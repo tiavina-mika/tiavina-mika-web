@@ -10,7 +10,7 @@ import '../styles.css';
 const theme = {
     color: {
         primary: '#05A73C',
-    }
+    },
 };
 React.useLayoutEffect = React.useEffect;
 const MyApp = ({ Component, pageProps, router }: AppProps) => {

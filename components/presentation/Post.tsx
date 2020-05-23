@@ -1,14 +1,22 @@
 import React, { FC } from 'react';
-
-import { postAnimation } from '../../utils/animation';
 import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
 
-type Props = { text: string; className?: string };
-const Post: FC<Props> = ({ text, className }) => {
+import { screenState } from '../../reducers/appReducer';
+import { postAnimation } from '../../utils/animation';
+
+type Props = { text: string; className?: string; display?: boolean };
+const Post: FC<Props> = ({ text, className, display }) => {
+    const isMobile = useSelector(screenState);
+    const Component = isMobile ? 'h5' : motion.h5;
+    const otherProps = !isMobile ? postAnimation : {};
+
+    if (!display) return null;
+
     return (
-        <motion.h5 className={className} {...postAnimation}>
+        <Component className={className} {...otherProps}>
             {text}
-        </motion.h5>
+        </Component>
     );
 };
 

@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import stepReducer from './stepReducer';
+import appReducer from './appReducer';
 
 const rootReducer = combineReducers({
-    step: stepReducer,
+    app: appReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

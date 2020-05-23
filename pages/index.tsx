@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 // import Head from 'next/head';
 import { createUseStyles } from 'react-jss';
+import { useDispatch } from 'react-redux';
 
+import { useWindowSize } from '../hooks/useWindowSize';
+import { getScreen } from '../reducers/appReducer';
 import Presentation from '../components/presentation/Presentation';
 import Block2 from '../components/domain/Domain';
 
 const useStyles = createUseStyles({
     root: {
-        // minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        // backgroundColor: '#000',
-        alignSelf: 'stretch',
-        flex: 1,
+        composes: 'flexColumn flexCenter alignCenter stretchSelf flex1',
     },
 });
 
 const Home = () => {
     const classes = useStyles();
+    const size = useWindowSize();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getScreen(size.width));
+    });
 
     return (
         <div className={classes.root}>

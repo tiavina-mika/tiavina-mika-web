@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 // import Head from 'next/head';
 import { createUseStyles } from 'react-jss';
 import { useViewportScroll, motion } from 'framer-motion';
+import { screenState } from '../../reducers/appReducer';
+import { useSelector } from 'react-redux';
 
 import About from './About';
 
@@ -19,6 +21,7 @@ const Presentation = () => {
     const { scrollYProgress } = useViewportScroll();
     const [opacity, setOpacity] = useState(1);
     const [position, setPosition] = useState(0);
+    const isMobile = useSelector(screenState);
 
     useEffect(
         () =>
@@ -28,10 +31,13 @@ const Presentation = () => {
             }),
         []
     );
+    const Component = isMobile ? 'div' : motion.div;
+    const styles = isMobile ? {} : { opacity };
+
     return (
-        <motion.div className={classes.presentation} style={{ opacity }}>
-            <About position={position} />
-        </motion.div>
+        <Component className={classes.presentation} style={styles}>
+            <About position={isMobile ? 0 : position} />
+        </Component>
     );
 };
 

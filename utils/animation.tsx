@@ -45,6 +45,6 @@ export const postAnimation = {
         },
     },
     transition: {
-        duration: 0.5
+        duration: 0.5,
     },
 };
