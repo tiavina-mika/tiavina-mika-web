@@ -2,7 +2,7 @@ import React from 'react';
 // import Head from 'next/head';
 import { createUseStyles } from 'react-jss';
 
-import Block1 from '../components/presentation/Presentation';
+import Presentation from '../components/presentation/Presentation';
 import Block2 from '../components/domain/Domain';
 
 const useStyles = createUseStyles({
@@ -23,7 +23,7 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
-            <Block1 />
+            <Presentation />
             <Block2 />
         </div>
     );

@@ -8,7 +8,9 @@ import store from '../reducers/store';
 import '../styles.css';
 
 const theme = {
-    primary: '#f7df1e',
+    color: {
+        primary: '#05A73C',
+    }
 };
 React.useLayoutEffect = React.useEffect;
 const MyApp = ({ Component, pageProps, router }: AppProps) => {
