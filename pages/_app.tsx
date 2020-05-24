@@ -10,7 +10,12 @@ import '../styles.css';
 const theme = {
     color: {
         primary: '#05A73C',
+        // secondary: '#373432',
+        secondary: '#27282A',
+        regular: '#6D6D6D',
+        subtitle: '#52575f',
     },
+    spacing: (size) => size * 6,
 };
 React.useLayoutEffect = React.useEffect;
 const MyApp = ({ Component, pageProps, router }: AppProps) => {

@@ -5,10 +5,54 @@
     font-display: auto;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Prequelrough';
+    /* src: url(/fonts/prequel-rough.eot); */
+    src: url('/fonts/prequel-rough.woff2') format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat Medium';
+    src: url('/fonts/Montserrat-Medium.ttf');
+    font-display: auto;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/fonts/Montserrat-Regular.ttf');
+    font-display: auto;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Medium';
+    src: url('/fonts/Proxima-Nova-Medium.otf');
+    font-display: auto;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Karla Regular';
+    src: url('/fonts/Karla-Regular.ttf');
+    font-display: auto;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tungsten-Medium';
+    src: url('/fonts/Tungsten-Medium.woff');
+    font-display: auto;
+    font-style: normal;
+}
+
 
 body {
     margin: 0; 
     padding:0;
+}
+h6, h3, h4, h2 {
+    margin: 0;
 }
 .bg {
     background-color: red;

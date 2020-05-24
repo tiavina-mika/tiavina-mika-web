@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 
 import Title from './Title';
 import Post from './Post';
-import { screenState } from '../../reducers/appReducer';
-import { media } from '../../utils/constants';
+import { screenState } from '../../../reducers/appReducer';
+import { media } from '../../../utils/constants';
 
 const useStyles = createUseStyles((theme: any) => ({
     about: {

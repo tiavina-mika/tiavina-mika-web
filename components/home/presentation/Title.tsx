@@ -4,8 +4,8 @@ import { createUseStyles } from 'react-jss';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 
-import { textItemsAnimation, textItemAnimation } from '../../utils/animation';
-import { screenState } from '../../reducers/appReducer';
+import { textItemsAnimation, textItemAnimation } from '../../../animations/presentation';
+import { screenState } from '../../../reducers/appReducer';
 
 const useStyles = createUseStyles({
     title: {

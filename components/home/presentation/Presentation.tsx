@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Head from 'next/head';
 import { createUseStyles } from 'react-jss';
 import { useViewportScroll, motion } from 'framer-motion';
-import { screenState } from '../../reducers/appReducer';
+import { screenState } from '../../../reducers/appReducer';
 import { useSelector } from 'react-redux';
 
 import About from './About';

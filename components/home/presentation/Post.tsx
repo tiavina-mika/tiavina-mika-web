@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 
-import { screenState } from '../../reducers/appReducer';
-import { postAnimation } from '../../utils/animation';
+import { screenState } from '../../../reducers/appReducer';
+import { postAnimation } from '../../../animations/presentation';
 
 type Props = { text: string; className?: string; display?: boolean };
 const Post: FC<Props> = ({ text, className, display }) => {
