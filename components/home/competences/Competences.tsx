@@ -4,6 +4,7 @@ import { useViewportScroll, motion } from 'framer-motion';
 
 import BlockTitle from '../../Common/BlockTitle';
 import { animation, itemVariants } from '../../../animations/cards';
+import { onEnterAnimation } from '../../../animations/onEnter';
 import { media } from '../../../utils/constants';
 
 const data = [
@@ -84,9 +85,9 @@ const Competences: FC = () => {
 
     return (
         <motion.div className={classes.root}>
-            <div className={classes.titleBlock}>
+            <motion.div className={classes.titleBlock} {...onEnterAnimation}>
                 <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" />
-            </div>
+            </motion.div>
             <div className={classes.content}>
                 <motion.div className={classes.items} {...animation}>
                     {data.map((item, index) => (

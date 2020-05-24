@@ -13,16 +13,16 @@ const useStyles = createUseStyles((theme: any) => ({
         width: '100%',
         [media.lgDown]: {
             flexDirection: 'column',
-            alignItems: 'flex-start'
-        }
+            alignItems: 'flex-start',
+        },
     },
     main: {
         [media.lgUp]: {
             paddingLeft: 15,
         },
         [media.lgDown]: {
-            order: -1
-        }
+            order: -1,
+        },
     },
     title: {
         fontSize: 32,
@@ -36,13 +36,12 @@ const useStyles = createUseStyles((theme: any) => ({
         textIndent: -9999,
         [media.lgDown]: {
             marginTop: theme.spacing(3),
-            width: 200
+            width: 200,
         },
         [media.lgUp]: {
             marginTop: theme.spacing(3),
-        width: 300,
-    },
-        
+            width: 300,
+        },
     },
     subtitle: {
         fontSize: 22,
