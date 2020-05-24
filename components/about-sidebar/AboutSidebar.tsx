@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 import { media } from '../../utils/constants';
+import Button from '../Common/Button';
 
 const useStyles = createUseStyles((theme: any) => ({
     root: {
-        composes: 'flexRow stretchSelf',
+        composes: 'flexColum center stretchSelf',
+        fontFamily: 'Prequelrough, sans-serif',
         backgroundColor: theme.color.secondary,
         [media.lgUp]: {
             height: '100vh',
@@ -13,9 +15,48 @@ const useStyles = createUseStyles((theme: any) => ({
         [media.lgDown]: {
             width: '100%',
         },
+        paddingLeft: 20,
+        paddingRight: 20,
     },
-    left: {
+    top: {
         composes: 'flexColumn',
+    },
+    imageContainer: {
+        composes: 'flexRow stretchSelf justifyCenter',
+        padding: [15, 0],
+    },
+    image: {
+        backgroundColor: 'green',
+        composes: 'flexRow stretchSelf',
+        width: 200,
+        height: 200,
+        borderRadius: '50%',
+        border: '5px solid #000',
+        overflow: 'hidden',
+        '& img': {
+            width: '100%',
+        },
+    },
+    content: {
+        '& h3': {
+            color: theme.color.grey,
+            fontWeight: '400',
+            lineHeight: 1.4,
+            textTransform: 'uppercase',
+            letterSpacing: 3.5,
+        },
+        '& h2': {
+            color: '#fff',
+            fontWeight: '400',
+            lineHeight: 1.4,
+            textTransform: 'uppercase',
+            letterSpacing: 3.5,
+            marginTop: 10,
+        },
+    },
+    button: {
+        composes: 'flexRow justifyCenter stretchSelf',
+        marginTop: 15,
     },
 }));
 
@@ -23,12 +64,22 @@ const AboutSidebar: FC = () => {
     const classes = useStyles();
 
     return (
-        <motion.div className={classes.root}>
-            <div className={classes.left}>
-                <h1>Tiavina Michael Ralainirina</h1>
-                <h1>AboutSidebar</h1>
+        <div className={classes.root}>
+            <div className={classes.top}>
+                <div className={classes.imageContainer}>
+                    <div className={classes.image}>
+                        <img alt="" src="/images/profile.jpg" />
+                    </div>
+                </div>
+                <div className={classes.content}>
+                    <h3>Tiavina Michael Ralainirina</h3>
+                    <h2>Développeur FullStack / Web Designer / Lead Developpeur</h2>
+                </div>
+                <div className={classes.button}>
+                    <Button text="Télécharger mon CV" icon="download" />
+                </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

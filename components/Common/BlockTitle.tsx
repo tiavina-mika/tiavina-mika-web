@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import { useViewportScroll, motion } from 'framer-motion';
 import clsx from 'clsx';
 
 import { media } from '../../utils/constants';
@@ -53,17 +52,16 @@ const useStyles = createUseStyles((theme: any) => ({
 type Props = { className?: string; title: string; subtitle?: string };
 const BlockTitle: FC<Props> = ({ className, title, subtitle }) => {
     const classes = useStyles();
-    const { scrollYProgress } = useViewportScroll();
 
     return (
-        <motion.div className={clsx(classes.root, className)}>
+        <div className={clsx(classes.root, className)}>
             <div className={classes.dotted}></div>
 
             <div className={classes.main}>
                 <h3 className={classes.title}>{title}</h3>
                 {subtitle && <h6 className={classes.subtitle}>{subtitle}</h6>}
             </div>
-        </motion.div>
+        </div>
     );
 };
 

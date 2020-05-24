@@ -49,16 +49,16 @@ const textName = 'Tiavina Michael';
 const textFirstName = 'Ralainirina';
 const textPost = 'Developpeur Full-Stack / Web Designer';
 
-type Props = { position?: number };
+type Props = { position?: number; opacity?: number };
 
-const About: FC<Props> = ({ position }) => {
+const About: FC<Props> = ({ position, opacity }) => {
     const classes = useStyles();
     const [firstName, setFirstName] = useState(false);
     const [lastName, setLastName] = useState(false);
     const isMobile = useSelector(screenState);
 
     return (
-        <motion.div className={classes.about} style={{ paddingBottom: position }}>
+        <motion.div className={classes.about} style={{ paddingBottom: position, opacity }}>
             <div className={classes.hello}>
                 <h6>Hello! Je suis</h6>
             </div>

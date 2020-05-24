@@ -9,6 +9,7 @@ import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
 import AboutSidebar from '../components/about-sidebar/AboutSidebar';
 import Competences from '../components/home/competences/Competences';
+import Presentation from '../components/home/presentation/Presentation';
 
 const useStyles = createUseStyles({
     window: {
@@ -57,7 +58,7 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
-            {/* <Presentation /> */}
+            <Presentation />
             <motion.div className={classes.main}>
                 <div className={clsx(classes.left, classes.window)}>
                     <Competences />

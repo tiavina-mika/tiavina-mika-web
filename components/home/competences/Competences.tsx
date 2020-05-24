@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { useViewportScroll, motion } from 'framer-motion';
 
@@ -8,6 +8,36 @@ import { onEnterAnimation } from '../../../animations/onEnter';
 import { media } from '../../../utils/constants';
 
 const data = [
+    {
+        title: 'Performance',
+        description:
+            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
+    },
+    {
+        title: 'Performance',
+        description:
+            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
+    },
+    {
+        title: 'Performance',
+        description:
+            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
+    },
+    {
+        title: 'Performance',
+        description:
+            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
+    },
+    {
+        title: 'Performance',
+        description:
+            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
+    },
+    {
+        title: 'Performance',
+        description:
+            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
+    },
     {
         title: 'Performance',
         description:
@@ -43,7 +73,7 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: '$fullColumn',
     },
     items: {
-        composes: 'flexRow stretchSelf justifyCenter',
+        composes: 'flexRow stretchSelf',
         marginTop: theme.spacing(7),
         [media.lgUp]: {
             marginTop: theme.spacing(12),
@@ -82,7 +112,20 @@ const useStyles = createUseStyles((theme: any) => ({
 const Competences: FC = () => {
     const classes = useStyles();
     const { scrollYProgress } = useViewportScroll();
+    const [start, setStart] = useState(false);
 
+    useEffect(
+        () =>
+            scrollYProgress.onChange((latest) => {
+                if (latest > 0.3) {
+                    setStart(true);
+                    return;
+                }
+                setStart(false);
+            }),
+        []
+    );
+    if (!start) return null;
     return (
         <motion.div className={classes.root}>
             <motion.div className={classes.titleBlock} {...onEnterAnimation}>
@@ -93,7 +136,7 @@ const Competences: FC = () => {
                     {data.map((item, index) => (
                         <motion.div className={classes.item} key={index} {...itemVariants}>
                             <h6 className={classes.title}>
-                                <img src="/images/left-circle.svg" alt="circle" />
+                                <img src="/images/icons/left-circle-active.svg" alt="circle" />
                                 <span>{item.title}</span>
                             </h6>
                             <span className={classes.description}>{item.description}</span>

@@ -6,7 +6,7 @@ export const cardItemsAnimation = {
             transition: {
                 when: 'beforeChildren',
                 staggerChildren: 0.1,
-                delay: 0.2,
+                delay: 0.4,
             },
         },
     },

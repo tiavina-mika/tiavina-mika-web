@@ -5,15 +5,14 @@ export const cardItemsAnimation = {
             scale: 1,
             transition: {
                 when: 'beforeChildren',
-                staggerChildren: 0.1,
-                delay: 0.2,
+                staggerChildren: 0.08,
             },
         },
     },
     transition: {
         type: 'tween',
         ease: 'anticipate',
-        duration: 0.2,
+        duration: 0.1,
     },
 };
 

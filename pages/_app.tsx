@@ -9,11 +9,12 @@ import '../styles.css';
 
 const theme = {
     color: {
-        primary: '#05A73C',
+        primary: '#cf1119',
         // secondary: '#373432',
         secondary: '#27282A',
         regular: '#6D6D6D',
         subtitle: '#52575f',
+        grey: '#52575f',
     },
     spacing: (size) => size * 6,
 };
