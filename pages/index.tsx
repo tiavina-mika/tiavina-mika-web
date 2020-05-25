@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import { useDispatch } from 'react-redux';
-import { motion } from 'framer-motion';
-import clsx from 'clsx';
 
 import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
-import AboutSidebar from '../components/about-sidebar/AboutSidebar';
 import Competences from '../components/home/competences/Competences';
+import About from '../components/home/about/About';
 import Presentation from '../components/home/presentation/Presentation';
 
 const useStyles = createUseStyles({
@@ -22,7 +20,7 @@ const useStyles = createUseStyles({
         composes: 'flexColumn flexCenter alignCenter stretchSelf flex1',
     },
     main: {
-        composes: 'flexRow stretchSelf flex1',
+        composes: 'flexColumn stretchSelf flex1',
         backgroundColor: '#000',
         color: '#fff',
         [media.lgDown]: {
@@ -59,14 +57,15 @@ const Home = () => {
     return (
         <div className={classes.root}>
             <Presentation />
-            <motion.div className={classes.main}>
-                <div className={clsx(classes.left, classes.window)}>
-                    <Competences />
-                </div>
-                <div className={clsx(classes.right, classes.window)}>
+            <div className={classes.main}>
+                {/* <div className={clsx(classes.left, classes.window)}> */}
+                <Competences />
+                <About />
+                {/* </div> */}
+                {/* <div className={clsx(classes.right, classes.window)}>
                     <AboutSidebar />
-                </div>
-            </motion.div>
+                </div> */}
+            </div>
         </div>
     );
 };

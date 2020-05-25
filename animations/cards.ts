@@ -37,3 +37,9 @@ export const animation = {
     variants: cardItemsAnimation.container,
     transition: cardItemsAnimation.transition,
 };
+
+export const animate = (start) => ({
+    animate: start ? 'visible' : 'hidden',
+    variants: cardItemsAnimation.container,
+    transition: cardItemsAnimation.transition,
+});

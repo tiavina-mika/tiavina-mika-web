@@ -1,28 +1,14 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import { useViewportScroll, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import BlockTitle from '../../Common/BlockTitle';
-import { animation, itemVariants } from '../../../animations/cards';
+import { animate, itemVariants } from '../../../animations/cards';
 import { onEnterAnimation } from '../../../animations/onEnter';
 import { media } from '../../../utils/constants';
+import { useInView } from 'react-intersection-observer';
 
 const data = [
-    {
-        title: 'Performance',
-        description:
-            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
-    },
-    {
-        title: 'Performance',
-        description:
-            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
-    },
-    {
-        title: 'Performance',
-        description:
-            "For as long as I can remember, I've been obsessed with learning about the latest and greatest; no language is too different, pattern too difficult, or process too challenging.",
-    },
     {
         title: 'Performance',
         description:
@@ -64,17 +50,25 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexColumn stretchSelf',
     },
     root: {
-        composes: '$fullColumn',
+        composes: '$fullColumn alignCenter',
     },
     titleBlock: {
         composes: '$fullColumn',
     },
     content: {
-        composes: '$fullColumn',
+        composes: '$fullColumn center',
+    },
+    center: {
+        composes: 'flexRow justifyCenter',
+        [media.lgUp]: {
+            width: 1500,
+            marginTop: theme.spacing(4),
+            paddingLeft: theme.spacing(8),
+            paddingRight: theme.spacing(8),
+        },
     },
     items: {
         composes: 'flexRow stretchSelf',
-        marginTop: theme.spacing(7),
         [media.lgUp]: {
             marginTop: theme.spacing(12),
         },
@@ -111,40 +105,32 @@ const useStyles = createUseStyles((theme: any) => ({
 
 const Competences: FC = () => {
     const classes = useStyles();
-    const { scrollYProgress } = useViewportScroll();
-    const [start, setStart] = useState(false);
+    const [ref, inView] = useInView({
+        threshold: 0.5,
+        triggerOnce: false,
+    });
 
-    useEffect(
-        () =>
-            scrollYProgress.onChange((latest) => {
-                if (latest > 0.3) {
-                    setStart(true);
-                    return;
-                }
-                setStart(false);
-            }),
-        []
-    );
-    if (!start) return null;
     return (
-        <motion.div className={classes.root}>
-            <motion.div className={classes.titleBlock} {...onEnterAnimation}>
+        <div className={classes.root}>
+            <motion.div className={classes.titleBlock} {...onEnterAnimation(inView)}>
                 <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" />
             </motion.div>
-            <div className={classes.content}>
-                <motion.div className={classes.items} {...animation}>
-                    {data.map((item, index) => (
-                        <motion.div className={classes.item} key={index} {...itemVariants}>
-                            <h6 className={classes.title}>
-                                <img src="/images/icons/left-circle-active.svg" alt="circle" />
-                                <span>{item.title}</span>
-                            </h6>
-                            <span className={classes.description}>{item.description}</span>
-                        </motion.div>
-                    ))}
-                </motion.div>
+            <div className={classes.content} ref={ref}>
+                <div className={classes.center}>
+                    <motion.div className={classes.items} {...animate(inView)}>
+                        {data.map((item, index) => (
+                            <motion.div className={classes.item} key={index} {...itemVariants}>
+                                <h6 className={classes.title}>
+                                    <img src="/images/icons/left-circle-active.svg" alt="circle" />
+                                    <span>{item.title}</span>
+                                </h6>
+                                <span className={classes.description}>{item.description}</span>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
             </div>
-        </motion.div>
+        </div>
     );
 };
 

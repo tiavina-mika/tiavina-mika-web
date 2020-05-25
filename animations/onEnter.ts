@@ -8,9 +8,8 @@ const transition = {
     duration: 1,
 };
 
-export const onEnterAnimation = {
-    initial: 'hidden',
-    animate: 'visible',
+export const onEnterAnimation = (start) => ({
+    animate: start ? 'visible' : 'hidden',
     variants,
     transition,
-};
+});
