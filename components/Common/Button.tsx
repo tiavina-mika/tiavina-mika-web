@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import { motion } from 'framer-motion';
 // import { media } from '../../utils/constants';
 
-const animation = {
+const defaultAnimation = {
     initial: 'in',
     animate: 'out',
     variants: {
@@ -19,7 +19,9 @@ const useStyles = createUseStyles((theme: any) => ({
     button: {
         composes: 'flexRow spaceBetween flex1',
         backgroundColor: theme.color.primary,
-        padding: [10, 30],
+        color: '#fff',
+        textDecoration: 'none',
+        padding: [20, 30],
         letterSpacing: 1,
         '& img': {
             marginLeft: theme.spacing(3),
@@ -27,12 +29,14 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { text: string; icon?: string };
-const Button: FC<Props> = ({ text, icon }) => {
+type Props = { text: string; icon?: string; url?: string; animation?: any };
+const Button: FC<Props> = ({ text, icon, url, animation }) => {
     const classes = useStyles();
 
+    const animate = animation ? animation : defaultAnimation;
+
     return (
-        <motion.a className={classes.button} {...animation}>
+        <motion.a className={classes.button} {...animate} href={url || '#'}>
             <span>{text}</span>
             {icon && <img alt="" src={`/images/icons/${icon}.svg`} />}
         </motion.a>

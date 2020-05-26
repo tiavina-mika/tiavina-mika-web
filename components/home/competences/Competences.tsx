@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 
 import BlockTitle from '../../Common/BlockTitle';
 import { animate, itemVariants } from '../../../animations/cards';
-import { onEnterAnimation } from '../../../animations/onEnter';
-import { media } from '../../../utils/constants';
+import { media, lgScreenWidth } from '../../../utils/constants';
 import { useInView } from 'react-intersection-observer';
 
 const data = [
@@ -52,16 +51,13 @@ const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: '$fullColumn alignCenter',
     },
-    titleBlock: {
-        composes: '$fullColumn',
-    },
     content: {
         composes: '$fullColumn center',
     },
     center: {
         composes: 'flexRow justifyCenter',
         [media.lgUp]: {
-            width: 1500,
+            width: lgScreenWidth,
             marginTop: theme.spacing(4),
             paddingLeft: theme.spacing(8),
             paddingRight: theme.spacing(8),
@@ -106,15 +102,13 @@ const useStyles = createUseStyles((theme: any) => ({
 const Competences: FC = () => {
     const classes = useStyles();
     const [ref, inView] = useInView({
-        threshold: 0.5,
+        threshold: 0.3,
         triggerOnce: false,
     });
 
     return (
         <div className={classes.root}>
-            <motion.div className={classes.titleBlock} {...onEnterAnimation(inView)}>
-                <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" />
-            </motion.div>
+            <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" startAnimation={inView} />
             <div className={classes.content} ref={ref}>
                 <div className={classes.center}>
                     <motion.div className={classes.items} {...animate(inView)}>

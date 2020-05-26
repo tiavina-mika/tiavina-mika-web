@@ -31,13 +31,6 @@ export const itemVariants = {
     },
 };
 
-export const animation = {
-    initial: 'hidden',
-    animate: 'visible',
-    variants: cardItemsAnimation.container,
-    transition: cardItemsAnimation.transition,
-};
-
 export const animate = (start) => ({
     animate: start ? 'visible' : 'hidden',
     variants: cardItemsAnimation.container,

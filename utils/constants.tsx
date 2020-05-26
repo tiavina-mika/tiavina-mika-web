@@ -36,3 +36,5 @@ export const media = {
     mdXl: `@media (min-width: ${md}px) and (max-width: ${xl}px)`,
     lgXl: `@media (min-width: ${lg}px) and (max-width: ${xl}px)`,
 };
+
+export const lgScreenWidth = 1500;

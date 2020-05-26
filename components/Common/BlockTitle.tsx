@@ -1,8 +1,13 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
+import { useSelector } from 'react-redux';
 
 import { media } from '../../utils/constants';
+import { onEnterAnimation } from '../../animations/onEnter';
+import { turnIndefinetily } from '../../animations/app';
+import { screenState } from '../../reducers/appReducer';
 
 const useStyles = createUseStyles((theme: any) => ({
     root: {
@@ -15,7 +20,11 @@ const useStyles = createUseStyles((theme: any) => ({
             alignItems: 'flex-start',
         },
     },
+    right: {
+        composes: 'justifyEnd',
+    },
     main: {
+        composes: 'flexRow alignCenter',
         [media.lgUp]: {
             paddingLeft: 15,
         },
@@ -23,6 +32,11 @@ const useStyles = createUseStyles((theme: any) => ({
             order: -1,
         },
     },
+    icon: {
+        composes: 'flexRow',
+        marginRight: 10,
+    },
+    titleContainer: {},
     title: {
         fontSize: 32,
         letterSpacing: ' 0.16em',
@@ -39,7 +53,13 @@ const useStyles = createUseStyles((theme: any) => ({
         },
         [media.lgUp]: {
             marginTop: theme.spacing(3),
-            width: 300,
+            width: '30vw',
+        },
+    },
+    dottedRight: {
+        order: 1,
+        [media.lgUp]: {
+            width: '50vw',
         },
     },
     subtitle: {
@@ -49,19 +69,40 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { className?: string; title: string; subtitle?: string };
-const BlockTitle: FC<Props> = ({ className, title, subtitle }) => {
+type Props = {
+    className?: string;
+    title: string;
+    subtitle?: string;
+    right?: boolean;
+    startAnimation?: boolean;
+    icon?: string;
+};
+const BlockTitle: FC<Props> = ({ className, title, subtitle, right, startAnimation, icon }) => {
     const classes = useStyles();
+    const isMobile = useSelector(screenState);
+
+    const Img = isMobile ? 'img' : motion.img;
+    const Div = isMobile ? 'div' : motion.div;
+    const iconAnimationProps = (startAnimation) => (isMobile ? {} : turnIndefinetily(startAnimation));
+    const onEnterAnimationProps = (startAnimation) => (isMobile ? {} : onEnterAnimation(startAnimation));
 
     return (
-        <div className={clsx(classes.root, className)}>
-            <div className={classes.dotted}></div>
-
+        <Div
+            {...onEnterAnimationProps(startAnimation)}
+            className={clsx(classes.root, className, right ? classes.right : null)}>
+            <div className={clsx(classes.dotted, right ? classes.dottedRight : null)}></div>
             <div className={classes.main}>
-                <h3 className={classes.title}>{title}</h3>
-                {subtitle && <h6 className={classes.subtitle}>{subtitle}</h6>}
+                {icon && (
+                    <div className={classes.icon}>
+                        <Img src={`/images/icons/${icon}.svg`} alt="" {...iconAnimationProps(startAnimation)} />
+                    </div>
+                )}
+                <div className={classes.titleContainer}>
+                    <h3 className={classes.title}>{title}</h3>
+                    {subtitle && <h6 className={classes.subtitle}>{subtitle}</h6>}
+                </div>
             </div>
-        </div>
+        </Div>
     );
 };
 
