@@ -2,6 +2,9 @@ import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import { motion } from 'framer-motion';
 // import { media } from '../../utils/constants';
+import { useSelector } from 'react-redux';
+
+import { screenState } from '../../reducers/appReducer';
 
 const defaultAnimation = {
     initial: 'in',
@@ -32,14 +35,16 @@ const useStyles = createUseStyles((theme: any) => ({
 type Props = { text: string; icon?: string; url?: string; animation?: any };
 const Button: FC<Props> = ({ text, icon, url, animation }) => {
     const classes = useStyles();
+    const isMobile = useSelector(screenState);
 
-    const animate = animation ? animation : defaultAnimation;
+    const animate = isMobile ? {} : animation ? animation : defaultAnimation;
+    const Link = isMobile ? 'a' : motion.a;
 
     return (
-        <motion.a className={classes.button} {...animate} href={url || '#'}>
+        <Link className={classes.button} {...animate} href={url || '#'}>
             <span>{text}</span>
             {icon && <img alt="" src={`/images/icons/${icon}.svg`} />}
-        </motion.a>
+        </Link>
     );
 };
 

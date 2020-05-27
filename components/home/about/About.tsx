@@ -16,13 +16,14 @@ const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: 'flexRow flex1 justifyCenter',
         fontFamily: 'Prequelrough, sans-serif',
+        paddingBottom: theme.spacing(30),
         [media.lgUp]: {
             marginTop: theme.spacing(30),
         },
     },
     content: {
         composes: 'flexRow justifyCenter stretchSelf',
-        width: lgScreenWidth - 500,
+        width: lgScreenWidth - 400,
         marginTop: theme.spacing(20),
         // backgroundColor: 'red'
     },
@@ -50,7 +51,7 @@ const useStyles = createUseStyles((theme: any) => ({
             letterSpacing: 3.5,
             marginTop: 10,
             [media.mdUp]: {
-                width: 600,
+                width: 650,
             },
         },
         [media.lgUp]: {
@@ -68,7 +69,7 @@ const useStyles = createUseStyles((theme: any) => ({
         fontFamily: 'Montserrat, sans-serif',
 
         [media.mdUp]: {
-            width: 600,
+            width: 650,
         },
     },
     description: {
@@ -131,19 +132,18 @@ const About: FC = () => {
                         {...shortDescriptionAnimation}
                         className={clsx(classes.shortDescription, classes.descriptionText)}>
                         <span>
-                            I am Andrew Martin, an excitable freelance full-stack web developer. I live with an intense
-                            passion for software engineering, particularly in the world of architecture, functional
-                            development, and enhancing developer productivity
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam
                         </span>
                     </Div>
                     <Div {...descriptionAnimation} className={clsx(classes.description, classes.descriptionText)}>
                         <span>
-                            For as long as I can remember, I've been obsessed with learning about the latest and
-                            greatest; no language is too different, pattern too difficult, or process too challenging.
-                            Lately? I've been building GraphQL API's using TypeScript, developing infrastructure
-                            tooling, and architecting elegant Client-side solutions at Credit Karma. Some of my must
-                            haves: test driven development, scalability, thoughtful and meaningful code review, and
-                            setting up build pipelines for success.
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                            consectetur, adipisci velit, sed quia
                         </span>
                     </Div>
                 </div>

@@ -11,7 +11,7 @@ const useStyles = createUseStyles({
     presentation: {
         composes: 'flexRow flexEnd stretchSelf',
         height: '100vh',
-        backgroundColor: '#fff',
+        backgroundColor: '#171717',
         // background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(7,17,35,0.4) 59.29%, rgba(6,15,31,0.6) 99.89%, rgba(6,15,31,0.8) 99.93%)`,
     },
 });
@@ -35,7 +35,7 @@ const Presentation: FC = () => {
     );
     const Component = isMobile ? 'div' : motion.div;
     const styles = isMobile
-        ? {}
+        ? { backgroundColor: 'rgb(23, 23, 23)' }
         : {
               background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(0,0,0,${
                   bgOpacity - 0.2
