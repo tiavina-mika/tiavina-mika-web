@@ -9,6 +9,7 @@ import Competences from '../components/home/competences/Competences';
 import About from '../components/home/about/About';
 import Presentation from '../components/home/presentation/Presentation';
 import Projects from '../components/home/projects/Projects';
+import Skills from '../components/home/skills/Skills';
 
 const useStyles = createUseStyles({
     window: {
@@ -63,6 +64,7 @@ const Home = () => {
                 <Competences />
                 <About />
                 <Projects />
+                <Skills />
                 {/* </div> */}
                 {/* <div className={clsx(classes.right, classes.window)}>
                     <AboutSidebar />
