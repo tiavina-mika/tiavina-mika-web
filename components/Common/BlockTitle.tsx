@@ -19,6 +19,9 @@ const useStyles = createUseStyles((theme: any) => ({
             flexDirection: 'column',
             alignItems: 'flex-start',
         },
+        [media.mdDown]: {
+            marginBottom: theme.spacing(4),
+        },
     },
     right: {
         composes: 'justifyEnd',
@@ -35,6 +38,9 @@ const useStyles = createUseStyles((theme: any) => ({
     icon: {
         composes: 'flexRow',
         marginRight: 10,
+        [media.mdDown]: {
+            marginBottom: theme.spacing(1),
+        },
     },
     titleContainer: {},
     title: {
@@ -42,13 +48,20 @@ const useStyles = createUseStyles((theme: any) => ({
         letterSpacing: ' 0.16em',
         color: '#fff',
         marginBottom: 10,
+        [media.mdDown]: {
+            fontSize: 20,
+        },
     },
     dotted: {
-        // flexBasis: '40%',
         borderTop: '1px dotted white',
         textIndent: -9999,
-        [media.lgDown]: {
+        [media.mdLg]: {
             marginTop: theme.spacing(3),
+        },
+        [media.mdDown]: {
+            marginTop: theme.spacing(1),
+        },
+        [media.lgDown]: {
             width: 200,
         },
         [media.lgUp]: {
@@ -66,6 +79,9 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 22,
         letterSpacing: '0.16em',
         color: theme.color.subtitle,
+        [media.mdDown]: {
+            fontSize: 18,
+        },
     },
 }));
 
@@ -84,6 +100,7 @@ const BlockTitle: FC<Props> = ({ className, title, subtitle, right, startAnimati
 
     const Img = isMobile ? 'img' : motion.img;
     const Div = isMobile ? 'div' : motion.div;
+
     const iconAnimationProps = (startAnimation) =>
         isMobile ? {} : animateIcon ? turnIndefinetily(startAnimation) : {};
     const onEnterAnimationProps = (startAnimation) => (isMobile ? {} : onEnterAnimation(startAnimation));

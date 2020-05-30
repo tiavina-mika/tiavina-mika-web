@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { useSelector } from 'react-redux';
 
 import BlockTitle from '../../Common/BlockTitle';
 import { animate, itemVariants } from '../../../animations/cards';
 import { media, lgScreenWidth } from '../../../utils/constants';
-import { useInView } from 'react-intersection-observer';
+import { screenState } from '../../../reducers/appReducer';
 
 const data = [
     {
@@ -50,6 +52,10 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     root: {
         composes: '$fullColumn alignCenter',
+        [media.mdDown]: {
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(3),
+        },
     },
     content: {
         composes: '$fullColumn center',
@@ -96,32 +102,43 @@ const useStyles = createUseStyles((theme: any) => ({
         lineHeight: 1.6,
         letterSpacing: '0.68px',
         color: '#fff',
+        [media.smDown]: {
+            fontSize: 16,
+        },
     },
 }));
 
 const Competences: FC = () => {
     const classes = useStyles();
+    const isMobile = useSelector(screenState);
+
     const [ref, inView] = useInView({
         threshold: 0.3,
         triggerOnce: false,
     });
+    /** Components */
+    const Div = isMobile ? 'div' : motion.div;
+
+    /** Animation */
+    const itemsAnimation = (inView) => (isMobile ? {} : animate(inView));
+    const itemAnimation = isMobile ? {} : itemVariants;
 
     return (
         <div className={classes.root}>
             <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" startAnimation={inView} />
             <div className={classes.content} ref={ref}>
                 <div className={classes.center}>
-                    <motion.div className={classes.items} {...animate(inView)}>
+                    <Div className={classes.items} {...itemsAnimation(inView)}>
                         {data.map((item, index) => (
-                            <motion.div className={classes.item} key={index} {...itemVariants}>
+                            <Div className={classes.item} key={index} {...itemAnimation}>
                                 <h6 className={classes.title}>
                                     <img src="/images/icons/left-circle-active.svg" alt="circle" />
                                     <span>{item.title}</span>
                                 </h6>
                                 <span className={classes.description}>{item.description}</span>
-                            </motion.div>
+                            </Div>
                         ))}
-                    </motion.div>
+                    </Div>
                 </div>
             </div>
         </div>

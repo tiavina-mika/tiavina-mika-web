@@ -16,16 +16,27 @@ const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: 'flexRow flex1 justifyCenter',
         fontFamily: 'Prequelrough, sans-serif',
-        paddingBottom: theme.spacing(30),
+        paddingBottom: theme.spacing(8),
         [media.lgUp]: {
             marginTop: theme.spacing(30),
+            paddingBottom: theme.spacing(30),
+        },
+        [media.mdDown]: {
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(3),
         },
     },
     content: {
         composes: 'flexRow justifyCenter stretchSelf',
-        width: lgScreenWidth - 400,
-        marginTop: theme.spacing(20),
-        // backgroundColor: 'red'
+        [media.mdDown]: {
+            flexDirection: 'column',
+        },
+        [media.mdUp]: {
+            width: lgScreenWidth - 400,
+        },
+        [media.lgUp]: {
+            marginTop: theme.spacing(20),
+        },
     },
     left: {
         composes: 'flexColumn center flex1',
@@ -58,11 +69,17 @@ const useStyles = createUseStyles((theme: any) => ({
             paddingLeft: theme.spacing(5),
             paddingRight: theme.spacing(5),
         },
+        [media.mdDown]: {
+            marginTop: theme.spacing(6),
+        },
     },
     descriptionText: {
         lineHeight: 1.8,
         marginTop: theme.spacing(3),
         fontSize: 20,
+        [media.mdDown]: {
+            fontSize: 16,
+        },
     },
     shortDescription: {
         color: theme.color.subtitle,
@@ -79,6 +96,9 @@ const useStyles = createUseStyles((theme: any) => ({
     button: {
         composes: 'flexRow justifyCenter stretchSelf',
         marginTop: theme.spacing(20),
+        [media.mdDown]: {
+            marginTop: theme.spacing(1.2),
+        },
     },
 }));
 

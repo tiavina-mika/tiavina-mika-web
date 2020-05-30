@@ -46,16 +46,12 @@
     font-style: normal;
 }
 
-
 body {
     margin: 0; 
     padding:0;
 }
 h6, h3, h4, h2 {
     margin: 0;
-}
-.bg {
-    background-color: red;
 }
 .font-Montserrat {
     font-family: 'Montserrat', sans-serif;
