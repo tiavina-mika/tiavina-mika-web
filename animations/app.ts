@@ -1,8 +1,8 @@
 export const downloadButtonAnimation = (start: boolean) => ({
     animate: start ? 'in' : 'out',
     variants: {
-        in: { y: 30, opacity: 0 },
-        out: { y: 0, opacity: 1 },
+        in: { y: -30, opacity: 1 },
+        out: { y: 0, opacity: 0 },
     },
     transition: {
         duration: 1,

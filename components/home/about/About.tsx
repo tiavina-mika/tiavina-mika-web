@@ -78,7 +78,7 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     button: {
         composes: 'flexRow justifyCenter stretchSelf',
-        marginTop: theme.spacing(2),
+        marginTop: theme.spacing(20),
     },
 }));
 
@@ -112,13 +112,20 @@ const About: FC = () => {
 
     return (
         <div className={classes.root} ref={ref}>
-            <BlockTitle title="A propos de moi" subtitle="Qui suis-je" right startAnimation={inView} icon="setting" />
+            <BlockTitle
+                title="A propos de moi"
+                subtitle="Qui suis-je"
+                right
+                animateIcon
+                startAnimation={inView}
+                icon="setting"
+            />
             <div className={classes.content}>
                 <div className={classes.left}>
                     <Img
                         alt=""
                         src="/images/profile.jpg"
-                        style={inView ? { opacity: value, scale: value } : {}}
+                        style={inView ? { scale: 0.5 + value } : {}}
                         // style={inView ? { scale: value ? value : 1, rotate: `${value ? value * 10 : 0}deg` } : {}}
                     />
                     <div className={classes.button}>

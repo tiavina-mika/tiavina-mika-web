@@ -8,6 +8,7 @@ import { media } from '../utils/constants';
 import Competences from '../components/home/competences/Competences';
 import About from '../components/home/about/About';
 import Presentation from '../components/home/presentation/Presentation';
+import Projects from '../components/home/projects/Projects';
 
 const useStyles = createUseStyles({
     window: {
@@ -61,6 +62,7 @@ const Home = () => {
                 {/* <div className={clsx(classes.left, classes.window)}> */}
                 <Competences />
                 <About />
+                <Projects />
                 {/* </div> */}
                 {/* <div className={clsx(classes.right, classes.window)}>
                     <AboutSidebar />

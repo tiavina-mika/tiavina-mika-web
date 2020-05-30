@@ -76,14 +76,16 @@ type Props = {
     right?: boolean;
     startAnimation?: boolean;
     icon?: string;
+    animateIcon?: boolean;
 };
-const BlockTitle: FC<Props> = ({ className, title, subtitle, right, startAnimation, icon }) => {
+const BlockTitle: FC<Props> = ({ className, title, subtitle, right, startAnimation, icon, animateIcon }) => {
     const classes = useStyles();
     const isMobile = useSelector(screenState);
 
     const Img = isMobile ? 'img' : motion.img;
     const Div = isMobile ? 'div' : motion.div;
-    const iconAnimationProps = (startAnimation) => (isMobile ? {} : turnIndefinetily(startAnimation));
+    const iconAnimationProps = (startAnimation) =>
+        isMobile ? {} : animateIcon ? turnIndefinetily(startAnimation) : {};
     const onEnterAnimationProps = (startAnimation) => (isMobile ? {} : onEnterAnimation(startAnimation));
 
     return (
