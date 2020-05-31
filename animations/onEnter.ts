@@ -1,5 +1,5 @@
 const variants = {
-    hidden: { y: 100 },
+    hidden: { y: 50 },
     visible: {
         y: 0,
     },

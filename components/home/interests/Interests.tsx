@@ -65,7 +65,6 @@ const useStyles = createUseStyles((theme: any) => ({
         height: 70,
         width: 70,
         marginBottom: theme.spacing(2),
-
     },
 }));
 
@@ -95,26 +94,25 @@ const items = [
         icon: 'geopolitic',
     },
     {
-        name: "chess",
+        name: 'chess',
         icon: 'chess',
     },
     {
-        name: "manga",
+        name: 'manga',
         icon: 'manga',
     },
     {
-        name: "histoire",
+        name: 'histoire',
         icon: 'history',
     },
     {
-        name: "voiture",
+        name: 'voiture',
         icon: 'car',
     },
     {
-        name: "comics",
+        name: 'comics',
         icon: 'comics',
     },
-    
 ];
 
 const Interests: FC = () => {
@@ -142,7 +140,7 @@ const Interests: FC = () => {
                 icon="passion"
             />
             <div className={classes.content} ref={ref}>
-                <Div className={classes.center}  {...itemsAnimation(inView)} >
+                <Div className={classes.center} {...itemsAnimation(inView)}>
                     {items.map((item, index) => (
                         <Div className={classes.item} key={index} {...itemAnimation}>
                             <div className={classes.icon}>
