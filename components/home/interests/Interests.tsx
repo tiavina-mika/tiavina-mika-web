@@ -32,6 +32,9 @@ const useStyles = createUseStyles((theme: any) => ({
             width: lgScreenWidth - 300,
             marginTop: theme.spacing(4),
         },
+        [media.lgDown]: {
+            justifyContent: 'flex-start',
+        },
     },
     type: {
         composes: '$fullColumn flex1',

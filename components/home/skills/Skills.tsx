@@ -35,6 +35,9 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     type: {
         composes: '$fullColumn flex1',
+        [media.mdDown]: {
+            marginBottom: theme.spacing(4),
+        },
     },
     title: {
         composes: 'flexRow center stretchSelf',
@@ -46,12 +49,17 @@ const useStyles = createUseStyles((theme: any) => ({
         '& span': {
             marginLeft: 10,
         },
+        [media.mdDown]: {
+            marginBottom: theme.spacing(1),
+        },
     },
     items: {
         composes: 'flexColumn flexStart',
-        marginBottom: theme.spacing(8),
         '& span': {
             marginLeft: 10,
+        },
+        [media.mdUp]: {
+            marginBottom: theme.spacing(8),
         },
     },
     item: {
@@ -298,7 +306,7 @@ const Skills: FC = () => {
                 icon="skills"
             />
             <div className={classes.content} ref={ref}>
-                <Div className={classes.center}  {...itemsAnimation(inView)}>
+                <Div className={classes.center} {...itemsAnimation(inView)}>
                     {items.map((item, index) => (
                         <Div className={classes.type} key={index} {...itemAnimation}>
                             <h6 className={classes.title}>
