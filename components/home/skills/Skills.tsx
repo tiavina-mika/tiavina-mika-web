@@ -297,8 +297,8 @@ const Skills: FC = () => {
                 startAnimation={inView}
                 icon="skills"
             />
-            <div className={classes.content} ref={ref}>
-                <div className={classes.center} ref={ref}>
+            <Div className={classes.content} ref={ref} {...itemsAnimation(inView)}>
+                <Div className={classes.center} {...itemAnimation}>
                     {items.map((item, index) => (
                         <div className={classes.type} key={index}>
                             <h6 className={classes.title}>
@@ -315,8 +315,8 @@ const Skills: FC = () => {
                             </Div>
                         </div>
                     ))}
-                </div>
-            </div>
+                </Div>
+            </Div>
         </div>
     );
 };
