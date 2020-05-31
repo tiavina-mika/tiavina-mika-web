@@ -278,7 +278,7 @@ const Skills: FC = () => {
     const isMobile = useSelector(screenState);
 
     const [ref, inView] = useInView({
-        threshold: 0.3,
+        threshold: 0.1,
         triggerOnce: false,
     });
     /** Components */
@@ -297,10 +297,10 @@ const Skills: FC = () => {
                 startAnimation={inView}
                 icon="skills"
             />
-            <Div className={classes.content} ref={ref} {...itemsAnimation(inView)}>
-                <Div className={classes.center} {...itemAnimation}>
+            <div className={classes.content} ref={ref}>
+                <Div className={classes.center}  {...itemsAnimation(inView)}>
                     {items.map((item, index) => (
-                        <div className={classes.type} key={index}>
+                        <Div className={classes.type} key={index} {...itemAnimation}>
                             <h6 className={classes.title}>
                                 <img src={`/images/icons/${item.icon}.svg`} alt="" />
                                 <span>{item.type}</span>
@@ -313,10 +313,10 @@ const Skills: FC = () => {
                                     </Div>
                                 ))}
                             </Div>
-                        </div>
+                        </Div>
                     ))}
                 </Div>
-            </Div>
+            </div>
         </div>
     );
 };
