@@ -11,6 +11,7 @@ import Presentation from '../components/home/presentation/Presentation';
 import Projects from '../components/home/projects/Projects';
 import Skills from '../components/home/skills/Skills';
 import Interests from '../components/home/interests/Interests';
+import Contact from '../components/home/contact/Contact';
 
 const useStyles = createUseStyles({
     window: {
@@ -59,14 +60,15 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
-            <Presentation />
+            {/* <Presentation /> */}
             <div className={classes.main}>
                 {/* <div className={clsx(classes.left, classes.window)}> */}
-                <Competences />
+                {/* <Competences />
                 <About />
                 <Projects />
                 <Skills />
-                <Interests />
+                <Interests /> */}
+                <Contact />
                 {/* </div> */}
                 {/* <div className={clsx(classes.right, classes.window)}>
                     <AboutSidebar />
