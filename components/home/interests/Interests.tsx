@@ -15,6 +15,8 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     root: {
         composes: '$fullColumn justifyCenter',
+        marginTop: theme.spacing(20),
+        marginBottom: theme.spacing(30),
         [media.mdDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
