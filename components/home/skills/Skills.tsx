@@ -53,7 +53,7 @@ const useStyles = createUseStyles((theme: any) => ({
             marginLeft: 10,
         },
         [media.mdDown]: {
-            marginBottom: theme.spacing(1),
+            marginBottom: theme.spacing(1.3),
         },
     },
     items: {
@@ -69,7 +69,7 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexRow center',
         marginBottom: theme.spacing(2),
         [media.smDown]: {
-            marginBottom: 0,
+            marginBottom: 3,
         },
         width: 300,
         '& h6': {

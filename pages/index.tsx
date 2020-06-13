@@ -56,7 +56,7 @@ const Home = () => {
 
     useEffect(() => {
         dispatch(getScreen(size.width));
-    });
+    }, []);
 
     return (
         <div className={classes.root}>

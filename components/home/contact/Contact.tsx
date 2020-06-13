@@ -97,9 +97,16 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     contactIcon: {
         marginRight: theme.spacing(2.5),
+        [media.xsDown]: {
+            marginRight: theme.spacing(1),
+        }
     },
     contactDetail: {
         composes: 'flexColumn',
+        [media.xsDown]: {
+            marginRight: theme.spacing(1),
+            flex: 1,
+        },
     },
     icon: {
         composes: 'flexRow justifyCenter center',
@@ -114,7 +121,9 @@ const useStyles = createUseStyles((theme: any) => ({
         opacity: 0.6,
         fontWeight: 300,
         marginTop: theme.spacing(1),
-        width: 300,
+        [media.smUp]: {
+            width: 300,
+        }
     },
     items: {
         composes: 'flexColumn flexStart',

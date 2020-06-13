@@ -1267,12 +1267,17 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       composes: '$centered',
       marginBottom: theme.spacing(5)
     },
-    contactIcon: {
+    contactIcon: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       marginRight: theme.spacing(2.5)
-    },
-    contactDetail: {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].xsDown, {
+      marginRight: theme.spacing(1)
+    }),
+    contactDetail: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: 'flexColumn'
-    },
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].xsDown, {
+      marginRight: theme.spacing(1),
+      flex: 1
+    }),
     icon: {
       composes: 'flexRow justifyCenter center',
       border: '1px solid #fff',
@@ -1281,13 +1286,14 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       borderRadius: '50%'
     },
     label: {},
-    value: {
+    value: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       fontSize: 18,
       opacity: 0.6,
       fontWeight: 300,
-      marginTop: theme.spacing(1),
+      marginTop: theme.spacing(1)
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].smUp, {
       width: 300
-    },
+    }),
     items: {
       composes: 'flexColumn flexStart',
       marginBottom: theme.spacing(8),
@@ -1424,7 +1430,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 243,
+      lineNumber: 252,
       columnNumber: 9
     }
   }, __jsx(_Common_BlockTitle__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1435,7 +1441,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 244,
+      lineNumber: 253,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1444,7 +1450,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 250,
+      lineNumber: 259,
       columnNumber: 13
     }
   }, __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1453,7 +1459,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 251,
+      lineNumber: 260,
       columnNumber: 17
     }
   }), __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1462,14 +1468,14 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 252,
+      lineNumber: 261,
       columnNumber: 21
     }
   }), __jsx("h6", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 253,
+      lineNumber: 262,
       columnNumber: 25
     }
   }, "Vous recherchez un designer ou un d\xE9veloppeur ? Laissez-moi un message, je vous r\xE9pondrai rapidement !"), __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1478,7 +1484,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 257,
+      lineNumber: 266,
       columnNumber: 25
     }
   }), contacts.map(function (contact, index) {
@@ -1489,7 +1495,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 259,
+        lineNumber: 268,
         columnNumber: 33
       }
     }), __jsx("div", {
@@ -1497,7 +1503,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 260,
+        lineNumber: 269,
         columnNumber: 37
       }
     }, __jsx("div", {
@@ -1505,7 +1511,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 261,
+        lineNumber: 270,
         columnNumber: 41
       }
     }, __jsx("img", {
@@ -1514,7 +1520,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 262,
+        lineNumber: 271,
         columnNumber: 45
       }
     }))), __jsx("div", {
@@ -1522,7 +1528,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 265,
+        lineNumber: 274,
         columnNumber: 37
       }
     }, __jsx("span", {
@@ -1530,7 +1536,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 266,
+        lineNumber: 275,
         columnNumber: 41
       }
     }, contact.label), __jsx("span", {
@@ -1538,7 +1544,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 267,
+        lineNumber: 276,
         columnNumber: 41
       }
     }, contact.value)));
@@ -1549,7 +1555,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 273,
+      lineNumber: 282,
       columnNumber: 21
     }
   }), __jsx("div", {
@@ -1557,30 +1563,10 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 274,
+      lineNumber: 283,
       columnNumber: 25
     }
   }, __jsx("div", {
-    className: classes.field,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 275,
-      columnNumber: 29
-    }
-  }, __jsx("input", {
-    placeholder: "Votre nom",
-    className: Object(clsx__WEBPACK_IMPORTED_MODULE_13__["default"])(classes.input, error.name ? classes.errorInput : null),
-    onChange: handleChange('name'),
-    value: values.name,
-    required: true,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 276,
-      columnNumber: 33
-    }
-  })), __jsx("div", {
     className: classes.field,
     __self: _this,
     __source: {
@@ -1589,11 +1575,10 @@ var Contact = function Contact() {
       columnNumber: 29
     }
   }, __jsx("input", {
-    placeholder: "Votre email",
-    className: classes.input,
-    type: "email",
-    onChange: handleChange('email'),
-    value: values.email,
+    placeholder: "Votre nom",
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_13__["default"])(classes.input, error.name ? classes.errorInput : null),
+    onChange: handleChange('name'),
+    value: values.name,
     required: true,
     __self: _this,
     __source: {
@@ -1606,7 +1591,28 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 293,
+      columnNumber: 29
+    }
+  }, __jsx("input", {
+    placeholder: "Votre email",
+    className: classes.input,
+    type: "email",
+    onChange: handleChange('email'),
+    value: values.email,
+    required: true,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 294,
+      columnNumber: 33
+    }
+  })), __jsx("div", {
+    className: classes.field,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 303,
       columnNumber: 29
     }
   }, __jsx("textarea", {
@@ -1619,7 +1625,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 295,
+      lineNumber: 304,
       columnNumber: 33
     }
   }), error.message && __jsx("span", {
@@ -1627,7 +1633,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 306,
+      lineNumber: 315,
       columnNumber: 51
     }
   }, error.message)), __jsx("div", {
@@ -1635,7 +1641,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 308,
+      lineNumber: 317,
       columnNumber: 29
     }
   }, __jsx(_Common_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -1645,7 +1651,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 309,
+      lineNumber: 318,
       columnNumber: 33
     }
   })))))));
@@ -2671,7 +2677,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
         marginLeft: 10
       }
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].mdDown, {
-      marginBottom: theme.spacing(1)
+      marginBottom: theme.spacing(1.3)
     }),
     items: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: 'flexColumn flexStart',
@@ -2685,7 +2691,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       composes: 'flexRow center',
       marginBottom: theme.spacing(2)
     }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_item, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].smDown, {
-      marginBottom: 0
+      marginBottom: 3
     }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_item, "width", 300), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_item, '& h6', Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       marginLeft: 10,
       fontFamily: 'Montserrat-Regular',
@@ -23974,7 +23980,7 @@ var Home = function Home() {
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     dispatch(Object(_reducers_appReducer__WEBPACK_IMPORTED_MODULE_5__["getScreen"])(size.width));
-  });
+  }, []);
   return __jsx("div", {
     className: classes.root,
     __self: _this,
