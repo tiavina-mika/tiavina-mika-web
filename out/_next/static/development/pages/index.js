@@ -621,23 +621,22 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"])(function (theme) {
-  var _root, _content, _left, _right;
+  var _content, _left, _right;
 
   return {
     rowStretch: {
       composes: 'flexRow justifyCenter stretchSelf'
     },
-    root: (_root = {
+    root: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: 'flexRow flex1 justifyCenter',
-      fontFamily: 'Prequelrough, sans-serif'
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_root, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgUp, {
-      marginTop: theme.spacing(10) // paddingBottom: theme.spacing(30),
-
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_root, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgDown, {
+      fontFamily: 'Prequelrough, sans-serif',
+      paddingBottom: theme.spacing(30)
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgDown, {
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),
-      marginTop: theme.spacing(8)
-    }), _root),
+      marginTop: theme.spacing(8),
+      paddingBottom: theme.spacing(0)
+    }),
     content: (_content = {
       composes: '$rowStretch'
     }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_content, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgDown, {
@@ -766,7 +765,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159,
+      lineNumber: 156,
       columnNumber: 9
     }
   }, __jsx(_Common_BlockTitle__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -779,7 +778,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160,
+      lineNumber: 157,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -787,7 +786,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168,
+      lineNumber: 165,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -795,7 +794,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169,
+      lineNumber: 166,
       columnNumber: 17
     }
   }, __jsx("div", {
@@ -803,7 +802,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 170,
+      lineNumber: 167,
       columnNumber: 21
     }
   }, __jsx(Img, {
@@ -816,7 +815,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 171,
+      lineNumber: 168,
       columnNumber: 25
     }
   }), __jsx("div", {
@@ -824,7 +823,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 177,
+      lineNumber: 174,
       columnNumber: 25
     }
   }, __jsx(_Common_Button__WEBPACK_IMPORTED_MODULE_14__["default"], {
@@ -835,7 +834,7 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 178,
+      lineNumber: 175,
       columnNumber: 29
     }
   }))), __jsx("div", {
@@ -843,21 +842,21 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 186,
+      lineNumber: 183,
       columnNumber: 21
     }
   }, __jsx(H3, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, h3Animation, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 187,
+      lineNumber: 184,
       columnNumber: 25
     }
   }), "Tiavina Michael Ralainirina"), __jsx(H2, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, h2Animation, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 188,
+      lineNumber: 185,
       columnNumber: 25
     }
   }), "D\xE9veloppeur FullStack / Web Designer / Lead Developpeur"), __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, shortDescriptionAnimation, {
@@ -865,14 +864,14 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 189,
+      lineNumber: 186,
       columnNumber: 25
     }
   }), __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 192,
+      lineNumber: 189,
       columnNumber: 29
     }
   }, "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam")), __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, descriptionAnimation, {
@@ -880,14 +879,14 @@ var About = function About() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 197,
+      lineNumber: 194,
       columnNumber: 25
     }
   }), __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 198,
+      lineNumber: 195,
       columnNumber: 29
     }
   }, "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia"))))));
@@ -966,10 +965,12 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       composes: 'flexColumn stretchSelf'
     },
     root: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
-      composes: '$fullColumn alignCenter'
+      composes: '$fullColumn alignCenter',
+      paddingBottom: theme.spacing(30)
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].mdDown, {
       paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3)
+      paddingRight: theme.spacing(3),
+      paddingBottom: theme.spacing(0)
     }),
     content: {
       composes: '$fullColumn center'
@@ -1049,7 +1050,7 @@ var Competences = function Competences() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 134,
       columnNumber: 9
     }
   }, __jsx(_Common_BlockTitle__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1059,7 +1060,7 @@ var Competences = function Competences() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 135,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1068,7 +1069,7 @@ var Competences = function Competences() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 136,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -1076,7 +1077,7 @@ var Competences = function Competences() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 137,
       columnNumber: 17
     }
   }, __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1085,7 +1086,7 @@ var Competences = function Competences() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 138,
       columnNumber: 21
     }
   }), data.map(function (item, index) {
@@ -1096,7 +1097,7 @@ var Competences = function Competences() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138,
+        lineNumber: 140,
         columnNumber: 29
       }
     }), __jsx("h6", {
@@ -1104,7 +1105,7 @@ var Competences = function Competences() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 139,
+        lineNumber: 141,
         columnNumber: 33
       }
     }, __jsx("img", {
@@ -1113,14 +1114,14 @@ var Competences = function Competences() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 140,
+        lineNumber: 142,
         columnNumber: 37
       }
     }), __jsx("span", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 141,
+        lineNumber: 143,
         columnNumber: 37
       }
     }, item.title)), __jsx("span", {
@@ -1128,7 +1129,7 @@ var Competences = function Competences() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 143,
+        lineNumber: 145,
         columnNumber: 33
       }
     }, item.description));
@@ -1696,13 +1697,12 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
     },
     root: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: '$fullColumn justifyCenter',
-      marginTop: theme.spacing(20),
-      marginBottom: theme.spacing(30)
+      paddingBottom: theme.spacing(30)
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgDown, {
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),
       marginTop: theme.spacing(8),
-      marginBottom: theme.spacing(0)
+      paddingBottom: theme.spacing(0)
     }),
     content: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: '$fullColumn center'
@@ -1815,7 +1815,7 @@ var Interests = function Interests() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 143,
       columnNumber: 9
     }
   }, __jsx(_Common_BlockTitle__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1827,7 +1827,7 @@ var Interests = function Interests() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 144,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1836,7 +1836,7 @@ var Interests = function Interests() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 151,
       columnNumber: 13
     }
   }, __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1845,7 +1845,7 @@ var Interests = function Interests() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 152,
       columnNumber: 17
     }
   }), items.map(function (item, index) {
@@ -1856,7 +1856,7 @@ var Interests = function Interests() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 155,
+        lineNumber: 154,
         columnNumber: 25
       }
     }), __jsx("div", {
@@ -1864,7 +1864,7 @@ var Interests = function Interests() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 156,
+        lineNumber: 155,
         columnNumber: 29
       }
     }, __jsx("img", {
@@ -1873,7 +1873,7 @@ var Interests = function Interests() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157,
+        lineNumber: 156,
         columnNumber: 33
       }
     })), __jsx("h6", {
@@ -1881,7 +1881,7 @@ var Interests = function Interests() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 159,
+        lineNumber: 158,
         columnNumber: 29
       }
     }, item.name));
@@ -2164,7 +2164,7 @@ var Presentation = function Presentation() {
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     return scrollYProgress.onChange(function (latest) {
       setOpacity(1 - latest * 3.5);
-      setBgOpacity(latest * 5);
+      setBgOpacity(latest * 15);
       setPosition(latest * 220);
     });
   }, []);
@@ -2328,23 +2328,20 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"])(function (theme) {
-  var _root;
-
   return {
     rowCenter: {
       composes: 'flexRow stretchSelf center',
       padding: [0, 10]
     },
-    root: (_root = {
+    root: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: 'flexRow flex1 justifyCenter',
-      fontFamily: 'Prequelrough, sans-serif'
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_root, _utils_constants__WEBPACK_IMPORTED_MODULE_11__["media"].lgUp, {
-      marginTop: theme.spacing(30)
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_root, _utils_constants__WEBPACK_IMPORTED_MODULE_11__["media"].lgDown, {
+      fontFamily: 'Prequelrough, sans-serif',
+      paddingBottom: theme.spacing(30)
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_11__["media"].lgDown, {
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),
       paddingBottom: theme.spacing(0)
-    }), _root),
+    }),
     center: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: 'flexRow justifyCenter'
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_11__["media"].lgUp, {
@@ -2465,7 +2462,7 @@ var Projects = function Projects() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 139,
       columnNumber: 9
     }
   }, __jsx(_Common_BlockTitle__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -2476,7 +2473,7 @@ var Projects = function Projects() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 140,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -2484,7 +2481,7 @@ var Projects = function Projects() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148,
+      lineNumber: 146,
       columnNumber: 13
     }
   }, __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -2493,7 +2490,7 @@ var Projects = function Projects() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149,
+      lineNumber: 147,
       columnNumber: 17
     }
   }), data.map(function (item, index) {
@@ -2504,7 +2501,7 @@ var Projects = function Projects() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 151,
+        lineNumber: 149,
         columnNumber: 25
       }
     }), __jsx("div", {
@@ -2512,7 +2509,7 @@ var Projects = function Projects() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152,
+        lineNumber: 150,
         columnNumber: 29
       }
     }, ['#D82734', '#F3A702', '#20891F'].map(function (color, index) {
@@ -2524,7 +2521,7 @@ var Projects = function Projects() {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154,
+          lineNumber: 152,
           columnNumber: 37
         }
       });
@@ -2533,7 +2530,7 @@ var Projects = function Projects() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 157,
+        lineNumber: 155,
         columnNumber: 29
       }
     }, __jsx("img", {
@@ -2542,7 +2539,7 @@ var Projects = function Projects() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 158,
+        lineNumber: 156,
         columnNumber: 33
       }
     }), __jsx("div", {
@@ -2550,14 +2547,14 @@ var Projects = function Projects() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 159,
+        lineNumber: 157,
         columnNumber: 33
       }
     }, __jsx("span", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 160,
+        lineNumber: 158,
         columnNumber: 37
       }
     }, item.description), __jsx("a", {
@@ -2565,7 +2562,7 @@ var Projects = function Projects() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 161,
+        lineNumber: 159,
         columnNumber: 37
       }
     }, __jsx(Img, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -2575,7 +2572,7 @@ var Projects = function Projects() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 162,
+        lineNumber: 160,
         columnNumber: 41
       }
     }))))));
@@ -2626,20 +2623,21 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"])(function (theme) {
-  var _root, _item;
+  var _item;
 
   return {
     fullColumn: {
       composes: 'flexColumn stretchSelf'
     },
-    root: (_root = {
-      composes: '$fullColumn justifyCenter'
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_root, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgDown, {
+    root: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
+      composes: '$fullColumn justifyCenter',
+      paddingBottom: theme.spacing(30)
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgDown, {
       paddingLeft: theme.spacing(3),
-      paddingRight: theme.spacing(3)
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_root, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgUp, {
-      marginTop: theme.spacing(30)
-    }), _root),
+      paddingRight: theme.spacing(3),
+      marginTop: theme.spacing(8),
+      paddingBottom: theme.spacing(0)
+    }),
     content: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: '$fullColumn center'
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgUp, {

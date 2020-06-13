@@ -19,15 +19,12 @@ const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: 'flexRow flex1 justifyCenter',
         fontFamily: 'Prequelrough, sans-serif',
-        // paddingBottom: theme.spacing(8),
-        [media.lgUp]: {
-            marginTop: theme.spacing(10),
-            // paddingBottom: theme.spacing(30),
-        },
+        paddingBottom: theme.spacing(30),
         [media.lgDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
             marginTop: theme.spacing(8),
+            paddingBottom: theme.spacing(0),
         },
     },
     content: {

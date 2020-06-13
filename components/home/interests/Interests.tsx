@@ -15,13 +15,12 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     root: {
         composes: '$fullColumn justifyCenter',
-        marginTop: theme.spacing(20),
-        marginBottom: theme.spacing(30),
+        paddingBottom: theme.spacing(30),
         [media.lgDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
             marginTop: theme.spacing(8),
-            marginBottom: theme.spacing(0),
+            paddingBottom: theme.spacing(0),
         },
     },
     content: {

@@ -17,9 +17,7 @@ const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: 'flexRow flex1 justifyCenter',
         fontFamily: 'Prequelrough, sans-serif',
-        [media.lgUp]: {
-            marginTop: theme.spacing(30),
-        },
+        paddingBottom: theme.spacing(30),
         [media.lgDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),

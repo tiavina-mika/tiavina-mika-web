@@ -28,7 +28,7 @@ const Presentation: FC = () => {
         () =>
             scrollYProgress.onChange((latest) => {
                 setOpacity(1 - latest * 3.5);
-                setBgOpacity(latest * 5);
+                setBgOpacity(latest * 15);
                 setPosition(latest * 220);
             }),
         []

@@ -52,9 +52,11 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     root: {
         composes: '$fullColumn alignCenter',
+        paddingBottom: theme.spacing(30),
         [media.mdDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
+            paddingBottom: theme.spacing(0),
         },
     },
     content: {
