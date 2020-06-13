@@ -13,40 +13,61 @@ import { screenState } from '../../../reducers/appReducer';
 import Button from '../../Common/Button';
 
 const useStyles = createUseStyles((theme: any) => ({
+    rowStretch: {
+        composes: 'flexRow justifyCenter stretchSelf',
+    },
     root: {
         composes: 'flexRow flex1 justifyCenter',
         fontFamily: 'Prequelrough, sans-serif',
-        paddingBottom: theme.spacing(8),
+        // paddingBottom: theme.spacing(8),
         [media.lgUp]: {
-            marginTop: theme.spacing(30),
-            paddingBottom: theme.spacing(30),
+            marginTop: theme.spacing(10),
+            // paddingBottom: theme.spacing(30),
         },
-        [media.mdDown]: {
+        [media.lgDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
+            marginTop: theme.spacing(8),
         },
     },
     content: {
-        composes: 'flexRow justifyCenter stretchSelf',
-        [media.mdDown]: {
+        composes: '$rowStretch',
+        [media.lgDown]: {
             flexDirection: 'column',
-        },
-        [media.mdUp]: {
-            width: lgScreenWidth - 400,
+            alignItems: 'center',
+            marginTop: theme.spacing(5),
         },
         [media.lgUp]: {
+            width: lgScreenWidth - 400,
             marginTop: theme.spacing(20),
+        },
+    },
+    center: {
+        composes: '$rowStretch',
+        [media.smLg]: {
+            width: '60%',
         },
     },
     left: {
         composes: 'flexColumn center flex1',
-        flex: 1,
-        '& > img': {
-            width: 300,
+        [media.smUp]: {
+            '& > img': {
+                width: 300,
+            },
+            flex: 1,
+        },
+        [media.xsSm]: {
+            '& > img': {
+                width: '60%',
+            },
+        },
+        [media.xsDown]: {
+            '& > img': {
+                width: '100%',
+            },
         },
     },
     right: {
-        flex: 2,
         '& h3': {
             color: theme.color.grey,
             fontWeight: '400',
@@ -61,16 +82,17 @@ const useStyles = createUseStyles((theme: any) => ({
             textTransform: 'uppercase',
             letterSpacing: 3.5,
             marginTop: 10,
-            [media.mdUp]: {
+            [media.lgUp]: {
                 width: 650,
             },
         },
         [media.lgUp]: {
+            flex: 2,
             paddingLeft: theme.spacing(5),
             paddingRight: theme.spacing(5),
         },
-        [media.mdDown]: {
-            marginTop: theme.spacing(6),
+        [media.lgDown]: {
+            marginTop: theme.spacing(8),
         },
     },
     descriptionText: {
@@ -85,7 +107,7 @@ const useStyles = createUseStyles((theme: any) => ({
         color: theme.color.subtitle,
         fontFamily: 'Montserrat, sans-serif',
 
-        [media.mdUp]: {
+        [media.lgUp]: {
             width: 650,
         },
     },
@@ -93,12 +115,15 @@ const useStyles = createUseStyles((theme: any) => ({
         fontFamily: 'Montserrat-Regular, sans-serif',
         color: '#fff',
     },
-    button: {
+    buttonContainer: {
         composes: 'flexRow justifyCenter stretchSelf',
         marginTop: theme.spacing(20),
         [media.mdDown]: {
             marginTop: theme.spacing(1.2),
         },
+    },
+    button: {
+        flex: 1,
     },
 }));
 
@@ -141,38 +166,45 @@ const About: FC = () => {
                 icon="setting"
             />
             <div className={classes.content}>
-                <div className={classes.left}>
-                    <Img
-                        alt=""
-                        src="/images/profile.jpg"
-                        style={inView ? { scale: 0.5 + value } : {}}
-                        // style={inView ? { scale: value ? value : 1, rotate: `${value ? value * 10 : 0}deg` } : {}}
-                    />
-                    <div className={classes.button}>
-                        <Button text="Télécharger mon CV" icon="download" animation={downloadButtonAnimation(inView)} />
+                <div className={classes.center}>
+                    <div className={classes.left}>
+                        <Img
+                            alt=""
+                            src="/images/profile.jpg"
+                            style={inView ? { scale: 0.5 + value } : {}}
+                            // style={inView ? { scale: value ? value : 1, rotate: `${value ? value * 10 : 0}deg` } : {}}
+                        />
+                        <div className={classes.buttonContainer}>
+                            <Button
+                                text="Télécharger mon CV"
+                                icon="download"
+                                animation={downloadButtonAnimation(inView)}
+                                className={classes.button}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className={classes.right}>
-                    <H3 {...h3Animation}>Tiavina Michael Ralainirina</H3>
-                    <H2 {...h2Animation}>Développeur FullStack / Web Designer / Lead Developpeur</H2>
-                    <Div
-                        {...shortDescriptionAnimation}
-                        className={clsx(classes.shortDescription, classes.descriptionText)}>
-                        <span>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam
-                        </span>
-                    </Div>
-                    <Div {...descriptionAnimation} className={clsx(classes.description, classes.descriptionText)}>
-                        <span>
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-                            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                            consectetur, adipisci velit, sed quia
-                        </span>
-                    </Div>
+                    <div className={classes.right}>
+                        <H3 {...h3Animation}>Tiavina Michael Ralainirina</H3>
+                        <H2 {...h2Animation}>Développeur FullStack / Web Designer / Lead Developpeur</H2>
+                        <Div
+                            {...shortDescriptionAnimation}
+                            className={clsx(classes.shortDescription, classes.descriptionText)}>
+                            <span>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam
+                            </span>
+                        </Div>
+                        <Div {...descriptionAnimation} className={clsx(classes.description, classes.descriptionText)}>
+                            <span>
+                                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                                laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                                sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
+                                voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
+                                amet, consectetur, adipisci velit, sed quia
+                            </span>
+                        </Div>
+                    </div>
                 </div>
             </div>
         </div>

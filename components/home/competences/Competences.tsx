@@ -68,6 +68,10 @@ const useStyles = createUseStyles((theme: any) => ({
             paddingLeft: theme.spacing(8),
             paddingRight: theme.spacing(8),
         },
+        [media.smLg]: {
+            width: '60%',
+            backgroundColor: 'red',
+        },
     },
     items: {
         composes: 'flexRow stretchSelf',
@@ -78,11 +82,12 @@ const useStyles = createUseStyles((theme: any) => ({
     item: {
         color: '#fff',
         marginBottom: theme.spacing(8),
-        [media.smUp]: {
-            width: 300,
-        },
         [media.lgUp]: {
+            width: 300,
             margin: theme.spacing(4),
+        },
+        [media.mdDown]: {
+            marginBottom: theme.spacing(5),
         },
     },
     title: {

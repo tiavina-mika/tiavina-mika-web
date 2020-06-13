@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from './rootReducer';
-import { md } from '../utils/constants';
+import { lg } from '../utils/constants';
 
 interface AppState {
     isMobile: boolean;
@@ -19,7 +19,7 @@ const app = createSlice({
     initialState,
     reducers: {
         getScreen(state, action: PayloadAction<number>) {
-            state.isMobile = action.payload < md ? true : false;
+            state.isMobile = action.payload < lg ? true : false;
         },
     },
 });

@@ -18,15 +18,19 @@ const useStyles = createUseStyles((theme: any) => ({
     centered: {
         composes: 'flexRow justifyCenter alignCenter',
     },
+    columnStretch: {
+        composes: '$fullColumn flex1',
+    },
     root: {
         composes: '$fullColumn justifyCenter',
         fontFamily: 'Montserrat-Regular',
         fontSize: 20,
         letterSpacing: '0.68px',
         color: '#fff',
-        [media.mdDown]: {
+        [media.lgDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
+            marginTop: theme.spacing(8),
         },
     },
     content: {
@@ -39,7 +43,7 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexRow justifyCenter',
         paddingBottom: theme.spacing(6),
         [media.lgUp]: {
-            width: lgScreenWidth - 200,
+            width: lgScreenWidth - 300,
             marginTop: theme.spacing(4),
         },
         [media.lgDown]: {
@@ -65,12 +69,18 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     right: {
-        composes: 'flexColumn',
+        composes: 'flexRow stretchSelf flex1 justifyCenter',
         [media.lgDown]: {
             marginTop: theme.spacing(6),
         },
         [media.lgUp]: {
             flex: 1,
+        },
+    },
+    formContainer: {
+        width: 400,
+        [media.lgDown]: {
+            width: '100%',
         },
     },
     contactItems: {
@@ -82,7 +92,6 @@ const useStyles = createUseStyles((theme: any) => ({
         marginBottom: theme.spacing(5),
     },
     contactIcon: {
-        // composes: '$center'
         marginRight: theme.spacing(2.5),
     },
     contactDetail: {
@@ -120,10 +129,11 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     field: {
-        composes: 'flexColumn',
+        composes: '$columnStretch',
         marginBottom: theme.spacing(3),
     },
     input: {
+        composes: 'flexColumn stretchSelf',
         border: `1px solid #fff`,
         backgroundColor: '#000',
         height: 60,
@@ -135,12 +145,6 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 14,
         '&:focus': {
             outline: 'none',
-        },
-        [media.mdUp]: {
-            width: 300,
-        },
-        [media.mdDown]: {
-            width: '100%',
         },
     },
     errorInput: {
@@ -154,7 +158,7 @@ const useStyles = createUseStyles((theme: any) => ({
         paddingTop: 10,
     },
     buttonContainer: {
-        composes: 'flexRow flex1 stretchSelf',
+        composes: '$columnStretch',
     },
     button: {
         backgroundColor: theme.color.primary,
@@ -162,14 +166,7 @@ const useStyles = createUseStyles((theme: any) => ({
         borderRadius: 30,
         height: 60,
         fontSize: 18,
-
-        [media.mdDown]: {
-            width: '100%',
-        },
-        [media.mdUp]: {
-            paddingLeft: theme.spacing(10),
-            paddingRight: theme.spacing(10),
-        },
+        width: '100%',
     },
 }));
 
@@ -213,7 +210,7 @@ const Contact: FC = () => {
     });
 
     const [ref, inView] = useInView({
-        threshold: 0.1,
+        threshold: 0.2,
         triggerOnce: false,
     });
 
@@ -231,12 +228,12 @@ const Contact: FC = () => {
         }
     };
 
-    // /** Components */
-    // const Div = isMobile ? 'div' : motion.div;
+    /** Components */
+    const Div = isMobile ? 'div' : motion.div;
 
-    // /** Animation */
-    // const itemsAnimation = (inView) => (isMobile ? {} : animate(inView));
-    // const itemAnimation = isMobile ? {} : itemVariants;
+    /** Animation */
+    const itemsAnimation = (inView) => (isMobile ? {} : animate(inView));
+    const itemAnimation = isMobile ? {} : itemVariants;
 
     return (
         <div className={classes.root}>
@@ -247,15 +244,15 @@ const Contact: FC = () => {
                 icon="passion"
             />
             <div className={classes.content} ref={ref}>
-                <div className={classes.center}>
-                    <div className={classes.left}>
+                <Div className={classes.center} {...itemsAnimation(inView)}>
+                    <Div className={classes.left} {...itemAnimation}>
                         <h6>
                             Vous recherchez un designer ou un développeur ? Laissez-moi un message, je vous répondrai
                             rapidement !
                         </h6>
-                        <div className={classes.contactItems}>
+                        <Div className={classes.contactItems} {...itemsAnimation(inView)}>
                             {contacts.map((contact, index) => (
-                                <div className={classes.contactItem} key={index}>
+                                <Div className={classes.contactItem} key={index} {...itemAnimation}>
                                     <div className={classes.contactIcon}>
                                         <div className={classes.icon}>
                                             <img src={`images/icons/${contact.icon}.svg`} alt="" />
@@ -265,49 +262,51 @@ const Contact: FC = () => {
                                         <span className={classes.label}>{contact.label}</span>
                                         <span className={classes.value}>{contact.value}</span>
                                     </div>
-                                </div>
+                                </Div>
                             ))}
+                        </Div>
+                    </Div>
+                    <motion.form className={classes.right} onSubmit={onSubmit} {...itemAnimation}>
+                        <div className={classes.formContainer}>
+                            <div className={classes.field}>
+                                <input
+                                    placeholder="Votre nom"
+                                    className={clsx(classes.input, error.name ? classes.errorInput : null)}
+                                    onChange={handleChange('name')}
+                                    value={values.name}
+                                    required
+                                />
+                            </div>
+                            <div className={classes.field}>
+                                <input
+                                    placeholder="Votre email"
+                                    className={classes.input}
+                                    type="email"
+                                    onChange={handleChange('email')}
+                                    value={values.email}
+                                    required
+                                />
+                            </div>
+                            <div className={classes.field}>
+                                <textarea
+                                    placeholder="Votre message"
+                                    className={clsx(
+                                        classes.input,
+                                        classes.textarea,
+                                        error.message ? classes.errorInput : null
+                                    )}
+                                    onChange={handleChange('message')}
+                                    value={values.message}
+                                    rows={20}
+                                    required></textarea>
+                                {error.message && <span className={classes.errorMessage}>{error.message}</span>}
+                            </div>
+                            <div className={classes.buttonContainer}>
+                                <Button text="Envoyer" type="submit" className={classes.button} />
+                            </div>
                         </div>
-                    </div>
-                    <form className={classes.right} onSubmit={onSubmit}>
-                        <div className={classes.field}>
-                            <input
-                                placeholder="Votre nom"
-                                className={clsx(classes.input, error.name ? classes.errorInput : null)}
-                                onChange={handleChange('name')}
-                                value={values.name}
-                                required
-                            />
-                        </div>
-                        <div className={classes.field}>
-                            <input
-                                placeholder="Votre email"
-                                className={classes.input}
-                                type="email"
-                                onChange={handleChange('email')}
-                                value={values.email}
-                                required
-                            />
-                        </div>
-                        <div className={classes.field}>
-                            <textarea
-                                placeholder="Votre message"
-                                className={clsx(
-                                    classes.input,
-                                    classes.textarea,
-                                    error.message ? classes.errorInput : null
-                                )}
-                                onChange={handleChange('message')}
-                                value={values.message}
-                                rows={20}
-                                required></textarea>
-                            {error.message && <span className={classes.errorMessage}>{error.message}</span>}
-                        </div>
-                        <div className={classes.buttonContainer}>
-                            <Button text="Envoyer" type="submit" className={classes.button} />
-                        </div>
-                    </form>
-                </div>
+                    </motion.form>
+                </Div>
             </div>
         </div>
     );

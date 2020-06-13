@@ -17,9 +17,11 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: '$fullColumn justifyCenter',
         marginTop: theme.spacing(20),
         marginBottom: theme.spacing(30),
-        [media.mdDown]: {
+        [media.lgDown]: {
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
+            marginTop: theme.spacing(8),
+            marginBottom: theme.spacing(0),
         },
     },
     content: {
@@ -36,6 +38,9 @@ const useStyles = createUseStyles((theme: any) => ({
         },
         [media.lgDown]: {
             justifyContent: 'flex-start',
+        },
+        [media.smLg]: {
+            width: '50%',
         },
     },
     type: {

@@ -64,7 +64,7 @@ const Button: FC<Props> = ({ text, icon, url, animation, type, className }) => {
     }
 
     return (
-        <Link className={classes.link} {...animate} href={url || '#'}>
+        <Link className={clsx(classes.link, className)} {...animate} href={url || '#'}>
             <span>{text}</span>
             {icon && <img alt="" src={`/images/icons/${icon}.svg`} />}
         </Link>
