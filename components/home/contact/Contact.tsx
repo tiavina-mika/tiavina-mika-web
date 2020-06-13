@@ -53,7 +53,7 @@ const useStyles = createUseStyles((theme: any) => ({
         [media.mdLg]: {
             width: 600,
         },
-        [media.mdDown]: {
+        [media.smMd]: {
             width: '90%',
         },
     },
@@ -63,6 +63,10 @@ const useStyles = createUseStyles((theme: any) => ({
             fontSize: 20,
             lineHeight: 1.3,
             fontWeight: 300,
+            [media.mdDown]: {
+                fontSize: 18,
+                lineHeight: 1.5,
+            },
         },
         [media.lgUp]: {
             flex: 1,

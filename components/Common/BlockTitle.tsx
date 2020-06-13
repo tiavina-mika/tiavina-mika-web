@@ -40,6 +40,9 @@ const useStyles = createUseStyles((theme: any) => ({
         marginRight: 10,
         [media.mdDown]: {
             marginBottom: theme.spacing(1),
+            '& img': {
+                width: 25,
+            },
         },
     },
     titleContainer: {},

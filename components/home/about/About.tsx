@@ -24,7 +24,7 @@ const useStyles = createUseStyles((theme: any) => ({
             paddingLeft: theme.spacing(3),
             paddingRight: theme.spacing(3),
             marginTop: theme.spacing(8),
-            paddingBottom: theme.spacing(0),
+            paddingBottom: theme.spacing(10),
         },
     },
     content: {

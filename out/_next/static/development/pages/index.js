@@ -313,7 +313,10 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       composes: 'flexRow',
       marginRight: 10
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].mdDown, {
-      marginBottom: theme.spacing(1)
+      marginBottom: theme.spacing(1),
+      '& img': {
+        width: 25
+      }
     }),
     titleContainer: {},
     title: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
@@ -378,7 +381,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 112,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -386,7 +389,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 115,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -394,7 +397,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 116,
       columnNumber: 13
     }
   }, icon && __jsx("div", {
@@ -402,7 +405,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 118,
       columnNumber: 21
     }
   }, __jsx(Img, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -412,7 +415,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 119,
       columnNumber: 25
     }
   }))), __jsx("div", {
@@ -420,7 +423,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 122,
       columnNumber: 17
     }
   }, __jsx("h3", {
@@ -428,7 +431,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 123,
       columnNumber: 21
     }
   }, title), subtitle && __jsx("h6", {
@@ -436,7 +439,7 @@ var BlockTitle = function BlockTitle(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 124,
       columnNumber: 34
     }
   }, subtitle))));
@@ -635,7 +638,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),
       marginTop: theme.spacing(8),
-      paddingBottom: theme.spacing(0)
+      paddingBottom: theme.spacing(10)
     }),
     content: (_content = {
       composes: '$rowStretch'
@@ -1228,16 +1231,19 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       flexDirection: 'column'
     }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_center, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].mdLg, {
       width: 600
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_center, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].mdDown, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_center, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].smMd, {
       width: '90%'
     }), _center),
     left: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
       composes: 'flexRow',
-      '& h6': {
+      '& h6': Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])({
         fontSize: 20,
         lineHeight: 1.3,
         fontWeight: 300
-      }
+      }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].mdDown, {
+        fontSize: 18,
+        lineHeight: 1.5
+      })
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_10__["media"].lgUp, {
       flex: 1
     }),
@@ -1418,7 +1424,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 239,
+      lineNumber: 243,
       columnNumber: 9
     }
   }, __jsx(_Common_BlockTitle__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -1429,7 +1435,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 240,
+      lineNumber: 244,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -1438,7 +1444,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 246,
+      lineNumber: 250,
       columnNumber: 13
     }
   }, __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1447,7 +1453,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 247,
+      lineNumber: 251,
       columnNumber: 17
     }
   }), __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1456,14 +1462,14 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 248,
+      lineNumber: 252,
       columnNumber: 21
     }
   }), __jsx("h6", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 249,
+      lineNumber: 253,
       columnNumber: 25
     }
   }, "Vous recherchez un designer ou un d\xE9veloppeur ? Laissez-moi un message, je vous r\xE9pondrai rapidement !"), __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -1472,7 +1478,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 253,
+      lineNumber: 257,
       columnNumber: 25
     }
   }), contacts.map(function (contact, index) {
@@ -1483,7 +1489,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 255,
+        lineNumber: 259,
         columnNumber: 33
       }
     }), __jsx("div", {
@@ -1491,7 +1497,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 256,
+        lineNumber: 260,
         columnNumber: 37
       }
     }, __jsx("div", {
@@ -1499,7 +1505,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 257,
+        lineNumber: 261,
         columnNumber: 41
       }
     }, __jsx("img", {
@@ -1508,7 +1514,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 258,
+        lineNumber: 262,
         columnNumber: 45
       }
     }))), __jsx("div", {
@@ -1516,7 +1522,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 261,
+        lineNumber: 265,
         columnNumber: 37
       }
     }, __jsx("span", {
@@ -1524,7 +1530,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 262,
+        lineNumber: 266,
         columnNumber: 41
       }
     }, contact.label), __jsx("span", {
@@ -1532,7 +1538,7 @@ var Contact = function Contact() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 263,
+        lineNumber: 267,
         columnNumber: 41
       }
     }, contact.value)));
@@ -1543,7 +1549,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 269,
+      lineNumber: 273,
       columnNumber: 21
     }
   }), __jsx("div", {
@@ -1551,7 +1557,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 270,
+      lineNumber: 274,
       columnNumber: 25
     }
   }, __jsx("div", {
@@ -1559,7 +1565,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 271,
+      lineNumber: 275,
       columnNumber: 29
     }
   }, __jsx("input", {
@@ -1571,7 +1577,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 272,
+      lineNumber: 276,
       columnNumber: 33
     }
   })), __jsx("div", {
@@ -1579,7 +1585,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 280,
+      lineNumber: 284,
       columnNumber: 29
     }
   }, __jsx("input", {
@@ -1592,7 +1598,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 281,
+      lineNumber: 285,
       columnNumber: 33
     }
   })), __jsx("div", {
@@ -1600,7 +1606,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 290,
+      lineNumber: 294,
       columnNumber: 29
     }
   }, __jsx("textarea", {
@@ -1613,7 +1619,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 291,
+      lineNumber: 295,
       columnNumber: 33
     }
   }), error.message && __jsx("span", {
@@ -1621,7 +1627,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 302,
+      lineNumber: 306,
       columnNumber: 51
     }
   }, error.message)), __jsx("div", {
@@ -1629,7 +1635,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 304,
+      lineNumber: 308,
       columnNumber: 29
     }
   }, __jsx(_Common_Button__WEBPACK_IMPORTED_MODULE_12__["default"], {
@@ -1639,7 +1645,7 @@ var Contact = function Contact() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 305,
+      lineNumber: 309,
       columnNumber: 33
     }
   })))))));
