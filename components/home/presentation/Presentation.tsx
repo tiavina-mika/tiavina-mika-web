@@ -13,6 +13,7 @@ const useStyles = createUseStyles({
         height: '100vh',
         backgroundColor: '#171717',
         // background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(7,17,35,0.4) 59.29%, rgba(6,15,31,0.6) 99.89%, rgba(6,15,31,0.8) 99.93%)`,
+        // backgroundImage: `url(images/bg.svg)`,
     },
 });
 

@@ -99,7 +99,7 @@ const useStyles = createUseStyles((theme: any) => ({
         marginRight: theme.spacing(2.5),
         [media.xsDown]: {
             marginRight: theme.spacing(1),
-        }
+        },
     },
     contactDetail: {
         composes: 'flexColumn',
@@ -123,7 +123,7 @@ const useStyles = createUseStyles((theme: any) => ({
         marginTop: theme.spacing(1),
         [media.smUp]: {
             width: 300,
-        }
+        },
     },
     items: {
         composes: 'flexColumn flexStart',

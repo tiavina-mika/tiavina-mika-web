@@ -12,6 +12,7 @@ import Projects from '../components/home/projects/Projects';
 import Skills from '../components/home/skills/Skills';
 import Interests from '../components/home/interests/Interests';
 import Contact from '../components/home/contact/Contact';
+import Menu from '../components/menu/Menu';
 
 const useStyles = createUseStyles({
     window: {
@@ -60,6 +61,7 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
+            <Menu />
             <Presentation />
             <div className={classes.main}>
                 {/* <div className={clsx(classes.left, classes.window)}> */}

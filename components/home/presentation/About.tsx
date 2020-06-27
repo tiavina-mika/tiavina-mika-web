@@ -57,8 +57,10 @@ const About: FC<Props> = ({ position, opacity }) => {
     const [lastName, setLastName] = useState(false);
     const isMobile = useSelector(screenState);
 
+    const Div = isMobile ? 'div' : motion.div;
+
     return (
-        <motion.div className={classes.about} style={{ paddingBottom: position, opacity }}>
+        <Div className={classes.about} style={{ paddingBottom: position, opacity }}>
             <div className={classes.hello}>
                 <h6>Hello! Je suis</h6>
             </div>
@@ -72,7 +74,7 @@ const About: FC<Props> = ({ position, opacity }) => {
                 />
                 <Post text={textPost} className={classes.post} display={isMobile ? true : lastName} />
             </div>
-        </motion.div>
+        </Div>
     );
 };
 
