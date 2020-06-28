@@ -34,7 +34,7 @@ const Presentation: FC = () => {
             }),
         []
     );
-    const Component = isMobile ? 'div' : motion.div;
+    const Div = isMobile ? 'div' : motion.div;
     const styles = isMobile
         ? { backgroundColor: 'rgb(23, 23, 23)' }
         : {
@@ -44,9 +44,9 @@ const Presentation: FC = () => {
           };
 
     return (
-        <Component className={classes.presentation} style={styles}>
+        <Div className={classes.presentation} style={styles} id="presentation">
             <About position={isMobile ? 0 : position} opacity={opacity} />
-        </Component>
+        </Div>
     );
 };
 
