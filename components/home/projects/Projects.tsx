@@ -136,7 +136,7 @@ const Projects: FC = () => {
     const imageAnimation = isMobile ? {} : { whileHover: { scale: 1.2 } };
 
     return (
-        <div className={classes.root} ref={ref}>
+        <div className={classes.root} ref={ref} id="projects">
             <BlockTitle
                 title="Projets"
                 subtitle="Projets sur lesquels j'ai travaille"

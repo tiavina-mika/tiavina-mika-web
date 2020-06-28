@@ -153,7 +153,7 @@ const About: FC = () => {
     const descriptionAnimation = isMobile ? {} : animate(inView, 3);
 
     return (
-        <div className={classes.root} ref={ref}>
+        <div className={classes.root} ref={ref} id="about">
             <BlockTitle
                 title="A propos de moi"
                 subtitle="Qui suis-je"

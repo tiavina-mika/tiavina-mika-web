@@ -249,7 +249,7 @@ const Contact: FC = () => {
     const itemAnimation = isMobile ? {} : itemVariants;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id="contact">
             <BlockTitle
                 title="Contact"
                 subtitle="N'hésitez pas à me contacter"

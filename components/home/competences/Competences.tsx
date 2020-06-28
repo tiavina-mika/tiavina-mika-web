@@ -131,7 +131,7 @@ const Competences: FC = () => {
     const itemAnimation = isMobile ? {} : itemVariants;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id="competences">
             <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" startAnimation={inView} />
             <div className={classes.content} ref={ref}>
                 <div className={classes.center}>

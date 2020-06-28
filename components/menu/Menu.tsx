@@ -67,8 +67,6 @@ const useStyles = createUseStyles({
         marginRight: 8,
     },
     menuIcon: {
-        // height: 25,
-        // width: 25,
         cursor: 'pointer',
         [media.mdUp]: {
             display: 'none',
@@ -95,6 +93,10 @@ const Menu = () => {
             <a href="#" className={classes.link}>
                 <img src={`/images/icons/passion.svg`} alt="" className={classes.icon} />
                 <span>A propos de moi</span>
+            </a>
+            <a href="#" className={classes.link}>
+                <img src={`/images/icons/passion.svg`} alt="" className={classes.icon} />
+                <span>Compétences</span>
             </a>
             <a href="#" className={classes.link}>
                 <img src={`/images/icons/passion.svg`} alt="" className={classes.icon} />

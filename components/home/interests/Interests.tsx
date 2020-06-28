@@ -140,7 +140,7 @@ const Interests: FC = () => {
     const itemAnimation = isMobile ? {} : itemVariants;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id="contact">
             <BlockTitle
                 title="Passions et loisirs"
                 subtitle="Ce que j'aime"

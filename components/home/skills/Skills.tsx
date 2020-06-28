@@ -300,7 +300,7 @@ const Skills: FC = () => {
     const itemAnimation = isMobile ? {} : itemVariants;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.root} id="skills">
             <BlockTitle
                 title="Connaissance"
                 subtitle="Ce que je maîtrise"
