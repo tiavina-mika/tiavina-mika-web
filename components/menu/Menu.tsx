@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { createUseStyles } from 'react-jss';
+import animateScrollTo from 'animated-scroll-to';
+
 import { media } from '../../utils/constants';
 import clsx from 'clsx';
 import { screenState } from '../../reducers/appReducer';
@@ -88,21 +90,28 @@ const Menu = () => {
     const Div = !isMobile ? 'div' : motion.div;
     const animate = !isMobile ? {} : openMenuAnimation;
 
+    const handleScroll = (id: string): void => {
+        const element = document.getElementById(id);
+        animateScrollTo(element.offsetTop, {
+            easing: (t: number): number => (t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1),
+        });
+    };
+
     const menus = (
         <Div className={clsx(classes.menus)} {...animate}>
-            <a href="#" className={classes.link}>
+            <a href="#" className={classes.link} onClick={() => handleScroll('about')}>
                 <img src={`/images/icons/passion.svg`} alt="" className={classes.icon} />
                 <span>A propos de moi</span>
             </a>
-            <a href="#" className={classes.link}>
+            <a href="#" className={classes.link} onClick={() => handleScroll('competences')}>
                 <img src={`/images/icons/passion.svg`} alt="" className={classes.icon} />
                 <span>Compétences</span>
             </a>
-            <a href="#" className={classes.link}>
+            <a href="#" className={classes.link} onClick={() => handleScroll('projects')}>
                 <img src={`/images/icons/passion.svg`} alt="" className={classes.icon} />
                 <span>Projets</span>
             </a>
-            <a href="#" className={classes.link}>
+            <a href="#" className={classes.link} onClick={() => handleScroll('contact')}>
                 <img src={`/images/icons/passion.svg`} alt="" className={classes.icon} />
                 <span>Contact</span>
             </a>
