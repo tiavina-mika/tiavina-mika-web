@@ -140,7 +140,7 @@ const Menu = () => {
 
     const menus = (
         <Div className={clsx(classes.menus, fixMenu ? classes.fixedMenu : null)} {...animate}>
-            {links.map(
+            {(links as LinkProps[]).map(
                 (link: LinkProps, index: number): ReactNode => (
                     <Link {...link} key={index} />
                 )
