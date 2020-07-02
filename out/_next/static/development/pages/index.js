@@ -44,13 +44,14 @@ var animate = function animate(start, i) {
 /*!***************************!*\
   !*** ./animations/app.ts ***!
   \***************************/
-/*! exports provided: downloadButtonAnimation, turnIndefinetily */
+/*! exports provided: downloadButtonAnimation, turnIndefinetily, openMenuAnimation */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "downloadButtonAnimation", function() { return downloadButtonAnimation; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "turnIndefinetily", function() { return turnIndefinetily; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openMenuAnimation", function() { return openMenuAnimation; });
 var downloadButtonAnimation = function downloadButtonAnimation(start) {
   return {
     animate: start ? 'in' : 'out',
@@ -82,6 +83,23 @@ var turnIndefinetily = function turnIndefinetily(start) {
       rotate: 360
     }
   };
+};
+var openMenuAnimation = {
+  initial: 'hidden',
+  animate: 'visible',
+  variants: {
+    visible: {
+      y: 0,
+      opacity: 1
+    },
+    hidden: {
+      y: -30,
+      opacity: 0
+    }
+  },
+  transition: {
+    duration: 0.8
+  }
 };
 
 /***/ }),
@@ -765,6 +783,7 @@ var About = function About() {
   return __jsx("div", {
     className: classes.root,
     ref: ref,
+    id: "about",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -1050,6 +1069,7 @@ var Competences = function Competences() {
   var itemAnimation = isMobile ? {} : _animations_cards__WEBPACK_IMPORTED_MODULE_9__["itemVariants"];
   return __jsx("div", {
     className: classes.root,
+    id: "competences",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -1427,6 +1447,7 @@ var Contact = function Contact() {
   var itemAnimation = isMobile ? {} : _animations_cards__WEBPACK_IMPORTED_MODULE_9__["itemVariants"];
   return __jsx("div", {
     className: classes.root,
+    id: "contact",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -1824,6 +1845,7 @@ var Interests = function Interests() {
   var itemAnimation = isMobile ? {} : _animations_cards__WEBPACK_IMPORTED_MODULE_9__["itemVariants"];
   return __jsx("div", {
     className: classes.root,
+    id: "contact",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -1990,7 +2012,8 @@ var About = function About(_ref) {
       setLastName = _useState2[1];
 
   var isMobile = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(_reducers_appReducer__WEBPACK_IMPORTED_MODULE_7__["screenState"]);
-  return __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_3__["motion"].div, {
+  var Div = isMobile ? 'div' : framer_motion__WEBPACK_IMPORTED_MODULE_3__["motion"].div;
+  return __jsx(Div, {
     className: classes.about,
     style: {
       paddingBottom: position,
@@ -1999,7 +2022,7 @@ var About = function About(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2007,14 +2030,14 @@ var About = function About(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 64,
       columnNumber: 13
     }
   }, __jsx("h6", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 65,
       columnNumber: 17
     }
   }, "Hello! Je suis")), __jsx("div", {
@@ -2022,7 +2045,7 @@ var About = function About(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 67,
       columnNumber: 13
     }
   }, __jsx(_Title__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2034,7 +2057,7 @@ var About = function About(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 68,
       columnNumber: 17
     }
   }), __jsx(_Title__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2047,7 +2070,7 @@ var About = function About(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 69,
       columnNumber: 17
     }
   }), __jsx(_Post__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -2057,7 +2080,7 @@ var About = function About(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 75,
       columnNumber: 17
     }
   })));
@@ -2150,6 +2173,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
     composes: 'flexRow flexEnd stretchSelf',
     height: '100vh',
     backgroundColor: '#171717' // background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(7,17,35,0.4) 59.29%, rgba(6,15,31,0.6) 99.89%, rgba(6,15,31,0.8) 99.93%)`,
+    // backgroundImage: `url(images/bg.svg)`,
 
   }
 });
@@ -2180,19 +2204,20 @@ var Presentation = function Presentation() {
       setPosition(latest * 220);
     });
   }, []);
-  var Component = isMobile ? 'div' : framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div;
+  var Div = isMobile ? 'div' : framer_motion__WEBPACK_IMPORTED_MODULE_2__["motion"].div;
   var styles = isMobile ? {
     backgroundColor: 'rgb(23, 23, 23)'
   } : {
     background: "linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(0,0,0,".concat(bgOpacity - 0.2, ") 20.29%, rgba(0,0,0,").concat(bgOpacity - 0.1, ") 80.89%, rgba(0,0,0,").concat(bgOpacity, ") 99.93%)")
   };
-  return __jsx(Component, {
+  return __jsx(Div, {
     className: classes.presentation,
     style: styles,
+    id: "presentation",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 9
     }
   }, __jsx(_About__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2201,7 +2226,7 @@ var Presentation = function Presentation() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 13
     }
   }));
@@ -2471,6 +2496,7 @@ var Projects = function Projects() {
   return __jsx("div", {
     className: classes.root,
     ref: ref,
+    id: "projects",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -2871,6 +2897,7 @@ var Skills = function Skills() {
   var itemAnimation = isMobile ? {} : _animations_cards__WEBPACK_IMPORTED_MODULE_9__["itemVariants"];
   return __jsx("div", {
     className: classes.root,
+    id: "skills",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -2984,6 +3011,329 @@ var Skills = function Skills() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Skills);
+
+/***/ }),
+
+/***/ "./components/menu/Link.tsx":
+/*!**********************************!*\
+  !*** ./components/menu/Link.tsx ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var animated_scroll_to__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! animated-scroll-to */ "./node_modules/animated-scroll-to/lib/animated-scroll-to.js");
+/* harmony import */ var animated_scroll_to__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(animated_scroll_to__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/constants */ "./utils/constants.tsx");
+
+
+var _this = undefined,
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\menu\\Link.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])({
+  link: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    composes: 'flexRow center',
+    color: '#fff',
+    textDecoration: 'none',
+    cursor: 'pointer',
+    marginRight: 10
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
+    flex: 1,
+    alignItems: 'flex-start',
+    padding: 8
+  }),
+  icon: {
+    height: 20,
+    width: 20,
+    marginRight: 8
+  }
+});
+
+var Link = function Link(_ref) {
+  var text = _ref.text,
+      icon = _ref.icon,
+      id = _ref.id;
+  var classes = useStyles();
+
+  var handleScroll = function handleScroll(id) {
+    var element = document.getElementById(id);
+    animated_scroll_to__WEBPACK_IMPORTED_MODULE_3___default()(element.offsetTop, {
+      easing: function easing(t) {
+        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+      }
+    });
+  };
+
+  return __jsx("a", {
+    className: classes.link,
+    onClick: function onClick() {
+      return handleScroll(id);
+    },
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 9
+    }
+  }, __jsx("img", {
+    src: "/images/icons/".concat(icon, ".svg"),
+    alt: "",
+    className: classes.icon,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 13
+    }
+  }), __jsx("span", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 13
+    }
+  }, text));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Link);
+
+/***/ }),
+
+/***/ "./components/menu/Menu.tsx":
+/*!**********************************!*\
+  !*** ./components/menu/Menu.tsx ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _reducers_appReducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../reducers/appReducer */ "./reducers/appReducer.ts");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
+/* harmony import */ var _animations_app__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../animations/app */ "./animations/app.ts");
+/* harmony import */ var _Link__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Link */ "./components/menu/Link.tsx");
+
+
+
+var _menuRoot,
+    _logo,
+    _this = undefined,
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\menu\\Menu.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+
+
+
+
+
+
+
+
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])({
+  menuRoot: (_menuRoot = {
+    composes: 'flexRow center font-Montserrat-light',
+    width: '100%',
+    position: 'fixed',
+    zIndex: 2000,
+    top: 50,
+    left: 0,
+    fontSize: 18
+  }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_menuRoot, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
+    flexDirection: 'column',
+    alignSelf: 'stretch',
+    alignItems: 'flex-start',
+    top: 0,
+    backgroundColor: '#000'
+  }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_menuRoot, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdUp, {
+    height: 80
+  }), _menuRoot),
+  fixedMenuRoot: {
+    top: 0
+  },
+  nonFixedMenuRoot: {
+    top: 50
+  },
+  logo: (_logo = {
+    marginLeft: 20,
+    flex: 2
+  }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_logo, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignSelf: 'stretch',
+    marginLeft: 0,
+    alignItems: 'center',
+    padding: 10
+  }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_logo, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].xlDown, {
+    flex: 1
+  }), _logo),
+  fixedLogo: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdUp, {
+    backgroundColor: '#000',
+    border: '5px solid #000'
+  }),
+  menus: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    composes: 'flexRow',
+    flex: 1
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
+    flexDirection: 'column',
+    paddingTop: 15,
+    paddingBottom: 15
+  }),
+  fixedMenu: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdUp, {
+    display: 'flex',
+    alignItems: 'center',
+    backgroundColor: '#000',
+    height: '100%',
+    paddingLeft: 20,
+    borderRadius: 2
+  }),
+  menuIcon: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
+    cursor: 'pointer'
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdUp, {
+    display: 'none'
+  }),
+  logoIcon: {
+    width: 30
+  }
+});
+var links = [{
+  id: 'about',
+  icon: 'passion',
+  text: 'A propos de moi'
+}, {
+  id: 'competences',
+  icon: 'passion',
+  text: 'Compétences'
+}, {
+  id: 'projects',
+  icon: 'passion',
+  text: 'Projets'
+}, {
+  id: 'contact',
+  icon: 'passion',
+  text: 'Contact'
+}];
+
+var Menu = function Menu() {
+  var classes = useStyles();
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+      openMenu = _useState[0],
+      setOpenMenu = _useState[1];
+
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+      fixMenu = _useState2[0],
+      setFixMenu = _useState2[1];
+
+  var isMobile = Object(react_redux__WEBPACK_IMPORTED_MODULE_7__["useSelector"])(_reducers_appReducer__WEBPACK_IMPORTED_MODULE_6__["screenState"]);
+
+  var onScroll = function onScroll() {
+    var header = document.getElementById('presentation');
+    var sticky = header.offsetHeight / 2;
+
+    if (window.pageYOffset > sticky) {
+      setFixMenu(true);
+    } else {
+      setFixMenu(false);
+    }
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_2__["useEffect"])(function () {
+    window.addEventListener('scroll', onScroll);
+    return function () {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [fixMenu]);
+
+  var handleOpen = function handleOpen() {
+    return setOpenMenu(!openMenu);
+  }; // const handleClose = () => setOpenMenu(false);
+
+
+  var Div = !isMobile ? 'div' : framer_motion__WEBPACK_IMPORTED_MODULE_8__["motion"].div;
+  var animate = !isMobile ? {} : _animations_app__WEBPACK_IMPORTED_MODULE_9__["openMenuAnimation"];
+
+  var menus = __jsx(Div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_5__["default"])(classes.menus, fixMenu ? classes.fixedMenu : null)
+  }, animate, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142,
+      columnNumber: 9
+    }
+  }), links.map(function (link, index) {
+    return __jsx(_Link__WEBPACK_IMPORTED_MODULE_10__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, link, {
+      key: index,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 145,
+        columnNumber: 21
+      }
+    }));
+  }));
+
+  return __jsx("div", {
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_5__["default"])(classes.menuRoot, fixMenu ? classes.fixedMenuRoot : classes.nonFixedMenuRoot),
+    id: "menu",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 152,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: classes.logo,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 153,
+      columnNumber: 13
+    }
+  }, __jsx("img", {
+    alt: "",
+    src: "/images/logo.svg",
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_5__["default"])(classes.logoIcon, fixMenu ? classes.fixedLogo : null),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 154,
+      columnNumber: 17
+    }
+  }), __jsx("img", {
+    alt: "",
+    src: "/images/icons/menu.svg",
+    className: classes.menuIcon,
+    onClick: handleOpen,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 159,
+      columnNumber: 17
+    }
+  })), isMobile && openMenu && menus, !isMobile && menus);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Menu);
 
 /***/ }),
 
@@ -5510,6 +5860,345 @@ Object(immer__WEBPACK_IMPORTED_MODULE_0__["enableES5"])();
 
 
 //# sourceMappingURL=redux-toolkit.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/animated-scroll-to/lib/animated-scroll-to.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/animated-scroll-to/lib/animated-scroll-to.js ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+// --------- SCROLL INTERFACES
+function getElementOffset(el) {
+    var top = 0;
+    var left = 0;
+    var element = el;
+    // Loop through the DOM tree
+    // and add it's parent's offset to get page offset
+    do {
+        top += element.offsetTop || 0;
+        left += element.offsetLeft || 0;
+        element = element.offsetParent;
+    } while (element);
+    return {
+        top: top,
+        left: left,
+    };
+}
+// --------- SCROLL INTERFACES
+// ScrollDomElement and ScrollWindow have identical interfaces
+var ScrollDomElement = /** @class */ (function () {
+    function ScrollDomElement(element) {
+        this.element = element;
+    }
+    ScrollDomElement.prototype.getHorizontalScroll = function () {
+        return this.element.scrollLeft;
+    };
+    ScrollDomElement.prototype.getVerticalScroll = function () {
+        return this.element.scrollTop;
+    };
+    ScrollDomElement.prototype.getMaxHorizontalScroll = function () {
+        return this.element.scrollWidth - this.element.clientWidth;
+    };
+    ScrollDomElement.prototype.getMaxVerticalScroll = function () {
+        return this.element.scrollHeight - this.element.clientHeight;
+    };
+    ScrollDomElement.prototype.getHorizontalElementScrollOffset = function (elementToScrollTo, elementToScroll) {
+        return getElementOffset(elementToScrollTo).left - getElementOffset(elementToScroll).left;
+    };
+    ScrollDomElement.prototype.getVerticalElementScrollOffset = function (elementToScrollTo, elementToScroll) {
+        return getElementOffset(elementToScrollTo).top - getElementOffset(elementToScroll).top;
+    };
+    ScrollDomElement.prototype.scrollTo = function (x, y) {
+        this.element.scrollLeft = x;
+        this.element.scrollTop = y;
+    };
+    return ScrollDomElement;
+}());
+var ScrollWindow = /** @class */ (function () {
+    function ScrollWindow() {
+    }
+    ScrollWindow.prototype.getHorizontalScroll = function () {
+        return window.scrollX || document.documentElement.scrollLeft;
+    };
+    ScrollWindow.prototype.getVerticalScroll = function () {
+        return window.scrollY || document.documentElement.scrollTop;
+    };
+    ScrollWindow.prototype.getMaxHorizontalScroll = function () {
+        return Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth) - window.innerWidth;
+    };
+    ScrollWindow.prototype.getMaxVerticalScroll = function () {
+        return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - window.innerHeight;
+    };
+    ScrollWindow.prototype.getHorizontalElementScrollOffset = function (elementToScrollTo) {
+        var scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+        return scrollLeft + elementToScrollTo.getBoundingClientRect().left;
+    };
+    ScrollWindow.prototype.getVerticalElementScrollOffset = function (elementToScrollTo) {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        return scrollTop + elementToScrollTo.getBoundingClientRect().top;
+    };
+    ScrollWindow.prototype.scrollTo = function (x, y) {
+        window.scrollTo(x, y);
+    };
+    return ScrollWindow;
+}());
+// --------- KEEPING TRACK OF ACTIVE ANIMATIONS
+var activeAnimations = {
+    elements: [],
+    cancelMethods: [],
+    add: function (element, cancelAnimation) {
+        activeAnimations.elements.push(element);
+        activeAnimations.cancelMethods.push(cancelAnimation);
+    },
+    remove: function (element, shouldStop) {
+        if (shouldStop === void 0) { shouldStop = true; }
+        var index = activeAnimations.elements.indexOf(element);
+        if (index > -1) {
+            // Stop animation
+            if (shouldStop) {
+                activeAnimations.cancelMethods[index]();
+            }
+            // Remove it
+            activeAnimations.elements.splice(index, 1);
+            activeAnimations.cancelMethods.splice(index, 1);
+        }
+    }
+};
+// --------- CHECK IF CODE IS RUNNING IN A BROWSER
+var WINDOW_EXISTS = typeof window !== 'undefined';
+// --------- ANIMATE SCROLL TO
+var defaultOptions = {
+    cancelOnUserAction: true,
+    easing: function (t) { return (--t) * t * t + 1; },
+    elementToScroll: WINDOW_EXISTS ? window : null,
+    horizontalOffset: 0,
+    maxDuration: 3000,
+    minDuration: 250,
+    speed: 500,
+    verticalOffset: 0,
+};
+function animateScrollTo(numberOrCoordsOrElement, userOptions) {
+    if (userOptions === void 0) { userOptions = {}; }
+    return __awaiter(this, void 0, void 0, function () {
+        var x, y, scrollToElement, options, isWindow, isElement, elementToScroll, maxHorizontalScroll, initialHorizontalScroll, horizontalDistanceToScroll, maxVerticalScroll, initialVerticalScroll, verticalDistanceToScroll, horizontalDuration, verticalDuration, duration;
+        return __generator(this, function (_a) {
+            // Check for server rendering
+            if (!WINDOW_EXISTS) {
+                // @ts-ignore
+                // If it still gets called on server, return Promise for API consistency
+                return [2 /*return*/, new Promise(function (resolve) {
+                        resolve(false); // Returning false on server
+                    })];
+            }
+            else if (!window.Promise) {
+                throw ('Browser doesn\'t support Promises, and animated-scroll-to depends on it, please provide a polyfill.');
+            }
+            options = __assign(__assign({}, defaultOptions), userOptions);
+            isWindow = options.elementToScroll === window;
+            isElement = !!options.elementToScroll.nodeName;
+            if (!isWindow && !isElement) {
+                throw ('Element to scroll needs to be either window or DOM element.');
+            }
+            elementToScroll = isWindow ?
+                new ScrollWindow() :
+                new ScrollDomElement(options.elementToScroll);
+            if (numberOrCoordsOrElement instanceof Element) {
+                scrollToElement = numberOrCoordsOrElement;
+                // If "elementToScroll" is not a parent of "scrollToElement"
+                if (isElement &&
+                    (!options.elementToScroll.contains(scrollToElement) ||
+                        options.elementToScroll.isSameNode(scrollToElement))) {
+                    throw ('options.elementToScroll has to be a parent of scrollToElement');
+                }
+                x = elementToScroll.getHorizontalElementScrollOffset(scrollToElement, options.elementToScroll);
+                y = elementToScroll.getVerticalElementScrollOffset(scrollToElement, options.elementToScroll);
+            }
+            else if (typeof numberOrCoordsOrElement === 'number') {
+                x = elementToScroll.getHorizontalScroll();
+                y = numberOrCoordsOrElement;
+            }
+            else if (Array.isArray(numberOrCoordsOrElement) && numberOrCoordsOrElement.length === 2) {
+                x = numberOrCoordsOrElement[0] === null ? elementToScroll.getHorizontalScroll() : numberOrCoordsOrElement[0];
+                y = numberOrCoordsOrElement[1] === null ? elementToScroll.getVerticalScroll() : numberOrCoordsOrElement[1];
+            }
+            else {
+                // ERROR
+                throw ('Wrong function signature. Check documentation.\n' +
+                    'Available method signatures are:\n' +
+                    '  animateScrollTo(y:number, options)\n' +
+                    '  animateScrollTo([x:number | null, y:number | null], options)\n' +
+                    '  animateScrollTo(scrollToElement:Element, options)');
+            }
+            // Add offsets
+            x += options.horizontalOffset;
+            y += options.verticalOffset;
+            maxHorizontalScroll = elementToScroll.getMaxHorizontalScroll();
+            initialHorizontalScroll = elementToScroll.getHorizontalScroll();
+            // If user specified scroll position is greater than maximum available scroll
+            if (x > maxHorizontalScroll) {
+                x = maxHorizontalScroll;
+            }
+            horizontalDistanceToScroll = x - initialHorizontalScroll;
+            maxVerticalScroll = elementToScroll.getMaxVerticalScroll();
+            initialVerticalScroll = elementToScroll.getVerticalScroll();
+            // If user specified scroll position is greater than maximum available scroll
+            if (y > maxVerticalScroll) {
+                y = maxVerticalScroll;
+            }
+            verticalDistanceToScroll = y - initialVerticalScroll;
+            horizontalDuration = Math.abs(Math.round((horizontalDistanceToScroll / 1000) * options.speed));
+            verticalDuration = Math.abs(Math.round((verticalDistanceToScroll / 1000) * options.speed));
+            duration = horizontalDuration > verticalDuration ? horizontalDuration : verticalDuration;
+            // Set minimum and maximum duration
+            if (duration < options.minDuration) {
+                duration = options.minDuration;
+            }
+            else if (duration > options.maxDuration) {
+                duration = options.maxDuration;
+            }
+            // @ts-ignore
+            return [2 /*return*/, new Promise(function (resolve, reject) {
+                    // Scroll is already in place, nothing to do
+                    if (horizontalDistanceToScroll === 0 && verticalDistanceToScroll === 0) {
+                        // Resolve promise with a boolean hasScrolledToPosition set to true
+                        resolve(true);
+                    }
+                    // Cancel existing animation if it is already running on the same element
+                    activeAnimations.remove(options.elementToScroll, true);
+                    // To cancel animation we have to store request animation frame ID 
+                    var requestID;
+                    // Cancel animation handler
+                    var cancelAnimation = function () {
+                        removeListeners();
+                        cancelAnimationFrame(requestID);
+                        // Resolve promise with a boolean hasScrolledToPosition set to false
+                        resolve(false);
+                    };
+                    // Registering animation so it can be canceled if function
+                    // gets called again on the same element
+                    activeAnimations.add(options.elementToScroll, cancelAnimation);
+                    // Prevent user actions handler
+                    var preventDefaultHandler = function (e) { return e.preventDefault(); };
+                    var handler = options.cancelOnUserAction ?
+                        cancelAnimation :
+                        preventDefaultHandler;
+                    // If animation is not cancelable by the user, we can't use passive events
+                    var eventOptions = options.cancelOnUserAction ?
+                        { passive: true } :
+                        { passive: false };
+                    var events = [
+                        'wheel',
+                        'touchstart',
+                        'keydown',
+                        'mousedown',
+                    ];
+                    // Function to remove listeners after animation is finished
+                    var removeListeners = function () {
+                        events.forEach(function (eventName) {
+                            options.elementToScroll.removeEventListener(eventName, handler, eventOptions);
+                        });
+                    };
+                    // Add listeners
+                    events.forEach(function (eventName) {
+                        options.elementToScroll.addEventListener(eventName, handler, eventOptions);
+                    });
+                    // Animation
+                    var startingTime = Date.now();
+                    var step = function () {
+                        var timeDiff = Date.now() - startingTime;
+                        var t = timeDiff / duration;
+                        var horizontalScrollPosition = Math.round(initialHorizontalScroll + (horizontalDistanceToScroll * options.easing(t)));
+                        var verticalScrollPosition = Math.round(initialVerticalScroll + (verticalDistanceToScroll * options.easing(t)));
+                        if (timeDiff < duration && (horizontalScrollPosition !== x || verticalScrollPosition !== y)) {
+                            // If scroll didn't reach desired position or time is not elapsed
+                            // Scroll to a new position
+                            elementToScroll.scrollTo(horizontalScrollPosition, verticalScrollPosition);
+                            // And request a new step
+                            requestID = requestAnimationFrame(step);
+                        }
+                        else {
+                            // If the time elapsed or we reached the desired offset
+                            // Set scroll to the desired offset (when rounding made it to be off a pixel or two)
+                            // Clear animation frame to be sure
+                            elementToScroll.scrollTo(x, y);
+                            cancelAnimationFrame(requestID);
+                            // Remove listeners
+                            removeListeners();
+                            // Remove animation from the active animations coordinator
+                            activeAnimations.remove(options.elementToScroll, false);
+                            // Resolve promise with a boolean hasScrolledToPosition set to true
+                            resolve(true);
+                        }
+                    };
+                    // Start animating scroll
+                    requestID = requestAnimationFrame(step);
+                })];
+        });
+    });
+}
+exports.default = animateScrollTo;
+// Support for direct usage in browsers
+// This is mostly to keep it similar to v1
+// Don't forget to include Promise polyfill for IE
+// <script src="https://unpkg.com/es6-promise/dist/es6-promise.auto.min.js"></script>
+// https://github.com/stefanpenner/es6-promise
+if (WINDOW_EXISTS) {
+    window.animateScrollTo = animateScrollTo;
+}
 
 
 /***/ }),
@@ -23922,6 +24611,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_home_skills_Skills__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/home/skills/Skills */ "./components/home/skills/Skills.tsx");
 /* harmony import */ var _components_home_interests_Interests__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/home/interests/Interests */ "./components/home/interests/Interests.tsx");
 /* harmony import */ var _components_home_contact_Contact__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/home/contact/Contact */ "./components/home/contact/Contact.tsx");
+/* harmony import */ var _components_menu_Menu__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/menu/Menu */ "./components/menu/Menu.tsx");
 
 
 var _right,
@@ -23929,6 +24619,7 @@ var _right,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\pages\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -23986,14 +24677,21 @@ var Home = function Home() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 9
     }
-  }, __jsx(_components_home_presentation_Presentation__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }, __jsx(_components_menu_Menu__WEBPACK_IMPORTED_MODULE_14__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 64,
+      columnNumber: 13
+    }
+  }), __jsx(_components_home_presentation_Presentation__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -24001,49 +24699,49 @@ var Home = function Home() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 13
     }
   }, __jsx(_components_home_competences_Competences__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 68,
       columnNumber: 17
     }
   }), __jsx(_components_home_about_About__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 69,
       columnNumber: 17
     }
   }), __jsx(_components_home_projects_Projects__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 70,
       columnNumber: 17
     }
   }), __jsx(_components_home_skills_Skills__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 71,
       columnNumber: 17
     }
   }), __jsx(_components_home_interests_Interests__WEBPACK_IMPORTED_MODULE_12__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 72,
       columnNumber: 17
     }
   }), __jsx(_components_home_contact_Contact__WEBPACK_IMPORTED_MODULE_13__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 73,
       columnNumber: 17
     }
   })));
@@ -24164,7 +24862,7 @@ var lgScreenWidth = 1500;
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=E%3A%5Ctiavina-mika%5Ctiavina-mika-web%5Cpages%5Cindex.tsx ***!
   \***************************************************************************************************************************/
@@ -24187,5 +24885,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
