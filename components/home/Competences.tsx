@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useSelector } from 'react-redux';
 
-import BlockTitle from '../../Common/BlockTitle';
-import { animate, itemVariants } from '../../../animations/cards';
-import { media, lgScreenWidth } from '../../../utils/constants';
-import { screenState } from '../../../reducers/appReducer';
+import BlockTitle from '../Common/BlockTitle';
+import { animate, itemVariants } from '../../animations/cards';
+import { media, lgScreenWidth } from '../../utils/constants';
+import { screenState } from '../../reducers/appReducer';
 
 const data = [
     {

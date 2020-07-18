@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
-import Competences from '../components/home/competences/Competences';
+import Competences from '../components/home/Competences';
 import About from '../components/home/about/About';
 import Presentation from '../components/home/presentation/Presentation';
 import Projects from '../components/home/projects/Projects';
-import Skills from '../components/home/skills/Skills';
-import Interests from '../components/home/interests/Interests';
-import Contact from '../components/home/contact/Contact';
+import Skills from '../components/home/Skills';
+import Interests from '../components/home/Interests';
+import Contact from '../components/home/Contact';
 import Menu from '../components/menu/Menu';
 
 const useStyles = createUseStyles({

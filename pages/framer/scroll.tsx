@@ -3,7 +3,7 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 import Block1 from '../../components/home/presentation/Presentation';
-import Block2 from '../../components/home/domain/Domain';
+import Block2 from '../../components/home/Domain';
 
 const useStyles = createUseStyles({
     root: {
