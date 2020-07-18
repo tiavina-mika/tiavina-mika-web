@@ -1,13 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
+import { motion, useViewportScroll } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useSelector } from 'react-redux';
 
 import BlockTitle from '../../Common/BlockTitle';
 import { media, lgScreenWidth } from '../../../utils/constants';
+import { animate } from '../../../animations/about';
 import { downloadButtonAnimation } from '../../../animations/app';
+import { screenState } from '../../../reducers/appReducer';
 import Button from '../../Common/Button';
-import PlxComponent from '../../Common/PlxComponent';
 
 const useStyles = createUseStyles((theme: any) => ({
     rowStretch: {
@@ -60,36 +63,33 @@ const useStyles = createUseStyles((theme: any) => ({
                 width: '100%',
             },
         },
-        [media.lgUp]: {
-            width: 350,
-            opacity: 0,
-        },
     },
     right: {
+        '& h3': {
+            color: theme.color.grey,
+            fontWeight: '400',
+            lineHeight: 1.4,
+            textTransform: 'uppercase',
+            letterSpacing: 3.5,
+        },
+        '& h2': {
+            color: '#fff',
+            fontWeight: '400',
+            lineHeight: 1.4,
+            textTransform: 'uppercase',
+            letterSpacing: 3.5,
+            marginTop: 10,
+            [media.lgUp]: {
+                width: 650,
+            },
+        },
         [media.lgUp]: {
-            width: 500,
-            opacity: 0,
+            flex: 2,
+            paddingLeft: theme.spacing(5),
+            paddingRight: theme.spacing(5),
         },
         [media.lgDown]: {
             marginTop: theme.spacing(8),
-        },
-    },
-    name: {
-        color: theme.color.grey,
-        fontWeight: '400',
-        lineHeight: 1.4,
-        textTransform: 'uppercase',
-        letterSpacing: 3.5,
-    },
-    post: {
-        color: '#fff',
-        fontWeight: '400',
-        lineHeight: 1.4,
-        textTransform: 'uppercase',
-        letterSpacing: 3.5,
-        marginTop: 10,
-        [media.lgUp]: {
-            width: 650,
         },
     },
     descriptionText: {
@@ -103,6 +103,10 @@ const useStyles = createUseStyles((theme: any) => ({
     shortDescription: {
         color: theme.color.subtitle,
         fontFamily: 'Montserrat, sans-serif',
+
+        [media.lgUp]: {
+            width: 650,
+        },
     },
     description: {
         fontFamily: 'Montserrat-Regular, sans-serif',
@@ -120,62 +124,46 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-const textTriggerClass = 'about-text-trigger';
-
 const About: FC = () => {
     const classes = useStyles();
+    const [value, setValue] = useState(0);
+    const isMobile = useSelector(screenState);
+
     const [ref, inView] = useInView({
         threshold: 0.1,
         triggerOnce: false,
     });
 
-    const textParallaxData = [
-        {
-            start: `.${textTriggerClass}`,
-            duration: '50vh',
-            properties: [
-                {
-                    startValue: 10,
-                    endValue: 0,
-                    unit: 'vw',
-                    property: 'translateX',
-                },
-                {
-                    startValue: 0,
-                    endValue: 1,
-                    property: 'opacity',
-                },
-            ],
-        },
-    ];
+    const { scrollYProgress } = useViewportScroll();
 
-    const imageParallaxData = [
-        {
-            start: `.${textTriggerClass}`,
-            duration: '50vh',
-            properties: [
-                {
-                    startValue: -22,
-                    endValue: -5,
-                    unit: 'vw',
-                    property: 'translateX',
-                },
-                {
-                    startValue: 0,
-                    endValue: 1,
-                    property: 'opacity',
-                },
-            ],
-        },
-    ];
+    useEffect(() => {
+        scrollYProgress.onChange((latest) => setValue(latest));
+    }, []);
+
+    /** Components */
+    const H3 = isMobile ? 'h3' : motion.h3;
+    const H2 = isMobile ? 'h2' : motion.h2;
+    const Div = isMobile ? 'div' : motion.div;
+    const Img = isMobile ? 'img' : motion.img;
+
+    /** Animation */
+    const h3Animation = isMobile ? {} : animate(inView);
+    const h2Animation = isMobile ? {} : animate(inView, 2);
+    const shortDescriptionAnimation = isMobile ? {} : animate(inView, 3);
+    const descriptionAnimation = isMobile ? {} : animate(inView, 3);
 
     return (
         <div className={classes.root} ref={ref} id="about">
             <BlockTitle title="A propos de moi" subtitle="Qui suis-je" right icon="setting" />
             <div className={classes.content}>
                 <div className={classes.center}>
-                    <PlxComponent className={classes.left} parallaxData={imageParallaxData}>
-                        <img alt="" src="/images/profile2.jpg" />
+                    <div className={classes.left}>
+                        <Img
+                            alt=""
+                            src="/images/profile.jpg"
+                            style={inView ? { scale: 0.5 + value } : {}}
+                            // style={inView ? { scale: value ? value : 1, rotate: `${value ? value * 10 : 0}deg` } : {}}
+                        />
                         <div className={classes.buttonContainer}>
                             <Button
                                 text="Télécharger mon CV"
@@ -184,20 +172,19 @@ const About: FC = () => {
                                 className={classes.button}
                             />
                         </div>
-                    </PlxComponent>
-                    <PlxComponent
-                        className={classes.right}
-                        parallaxData={textParallaxData}
-                        triggerClass={textTriggerClass}>
-                        <h2 className={classes.name}>Tiavina Michael Ralainirina</h2>
-                        <h3 className={classes.post}>Développeur FullStack / Web Designer / Lead Developpeur</h3>
-                        <div className={clsx(classes.shortDescription, classes.descriptionText)}>
+                    </div>
+                    <div className={classes.right}>
+                        <H3 {...h3Animation}>Tiavina Michael Ralainirina</H3>
+                        <H2 {...h2Animation}>Développeur FullStack / Web Designer / Lead Developpeur</H2>
+                        <Div
+                            {...shortDescriptionAnimation}
+                            className={clsx(classes.shortDescription, classes.descriptionText)}>
                             <span>
                                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
                                 laudantium, totam rem aperiam
                             </span>
-                        </div>
-                        <div className={clsx(classes.description, classes.descriptionText)}>
+                        </Div>
+                        <Div {...descriptionAnimation} className={clsx(classes.description, classes.descriptionText)}>
                             <span>
                                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
                                 laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
@@ -206,8 +193,8 @@ const About: FC = () => {
                                 voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit
                                 amet, consectetur, adipisci velit, sed quia
                             </span>
-                        </div>
-                    </PlxComponent>
+                        </Div>
+                    </div>
                 </div>
             </div>
         </div>

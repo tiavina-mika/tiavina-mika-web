@@ -1,11 +1,9 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
-import Plx from 'react-plx';
-import { useSelector } from 'react-redux';
 
 import { media } from '../../utils/constants';
-import { screenState } from '../../reducers/appReducer';
+import PlxComponent from './PlxComponent';
 
 const useStyles = createUseStyles((theme: any) => ({
     root: {
@@ -100,7 +98,6 @@ type Props = {
 };
 const BlockTitle: FC<Props> = ({ className, title, subtitle, right, icon }) => {
     const classes = useStyles();
-    const isMobile = useSelector(screenState);
     const triggerClass = title.split(' ').join('-') + '-titleTrigger';
 
     const parallaxData = [
@@ -123,11 +120,12 @@ const BlockTitle: FC<Props> = ({ className, title, subtitle, right, icon }) => {
         },
     ];
 
-    const Component = !isMobile ? Plx : 'div';
-    const otherProps = isMobile ? {} : { parallaxData };
     return (
-        <Component {...otherProps} className={clsx(classes.root, className, right ? classes.right : null)}>
-            {!isMobile && <div className={clsx(triggerClass, classes.trigger)} />}
+        <PlxComponent
+            triggerClass={triggerClass}
+            parallaxData={parallaxData}
+            className={clsx(classes.root, className, right ? classes.right : null)}
+            triggerlassName={classes.trigger}>
             <div className={clsx(classes.dotted, right ? classes.dottedRight : null)}></div>
             <div className={classes.main}>
                 {icon && (
@@ -140,7 +138,7 @@ const BlockTitle: FC<Props> = ({ className, title, subtitle, right, icon }) => {
                     {subtitle && <h6 className={classes.subtitle}>{subtitle}</h6>}
                 </div>
             </div>
-        </Component>
+        </PlxComponent>
     );
 };
 
