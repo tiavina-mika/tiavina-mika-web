@@ -5,6 +5,12 @@ import { screenState } from '../../../reducers/appReducer';
 import MobileProjects from './MobileProjects';
 import DesktopProjects from './DesktopProjects';
 
+const pageInfo = {
+    title: 'Projets',
+    subtitle: "Projets sur lesquels j'ai travaille",
+    icon: 'projects',
+};
+
 const data = [
     {
         image: 'mac.png',
@@ -22,11 +28,15 @@ const data = [
     },
 ];
 export type ProjectsProps = { image: string; title: string; description?: string; link?: string };
-
+export type PageInfoProps = { title: string; subtitle: string; icon: string };
 const Projects: FC = () => {
     const isMobile = useSelector(screenState);
 
-    return isMobile ? <MobileProjects data={data} /> : <DesktopProjects data={data} />;
+    return isMobile ? (
+        <MobileProjects data={data} pageInfo={pageInfo} />
+    ) : (
+        <DesktopProjects data={data} pageInfo={pageInfo} />
+    );
 };
 
 export default Projects;

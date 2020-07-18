@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 import BlockTitle from '../../Common/BlockTitle';
 import { media, lgScreenWidth } from '../../../utils/constants';
-import { ProjectsProps } from './Projects';
+import { ProjectsProps, PageInfoProps } from './Projects';
 
 const useStyles = createUseStyles((theme: any) => ({
     rowCenter: {
@@ -92,13 +92,13 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { data: ProjectsProps[] };
-const MobileProjects: FC<Props> = ({ data }) => {
+type Props = { data: ProjectsProps[]; pageInfo: PageInfoProps };
+const MobileProjects: FC<Props> = ({ data, pageInfo }) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root} id="projects">
-            <BlockTitle title="Projets" subtitle="Projets sur lesquels j'ai travaille" icon="projects" />
+            <BlockTitle {...pageInfo} />
             <div className={classes.center}>
                 <div className={classes.items}>
                     {data.map(

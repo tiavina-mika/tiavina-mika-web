@@ -5,7 +5,7 @@ import PlxLayout from './PlxLayout';
 
 import BlockTitle from '../../Common/BlockTitle';
 import { media } from '../../../utils/constants';
-import { ProjectsProps } from './Projects';
+import { ProjectsProps, PageInfoProps } from './Projects';
 
 const useStyles = createUseStyles((theme: any) => ({
     root: {
@@ -21,8 +21,8 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { data: ProjectsProps[] };
-const DesktopProjects: FC<Props> = ({ data }) => {
+type Props = { data: ProjectsProps[]; pageInfo: PageInfoProps };
+const DesktopProjects: FC<Props> = ({ data, pageInfo }) => {
     const classes = useStyles();
 
     const [ref, inView] = useInView({
@@ -32,12 +32,7 @@ const DesktopProjects: FC<Props> = ({ data }) => {
 
     return (
         <div className={classes.root} ref={ref} id="projects">
-            <BlockTitle
-                title="Projets"
-                subtitle="Projets sur lesquels j'ai travaille"
-                startAnimation={inView}
-                icon="projects"
-            />
+            <BlockTitle {...pageInfo} startAnimation={inView} />
             {data.map(
                 (item: ProjectsProps, index: number): ReactNode => (
                     <PlxLayout {...item} key={index} reverse={index % 2 !== 0} />
