@@ -132,7 +132,7 @@ const Competences: FC = () => {
 
     return (
         <div className={classes.root} id="competences">
-            <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" startAnimation={inView} />
+            <BlockTitle title="Compétences clées" subtitle="Ce que je maîtrise" />
             <div className={classes.content} ref={ref}>
                 <div className={classes.center}>
                     <Div className={classes.items} {...itemsAnimation(inView)}>

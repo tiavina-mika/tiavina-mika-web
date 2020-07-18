@@ -250,12 +250,7 @@ const Contact: FC = () => {
 
     return (
         <div className={classes.root} id="contact">
-            <BlockTitle
-                title="Contact"
-                subtitle="N'hésitez pas à me contacter"
-                startAnimation={inView}
-                icon="passion"
-            />
+            <BlockTitle title="Contact" subtitle="N'hésitez pas à me contacter" icon="passion" />
             <div className={classes.content} ref={ref}>
                 <Div className={classes.center} {...itemsAnimation(inView)}>
                     <Div className={classes.left} {...itemAnimation}>

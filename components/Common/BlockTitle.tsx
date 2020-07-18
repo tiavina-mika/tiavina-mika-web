@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
-import { motion } from 'framer-motion';
+import Plx from 'react-plx';
 import { useSelector } from 'react-redux';
 
 import { media } from '../../utils/constants';
-import { onEnterAnimation } from '../../animations/onEnter';
-import { turnIndefinetily } from '../../animations/app';
 import { screenState } from '../../reducers/appReducer';
 
 const useStyles = createUseStyles((theme: any) => ({
@@ -15,9 +13,11 @@ const useStyles = createUseStyles((theme: any) => ({
         textTransform: 'uppercase',
         fontFamily: 'Prequelrough, sans-serif',
         width: '100%',
+        opacity: 0,
         [media.lgDown]: {
             flexDirection: 'column',
             alignItems: 'flex-start',
+            opacity: 1,
         },
         [media.mdDown]: {
             marginBottom: theme.spacing(4),
@@ -86,6 +86,9 @@ const useStyles = createUseStyles((theme: any) => ({
             fontSize: 18,
         },
     },
+    trigger: {
+        marginTop: '20vh',
+    },
 }));
 
 type Props = {
@@ -93,30 +96,43 @@ type Props = {
     title: string;
     subtitle?: string;
     right?: boolean;
-    startAnimation?: boolean;
     icon?: string;
-    animateIcon?: boolean;
 };
-const BlockTitle: FC<Props> = ({ className, title, subtitle, right, startAnimation, icon, animateIcon }) => {
+const BlockTitle: FC<Props> = ({ className, title, subtitle, right, icon }) => {
     const classes = useStyles();
     const isMobile = useSelector(screenState);
+    const triggerClass = title.split(' ').join('-') + '-titleTrigger';
 
-    const Img = isMobile ? 'img' : motion.img;
-    const Div = isMobile ? 'div' : motion.div;
+    const parallaxData = [
+        {
+            start: `.${triggerClass}`,
+            duration: '50vh',
+            properties: [
+                {
+                    startValue: 20,
+                    endValue: 5,
+                    unit: 'vh',
+                    property: 'translateY',
+                },
+                {
+                    startValue: 0,
+                    endValue: 1,
+                    property: 'opacity',
+                },
+            ],
+        },
+    ];
 
-    const iconAnimationProps = (startAnimation) =>
-        isMobile ? {} : animateIcon ? turnIndefinetily(startAnimation) : {};
-    const onEnterAnimationProps = (startAnimation) => (isMobile ? {} : onEnterAnimation(startAnimation));
-
+    const Component = !isMobile ? Plx : 'div';
+    const otherProps = isMobile ? {} : { parallaxData };
     return (
-        <Div
-            {...onEnterAnimationProps(startAnimation)}
-            className={clsx(classes.root, className, right ? classes.right : null)}>
+        <Component {...otherProps} className={clsx(classes.root, className, right ? classes.right : null)}>
+            {!isMobile && <div className={clsx(triggerClass, classes.trigger)} />}
             <div className={clsx(classes.dotted, right ? classes.dottedRight : null)}></div>
             <div className={classes.main}>
                 {icon && (
                     <div className={classes.icon}>
-                        <Img src={`/images/icons/${icon}.svg`} alt="" {...iconAnimationProps(startAnimation)} />
+                        <img src={`/images/icons/${icon}.svg`} alt="" />
                     </div>
                 )}
                 <div className={classes.titleContainer}>
@@ -124,7 +140,7 @@ const BlockTitle: FC<Props> = ({ className, title, subtitle, right, startAnimati
                     {subtitle && <h6 className={classes.subtitle}>{subtitle}</h6>}
                 </div>
             </div>
-        </Div>
+        </Component>
     );
 };
 

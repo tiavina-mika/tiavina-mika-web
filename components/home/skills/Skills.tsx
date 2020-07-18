@@ -301,13 +301,7 @@ const Skills: FC = () => {
 
     return (
         <div className={classes.root} id="skills">
-            <BlockTitle
-                title="Connaissance"
-                subtitle="Ce que je maîtrise"
-                right
-                startAnimation={inView}
-                icon="skills"
-            />
+            <BlockTitle title="Connaissance" subtitle="Ce que je maîtrise" right icon="skills" />
             <div className={classes.content} ref={ref}>
                 <Div className={classes.center} {...itemsAnimation(inView)}>
                     {items.map((item, index) => (

@@ -154,14 +154,7 @@ const About: FC = () => {
 
     return (
         <div className={classes.root} ref={ref} id="about">
-            <BlockTitle
-                title="A propos de moi"
-                subtitle="Qui suis-je"
-                right
-                animateIcon
-                startAnimation={inView}
-                icon="setting"
-            />
+            <BlockTitle title="A propos de moi" subtitle="Qui suis-je" right icon="setting" />
             <div className={classes.content}>
                 <div className={classes.center}>
                     <div className={classes.left}>

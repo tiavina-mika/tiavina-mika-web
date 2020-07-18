@@ -141,13 +141,7 @@ const Interests: FC = () => {
 
     return (
         <div className={classes.root} id="contact">
-            <BlockTitle
-                title="Passions et loisirs"
-                subtitle="Ce que j'aime"
-                right
-                startAnimation={inView}
-                icon="passion"
-            />
+            <BlockTitle title="Passions et loisirs" subtitle="Ce que j'aime" right icon="passion" />
             <div className={classes.content} ref={ref}>
                 <Div className={classes.center} {...itemsAnimation(inView)}>
                     {items.map((item, index) => (
