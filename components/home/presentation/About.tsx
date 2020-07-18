@@ -1,12 +1,12 @@
 import React, { useState, FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import { motion } from 'framer-motion';
 import { useSelector } from 'react-redux';
 
 import Title from './Title';
 import Post from './Post';
 import { screenState } from '../../../reducers/appReducer';
 import { media } from '../../../utils/constants';
+import PlxComponent from '../../Common/PlxComponent';
 
 const useStyles = createUseStyles((theme: any) => ({
     about: {
@@ -49,18 +49,28 @@ const textName = 'Tiavina Michael';
 const textFirstName = 'Ralainirina';
 const textPost = 'Developpeur Full-Stack / Web Designer';
 
-type Props = { position?: number; opacity?: number };
-
-const About: FC<Props> = ({ position, opacity }) => {
+const About: FC = () => {
     const classes = useStyles();
     const [firstName, setFirstName] = useState(false);
     const [lastName, setLastName] = useState(false);
     const isMobile = useSelector(screenState);
 
-    const Div = isMobile ? 'div' : motion.div;
-
+    const parallaxData = [
+        {
+            start: `self`,
+            duration: '70vh',
+            easing: 'easeInSine',
+            properties: [
+                {
+                    startValue: 1,
+                    endValue: 0,
+                    property: 'opacity',
+                },
+            ],
+        },
+    ];
     return (
-        <Div className={classes.about} style={{ paddingBottom: position, opacity }}>
+        <PlxComponent className={classes.about} parallaxData={parallaxData}>
             <div className={classes.hello}>
                 <h6>Hello! Je suis</h6>
             </div>
@@ -74,7 +84,7 @@ const About: FC<Props> = ({ position, opacity }) => {
                 />
                 <Post text={textPost} className={classes.post} display={isMobile ? true : lastName} />
             </div>
-        </Div>
+        </PlxComponent>
     );
 };
 

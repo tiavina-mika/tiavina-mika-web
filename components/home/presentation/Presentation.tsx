@@ -1,9 +1,5 @@
-import React, { useState, useEffect, FC } from 'react';
+import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import { useViewportScroll } from 'framer-motion';
-import { useSelector } from 'react-redux';
-
-import { screenState } from '../../../reducers/appReducer';
 
 import About from './About';
 import PlxComponent from '../../Common/PlxComponent';
@@ -22,21 +18,6 @@ const triggerClass = 'presentationHeader-trigger';
 
 const Presentation: FC = () => {
     const classes = useStyles();
-    const { scrollYProgress } = useViewportScroll();
-    const [bgOpacity, setBgOpacity] = useState(0);
-    const [opacity, setOpacity] = useState(1);
-    const [position, setPosition] = useState(0);
-    const isMobile = useSelector(screenState);
-
-    useEffect(
-        () =>
-            scrollYProgress.onChange((latest) => {
-                setOpacity(1 - latest * 3.5);
-                setBgOpacity(latest * 15);
-                setPosition(latest * 220);
-            }),
-        []
-    );
 
     const parallaxData = [
         {
@@ -60,7 +41,7 @@ const Presentation: FC = () => {
             triggerClass={triggerClass}
             id="presentation"
             trigger={20}>
-            <About position={isMobile ? 0 : position} opacity={opacity} />
+            <About />
         </PlxComponent>
     );
 };
