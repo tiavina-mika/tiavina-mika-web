@@ -1,13 +1,11 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
-import { useInView } from 'react-intersection-observer';
 
 import BlockTitle from '../../Common/BlockTitle';
 import { media, lgScreenWidth } from '../../../utils/constants';
-import { downloadButtonAnimation } from '../../../animations/app';
-import Button from '../../Common/Button';
 import PlxComponent from '../../Common/PlxComponent';
+import DownloadButton from './DownloadButton';
 
 const useStyles = createUseStyles((theme: any) => ({
     rowStretch: {
@@ -124,10 +122,6 @@ const textTriggerClass = 'about-text-trigger';
 
 const About: FC = () => {
     const classes = useStyles();
-    const [ref, inView] = useInView({
-        threshold: 0.1,
-        triggerOnce: false,
-    });
 
     const textParallaxData = [
         {
@@ -170,19 +164,14 @@ const About: FC = () => {
     ];
 
     return (
-        <div className={classes.root} ref={ref} id="about">
+        <div className={classes.root} id="about">
             <BlockTitle title="A propos de moi" subtitle="Qui suis-je" right icon="setting" />
             <div className={classes.content}>
                 <div className={classes.center}>
                     <PlxComponent className={classes.left} parallaxData={imageParallaxData}>
                         <img alt="" src="/images/profile2.jpg" />
                         <div className={classes.buttonContainer}>
-                            <Button
-                                text="Télécharger mon CV"
-                                icon="download"
-                                animation={downloadButtonAnimation(inView)}
-                                className={classes.button}
-                            />
+                            <DownloadButton text="Télécharger mon CV" icon="download" className={classes.button} />
                         </div>
                     </PlxComponent>
                     <PlxComponent

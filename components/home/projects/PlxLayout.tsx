@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import Plx from 'react-plx';
 import clsx from 'clsx';
+
 import { ProjectsProps } from './Projects';
 
 const SYSTEM_CONTENT_BLOCK_WIDTH = 380;
