@@ -84,9 +84,6 @@ const useStyles = createUseStyles((theme: any) => ({
             fontSize: 18,
         },
     },
-    trigger: {
-        marginTop: '20vh',
-    },
 }));
 
 type Props = {
@@ -125,7 +122,7 @@ const BlockTitle: FC<Props> = ({ className, title, subtitle, right, icon }) => {
             triggerClass={triggerClass}
             parallaxData={parallaxData}
             className={clsx(classes.root, className, right ? classes.right : null)}
-            triggerlassName={classes.trigger}>
+            trigger={20}>
             <div className={clsx(classes.dotted, right ? classes.dottedRight : null)}></div>
             <div className={classes.main}>
                 {icon && (

@@ -1,21 +1,24 @@
 import React, { useState, useEffect, FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import { useViewportScroll, motion } from 'framer-motion';
+import { useViewportScroll } from 'framer-motion';
 import { useSelector } from 'react-redux';
 
 import { screenState } from '../../../reducers/appReducer';
 
 import About from './About';
+import PlxComponent from '../../Common/PlxComponent';
 
 const useStyles = createUseStyles({
     presentation: {
         composes: 'flexRow flexEnd stretchSelf',
         height: '100vh',
-        backgroundColor: '#171717',
-        // background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(7,17,35,0.4) 59.29%, rgba(6,15,31,0.6) 99.89%, rgba(6,15,31,0.8) 99.93%)`,
+        // background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(0,0,0,0.2) 20.29%, rgba(0,0,0,0.1) 80.89%, rgba(0,0,0,0) 99.93%)`,
+        // backgroundColor: '#171717',
         // backgroundImage: `url(images/bg.svg)`,
     },
 });
+
+const triggerClass = 'presentationHeader-trigger';
 
 const Presentation: FC = () => {
     const classes = useStyles();
@@ -34,19 +37,31 @@ const Presentation: FC = () => {
             }),
         []
     );
-    const Div = isMobile ? 'div' : motion.div;
-    const styles = isMobile
-        ? { backgroundColor: 'rgb(23, 23, 23)' }
-        : {
-              background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(0,0,0,${
-                  bgOpacity - 0.2
-              }) 20.29%, rgba(0,0,0,${bgOpacity - 0.1}) 80.89%, rgba(0,0,0,${bgOpacity}) 99.93%)`,
-          };
+
+    const parallaxData = [
+        {
+            start: `.${triggerClass}`,
+            duration: '40vh',
+            easing: 'easeInSine',
+            properties: [
+                {
+                    startValue: '#fff',
+                    endValue: '#000',
+                    property: 'backgroundColor',
+                },
+            ],
+        },
+    ];
 
     return (
-        <Div className={classes.presentation} style={styles} id="presentation">
+        <PlxComponent
+            className={classes.presentation}
+            parallaxData={parallaxData}
+            triggerClass={triggerClass}
+            id="presentation"
+            trigger={20}>
             <About position={isMobile ? 0 : position} opacity={opacity} />
-        </Div>
+        </PlxComponent>
     );
 };
 
