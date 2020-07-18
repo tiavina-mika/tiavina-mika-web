@@ -10,6 +10,7 @@ import { media, lgScreenWidth } from '../../utils/constants';
 import { screenState } from '../../reducers/appReducer';
 import Button from '../Common/Button';
 import clsx from 'clsx';
+import PlxComponent from '../Common/PlxComponent';
 
 const useStyles = createUseStyles((theme: any) => ({
     fullColumn: {
@@ -79,6 +80,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
         [media.lgUp]: {
             flex: 1,
+            opacity: 0,
         },
     },
     formContainer: {
@@ -207,6 +209,8 @@ interface State {
     message: string;
 }
 
+const triggerClass = 'contact-text-trigger';
+
 const Contact: FC = () => {
     const classes = useStyles();
     const isMobile = useSelector(screenState);
@@ -248,12 +252,57 @@ const Contact: FC = () => {
     const itemsAnimation = (inView) => (isMobile ? {} : animate(inView));
     const itemAnimation = isMobile ? {} : itemVariants;
 
+    const textParallaxData = [
+        {
+            start: `.${triggerClass}`,
+            duration: '40vh',
+            properties: [
+                {
+                    startValue: 10,
+                    endValue: -20,
+                    unit: 'vh',
+                    property: 'translateY',
+                },
+                {
+                    startValue: 0,
+                    endValue: 1,
+                    property: 'opacity',
+                },
+            ],
+        },
+    ];
+
+    const formParallaxData = [
+        {
+            start: `.${triggerClass}`,
+            startOffset: '25vh',
+            duration: '18vh',
+            properties: [
+                {
+                    startValue: 20,
+                    endValue: -0.5,
+                    unit: 'vh',
+                    property: 'translateY',
+                },
+                {
+                    startValue: 0,
+                    endValue: 1,
+                    property: 'opacity',
+                },
+            ],
+        },
+    ];
+
     return (
         <div className={classes.root} id="contact">
             <BlockTitle title="Contact" subtitle="N'hésitez pas à me contacter" icon="passion" />
             <div className={classes.content} ref={ref}>
-                <Div className={classes.center} {...itemsAnimation(inView)}>
-                    <Div className={classes.left} {...itemAnimation}>
+                <div className={classes.center}>
+                    <PlxComponent
+                        className={classes.left}
+                        parallaxData={textParallaxData}
+                        triggerClass={triggerClass}
+                        trigger={20}>
                         <h6>
                             Vous recherchez un designer ou un développeur ? Laissez-moi un message, je vous répondrai
                             rapidement !
@@ -273,9 +322,9 @@ const Contact: FC = () => {
                                 </Div>
                             ))}
                         </Div>
-                    </Div>
-                    <motion.form className={classes.right} onSubmit={onSubmit} {...itemAnimation}>
-                        <div className={classes.formContainer}>
+                    </PlxComponent>
+                    <PlxComponent className={classes.right} parallaxData={formParallaxData} triggerClass={triggerClass}>
+                        <form className={classes.formContainer} onSubmit={onSubmit}>
                             <div className={classes.field}>
                                 <input
                                     placeholder="Votre nom"
@@ -312,9 +361,9 @@ const Contact: FC = () => {
                             <div className={classes.buttonContainer}>
                                 <Button text="Envoyer" type="submit" className={classes.button} />
                             </div>
-                        </div>
-                    </motion.form>
-                </Div>
+                        </form>
+                    </PlxComponent>
+                </div>
             </div>
         </div>
     );
