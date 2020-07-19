@@ -13,13 +13,23 @@ type Props = {
     triggerlassName?: ReactNode;
     id?: string;
     trigger?: number;
+    tagName?: string;
 };
 
-const PlxComponent: FC<Props> = ({ className, parallaxData, triggerClass, children, triggerlassName, id, trigger }) => {
+const PlxComponent: FC<Props> = ({
+    className,
+    parallaxData,
+    triggerClass,
+    children,
+    triggerlassName,
+    id,
+    trigger,
+    tagName,
+}) => {
     const isMobile = useSelector(screenState);
 
-    const Component = !isMobile ? Plx : 'div';
-    const otherProps = isMobile ? {} : { parallaxData };
+    const Component = !isMobile ? Plx : tagName ? tagName : 'div';
+    const otherProps = isMobile ? {} : { parallaxData, tagName };
     return (
         <Component {...otherProps} className={className} id={id}>
             {!isMobile && (
