@@ -5,9 +5,9 @@ import { useDispatch } from 'react-redux';
 import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
-import Competences from '../components/home/Competences';
-import Menu from '../components/menu/Menu';
+// import Menu from '../components/menu/Menu';
 import Header from '../components/project/Header';
+import Content from '../components/project/Content';
 
 const useStyles = createUseStyles({
     root: {
@@ -37,7 +37,7 @@ const Project = () => {
             {/* <Menu /> */}
             <Header />
             <div className={classes.main}>
-                <Competences />
+                <Content />
             </div>
         </div>
     );
