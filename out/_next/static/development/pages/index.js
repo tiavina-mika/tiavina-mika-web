@@ -2619,27 +2619,31 @@ var Post = function Post(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./About */ "./components/home/presentation/About.tsx");
-/* harmony import */ var _Common_PlxComponent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Common/PlxComponent */ "./components/Common/PlxComponent.tsx");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About */ "./components/home/presentation/About.tsx");
+/* harmony import */ var _Common_PlxComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Common/PlxComponent */ "./components/Common/PlxComponent.tsx");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+
+
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\presentation\\Presentation.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])({
-  presentation: {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])({
+  presentation: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
     composes: 'flexRow flexEnd stretchSelf',
-    height: '100vh' // background: `linear-gradient(180deg, rgba(11,24,46,0) 0%, rgba(0,0,0,0.2) 20.29%, rgba(0,0,0,0.1) 80.89%, rgba(0,0,0,0) 99.93%)`,
-    // backgroundColor: '#171717',
-    // backgroundImage: `url(images/bg.svg)`,
-
-  }
+    height: '100vh'
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgDown, {
+    backgroundColor: '#000'
+  })
 });
 var triggerClass = 'presentationHeader-trigger';
 
@@ -2655,7 +2659,7 @@ var Presentation = function Presentation() {
       property: 'backgroundColor'
     }]
   }];
-  return __jsx(_Common_PlxComponent__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  return __jsx(_Common_PlxComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
     className: classes.presentation,
     parallaxData: parallaxData,
     triggerClass: triggerClass,
@@ -2664,14 +2668,14 @@ var Presentation = function Presentation() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 42,
       columnNumber: 9
     }
-  }, __jsx(_About__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_About__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 48,
       columnNumber: 13
     }
   }));
@@ -2867,6 +2871,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
 /* harmony import */ var _Common_BlockTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Common/BlockTitle */ "./components/Common/BlockTitle.tsx");
 /* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var _ProjectLink__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ProjectLink */ "./components/home/projects/ProjectLink.tsx");
 
 
 
@@ -2874,6 +2879,7 @@ var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\projects\\MobileProjects.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+
 
 
 
@@ -2913,8 +2919,10 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
     body: {
       composes: 'flexColumn'
     },
+    content: {
+      padding: 10
+    },
     image: {
-      padding: 10,
       '& > img': {
         width: '100%'
       }
@@ -2973,14 +2981,14 @@ var MobileProjects = function MobileProjects(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 103,
       columnNumber: 9
     }
   }, __jsx(_Common_BlockTitle__WEBPACK_IMPORTED_MODULE_4__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, pageInfo, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 104,
       columnNumber: 13
     }
   })), __jsx("div", {
@@ -2988,7 +2996,7 @@ var MobileProjects = function MobileProjects(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 105,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2996,7 +3004,7 @@ var MobileProjects = function MobileProjects(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 106,
       columnNumber: 17
     }
   }, data.map(function (item, index) {
@@ -3006,15 +3014,15 @@ var MobileProjects = function MobileProjects(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 106,
+        lineNumber: 109,
         columnNumber: 29
       }
     }, __jsx("div", {
-      className: classes.image,
+      className: classes.content,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107,
+        lineNumber: 110,
         columnNumber: 33
       }
     }, __jsx("div", {
@@ -3022,60 +3030,42 @@ var MobileProjects = function MobileProjects(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108,
+        lineNumber: 111,
         columnNumber: 37
       }
     }, __jsx("span", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 109,
+        lineNumber: 112,
         columnNumber: 41
       }
-    }, item.title)), __jsx("img", {
+    }, item.title)), __jsx("div", {
+      className: classes.image,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 114,
+        columnNumber: 37
+      }
+    }, __jsx("img", {
       src: "/images/".concat(item.image),
       alt: "",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 111,
-        columnNumber: 37
-      }
-    }), __jsx("div", {
-      className: classes.linkContainer,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 112,
-        columnNumber: 37
-      }
-    }, __jsx("a", {
-      href: "#",
-      className: classes.link,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 113,
+        lineNumber: 115,
         columnNumber: 41
       }
-    }, __jsx("span", {
+    })), __jsx(_ProjectLink__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      url: item.link,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 114,
-        columnNumber: 45
+        lineNumber: 117,
+        columnNumber: 37
       }
-    }, "Voir le projet"), __jsx("img", {
-      src: "/images/icons/enter.svg",
-      alt: "",
-      className: classes.rightArrowIcon,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 115,
-        columnNumber: 45
-      }
-    })))));
+    })));
   }))));
 };
 
@@ -3098,6 +3088,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-plx */ "./node_modules/react-plx/lib/index.js");
 /* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_plx__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _ProjectLink__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ProjectLink */ "./components/home/projects/ProjectLink.tsx");
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\projects\\PlxLayout.tsx";
 
@@ -3106,61 +3097,85 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var SYSTEM_CONTENT_BLOCK_WIDTH = 380;
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])({
-  root: {
-    composes: 'flexRow justifyCenter',
-    height: '280vh',
-    width: '100%'
-  },
-  textBlockRoot: {
-    composes: 'textBlock',
-    maxWidth: SYSTEM_CONTENT_BLOCK_WIDTH
-  },
-  textPlx: {
-    maxWidth: SYSTEM_CONTENT_BLOCK_WIDTH,
-    top: '20%',
-    opacity: 0,
-    position: 'fixed',
-    transform: 'translateX(-20vw)'
-  },
-  reverseTextPlx: {
-    transform: 'translateX(0vw)'
-  },
-  imageBlockRoot: {
-    composes: 'flexColumn alignCenter justifyCenter'
-  },
-  imageBlockReverse: {
-    order: -1
-  },
-  img: {
-    width: '100%',
-    margin: 0,
-    transform: 'translateY(50%)'
-  },
-  imagePlx: {
-    pointerEvents: 'none',
-    bottom: 0,
-    opacity: 0,
-    position: 'fixed',
-    left: '13vw'
-  },
-  textTrigger: {
-    marginTop: '120vh'
-  },
-  imageTrigger: {
-    marginTop: '50vh'
-  },
-  scrollY: {
-    height: '200vh'
-  }
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])(function (theme) {
+  return {
+    root: {
+      composes: 'flexRow justifyCenter',
+      height: '280vh',
+      width: '100%'
+    },
+    textBlockRoot: {
+      composes: 'textBlock',
+      maxWidth: SYSTEM_CONTENT_BLOCK_WIDTH
+    },
+    textPlx: {
+      maxWidth: SYSTEM_CONTENT_BLOCK_WIDTH,
+      top: '20%',
+      opacity: 0,
+      position: 'fixed',
+      transform: 'translateX(-20vw)'
+    },
+    reverseTextPlx: {
+      transform: 'translateX(0vw)'
+    },
+    imageBlockRoot: {
+      composes: 'flexColumn alignCenter justifyCenter'
+    },
+    imageBlockReverse: {
+      order: -1
+    },
+    img: {
+      width: '100%',
+      margin: 0,
+      transform: 'translateY(50%)'
+    },
+    imagePlx: {
+      pointerEvents: 'none',
+      bottom: 0,
+      opacity: 0,
+      position: 'fixed',
+      left: '13vw'
+    },
+    textTrigger: {
+      marginTop: '120vh'
+    },
+    imageTrigger: {
+      marginTop: '50vh'
+    },
+    scrollY: {
+      height: '200vh'
+    },
+    description: {
+      composes: 'font-Montserrat-regular',
+      lineHeight: 1.6
+    },
+    subtitle: {
+      composes: 'font-tungsten-regular',
+      fontSize: 32,
+      letterSpacing: '0.16em',
+      color: theme.color.subtitle,
+      marginTop: theme.spacing(2),
+      marginBottom: theme.spacing(2)
+    },
+    link: {
+      marginTop: theme.spacing(6),
+      justifyContent: 'flex-start !important'
+    },
+    linkText: {
+      justifyContent: 'flex-start !important'
+    }
+  };
 });
 
 var PlxLayout = function PlxLayout(_ref) {
   var image = _ref.image,
       reverse = _ref.reverse,
       title = _ref.title,
-      description = _ref.description;
+      description = _ref.description,
+      subtitle = _ref.subtitle,
+      link = _ref.link;
   var classes = useStyles();
   var triggerClass = title.split(' ').join('-') + '-trigger';
   var textTriggerClass = 'text' + triggerClass;
@@ -3231,7 +3246,7 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 174,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -3239,7 +3254,7 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155,
+      lineNumber: 175,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3247,7 +3262,7 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156,
+      lineNumber: 176,
       columnNumber: 17
     }
   }), __jsx(react_plx__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -3256,29 +3271,48 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157,
+      lineNumber: 177,
       columnNumber: 17
     }
-  }, __jsx("h1", {
+  }, __jsx("h2", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160,
+      lineNumber: 180,
       columnNumber: 21
     }
-  }, title), __jsx("div", {
+  }, title), __jsx("h3", {
+    className: classes.subtitle,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161,
+      lineNumber: 181,
       columnNumber: 21
     }
-  }, description))), __jsx("div", {
+  }, subtitle), __jsx("div", {
+    className: classes.description,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 182,
+      columnNumber: 21
+    }
+  }, description), __jsx(_ProjectLink__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    url: link,
+    className: classes.link,
+    linkClassName: classes.linkText,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 183,
+      columnNumber: 21
+    }
+  }))), __jsx("div", {
     className: Object(clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.imageBlockRoot, reverse ? classes.imageBlockReverse : null),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164,
+      lineNumber: 186,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3286,7 +3320,7 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165,
+      lineNumber: 187,
       columnNumber: 17
     }
   }), __jsx(react_plx__WEBPACK_IMPORTED_MODULE_2___default.a, {
@@ -3295,7 +3329,7 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166,
+      lineNumber: 188,
       columnNumber: 17
     }
   }, __jsx("img", {
@@ -3305,7 +3339,7 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 167,
+      lineNumber: 189,
       columnNumber: 21
     }
   })), __jsx("div", {
@@ -3313,13 +3347,95 @@ var PlxLayout = function PlxLayout(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 169,
+      lineNumber: 191,
       columnNumber: 17
     }
   })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PlxLayout);
+
+/***/ }),
+
+/***/ "./components/home/projects/ProjectLink.tsx":
+/*!**************************************************!*\
+  !*** ./components/home/projects/ProjectLink.tsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+var _this = undefined,
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\projects\\ProjectLink.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])({
+  linkContainer: {
+    composes: 'flexRow justifyCenter'
+  },
+  link: {
+    composes: 'flexRow alignCenter justifyCenter',
+    color: '#fff',
+    textDecoration: 'none',
+    width: 250
+  },
+  rightArrowIcon: {
+    marginLeft: 10
+  }
+});
+
+var ProjectLink = function ProjectLink(_ref) {
+  var url = _ref.url,
+      text = _ref.text,
+      className = _ref.className,
+      linkClassName = _ref.linkClassName;
+  var classes = useStyles();
+  return __jsx("div", {
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])(className, classes.linkContainer),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25,
+      columnNumber: 9
+    }
+  }, __jsx("a", {
+    href: url || '#',
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])(classes.link, linkClassName),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26,
+      columnNumber: 13
+    }
+  }, __jsx("span", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27,
+      columnNumber: 17
+    }
+  }, text || 'Voir le projet'), __jsx("img", {
+    src: "/images/icons/enter.svg",
+    alt: "",
+    className: classes.rightArrowIcon,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28,
+      columnNumber: 17
+    }
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (ProjectLink);
 
 /***/ }),
 
@@ -3355,13 +3471,15 @@ var pageInfo = {
 var data = [{
   image: 'mac.png',
   title: 'Some Project Title here',
+  subtitle: 'Some Subtitle',
   description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-  link: 'htttps://www.facebook.com'
+  link: 'https://www.linkedin.com/in/tiavina-michael-ralainirina/'
 }, {
   image: 'mac.png',
   title: 'Some Project Title here 2',
+  subtitle: 'Some Subtitle 2',
   description: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
-  link: 'htttps://www.facebook.com'
+  link: 'https://www.linkedin.com/in/tiavina-michael-ralainirina/'
 }];
 
 var Projects = function Projects() {
@@ -3372,7 +3490,7 @@ var Projects = function Projects() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 38,
       columnNumber: 9
     }
   }) : __jsx(_DesktopProjects__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -3381,7 +3499,7 @@ var Projects = function Projects() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 40,
       columnNumber: 9
     }
   });
@@ -3534,7 +3652,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
     top: 50,
     left: 0,
     fontSize: 18
-  }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_menuRoot, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
+  }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_menuRoot, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
     flexDirection: 'column',
     alignSelf: 'stretch',
     alignItems: 'flex-start',
@@ -3546,13 +3664,15 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
   fixedMenuRoot: {
     top: 0
   },
-  nonFixedMenuRoot: {
+  nonFixedMenuRoot: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
     top: 50
-  },
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
+    top: 0
+  }),
   logo: (_logo = {
     marginLeft: 20,
     flex: 2
-  }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_logo, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
+  }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_logo, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
     display: 'flex',
     justifyContent: 'space-between',
     alignSelf: 'stretch',
@@ -3562,19 +3682,19 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
   }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_logo, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].xlDown, {
     flex: 1
   }), _logo),
-  fixedLogo: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdUp, {
+  fixedLogo: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
     backgroundColor: '#000',
     border: '5px solid #000'
   }),
   menus: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
     composes: 'flexRow',
     flex: 1
-  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
     flexDirection: 'column',
     paddingTop: 15,
     paddingBottom: 15
   }),
-  fixedMenu: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdUp, {
+  fixedMenu: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
     display: 'flex',
     alignItems: 'center',
     backgroundColor: '#000',
@@ -3584,7 +3704,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
   }),
   menuIcon: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
     cursor: 'pointer'
-  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdUp, {
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
     display: 'none'
   }),
   logoIcon: {
@@ -3654,7 +3774,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 145,
       columnNumber: 9
     }
   }), links.map(function (link, index) {
@@ -3663,7 +3783,7 @@ var Menu = function Menu() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 145,
+        lineNumber: 148,
         columnNumber: 21
       }
     }));
@@ -3675,7 +3795,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 155,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -3683,7 +3803,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 156,
       columnNumber: 13
     }
   }, __jsx("img", {
@@ -3693,7 +3813,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 157,
       columnNumber: 17
     }
   }), __jsx("img", {
@@ -3704,7 +3824,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159,
+      lineNumber: 162,
       columnNumber: 17
     }
   })), isMobile && openMenu && menus, !isMobile && menus);
