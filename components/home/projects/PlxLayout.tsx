@@ -4,6 +4,7 @@ import Plx from 'react-plx';
 import clsx from 'clsx';
 
 import { ProjectsProps } from './Projects';
+import ProjectLink from './ProjectLink';
 
 const SYSTEM_CONTENT_BLOCK_WIDTH = 380;
 
@@ -66,13 +67,20 @@ const useStyles = createUseStyles((theme: any) => ({
         marginTop: theme.spacing(2),
         marginBottom: theme.spacing(2),
     },
+    link: {
+        marginTop: theme.spacing(6),
+        justifyContent: 'flex-start !important',
+    },
+    linkText: {
+        justifyContent: 'flex-start !important',
+    },
 }));
 
 type Props = {
     reverse?: boolean;
 };
 
-const PlxLayout: FC<Props & ProjectsProps> = ({ image, reverse, title, description, subtitle }) => {
+const PlxLayout: FC<Props & ProjectsProps> = ({ image, reverse, title, description, subtitle, link }) => {
     const classes = useStyles();
     const triggerClass = title.split(' ').join('-') + '-trigger';
     const textTriggerClass = 'text' + triggerClass;
@@ -172,6 +180,7 @@ const PlxLayout: FC<Props & ProjectsProps> = ({ image, reverse, title, descripti
                     <h2>{title}</h2>
                     <h3 className={classes.subtitle}>{subtitle}</h3>
                     <div className={classes.description}>{description}</div>
+                    <ProjectLink url={link} className={classes.link} linkClassName={classes.linkText} />
                 </Plx>
             </div>
             <div className={clsx(classes.imageBlockRoot, reverse ? classes.imageBlockReverse : null)}>

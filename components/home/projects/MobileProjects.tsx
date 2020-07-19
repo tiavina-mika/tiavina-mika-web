@@ -4,6 +4,7 @@ import { createUseStyles } from 'react-jss';
 import BlockTitle from '../../Common/BlockTitle';
 import { media, lgScreenWidth } from '../../../utils/constants';
 import { ProjectsProps, PageInfoProps } from './Projects';
+import ProjectLink from './ProjectLink';
 
 const useStyles = createUseStyles((theme: any) => ({
     rowCenter: {
@@ -113,16 +114,7 @@ const MobileProjects: FC<Props> = ({ data, pageInfo }) => {
                                     <div className={classes.image}>
                                         <img src={`/images/${item.image}`} alt="" />
                                     </div>
-                                    <div className={classes.linkContainer}>
-                                        <a href="#" className={classes.link}>
-                                            <span>Voir le projet</span>
-                                            <img
-                                                src="/images/icons/enter.svg"
-                                                alt=""
-                                                className={classes.rightArrowIcon}
-                                            />
-                                        </a>
-                                    </div>
+                                    <ProjectLink url={item.link} />
                                 </div>
                             </div>
                         )
