@@ -18,7 +18,7 @@ const useStyles = createUseStyles({
         top: 50,
         left: 0,
         fontSize: 18,
-        [media.mdDown]: {
+        [media.lgDown]: {
             flexDirection: 'column',
             alignSelf: 'stretch',
             alignItems: 'flex-start',
@@ -34,11 +34,14 @@ const useStyles = createUseStyles({
     },
     nonFixedMenuRoot: {
         top: 50,
+        [media.lgDown]: {
+            top: 0,
+        },
     },
     logo: {
         marginLeft: 20,
         flex: 2,
-        [media.mdDown]: {
+        [media.lgDown]: {
             display: 'flex',
             justifyContent: 'space-between',
             alignSelf: 'stretch',
@@ -51,7 +54,7 @@ const useStyles = createUseStyles({
         },
     },
     fixedLogo: {
-        [media.mdUp]: {
+        [media.lgUp]: {
             backgroundColor: '#000',
             border: '5px solid #000',
         },
@@ -59,14 +62,14 @@ const useStyles = createUseStyles({
     menus: {
         composes: 'flexRow',
         flex: 1,
-        [media.mdDown]: {
+        [media.lgDown]: {
             flexDirection: 'column',
             paddingTop: 15,
             paddingBottom: 15,
         },
     },
     fixedMenu: {
-        [media.mdUp]: {
+        [media.lgUp]: {
             display: 'flex',
             alignItems: 'center',
             backgroundColor: '#000',
@@ -77,7 +80,7 @@ const useStyles = createUseStyles({
     },
     menuIcon: {
         cursor: 'pointer',
-        [media.mdUp]: {
+        [media.lgUp]: {
             display: 'none',
         },
     },

@@ -43,8 +43,10 @@ const useStyles = createUseStyles((theme: any) => ({
     body: {
         composes: 'flexColumn',
     },
-    image: {
+    content: {
         padding: 10,
+    },
+    image: {
         '& > img': {
             width: '100%',
         },
@@ -104,11 +106,13 @@ const MobileProjects: FC<Props> = ({ data, pageInfo }) => {
                     {data.map(
                         (item: ProjectsProps, index: number): ReactNode => (
                             <div className={classes.item} key={index}>
-                                <div className={classes.image}>
+                                <div className={classes.content}>
                                     <div className={classes.title}>
                                         <span>{item.title}</span>
                                     </div>
-                                    <img src={`/images/${item.image}`} alt="" />
+                                    <div className={classes.image}>
+                                        <img src={`/images/${item.image}`} alt="" />
+                                    </div>
                                     <div className={classes.linkContainer}>
                                         <a href="#" className={classes.link}>
                                             <span>Voir le projet</span>
