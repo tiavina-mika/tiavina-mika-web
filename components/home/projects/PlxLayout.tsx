@@ -7,7 +7,7 @@ import { ProjectsProps } from './Projects';
 
 const SYSTEM_CONTENT_BLOCK_WIDTH = 380;
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: 'flexRow justifyCenter',
         height: '280vh',
@@ -54,13 +54,25 @@ const useStyles = createUseStyles({
     scrollY: {
         height: '200vh',
     },
-});
+    description: {
+        composes: 'font-Montserrat-regular',
+        lineHeight: 1.6,
+    },
+    subtitle: {
+        composes: 'font-tungsten-regular',
+        fontSize: 32,
+        letterSpacing: '0.16em',
+        color: theme.color.subtitle,
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+    },
+}));
 
 type Props = {
     reverse?: boolean;
 };
 
-const PlxLayout: FC<Props & ProjectsProps> = ({ image, reverse, title, description }) => {
+const PlxLayout: FC<Props & ProjectsProps> = ({ image, reverse, title, description, subtitle }) => {
     const classes = useStyles();
     const triggerClass = title.split(' ').join('-') + '-trigger';
     const textTriggerClass = 'text' + triggerClass;
@@ -157,8 +169,9 @@ const PlxLayout: FC<Props & ProjectsProps> = ({ image, reverse, title, descripti
                 <Plx
                     parallaxData={textParallaxData}
                     className={clsx(classes.textPlx, reverse ? classes.reverseTextPlx : null)}>
-                    <h1>{title}</h1>
-                    <div>{description}</div>
+                    <h2>{title}</h2>
+                    <h3 className={classes.subtitle}>{subtitle}</h3>
+                    <div className={classes.description}>{description}</div>
                 </Plx>
             </div>
             <div className={clsx(classes.imageBlockRoot, reverse ? classes.imageBlockReverse : null)}>

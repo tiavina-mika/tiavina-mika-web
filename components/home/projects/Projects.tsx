@@ -15,6 +15,7 @@ const data = [
     {
         image: 'mac.png',
         title: 'Some Project Title here',
+        subtitle: 'Some Subtitle',
         description:
             'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
         link: 'htttps://www.facebook.com',
@@ -22,12 +23,13 @@ const data = [
     {
         image: 'mac.png',
         title: 'Some Project Title here 2',
+        subtitle: 'Some Subtitle 2',
         description:
             'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.',
         link: 'htttps://www.facebook.com',
     },
 ];
-export type ProjectsProps = { image: string; title: string; description?: string; link?: string };
+export type ProjectsProps = { image: string; title: string; description?: string; link?: string; subtitle?: string };
 export type PageInfoProps = { title: string; subtitle: string; icon: string };
 const Projects: FC = () => {
     const isMobile = useSelector(screenState);
