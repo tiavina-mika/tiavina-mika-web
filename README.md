@@ -10,4 +10,4 @@ Javascript, TypeScript, Webpack, React, Redux, Netlify
 Python, Flask
 
 ### Base de données:
-MongoDB, MongoEngine (Python MongoDB ORM)
+MongoDB, MongoEngine (Python MongoDB ORM).
