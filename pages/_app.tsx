@@ -9,9 +9,8 @@ import '../styles.css';
 
 const theme = {
     color: {
-        primary: '#cf1119',
-        // secondary: '#373432',
-        secondary: '#27282A',
+        active: '#13BB70', //green
+        secondary: '#5B606B', //blue dark
         regular: '#6D6D6D',
         subtitle: '#52575f',
         grey: '#52575f',

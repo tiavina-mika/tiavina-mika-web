@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'DINCondensed';
+    src: url('/fonts/DINWeb-CondMedium.ttf');
+    /* font-weight: bold; */
+    font-display: auto;
+    font-style: normal;
+}
+@font-face {
     font-family: 'Prequel';
     src: url('/fonts/Prequel-Regular.ttf');
     /* font-weight: bold; */
@@ -53,6 +60,17 @@ body {
 h6, h3, h4, h2 {
     margin: 0;
 }
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.green {
+    background-color: green;
+}
+
+/* Montserrat */
 .font-Montserrat {
     font-family: 'Montserrat', sans-serif;
 }
@@ -76,6 +94,8 @@ h6, h3, h4, h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
+
+/* ProximaNova */
 .font-ProximaNova-bold {
     font-family: 'Proxima Nova', sans-serif;
     font-weight: bold;
@@ -83,6 +103,16 @@ h6, h3, h4, h2 {
 .font-ProximaNova-extrabold {
     font-family: 'Proxima Nova', sans-serif;
     font-weight: 600;
+}
+.font-ProximaNova-regular {
+    font-family: 'Proxima Nova', sans-serif;
+    font-weight: 400;
+  }
+
+/* DIN */
+.font-DINCondensed-medium {
+    font-family: 'DINCondensed', sans-serif;
+    font-weight: 500;
 }
 .font-Poppins-bold {
     font-family: 'Poppins', sans-serif;

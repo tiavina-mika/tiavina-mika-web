@@ -5,14 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
-import Competences from '../components/home/Competences';
-import About from '../components/home/about/About';
-import Presentation from '../components/home/presentation/Presentation';
-import Projects from '../components/home/projects/Projects';
-import Skills from '../components/home/Skills';
-import Interests from '../components/home/Interests';
-import Contact from '../components/home/Contact';
-import Menu from '../components/menu/Menu';
+import Header from '../common/Header';
 
 const useStyles = createUseStyles({
     window: {
@@ -50,6 +43,8 @@ const useStyles = createUseStyles({
     },
 });
 
+const headerDescription: string = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
+
 const Home = () => {
     const size = useWindowSize();
     const classes = useStyles({ size });
@@ -61,21 +56,7 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
-            <Menu />
-            <Presentation />
-            <div className={classes.main}>
-                {/* <div className={clsx(classes.left, classes.window)}> */}
-                <Competences />
-                <About />
-                <Projects />
-                <Skills />
-                <Interests />
-                <Contact />
-                {/* </div> */}
-                {/* <div className={clsx(classes.right, classes.window)}>
-                    <AboutSidebar />
-                </div> */}
-            </div>
+            <Header title="Learn Git and GitHub without any code!" description={headerDescription} />
         </div>
     );
 };

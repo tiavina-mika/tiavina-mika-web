@@ -2,8 +2,8 @@ import React from 'react';
 // import Head from 'next/head';
 import { createUseStyles } from 'react-jss';
 
-import Block1 from '../../components/home/presentation/Presentation';
-import Block2 from '../../components/home/Domain';
+import Block1 from '../../components2/home/presentation/Presentation';
+import Block2 from '../../components2/home/Domain';
 
 const useStyles = createUseStyles({
     root: {
