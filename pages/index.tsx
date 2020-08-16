@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
-import Header from '../common/Header';
+import Header from '../components/shared/Header';
 
 const useStyles = createUseStyles({
     window: {
