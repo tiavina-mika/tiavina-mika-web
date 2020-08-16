@@ -74,7 +74,7 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { title: string; description?: string }
+type Props = { title: string; description?: string };
 const Header: FC<Props> = ({ title, description }) => {
     const classes = useStyles();
 
