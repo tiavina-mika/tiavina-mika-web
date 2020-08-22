@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import Title from './Title';
+import Text from './Text';
 
 const menus = [
     {
@@ -59,13 +61,6 @@ const useStyles = createUseStyles((theme: any) => ({
         width: '75%',
         marginTop: theme.spacing(22),
     },
-    title: {
-        composes: 'flexRow stretchSelf font-DINCondensed-medium',
-        lineHeight: '1.25em',
-        letterSpacing: 4,
-        textTransform: 'uppercase',
-        webkitFontSmoothing: 'antialiased',
-    },
     descriptionContainer: {
         composes: 'flexRow stretchSelf font-ProximaNova-regular',
         lineHeight: '1.8em',
@@ -73,6 +68,8 @@ const useStyles = createUseStyles((theme: any) => ({
         color: theme.color.secondary,
     },
 }));
+
+const descriptionItem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
 type Props = { title: string; description?: string };
 const Header: FC<Props> = ({ title, description }) => {
@@ -100,14 +97,13 @@ const Header: FC<Props> = ({ title, description }) => {
             </div>
             {/* page title */}
             <div className={classes.titleContainer}>
-                <div className={classes.title}>
-                    <h1>{title}</h1>
+                <div>
+                    <Title text={title} />
+                    {/* <h1>{title}</h1> */}
                 </div>
                 {/* page title */}
                 <div className={classes.descriptionContainer}>
-                    <p>
-                        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`}
-                    </p>
+                    <Text text={description} tagName="p" />
                 </div>
             </div>
         </div>

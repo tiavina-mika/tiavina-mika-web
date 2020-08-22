@@ -38,7 +38,18 @@
     font-display: auto;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url('/fonts/Proxima-Nova-Regular.otf');
+    font-display: auto;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima Nova Light';
+    src: url('/fonts/Proxima-Nova-Light.otf');
+    font-display: auto;
+    font-style: normal;
+}
 @font-face {
     font-family: 'Karla Regular';
     src: url('/fonts/Karla-Regular.ttf');
@@ -97,17 +108,21 @@ h6, h3, h4, h2 {
 
 /* ProximaNova */
 .font-ProximaNova-bold {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Proxima Nova Bold', sans-serif;
     font-weight: bold;
 }
 .font-ProximaNova-extrabold {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Proxima Nova Medium', sans-serif;
     font-weight: 600;
 }
 .font-ProximaNova-regular {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'Proxima Nova Regular', sans-serif;
     font-weight: 400;
-  }
+}
+.font-ProximaNova-light {
+    font-family: 'Proxima Nova Light', sans-serif;
+    font-weight: 300;
+}
 
 /* DIN */
 .font-DINCondensed-medium {

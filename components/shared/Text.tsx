@@ -1,0 +1,21 @@
+import React, { FC, ReactType } from 'react';
+import { createUseStyles } from 'react-jss';
+import clsx from 'clsx';
+
+const useStyles = createUseStyles((theme: any) => ({
+    text: {
+        composes: 'flexRow stretchSelf font-ProximaNova-regular',
+        lineHeight: '1.8em',
+        fontSize: 24,
+        color: theme.color.secondary,
+    },
+}));
+
+type Props = { text: string; className?: string; tagName?: 'b' | 'p' };
+const Text: FC<Props> = ({ text, tagName, className }) => {
+    const classes = useStyles();
+    const Component = (tagName ? tagName : 'span') as ReactType;
+    return <Component className={clsx(classes.text, className)}>{text}</Component>;
+};
+
+export default Text;
