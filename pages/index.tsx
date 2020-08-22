@@ -6,7 +6,7 @@ import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
 import Header from '../components/shared/Header';
-import CompetencesSvg from '../components/home/competences/CompetencesSvg';
+import CompetencesSvg from '../components/home/competences/svg/CompetencesSvg';
 
 const useStyles = createUseStyles({
     window: {
