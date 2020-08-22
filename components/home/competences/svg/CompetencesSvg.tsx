@@ -42,7 +42,7 @@ const useStyles = createUseStyles({
         strokeWidth: 4.41,
     },
     cls11: { opacity: 0.15, composes: '$blendMode' },
-    cls12: { fill: '#def7eb', fillRule: 'evenod' },
+    cls12: { fill: '#bcffde', fillRule: 'evenod' },
     cls13: { fill: '#fff', fillRule: 'evenod' },
     cls14: { fill: '#fe0854' },
 });

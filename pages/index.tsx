@@ -6,7 +6,7 @@ import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
 import Header from '../components/shared/Header';
-import CompetencesSvg from '../components/home/competences/svg/CompetencesSvg';
+import Competences from '../components/home/competences';
 
 const useStyles = createUseStyles({
     window: {
@@ -58,7 +58,7 @@ const Home = () => {
     return (
         <div className={classes.root}>
             <Header title="Learn Git and GitHub without any code!" description={headerDescription} />
-            <CompetencesSvg />
+            <Competences />
         </div>
     );
 };
