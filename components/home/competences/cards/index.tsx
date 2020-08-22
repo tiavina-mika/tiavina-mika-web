@@ -8,12 +8,14 @@ const useStyles = createUseStyles({
     },
 });
 
+const cards = [0, 1];
 const Cards: FC = () => {
     const classes = useStyles();
     return (
         <div className={classes.cards}>
-            <Card />
-            <Card />
+            {cards.map((card, index) => {
+                <Card key={index} />
+            })}
         </div>
     );
 };
