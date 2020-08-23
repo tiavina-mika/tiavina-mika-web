@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
     },
 });
 
-const Mobile: FC = () => {
+const MobileIcon: FC = () => {
     const classes = useStyles();
     return (
         <g id="img-5" data-name="img">
@@ -33,4 +33,4 @@ const Mobile: FC = () => {
     );
 };
 
-export default Mobile;
+export default MobileIcon;

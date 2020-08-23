@@ -12,7 +12,7 @@ const useStyles = createUseStyles({
     },
 });
 
-const DesignSvg: FC = () => {
+const DesignIcon: FC = () => {
     const classes = useStyles();
     return (
         <g id="img">
@@ -38,4 +38,4 @@ const DesignSvg: FC = () => {
     );
 };
 
-export default DesignSvg;
+export default DesignIcon;

@@ -1,5 +1,7 @@
 import React, { FC, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
+import { competenseSvgTopY, competenseSvgBottomY } from '../../../../utils/constants';
+import { isTop } from '../../../../utils/utils';
 
 const useStyles = createUseStyles((theme: any) => ({
     dots: {
@@ -18,17 +20,22 @@ const useStyles = createUseStyles((theme: any) => ({
         fontWeight: 'bold',
     },
 }));
-type Props = { rect?: any; id: string; dotsPath: string; text: string; icon: ReactNode; x: number; y: number };
-const CompetencesBlock: FC<Props> = ({ id, x, y, dotsPath, icon, text }) => {
+type Props = { rect?: any; id: string; dotsPath: string; label: string; icon: ReactNode; x: number };
+const CompetencesBlock: FC<Props> = ({ id, x, dotsPath, icon, label }) => {
     const classes = useStyles();
+
     return (
         <g id={id + '-2'} data-name={id}>
             <path id={id + '-p'} className={classes.dots} d={dotsPath} transform="translate(2.95 -0.55)" />
             <g id={id + '-content'}>
                 {icon}
                 <g id="text-container" transform="translate(2.95 -0.55)">
-                    <text className={classes.text} x={x} y={y} id="text-path">
-                        {text}
+                    <text
+                        className={classes.text}
+                        x={x}
+                        y={isTop(id) ? competenseSvgTopY : competenseSvgBottomY}
+                        id={'text-path' + id}>
+                        {label}
                     </text>
                 </g>
             </g>
