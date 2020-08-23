@@ -13,7 +13,9 @@ const bottomY = 645;
 const topY = 125;
 
 const useStyles = createUseStyles({
-    compentencesRoot: {},
+    compentencesRoot: {
+        composes: 'flexRow justifyCenter flex1',
+    },
     isolate: { isolation: 'isolate' },
     blendMode: { mixBlendMode: 'multiply' },
     fillNone: { fill: 'none' },
