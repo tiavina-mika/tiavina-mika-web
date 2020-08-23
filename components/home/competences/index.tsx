@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 import Plx from 'react-plx';
 import clsx from 'clsx';
 
-import CompetencesSvg from './svg/CompetencesSvg';
+import CompetencesSvg from './svg';
 import Cards from './cards';
 import WebIcon from './svg/WebIcon';
 import DatabaseIcon from './svg/DatabaseIcon';
