@@ -12,10 +12,10 @@ const useStyles = createUseStyles({
         composes: 'flexColumn justifyCenter alignCenter',
         position: 'absolute',
     },
-    firstLogo: {
+    firstCard: {
         transform: 'translateY(-10vh)',
     },
-    logo: {
+    otherCard: {
         transform: `translateY(${y}vh)`,
         opacity: 0,
     },
@@ -54,34 +54,8 @@ const getOffsets = (index: number): any => {
     return offsetAnimationEnd;
 };
 
-const cards = [
-    {
-        id: '1',
-        color: 'yellow',
-    },
-    {
-        id: '2',
-        color: 'gray',
-    },
-    {
-        id: '3',
-        color: 'purple',
-    },
-    {
-        id: '4',
-        color: 'blue',
-    },
-    {
-        id: '5',
-        color: '#000',
-    },
-    {
-        id: '6',
-        color: 'pink',
-    },
-];
-type Props = { triggerClassName: string };
-const Cards: FC<Props> = ({ triggerClassName }) => {
+type Props = { triggerClassName: string; items: any };
+const Cards: FC<Props> = ({ triggerClassName, items }) => {
     const classes = useStyles();
 
     const setParallaxData = (index: number): any => {
@@ -129,13 +103,12 @@ const Cards: FC<Props> = ({ triggerClassName }) => {
     return (
         <div className={classes.cardsRoot}>
             <div className={clsx(classes.cards, triggerClassName)}>
-                {cards.map((card, i) => (
+                {items.map((item, i) => (
                     <Card
                         key={i}
-                        className={i === 0 ? classes.firstLogo : classes.logo}
+                        className={i === 0 ? classes.firstCard : classes.otherCard}
                         parallaxData={setParallaxData(i)}
-                        bgColor={card.color}
-                        data={card}
+                        data={item}
                     />
                 ))}
             </div>

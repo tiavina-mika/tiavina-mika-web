@@ -13,19 +13,16 @@ const useStyles = createUseStyles({
         height: 410,
         width: 543,
         // marginBottom: theme.spacing(10),
+        backgroundColor: '#fff',
         position: 'absolute',
     },
 });
 
-type Props = { className: string; parallaxData?: any; bgColor: string; data: any };
-const Card: FC<Props> = ({ className, parallaxData, bgColor, data }) => {
+type Props = { className: string; parallaxData?: any; data: any };
+const Card: FC<Props> = ({ className, parallaxData, data }) => {
     const classes = useStyles();
     return (
-        <Plx
-            className={clsx(classes.card, className)}
-            parallaxData={parallaxData}
-            style={{ backgroundColor: bgColor }}
-            id={data.color}>
+        <Plx className={clsx(classes.card, className)} parallaxData={parallaxData} id={data.color}>
             {data.id}
         </Plx>
     );

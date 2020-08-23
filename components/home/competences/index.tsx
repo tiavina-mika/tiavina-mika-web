@@ -6,6 +6,33 @@ import clsx from 'clsx';
 import CompetencesSvg from './svg/CompetencesSvg';
 import Cards from './cards';
 
+const competenceItems = [
+    {
+        id: '1',
+        name: 'web',
+    },
+    {
+        id: '2',
+        name: 'mobile',
+    },
+    {
+        id: '3',
+        name: 'database',
+    },
+    {
+        id: '4',
+        name: 'design',
+    },
+    {
+        id: '5',
+        name: 'performance',
+    },
+    {
+        id: '6',
+        name: 'security',
+    },
+];
+
 const triggerClassName = 'cardsTrigger';
 
 const useStyles = createUseStyles({
@@ -62,7 +89,7 @@ const Competences: FC = () => {
             <div className={clsx(triggerClassName, classes.plxTrigger)} />
             <Plx parallaxData={parallaxData} className={classes.cardsPlx}>
                 <CompetencesSvg />
-                <Cards triggerClassName={triggerClassName} />
+                <Cards triggerClassName={triggerClassName} items={competenceItems} />
             </Plx>
             {/* ------ simulate the long scollY ------ */}
             <div className={classes.scrollY} />
