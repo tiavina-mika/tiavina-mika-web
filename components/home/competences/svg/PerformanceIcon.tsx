@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import { activeColor } from '../../../../utils/constants';
 
 const useStyles = createUseStyles({
     fillWhite: { fill: '#fff' },
     cls5: { fill: '#bdefd1' },
-    cls8: { fill: '#13bb70' },
+    cls8: { fill: activeColor },
 });
 
 const PerformanceIcon: FC = () => {

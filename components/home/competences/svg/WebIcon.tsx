@@ -1,24 +1,17 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import { activeColor } from '../../../../utils/constants';
 
 const useStyles = createUseStyles({
     isolate: { isolation: 'isolate' },
     blendMode: { mixBlendMode: 'multiply' },
     fillWhite: { fill: '#fff' },
-    cls4: {
-        composes: '$isolate $fillNone',
-        stroke: '#63bf91',
-        strokeWidth: 3.39,
-        strokeDasharray: 5.08,
-        opacity: 0.4,
-    },
     cls5: { fill: '#bdefd1' },
     cls6: {
-        composes: '$fillNone',
-        stroke: '#13bb70',
+        fill: 'none',
+        stroke: activeColor,
         strokeWidth: 4.01,
     },
-    cls7: { stroke: '#5e709d' },
 });
 
 const WebIcon: FC = () => {

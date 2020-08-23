@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import { activeColor } from '../../../../utils/constants';
 
 const useStyles = createUseStyles({
-    fillNone: { fill: 'none' },
     fillWhite: { fill: '#fff' },
     cls5: { fill: '#bdefd1' },
     cls10: {
-        composes: '$fillNone',
-        stroke: '#13bb70',
+        fill: 'none',
+        stroke: activeColor,
         strokeWidth: 4.41,
     },
 });
