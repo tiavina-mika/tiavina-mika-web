@@ -6,10 +6,11 @@ import { AnimatePresence } from 'framer-motion';
 
 import store from '../reducers/store';
 import '../styles.css';
+import { activeColor } from '../utils/constants';
 
 const theme = {
     color: {
-        active: '#13BB70', //green
+        active: activeColor, //green
         secondary: '#5B606B', //blue dark
         regular: '#6D6D6D',
         subtitle: '#52575f',
