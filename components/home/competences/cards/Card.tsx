@@ -18,11 +18,15 @@ const useStyles = createUseStyles({
     },
 });
 
-type Props = { className: string; parallaxData?: any; data: any };
-const Card: FC<Props> = ({ className, parallaxData, data }) => {
+type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void };
+const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd }) => {
     const classes = useStyles();
     return (
-        <Plx className={clsx(classes.card, className)} parallaxData={parallaxData} id={data.color}>
+        <Plx
+            className={clsx(classes.card, className)}
+            parallaxData={parallaxData}
+            id={data.color}
+            onPlxEnd={() => onPlxEnd(data.name)}>
             {data.id}
         </Plx>
     );

@@ -50,7 +50,8 @@ const useStyles = createUseStyles({
     cls14: { fill: '#fe0854' },
 });
 
-const CompetencesSvg: FC = () => {
+type Props = { current: string };
+const CompetencesSvg: FC<Props> = ({ current }) => {
     const classes = useStyles();
     return (
         <div className={classes.compentencesRoot}>

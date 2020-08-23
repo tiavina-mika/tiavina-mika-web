@@ -54,8 +54,8 @@ const getOffsets = (index: number): any => {
     return offsetAnimationEnd;
 };
 
-type Props = { triggerClassName: string; items: any };
-const Cards: FC<Props> = ({ triggerClassName, items }) => {
+type Props = { triggerClassName: string; items: any; onCurrentStep: (value: string) => void };
+const Cards: FC<Props> = ({ triggerClassName, items, onCurrentStep }) => {
     const classes = useStyles();
 
     const setParallaxData = (index: number): any => {
@@ -109,6 +109,7 @@ const Cards: FC<Props> = ({ triggerClassName, items }) => {
                         className={i === 0 ? classes.firstCard : classes.otherCard}
                         parallaxData={setParallaxData(i)}
                         data={item}
+                        onPlxEnd={onCurrentStep}
                     />
                 ))}
             </div>

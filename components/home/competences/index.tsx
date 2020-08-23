@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import React, { FC, useMemo, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import Plx from 'react-plx';
 import clsx from 'clsx';
@@ -60,6 +60,11 @@ const useStyles = createUseStyles({
 
 const Competences: FC = () => {
     const classes = useStyles();
+    const [currentStep, setCurrentStep] = useState('');
+
+    const handleCurrentStep = (name: string): void => {
+        setCurrentStep(name);
+    };
 
     const parallaxData = useMemo(
         () => [
@@ -88,8 +93,8 @@ const Competences: FC = () => {
         <div className={classes.competences}>
             <div className={clsx(triggerClassName, classes.plxTrigger)} />
             <Plx parallaxData={parallaxData} className={classes.cardsPlx}>
-                <CompetencesSvg />
-                <Cards triggerClassName={triggerClassName} items={competenceItems} />
+                <CompetencesSvg current={currentStep} />
+                <Cards triggerClassName={triggerClassName} items={competenceItems} onCurrentStep={handleCurrentStep} />
             </Plx>
             {/* ------ simulate the long scollY ------ */}
             <div className={classes.scrollY} />
