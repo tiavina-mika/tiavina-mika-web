@@ -1,9 +1,9 @@
 import React, { FC, ReactNode } from 'react';
-import { createUseStyles } from 'react-jss';
+import { createUseStyles, useTheme } from 'react-jss';
 import { competenseSvgTopY, competenseSvgBottomY } from '../../../../utils/constants';
 import { isTop } from '../../../../utils/utils';
 
-const useStyles = createUseStyles((theme: any) => ({
+const useStyles = createUseStyles({
     dots: {
         fill: 'none',
         isolation: 'isolate',
@@ -15,22 +15,30 @@ const useStyles = createUseStyles((theme: any) => ({
     rect: { fill: '#bdefd1' },
     text: {
         composes: 'font-ProximaNova-regular',
-        fill: theme.color.secondary,
         fontSize: 18,
         fontWeight: 'bold',
     },
-}));
-type Props = { rect?: any; id: string; dotsPath: string; label: string; icon: ReactNode; x: number };
-const CompetencesBlock: FC<Props> = ({ id, x, dotsPath, icon, label }) => {
+});
+type Props = {
+    rect?: any;
+    id: string;
+    dotsPath: string;
+    label: string;
+    icon: (value?: boolean) => ReactNode;
+    x: number;
+    isCurrent: boolean;
+};
+const CompetencesBlock: FC<Props> = ({ id, x, dotsPath, icon, label, isCurrent }) => {
     const classes = useStyles();
-
+    const theme = useTheme();
     return (
         <g id={id + '-2'} data-name={id}>
             <path id={id + '-p'} className={classes.dots} d={dotsPath} transform="translate(2.95 -0.55)" />
             <g id={id + '-content'}>
-                {icon}
+                {icon(isCurrent)}
                 <g id="text-container" transform="translate(2.95 -0.55)">
                     <text
+                        fill={isCurrent ? '#fff' : (theme as any).color.secondary}
                         className={classes.text}
                         x={x}
                         y={isTop(id) ? competenseSvgTopY : competenseSvgBottomY}

@@ -3,8 +3,6 @@ import { createUseStyles } from 'react-jss';
 import { activeColor } from '../../../../utils/constants';
 
 const useStyles = createUseStyles({
-    isolate: { isolation: 'isolate' },
-    blendMode: { mixBlendMode: 'multiply' },
     fillWhite: { fill: '#fff' },
     cls5: { fill: '#bdefd1' },
     cls6: {

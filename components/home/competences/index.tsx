@@ -19,7 +19,9 @@ const competenceItems = [
         dotsPath: 'M92.21,166.46c0,51.62,176.89,47.45,176.89,128.09',
         x: 75,
         label: 'Web',
-        icon: <WebIcon />,
+        icon: function getIcon() {
+            return <WebIcon />;
+        },
         container: {
             xlinkHref:
                 'data:image/png;base64,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',
@@ -32,7 +34,9 @@ const competenceItems = [
         dotsPath: 'M298.73,164.55v130',
         x: 275,
         label: 'Mobile',
-        icon: <MobileIcon />,
+        icon: function getIcon() {
+            return <MobileIcon />;
+        },
         container: {
             transform: 'translate(204)',
             xlinkHref:
@@ -46,7 +50,9 @@ const competenceItems = [
         dotsPath: 'M505.89,166.55c0,51.58-176.7,47.42-176.7,128',
         x: 435,
         label: 'Base de données',
-        icon: <DatabaseIcon />,
+        icon: function getIcon(active: boolean) {
+            return <DatabaseIcon active={active} />;
+        },
         container: {
             transform: 'translate(409)',
             xlinkHref:
@@ -55,12 +61,14 @@ const competenceItems = [
         },
     },
     {
-        name: 'design',
+        name: 'security',
         id: 'br',
         dotsPath: 'M509.09,524.55c0-52-178.91-47.79-178.91-129',
         x: 470,
         label: 'Securité',
-        icon: <SecurityIcon />,
+        icon: function getIcon() {
+            return <SecurityIcon />;
+        },
         container: {
             transform: 'translate(409 523)',
             xlinkHref:
@@ -74,7 +82,9 @@ const competenceItems = [
         dotsPath: 'M299.39,526.55v-131',
         x: 250,
         label: 'Performance',
-        icon: <PerformanceIcon />,
+        icon: function getIcon(active: boolean) {
+            return <PerformanceIcon active={active} />;
+        },
         container: {
             transform: 'translate(204 523)',
             xlinkHref:
@@ -83,12 +93,14 @@ const competenceItems = [
         },
     },
     {
-        name: 'desigh',
+        name: 'design',
         id: 'bl',
         dotsPath: 'M88.45,524.62c0-52,177.82-47.81,177.82-129.07',
         x: 67,
         label: 'Design',
-        icon: <DesignIcon />,
+        icon: function getIcon() {
+            return <DesignIcon />;
+        },
         container: {
             transform: 'translate(0 523)',
             xlinkHref:
