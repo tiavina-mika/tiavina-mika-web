@@ -109,8 +109,8 @@ const competenceItems = [
         dotsPath: 'M88.45,524.62c0-52,177.82-47.81,177.82-129.07',
         x: 67,
         label: 'Design',
-        icon: function getIcon() {
-            return <DesignIcon />;
+        icon: function getIcon(active: boolean) {
+            return <DesignIcon active={active} />;
         },
         container: {
             transform: 'translate(0 523)',
