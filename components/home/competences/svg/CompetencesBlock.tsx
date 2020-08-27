@@ -50,7 +50,7 @@ const CompetencesBlock: FC<Props> = ({ id, x, dotsPath, icon, label, isCurrent }
                 transform="translate(2.95 -0.55)"
             />
             <g id={id + '-content'}>
-                {icon({ active: isCurrent })}
+                {icon(isCurrent)}
                 <g id="text-container" transform="translate(2.95 -0.55)">
                     <text
                         fill={isCurrent ? '#fff' : (theme as any).color.secondary}
