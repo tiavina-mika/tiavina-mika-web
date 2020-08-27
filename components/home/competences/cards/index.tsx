@@ -108,7 +108,7 @@ const Cards: FC<Props> = ({ triggerClassName, items, onCurrentStep }) => {
                         key={i}
                         className={i === 0 ? classes.firstCard : classes.otherCard}
                         parallaxData={setParallaxData(i)}
-                        data={item}
+                        data={{ ...item, ranking: `${i + 1} / ${items.length}` }}
                         onPlxEnd={onCurrentStep}
                     />
                 ))}
