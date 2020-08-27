@@ -19,8 +19,8 @@ const competenceItems = [
         dotsPath: 'M92.21,166.46c0,51.62,176.89,47.45,176.89,128.09',
         x: 75,
         label: 'Web',
-        icon: function getIcon() {
-            return <WebIcon />;
+        icon: function getIcon({ selected, current }) {
+            return <WebIcon selected={selected} current={!!current} />;
         },
         container: {
             xlinkHref:
@@ -98,8 +98,8 @@ const competenceItems = [
         dotsPath: 'M88.45,524.62c0-52,177.82-47.81,177.82-129.07',
         x: 67,
         label: 'Design',
-        icon: function getIcon() {
-            return <DesignIcon />;
+        icon: function getIcon({ selected, current }) {
+            return <DesignIcon selected={selected} current={!!current} />;
         },
         container: {
             transform: 'translate(0 523)',
@@ -171,7 +171,12 @@ const Competences: FC = () => {
             <div className={clsx(triggerClassName, classes.plxTrigger)} />
             <Plx parallaxData={parallaxData} className={classes.cardsPlx}>
                 <CompetencesSvg current={currentStep} items={competenceItems} />
-                <Cards triggerClassName={triggerClassName} items={competenceItems} onCurrentStep={handleCurrentStep} />
+                <Cards
+                    triggerClassName={triggerClassName}
+                    items={competenceItems}
+                    onCurrentStep={handleCurrentStep}
+                    current={currentStep}
+                />
             </Plx>
             {/* ------ simulate the long scollY ------ */}
             <div className={classes.scrollY} />

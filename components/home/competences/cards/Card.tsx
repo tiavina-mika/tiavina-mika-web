@@ -16,10 +16,13 @@ const useStyles = createUseStyles({
         backgroundColor: '#fff',
         position: 'absolute',
     },
+    cardHead: {
+        composes: 'flexRow spaceBetween alignCenter',
+    },
 });
 
-type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void };
-const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd }) => {
+type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void; current: boolean };
+const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd, current }) => {
     const classes = useStyles();
     return (
         <Plx
@@ -27,7 +30,10 @@ const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd }) => {
             parallaxData={parallaxData}
             id={data.color}
             onPlxEnd={() => onPlxEnd(data.name)}>
-            {data.id}
+            <div className={classes.cardHead}>
+                {data.icon({ selected: true, current })}
+                <span>2</span>
+            </div>
         </Plx>
     );
 };
