@@ -17,7 +17,7 @@ const useStyles = createUseStyles((theme: any) => ({
         color: theme.color.secondary,
     },
     cardHead: {
-        composes: 'flexRow spaceBetween alignCenter stretchSelf',
+        composes: 'flexRow spaceBetween center stretchSelf',
     },
     cardBody: {
         composes: 'flexColumn spaceBetween alignCenter',
