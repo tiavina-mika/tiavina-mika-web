@@ -50,8 +50,8 @@ const competenceItems = [
         dotsPath: 'M505.89,166.55c0,51.58-176.7,47.42-176.7,128',
         x: 435,
         label: 'Base de données',
-        icon: function getIcon({ active }) {
-            return <DatabaseIcon active={active} />;
+        icon: function getIcon(props) {
+            return <DatabaseIcon {...props} />;
         },
         container: {
             transform: 'translate(409)',
