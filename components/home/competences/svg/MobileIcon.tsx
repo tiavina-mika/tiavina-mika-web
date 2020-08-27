@@ -11,9 +11,39 @@ const useStyles = createUseStyles({
         strokeWidth: 4.41,
     },
 });
-
-const MobileIcon: FC = () => {
+type Props = { selected?: boolean; isCurrent?: boolean };
+const MobileIcon: FC<Props> = ({ selected, isCurrent }) => {
     const classes = useStyles();
+
+    /** ---------------------------------------------------------------------------------------------------- */
+    /** ---------------------------------- to show in the card --------------------------------------------- */
+    /** ---------------------------------------------------------------------------------------------------- */
+    if (selected && isCurrent) {
+        return (
+            <svg
+                id="Layer_1"
+                data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32.36"
+                height="49.3"
+                viewBox="0 0 32.36 49.3">
+                <g id="img-5-selected">
+                    <rect className={classes.cls5} width="32.36" height="49.3" rx="4.41" />
+                    <path
+                        className={classes.fillWhite}
+                        d="M4.41,37.35H28V7.47A1.48,1.48,0,0,0,26.48,6H5.88A1.48,1.48,0,0,0,4.41,7.47h0Z"
+                    />
+                    <path className={classes.cls10} d="M7.36,13.45H22.07" />
+                    <path className={classes.cls10} d="M7.36,20.92h8.82" />
+                    <path
+                        className={classes.fillWhite}
+                        d="M16.18,46.32a3,3,0,1,0-2.94-3.06v.06A3,3,0,0,0,16.18,46.32Z"
+                    />
+                </g>
+            </svg>
+        );
+    }
+
     return (
         <g id="img-5" data-name="img">
             <rect className={classes.cls5} x="286.77" y="43.27" width="32.36" height="49.3" rx="4.41" />

@@ -34,8 +34,8 @@ const competenceItems = [
         dotsPath: 'M298.73,164.55v130',
         x: 275,
         label: 'Mobile',
-        icon: function getIcon() {
-            return <MobileIcon />;
+        icon: function getIcon(props) {
+            return <MobileIcon {...props} />;
         },
         container: {
             transform: 'translate(204)',

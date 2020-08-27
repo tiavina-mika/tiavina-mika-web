@@ -12,14 +12,14 @@ const useStyles = createUseStyles({
     },
 });
 
-type Props = { selected?: boolean; current?: boolean };
-const WebIcon: FC<Props> = ({ selected, current }) => {
+type Props = { selected?: boolean; isCurrent?: boolean };
+const WebIcon: FC<Props> = ({ selected, isCurrent }) => {
     const classes = useStyles();
 
     /** ---------------------------------------------------------------------------------------------------- */
     /** ---------------------------------- to show in the card --------------------------------------------- */
     /** ---------------------------------------------------------------------------------------------------- */
-    if (selected && current) {
+    if (selected && isCurrent) {
         return (
             <svg
                 id="Layer_1"

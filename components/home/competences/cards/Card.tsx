@@ -31,7 +31,7 @@ const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd, current }) =
             id={data.color}
             onPlxEnd={() => onPlxEnd(data.name)}>
             <div className={classes.cardHead}>
-                {data.icon({ selected: true, current: data.name === current })}
+                {data.icon({ selected: true, isCurrent: data.name === current })}
                 <span>2</span>
             </div>
         </Plx>

@@ -18,14 +18,14 @@ const useStyles = createUseStyles((theme: any) => ({
     cls4: { fill: '#13bb70' },
 }));
 
-type Props = { selected?: boolean; current?: boolean };
-const DesignIcon: FC<Props> = ({ selected, current }) => {
+type Props = { selected?: boolean; isCurrent?: boolean };
+const DesignIcon: FC<Props> = ({ selected, isCurrent }) => {
     const classes = useStyles();
 
     /** ---------------------------------------------------------------------------------------------------- */
     /** ---------------------------------- to show in the card --------------------------------------------- */
     /** ---------------------------------------------------------------------------------------------------- */
-    if (selected && current) {
+    if (selected && isCurrent) {
         return (
             <svg
                 id="Layer_1"
