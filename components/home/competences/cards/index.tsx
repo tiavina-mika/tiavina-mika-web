@@ -54,7 +54,7 @@ const getOffsets = (index: number): any => {
     return offsetAnimationEnd;
 };
 
-type Props = { triggerClassName: string; items: any; onCurrentStep: (value: string) => void; current: boolean };
+type Props = { triggerClassName: string; items: any; onCurrentStep: (value: string) => void; current: string };
 const Cards: FC<Props> = ({ triggerClassName, items, onCurrentStep, current }) => {
     const classes = useStyles();
 

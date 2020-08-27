@@ -19,8 +19,8 @@ const competenceItems = [
         dotsPath: 'M92.21,166.46c0,51.62,176.89,47.45,176.89,128.09',
         x: 75,
         label: 'Web',
-        icon: function getIcon({ selected, current }) {
-            return <WebIcon selected={selected} current={!!current} />;
+        icon: function getIcon(props) {
+            return <WebIcon {...props} />;
         },
         container: {
             xlinkHref:
@@ -50,7 +50,7 @@ const competenceItems = [
         dotsPath: 'M505.89,166.55c0,51.58-176.7,47.42-176.7,128',
         x: 435,
         label: 'Base de données',
-        icon: function getIcon(active: boolean) {
+        icon: function getIcon({ active }) {
             return <DatabaseIcon active={active} />;
         },
         container: {
@@ -82,7 +82,7 @@ const competenceItems = [
         dotsPath: 'M299.39,526.55v-131',
         x: 250,
         label: 'Performance',
-        icon: function getIcon(active: boolean) {
+        icon: function getIcon({ active }) {
             return <PerformanceIcon active={active} />;
         },
         container: {
@@ -98,8 +98,8 @@ const competenceItems = [
         dotsPath: 'M88.45,524.62c0-52,177.82-47.81,177.82-129.07',
         x: 67,
         label: 'Design',
-        icon: function getIcon({ selected, current }) {
-            return <DesignIcon selected={selected} current={!!current} />;
+        icon: function getIcon(props) {
+            return <DesignIcon {...props} />;
         },
         container: {
             transform: 'translate(0 523)',

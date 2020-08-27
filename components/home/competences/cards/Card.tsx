@@ -21,7 +21,7 @@ const useStyles = createUseStyles({
     },
 });
 
-type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void; current: boolean };
+type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void; current: string };
 const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd, current }) => {
     const classes = useStyles();
     return (
@@ -31,7 +31,7 @@ const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd, current }) =
             id={data.color}
             onPlxEnd={() => onPlxEnd(data.name)}>
             <div className={classes.cardHead}>
-                {data.icon({ selected: true, current })}
+                {data.icon({ selected: true, current: data.name === current })}
                 <span>2</span>
             </div>
         </Plx>
