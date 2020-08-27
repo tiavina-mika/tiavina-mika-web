@@ -57,7 +57,11 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
-            <Header title="Learn Git and GitHub without any code!" description={headerDescription} />
+            <Header
+                title="Tiavina Michael RALAINIRINA"
+                subtitle="FullStack Developer - UI / UX Designer"
+                description={headerDescription}
+            />
             <Competences />
         </div>
     );

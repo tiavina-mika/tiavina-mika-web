@@ -33,6 +33,15 @@ const useStyles = createUseStyles((theme: any) => ({
         color: theme.color.primary,
         fontSize: 26,
     },
+    link: {
+        color: theme.color.active,
+        fontSize: 20,
+        textDecoration: 'none',
+        '&:hover': {
+            color: theme.color.active,
+            opacity: 0.8,
+        },
+    },
 }));
 
 type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void };
@@ -49,14 +58,13 @@ const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd }) => {
                 <span>{data.ranking}</span>
             </div>
             <div className={classes.cardBody}>
-                <h3 className={classes.title}>Some title here</h3>
-                <p
-                    className={
-                        classes.description
-                    }>{`Component definition is missing display name react/display-name, bundled successfully, waiting for typecheck results...`}</p>
+                <h3 className={classes.title}>{data.title}</h3>
+                <p className={classes.description}>{data.description}</p>
             </div>
             <div className={classes.cardFooter}>
-                <span>Some title here</span>
+                <a href="/" className={classes.link}>
+                    See more
+                </a>
             </div>
         </Plx>
     );

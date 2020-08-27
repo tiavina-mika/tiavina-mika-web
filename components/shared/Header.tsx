@@ -56,10 +56,16 @@ const useStyles = createUseStyles((theme: any) => ({
         textDecoration: 'none',
     },
     // title
-    titleContainer: {
+    content: {
         composes: 'flexColumn',
         width: '75%',
         marginTop: theme.spacing(22),
+    },
+    titleContainer: {
+        marginBottom: theme.spacing(6),
+    },
+    title: {
+        lineHeight: '0.5em',
     },
     descriptionContainer: {
         composes: 'flexRow stretchSelf font-ProximaNova-regular',
@@ -69,8 +75,8 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { title: string; description?: string };
-const Header: FC<Props> = ({ title, description }) => {
+type Props = { title: string; description?: string; subtitle?: string };
+const Header: FC<Props> = ({ title, description, subtitle }) => {
     const classes = useStyles();
 
     return (
@@ -94,15 +100,17 @@ const Header: FC<Props> = ({ title, description }) => {
                 </div>
             </div>
             {/* page title */}
-            <div className={classes.titleContainer}>
-                <div>
-                    <Title text={title} />
-                    {/* <h1>{title}</h1> */}
+            <div className={classes.content}>
+                <div className={description && subtitle ? classes.titleContainer : null}>
+                    <Title text={title} className={classes.title} />
+                    {subtitle && <Title text={subtitle} level={2} className={classes.title} />}
                 </div>
                 {/* page title */}
-                <div className={classes.descriptionContainer}>
-                    <Text text={description} tagName="p" />
-                </div>
+                {description && (
+                    <div className={classes.descriptionContainer}>
+                        <Text text={description} tagName="p" />
+                    </div>
+                )}
             </div>
         </div>
     );
