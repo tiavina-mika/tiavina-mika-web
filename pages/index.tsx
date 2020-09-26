@@ -7,6 +7,7 @@ import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
 import Header from '../components/shared/Header';
 import Competences from '../components/home/competences';
+import Projects from '../components/home/projects';
 
 const useStyles = createUseStyles({
     window: {
@@ -63,6 +64,7 @@ const Home = () => {
                 description={headerDescription}
             />
             <Competences />
+            <Projects />
         </div>
     );
 };

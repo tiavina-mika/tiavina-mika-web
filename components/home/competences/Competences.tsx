@@ -175,6 +175,24 @@ const Competences: FC = () => {
                     },
                 ],
             },
+            {
+                start: `.${triggerClassName}`,
+                startOffset: '450vh',
+                duration: '20vh',
+                properties: [
+                    {
+                        startValue: -15,
+                        endValue: -40,
+                        unit: 'vh',
+                        property: 'translateY',
+                    },
+                    {
+                        startValue: 1,
+                        endValue: 0,
+                        property: 'opacity',
+                    },
+                ],
+            },
         ],
         []
     );

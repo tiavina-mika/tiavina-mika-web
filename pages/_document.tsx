@@ -2,6 +2,7 @@ import React from 'react';
 import Document from 'next/document';
 import { SheetsRegistry, JssProvider, createGenerateId } from 'react-jss';
 
+/* eslint-disable-next-line react/display-name */
 export default class JssDocument extends Document {
     static async getInitialProps(ctx) {
         const registry = new SheetsRegistry();

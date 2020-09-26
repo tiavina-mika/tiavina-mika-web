@@ -1,4 +1,4 @@
-import React, { FC, ReactType } from 'react';
+import React, { FC, ElementType } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
@@ -14,7 +14,7 @@ const useStyles = createUseStyles((theme: any) => ({
 type Props = { text: string; className?: string; tagName?: 'b' | 'p' };
 const Text: FC<Props> = ({ text, tagName, className }) => {
     const classes = useStyles();
-    const Component = (tagName ? tagName : 'span') as ReactType;
+    const Component = (tagName ? tagName : 'span') as ElementType;
     return <Component className={clsx(classes.text, className)}>{text}</Component>;
 };
 

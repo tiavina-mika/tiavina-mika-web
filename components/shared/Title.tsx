@@ -1,4 +1,4 @@
-import React, { FC, ReactType } from 'react';
+import React, { FC, ElementType } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
@@ -19,7 +19,7 @@ const useStyles = createUseStyles({
 type Props = { text: string; className?: string; level?: 1 | 2 | 3 | 4 | 5 | 6 };
 const Title: FC<Props> = ({ text, level, className }) => {
     const classes = useStyles();
-    const Component = (level ? `h${level}` : 'h1') as ReactType;
+    const Component = (level ? `h${level}` : 'h1') as ElementType;
     return (
         <Component className={clsx(classes.title, className, level ? classes[`h${level}`] : classes['h1'])}>
             {text}
