@@ -9,12 +9,14 @@ export default class JssDocument extends Document {
         const originalRenderPage = ctx.renderPage;
         ctx.renderPage = () =>
             originalRenderPage({
-                enhanceApp: function (App) {
-                    (props) => (
-                        <JssProvider registry={registry} generateId={generateId}>
-                            <App {...props} />
-                        </JssProvider>
-                    );
+                enhanceApp: function app(App) {
+                    return function jss(props) {
+                        return (
+                            <JssProvider registry={registry} generateId={generateId}>
+                                <App {...props} />
+                            </JssProvider>
+                        );
+                    };
                 },
             });
 

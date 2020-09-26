@@ -10,13 +10,15 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexColumn justifyCenter font-ProximaNova-regular',
         fontSize: 22,
         background: 'linear-gradient(top bottom, #CCC 0%, #F4F4F4 100%)',
+        [media.lgUp]: {
+            padding: theme.spacing(20),
+        },
     },
     /** Title */
     content: {
         composes: 'flexColumn',
         width: '75%',
         marginTop: theme.spacing(22),
-        padding: theme.spacing(20),
         [media.lgDown]: {
             marginTop: theme.spacing(3),
             padding: [theme.spacing(1), theme.spacing(4)],
