@@ -393,6 +393,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])(function (theme) {
+  var _divider;
+
   return {
     cardDesktop: {
       composes: 'flexColumn spaceBetween font-ProximaNova-regular',
@@ -409,7 +411,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
     cardMobile: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
       composes: 'flexColumn spaceBetween font-ProximaNova-regular',
       marginTop: theme.spacing(2),
-      padding: [theme.spacing(6), theme.spacing(3)],
+      padding: [theme.spacing(2), theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_8__["horizontalPaddingMobile"])],
       // boxSizing: 'border-box',
       // boxShadow: '0 6px 10px rgba(0,0,0,.08)',
       // borderRadius: 10,
@@ -457,9 +459,11 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
         opacity: 0.8
       }
     },
-    divider: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_8__["media"].smLg, {
+    divider: (_divider = {}, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_divider, _utils_constants__WEBPACK_IMPORTED_MODULE_8__["media"].smLg, {
       display: 'none'
-    })
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_divider, _utils_constants__WEBPACK_IMPORTED_MODULE_8__["media"].smDown, {
+      marginTop: theme.spacing(6)
+    }), _divider)
   };
 });
 
@@ -485,7 +489,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 97,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -493,7 +497,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 98,
       columnNumber: 13
     }
   }, __jsx("img", {
@@ -503,14 +507,14 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 99,
       columnNumber: 17
     }
   }), __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 100,
       columnNumber: 17
     }
   }, data.ranking)), __jsx("div", {
@@ -518,7 +522,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 102,
       columnNumber: 13
     }
   }, __jsx("h3", {
@@ -526,7 +530,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 103,
       columnNumber: 17
     }
   }, data.title), __jsx("p", {
@@ -534,7 +538,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 104,
       columnNumber: 17
     }
   }, data.description)), __jsx("div", {
@@ -542,7 +546,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 106,
       columnNumber: 13
     }
   }, __jsx("a", {
@@ -551,7 +555,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104,
+      lineNumber: 107,
       columnNumber: 17
     }
   }, "See more")), isMobile && __jsx(_shared_Divider__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -559,7 +563,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 111,
       columnNumber: 26
     }
   }));
@@ -1959,7 +1963,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
   var _textBlockRoot, _img;
 
   return {
-    root: {
+    projectRoot: {
       composes: 'flexColumn justifyCenter stretchSelf',
       marginBottom: theme.spacing(15),
       letterSpacing: '0.1em'
@@ -1969,7 +1973,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
       flexDirection: 'column',
       alignItems: 'center',
-      padding: [0, theme.spacing(4)]
+      padding: [0, theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_4__["horizontalPaddingMobile"])]
     }),
     imageBlockRoot: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn center'
@@ -2022,7 +2026,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       marginBottom: theme.spacing(5)
     }),
     title: {
-      lineHeight: '1em'
+      lineHeight: '1.2em'
     },
     description: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'font-Montserrat-medium',
@@ -2038,7 +2042,8 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
       marginTop: theme.spacing(2),
       marginBottom: theme.spacing(2),
-      fontSize: 22
+      fontSize: 22,
+      letterSpacing: 1
     }),
     link: {
       marginTop: theme.spacing(6),
@@ -2060,11 +2065,11 @@ var Project = function Project(_ref) {
       reverseIndex = _ref.reverseIndex;
   var classes = useStyles();
   return __jsx("div", {
-    className: classes.root,
+    className: classes.projectRoot,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 133,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2072,7 +2077,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 134,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2080,7 +2085,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 135,
       columnNumber: 17
     }
   }, __jsx("div", {
@@ -2088,7 +2093,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 136,
       columnNumber: 21
     }
   }, __jsx("img", {
@@ -2098,7 +2103,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 137,
       columnNumber: 25
     }
   }))), __jsx("div", {
@@ -2106,7 +2111,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139,
+      lineNumber: 140,
       columnNumber: 17
     }
   }, __jsx("div", {
@@ -2114,7 +2119,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140,
+      lineNumber: 141,
       columnNumber: 21
     }
   }, __jsx("div", {
@@ -2122,7 +2127,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 142,
       columnNumber: 25
     }
   }, "Projet. ", reverseIndex), __jsx("h2", {
@@ -2130,7 +2135,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 143,
       columnNumber: 25
     }
   }, title), __jsx("h3", {
@@ -2138,7 +2143,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 144,
       columnNumber: 25
     }
   }, subtitle), __jsx("div", {
@@ -2146,7 +2151,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 145,
       columnNumber: 25
     }
   }, description), __jsx(_shared_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2155,7 +2160,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 146,
       columnNumber: 25
     }
   })))));
@@ -2211,7 +2216,7 @@ var data = [{
 ];
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])(function (theme) {
   return {
-    root: {
+    projectsRoot: {
       composes: 'flexColumn stretchSelf justifyCenter',
       fontFamily: 'Prequelrough, sans-serif',
       paddingBottom: theme.spacing(15)
@@ -2222,7 +2227,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
 var Projects = function Projects() {
   var classes = useStyles();
   return __jsx("div", {
-    className: classes.root,
+    className: classes.projectsRoot,
     id: "projects",
     __self: _this,
     __source: {
@@ -2463,7 +2468,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       marginTop: theme.spacing(22)
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgDown, {
       marginTop: theme.spacing(3),
-      padding: [theme.spacing(1), theme.spacing(4)]
+      padding: [theme.spacing(1), theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_5__["horizontalPaddingMobile"])]
     }),
     titleContainer: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       marginBottom: theme.spacing(6)
@@ -2602,13 +2607,16 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
     rowCenter: {
       composes: 'flexRow justifyCenter alignCenter'
     },
-    menu: {
+    menu: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
       composes: 'flexColumn stretchSelf'
-    },
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_8__["media"].lgDown, {
+      paddingTop: theme.spacing(1),
+      paddingBottom: theme.spacing(1)
+    }),
     content: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
       composes: 'flexRow spaceBetween center stretchSelf'
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_8__["media"].lgDown, {
-      padding: [theme.spacing(0), theme.spacing(4)]
+      padding: [theme.spacing(0), theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_8__["horizontalPaddingMobile"])]
     }),
     leftMenu: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
       composes: 'flexRow center flex1'
@@ -2622,7 +2630,8 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       fontStyle: 'italic',
       padding: 0
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_8__["media"].lgDown, {
-      fontSize: 42
+      fontSize: 42,
+      lineHeight: '1em'
     }),
     description: (_description = {
       composes: '$rowCenter'
@@ -2633,7 +2642,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       }
     }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_description, "fontSize", 16), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])(_description, "color", '#666'), _description),
     rightMenu: {
-      composes: 'flexRow alignCenter justifyEnd flex1'
+      composes: 'flexRow alignCenter justifyEnd '
     },
     item: {
       padding: [theme.spacing(3), theme.spacing(6)]
@@ -2688,7 +2697,7 @@ var Menu = function Menu() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 107,
+        lineNumber: 112,
         columnNumber: 9
       }
     }, __jsx("a", {
@@ -2697,7 +2706,7 @@ var Menu = function Menu() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 108,
+        lineNumber: 113,
         columnNumber: 13
       }
     }, text));
@@ -2708,7 +2717,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 120,
       columnNumber: 9
     }
   }, menus.map(function (_ref2, index) {
@@ -2738,7 +2747,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 133,
       columnNumber: 9
     }
   }, !openMenu ? __jsx("img", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -2747,7 +2756,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 135,
       columnNumber: 17
     }
   })) : __jsx("img", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -2756,7 +2765,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 137,
       columnNumber: 17
     }
   })));
@@ -2766,7 +2775,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138,
+      lineNumber: 143,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2775,7 +2784,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139,
+      lineNumber: 144,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2783,7 +2792,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140,
+      lineNumber: 145,
       columnNumber: 17
     }
   }, __jsx("div", {
@@ -2791,7 +2800,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 146,
       columnNumber: 21
     }
   }, "Mika"), __jsx("div", {
@@ -2799,14 +2808,14 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 147,
       columnNumber: 21
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 148,
       columnNumber: 25
     }
   }, "Some description about Mika"))), isMobile ? menuIcon : menuDesktop), isMobile && __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_5__["motion"].div, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -2817,7 +2826,7 @@ var Menu = function Menu() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149,
+      lineNumber: 154,
       columnNumber: 17
     }
   }), menus.map(function (_ref3, index) {
@@ -24702,7 +24711,7 @@ var screenState = function screenState(state) {
 /*!*****************************!*\
   !*** ./utils/constants.tsx ***!
   \*****************************/
-/*! exports provided: isProd, API_ENDPOINT, PRODUCT_API, xss, xs, sm, md, mdx, lg, xl, media, lgScreenWidth, competenseSvgBottomY, competenseSvgTopY, activeColor */
+/*! exports provided: isProd, API_ENDPOINT, PRODUCT_API, xss, xs, sm, md, mdx, lg, xl, media, lgScreenWidth, competenseSvgBottomY, competenseSvgTopY, activeColor, horizontalPaddingMobile */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24722,6 +24731,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "competenseSvgBottomY", function() { return competenseSvgBottomY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "competenseSvgTopY", function() { return competenseSvgTopY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "activeColor", function() { return activeColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horizontalPaddingMobile", function() { return horizontalPaddingMobile; });
 var isProd = false;
 var API_ENDPOINT = 'https://tiavina-mika-api.herokuapp.com';
 var PRODUCT_API = "".concat(API_ENDPOINT, "/products");
@@ -24764,6 +24774,7 @@ var lgScreenWidth = 1500;
 var competenseSvgBottomY = 645;
 var competenseSvgTopY = 125;
 var activeColor = '#13BB70';
+var horizontalPaddingMobile = 2;
 
 /***/ }),
 

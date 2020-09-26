@@ -23830,7 +23830,7 @@ if (true) {
 /*!*****************************!*\
   !*** ./utils/constants.tsx ***!
   \*****************************/
-/*! exports provided: isProd, API_ENDPOINT, PRODUCT_API, xss, xs, sm, md, mdx, lg, xl, media, lgScreenWidth, competenseSvgBottomY, competenseSvgTopY, activeColor */
+/*! exports provided: isProd, API_ENDPOINT, PRODUCT_API, xss, xs, sm, md, mdx, lg, xl, media, lgScreenWidth, competenseSvgBottomY, competenseSvgTopY, activeColor, horizontalPaddingMobile */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23850,6 +23850,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "competenseSvgBottomY", function() { return competenseSvgBottomY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "competenseSvgTopY", function() { return competenseSvgTopY; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "activeColor", function() { return activeColor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "horizontalPaddingMobile", function() { return horizontalPaddingMobile; });
 var isProd = false;
 var API_ENDPOINT = 'https://tiavina-mika-api.herokuapp.com';
 var PRODUCT_API = "".concat(API_ENDPOINT, "/products");
@@ -23892,6 +23893,7 @@ var lgScreenWidth = 1500;
 var competenseSvgBottomY = 645;
 var competenseSvgTopY = 125;
 var activeColor = '#13BB70';
+var horizontalPaddingMobile = 2;
 
 /***/ }),
 
