@@ -17,15 +17,15 @@ const useStyles = createUseStyles({
         [media.mdDown]: {
             fontSize: 60,
             lineHeight: '1.1em',
-        }
+        },
     },
     h2: {
         fontSize: 24,
         [media.mdDown]: {
             fontSize: 22,
             lineHeight: '1.6em',
-        }
-    },  
+        },
+    },
 });
 
 type Props = { text: string; className?: string; level?: 1 | 2 | 3 | 4 | 5 | 6 };

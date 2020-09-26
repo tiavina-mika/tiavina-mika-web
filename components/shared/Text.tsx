@@ -11,7 +11,7 @@ const useStyles = createUseStyles((theme: any) => ({
         color: theme.color.secondary,
         [media.mdDown]: {
             fontSize: 18,
-        }
+        },
     },
 }));
 
