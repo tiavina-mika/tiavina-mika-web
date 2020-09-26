@@ -155,7 +155,7 @@ const useStyles = createUseStyles({
 
 const Competences: FC = () => {
     const classes = useStyles();
-    const [currentStep, setCurrentStep] = useState('');
+    const [currentStep, setCurrentStep] = useState<string>('');
     const isMobile = useSelector(screenState);
 
     const handleCurrentStep = (name: string): void => {
