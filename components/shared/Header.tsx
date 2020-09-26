@@ -8,20 +8,18 @@ import Menu from './Menu';
 const useStyles = createUseStyles((theme: any) => ({
     headerRoot: {
         composes: 'flexColumn justifyCenter font-ProximaNova-regular',
-        padding: theme.spacing(20),
         fontSize: 22,
         background: 'linear-gradient(top bottom, #CCC 0%, #F4F4F4 100%)',
-        [media.lgDown]: {
-            padding: [theme.spacing(1), theme.spacing(4)],
-        },
     },
     /** Title */
     content: {
         composes: 'flexColumn',
         width: '75%',
         marginTop: theme.spacing(22),
+        padding: theme.spacing(20),
         [media.lgDown]: {
             marginTop: theme.spacing(3),
+            padding: [theme.spacing(1), theme.spacing(4)],
         },
     },
     titleContainer: {

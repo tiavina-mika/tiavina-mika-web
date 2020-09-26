@@ -2,7 +2,6 @@ import React from 'react';
 import Document from 'next/document';
 import { SheetsRegistry, JssProvider, createGenerateId } from 'react-jss';
 
-/* eslint-disable-next-line react/display-name */
 export default class JssDocument extends Document {
     static async getInitialProps(ctx) {
         const registry = new SheetsRegistry();
@@ -10,11 +9,13 @@ export default class JssDocument extends Document {
         const originalRenderPage = ctx.renderPage;
         ctx.renderPage = () =>
             originalRenderPage({
-                enhanceApp: (App) => (props) => (
-                    <JssProvider registry={registry} generateId={generateId}>
-                        <App {...props} />
-                    </JssProvider>
-                ),
+                enhanceApp: function (App) {
+                    (props) => (
+                        <JssProvider registry={registry} generateId={generateId}>
+                            <App {...props} />
+                        </JssProvider>
+                    );
+                },
             });
 
         const initialProps = await Document.getInitialProps(ctx);

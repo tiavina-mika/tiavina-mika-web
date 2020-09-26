@@ -121,16 +121,15 @@ const Cards: FC<Props> = ({ triggerClassName, items, onCurrentStep }) => {
         <div className={classes.cardsRoot}>
             <div {...cardsProps}>
                 {items.map((item, i) => (
-                    <>
+                    <div key={i}>
                         <Card
-                            key={i}
                             className={!isMobile && (i === 0 ? classes.firstCard : classes.otherCard)}
                             parallaxData={setParallaxData(i)}
                             data={{ ...item, ranking: `${i + 1} / ${items.length}` }}
                             onPlxEnd={onCurrentStep}
                         />
                         {isMobile && <Divider className={classes.divider} />}
-                    </>
+                    </div>
                 ))}
             </div>
         </div>
