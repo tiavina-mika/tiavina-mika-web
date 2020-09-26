@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import Title from './Title';
 import Text from './Text';
+import { media } from '../../utils/constants';
 
 const menus = [
     {
@@ -23,6 +24,9 @@ const useStyles = createUseStyles((theme: any) => ({
         padding: theme.spacing(20),
         fontSize: 22,
         background: 'linear-gradient(top bottom, #CCC 0%, #F4F4F4 100%)',
+        [media.lgDown]: {
+            padding: [theme.spacing(1), theme.spacing(4)],
+        }
     },
     menu: {
         composes: 'flexRow spaceBetween alignCenter stretchSelf',
@@ -55,22 +59,24 @@ const useStyles = createUseStyles((theme: any) => ({
         color: theme.color.active,
         textDecoration: 'none',
     },
-    // title
+    /** Title */
     content: {
         composes: 'flexColumn',
         width: '75%',
         marginTop: theme.spacing(22),
+        [media.lgDown]: {
+            marginTop: theme.spacing(3),
+        }
     },
     titleContainer: {
         marginBottom: theme.spacing(6),
-    },
-    title: {
-        lineHeight: '0.5em',
+        [media.mdDown]: {
+            marginBottom: theme.spacing(3),
+        }
     },
     descriptionContainer: {
         composes: 'flexRow stretchSelf font-ProximaNova-regular',
         lineHeight: '1.8em',
-        fontSize: 24,
         color: theme.color.secondary,
     },
 }));
@@ -102,8 +108,8 @@ const Header: FC<Props> = ({ title, description, subtitle }) => {
             {/* page title */}
             <div className={classes.content}>
                 <div className={description && subtitle ? classes.titleContainer : null}>
-                    <Title text={title} className={classes.title} />
-                    {subtitle && <Title text={subtitle} level={2} className={classes.title} />}
+                    <Title text={title} />
+                    {subtitle && <Title text={subtitle} level={2} />}
                 </div>
                 {/* page title */}
                 {description && (

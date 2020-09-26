@@ -1,6 +1,7 @@
 import React, { FC, ElementType } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
+import { media } from '../../utils/constants';
 
 const useStyles = createUseStyles((theme: any) => ({
     text: {
@@ -8,6 +9,9 @@ const useStyles = createUseStyles((theme: any) => ({
         lineHeight: '1.8em',
         fontSize: 24,
         color: theme.color.secondary,
+        [media.mdDown]: {
+            fontSize: 18,
+        }
     },
 }));
 
