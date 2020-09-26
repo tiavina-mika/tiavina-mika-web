@@ -164,6 +164,7 @@ const Competences: FC = () => {
 
     const parallaxData = useMemo(
         () => [
+            /** animation in */
             {
                 start: `.${triggerClassName}`,
                 duration: '50vh',
@@ -181,10 +182,11 @@ const Competences: FC = () => {
                     },
                 ],
             },
+            /** animation out */
             {
                 start: `.${triggerClassName}`,
                 startOffset: '450vh',
-                duration: '20vh',
+                duration: '40vh',
                 properties: [
                     {
                         startValue: -15,

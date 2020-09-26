@@ -4,8 +4,6 @@ import Card from './Card';
 import clsx from 'clsx';
 import { screenState } from '../../../../reducers/appReducer';
 import { useSelector } from 'react-redux';
-import Divider from '../../../shared/Divider';
-import { media } from '../../../../utils/constants';
 
 const y = 40;
 const useStyles = createUseStyles({
@@ -25,11 +23,6 @@ const useStyles = createUseStyles({
     otherCard: {
         transform: `translateY(${y}vh)`,
         opacity: 0,
-    },
-    divider: {
-        [media.smLg]: {
-            display: 'none',
-        },
     },
 });
 
@@ -121,15 +114,13 @@ const Cards: FC<Props> = ({ triggerClassName, items, onCurrentStep }) => {
         <div className={classes.cardsRoot}>
             <div {...cardsProps}>
                 {items.map((item, i) => (
-                    <div key={i}>
-                        <Card
-                            className={!isMobile && (i === 0 ? classes.firstCard : classes.otherCard)}
-                            parallaxData={setParallaxData(i)}
-                            data={{ ...item, ranking: `${i + 1} / ${items.length}` }}
-                            onPlxEnd={onCurrentStep}
-                        />
-                        {isMobile && <Divider className={classes.divider} />}
-                    </div>
+                    <Card
+                        key={i}
+                        className={!isMobile && (i === 0 ? classes.firstCard : classes.otherCard)}
+                        parallaxData={setParallaxData(i)}
+                        data={{ ...item, ranking: `${i + 1} / ${items.length}` }}
+                        onPlxEnd={onCurrentStep}
+                    />
                 ))}
             </div>
         </div>

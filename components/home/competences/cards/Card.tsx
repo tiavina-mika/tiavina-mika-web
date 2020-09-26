@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { screenState } from '../../../../reducers/appReducer';
 import { media } from '../../../../utils/constants';
+import Divider from '../../../shared/Divider';
 
 const useStyles = createUseStyles((theme: any) => ({
     cardDesktop: {
@@ -72,6 +73,11 @@ const useStyles = createUseStyles((theme: any) => ({
             opacity: 0.8,
         },
     },
+    divider: {
+        [media.smLg]: {
+            display: 'none',
+        },
+    },
 }));
 
 type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void };
@@ -99,6 +105,7 @@ const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd }) => {
                     See more
                 </a>
             </div>
+            {isMobile && <Divider className={classes.divider} />}
         </Component>
     );
 };
