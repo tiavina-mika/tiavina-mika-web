@@ -1,10 +1,13 @@
-import React, { FC } from 'react';
+import React, { ElementType, FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import Plx from 'react-plx';
 import clsx from 'clsx';
+import { useSelector } from 'react-redux';
+import { screenState } from '../../../../reducers/appReducer';
+import { media } from '../../../../utils/constants';
 
 const useStyles = createUseStyles((theme: any) => ({
-    card: {
+    cardDesktop: {
         composes: 'flexColumn spaceBetween font-ProximaNova-regular',
         boxSizing: 'border-box',
         boxShadow: '0 6px 10px rgba(0,0,0,.08)',
@@ -16,14 +19,41 @@ const useStyles = createUseStyles((theme: any) => ({
         padding: [60, 68],
         color: theme.color.secondary,
     },
+    cardMobile: {
+        composes: 'flexColumn spaceBetween font-ProximaNova-regular',
+        marginTop: theme.spacing(2),
+        padding: [theme.spacing(6), theme.spacing(3)],
+        // boxSizing: 'border-box',
+        // boxShadow: '0 6px 10px rgba(0,0,0,.08)',
+        // borderRadius: 10,
+        // height: 410,
+        // width: 543,
+        // backgroundColor: '#fff',
+        // position: 'absolute',
+        // padding: [60, 68],
+        color: theme.color.secondary,
+        [media.smLg]: {
+            boxShadow: '0 6px 10px rgba(0,0,0,.08)',
+            borderRadius: 10,
+            height: 300,
+            width: 440,
+            marginBottom: theme.spacing(5),
+        },
+    },
     cardHead: {
         composes: 'flexRow spaceBetween center stretchSelf',
+        [media.lgDown]: {
+            marginBottom: theme.spacing(1.8),
+        },
     },
     cardBody: {
         composes: 'flexColumn spaceBetween alignCenter',
     },
     cardFooter: {
         composes: 'flexColumn spaceBetween alignCenter stretchSelf',
+    },
+    image: {
+        width: '8%',
     },
     description: {
         fontSize: 17,
@@ -47,14 +77,17 @@ const useStyles = createUseStyles((theme: any) => ({
 type Props = { className: string; parallaxData?: any; data: any; onPlxEnd: (value: string) => void };
 const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd }) => {
     const classes = useStyles();
+    const isMobile = useSelector(screenState);
+
+    const Component = (isMobile ? 'div' : Plx) as ElementType;
+    const otherProps = isMobile
+        ? { className: clsx(classes.cardMobile, className) }
+        : { parallaxData, onPlxEnd: () => onPlxEnd(data.name), className: clsx(classes.cardDesktop, className) };
+
     return (
-        <Plx
-            className={clsx(classes.card, className)}
-            parallaxData={parallaxData}
-            id={data.color}
-            onPlxEnd={() => onPlxEnd(data.name)}>
+        <Component {...otherProps} id={data.color}>
             <div className={classes.cardHead}>
-                <img alt={data.name} src={`/images/competences/${data.name}.svg`} />
+                <img alt={data.name} src={`/images/competences/${data.name}.svg`} className={classes.image} />
                 <span>{data.ranking}</span>
             </div>
             <div className={classes.cardBody}>
@@ -66,7 +99,7 @@ const Card: FC<Props> = ({ className, parallaxData, data, onPlxEnd }) => {
                     See more
                 </a>
             </div>
-        </Plx>
+        </Component>
     );
 };
 

@@ -19,7 +19,7 @@ const useStyles = createUseStyles((theme: any) => ({
         [media.lgDown]: {
             flexDirection: 'column',
             alignItems: 'center',
-            padding: [0, theme.spacing(2)],
+            padding: [0, theme.spacing(4)],
         },
     },
     imageBlockRoot: {
@@ -86,6 +86,9 @@ const useStyles = createUseStyles((theme: any) => ({
     number: {
         composes: 'font-Montserrat-bold',
         color: '#F8C462',
+        [media.lgDown]: {
+            marginBottom: theme.spacing(5),
+        },
     },
     title: {
         lineHeight: '1em',
@@ -93,6 +96,9 @@ const useStyles = createUseStyles((theme: any) => ({
     description: {
         composes: 'font-Montserrat-medium',
         lineHeight: 1.8,
+        [media.lgDown]: {
+            marginBottom: theme.spacing(5),
+        },
     },
     subtitle: {
         composes: 'font-Montserrat-regular',
@@ -102,6 +108,7 @@ const useStyles = createUseStyles((theme: any) => ({
         [media.lgDown]: {
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2),
+            fontSize: 22,
         },
     },
     link: {

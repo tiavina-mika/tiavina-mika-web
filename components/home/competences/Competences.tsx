@@ -1,4 +1,4 @@
-import React, { FC, useMemo, useState, ReactNode } from 'react';
+import React, { FC, useMemo, useState, ReactNode, ElementType } from 'react';
 import { createUseStyles } from 'react-jss';
 import Plx from 'react-plx';
 import clsx from 'clsx';
@@ -11,6 +11,8 @@ import SecurityIcon from './svg/SecurityIcon';
 import PerformanceIcon from './svg/PerformanceIcon';
 import MobileIcon from './svg/MobileIcon';
 import DesignIcon from './svg/DesignIcon';
+import { useSelector } from 'react-redux';
+import { screenState } from '../../../reducers/appReducer';
 
 const description = `Component definition is missing display name react/display-name, bundled successfully, waiting for typecheck results...`;
 const competenceItems = [
@@ -134,13 +136,16 @@ const useStyles = createUseStyles({
         marginTop: '30vh',
         pointerEvents: 'none',
     },
-    cardsPlx: {
+    cardsPlxDesktop: {
         composes: 'flexRow center',
         width: '100%',
         pointerEvents: 'none',
         bottom: 0,
         opacity: 0,
         position: 'fixed',
+    },
+    cardsMobile: {
+        width: '100%',
     },
     scrollY: {
         marginTop: '440vh',
@@ -151,6 +156,7 @@ const useStyles = createUseStyles({
 const Competences: FC = () => {
     const classes = useStyles();
     const [currentStep, setCurrentStep] = useState('');
+    const isMobile = useSelector(screenState);
 
     const handleCurrentStep = (name: string): void => {
         setCurrentStep(name);
@@ -197,15 +203,20 @@ const Competences: FC = () => {
         []
     );
 
+    const Component = (isMobile ? 'div' : Plx) as ElementType;
+    const otherProps = isMobile
+        ? { className: classes.cardsMobile }
+        : { parallaxData, className: classes.cardsPlxDesktop };
+
     return (
         <div className={classes.competences}>
-            <div className={clsx(triggerClassName, classes.plxTrigger)} />
-            <Plx parallaxData={parallaxData} className={classes.cardsPlx}>
-                <CompetencesSvg current={currentStep} items={competenceItems} />
+            {!isMobile && <div className={clsx(triggerClassName, classes.plxTrigger)} />}
+            <Component {...otherProps}>
+                {!isMobile && <CompetencesSvg current={currentStep} items={competenceItems} />}
                 <Cards triggerClassName={triggerClassName} items={competenceItems} onCurrentStep={handleCurrentStep} />
-            </Plx>
+            </Component>
             {/* ------ simulate the long scollY ------ */}
-            <div className={classes.scrollY} />
+            {!isMobile && <div className={classes.scrollY} />}
         </div>
     );
 };

@@ -2,15 +2,22 @@ import React, { FC, useMemo } from 'react';
 import { createUseStyles } from 'react-jss';
 import Card from './Card';
 import clsx from 'clsx';
+import { screenState } from '../../../../reducers/appReducer';
+import { useSelector } from 'react-redux';
+import Divider from '../../../shared/Divider';
+import { media } from '../../../../utils/constants';
 
 const y = 40;
 const useStyles = createUseStyles({
     cardsRoot: {
-        composes: 'flexRow justifyStart flex1 blue',
+        composes: 'flexRow justifyStart alignCenter flex1',
     },
-    cards: {
+    cardsDesktop: {
         composes: 'flexColumn justifyCenter alignCenter',
         position: 'absolute',
+    },
+    cardsMobile: {
+        composes: 'flexColumn center flex1',
     },
     firstCard: {
         transform: 'translateY(-10vh)',
@@ -18,6 +25,11 @@ const useStyles = createUseStyles({
     otherCard: {
         transform: `translateY(${y}vh)`,
         opacity: 0,
+    },
+    divider: {
+        [media.smLg]: {
+            display: 'none',
+        },
     },
 });
 
@@ -57,6 +69,7 @@ const getOffsets = (index: number): any => {
 type Props = { triggerClassName: string; items: any; onCurrentStep: (value: string) => void };
 const Cards: FC<Props> = ({ triggerClassName, items, onCurrentStep }) => {
     const classes = useStyles();
+    const isMobile = useSelector(screenState);
 
     const setParallaxData = (index: number): any => {
         const offsetAnimationEnd = getOffsets(index);
@@ -100,17 +113,24 @@ const Cards: FC<Props> = ({ triggerClassName, items, onCurrentStep }) => {
         return useMemo(() => [enterAnimationSequence, exitAnimationSequence], []);
     };
 
+    const cardsProps = isMobile
+        ? { className: classes.cardsMobile }
+        : { className: clsx(classes.cardsDesktop, triggerClassName) };
+
     return (
         <div className={classes.cardsRoot}>
-            <div className={clsx(classes.cards, triggerClassName)}>
+            <div {...cardsProps}>
                 {items.map((item, i) => (
-                    <Card
-                        key={i}
-                        className={i === 0 ? classes.firstCard : classes.otherCard}
-                        parallaxData={setParallaxData(i)}
-                        data={{ ...item, ranking: `${i + 1} / ${items.length}` }}
-                        onPlxEnd={onCurrentStep}
-                    />
+                    <>
+                        <Card
+                            key={i}
+                            className={!isMobile && (i === 0 ? classes.firstCard : classes.otherCard)}
+                            parallaxData={setParallaxData(i)}
+                            data={{ ...item, ranking: `${i + 1} / ${items.length}` }}
+                            onPlxEnd={onCurrentStep}
+                        />
+                        {isMobile && <Divider className={classes.divider} />}
+                    </>
                 ))}
             </div>
         </div>
