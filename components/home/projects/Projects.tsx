@@ -32,7 +32,7 @@ const data = [
 ];
 
 const useStyles = createUseStyles((theme: any) => ({
-    root: {
+    projectsRoot: {
         composes: 'flexColumn stretchSelf justifyCenter',
         fontFamily: 'Prequelrough, sans-serif',
         paddingBottom: theme.spacing(15),
@@ -45,7 +45,7 @@ export type PageInfoProps = { title: string; subtitle: string; icon: string };
 const Projects: FC = () => {
     const classes = useStyles();
     return (
-        <div className={classes.root} id="projects">
+        <div className={classes.projectsRoot} id="projects">
             {data.map(
                 (item: ProjectsProps, index: number): ReactNode => (
                     <Project {...item} key={index} reverse={index % 2 !== 0} reverseIndex={data.length - index} />

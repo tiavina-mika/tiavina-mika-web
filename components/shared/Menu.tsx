@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { openMenuAnimation } from '../../animations/app';
 import { screenState } from '../../reducers/appReducer';
-import { media } from '../../utils/constants';
+import { horizontalPaddingMobile, media } from '../../utils/constants';
 
 interface MenuI {
     url: string;
@@ -31,11 +31,15 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     menu: {
         composes: 'flexColumn stretchSelf',
+        [media.lgDown]: {
+            paddingTop: theme.spacing(1),
+            paddingBottom: theme.spacing(1),
+        },
     },
     content: {
         composes: 'flexRow spaceBetween center stretchSelf',
         [media.lgDown]: {
-            padding: [theme.spacing(0), theme.spacing(4)],
+            padding: [theme.spacing(0), theme.spacing(horizontalPaddingMobile)],
         },
     },
     leftMenu: {
@@ -52,6 +56,7 @@ const useStyles = createUseStyles((theme: any) => ({
         padding: 0,
         [media.lgDown]: {
             fontSize: 42,
+            lineHeight: '1em',
         },
     },
     description: {
@@ -66,7 +71,7 @@ const useStyles = createUseStyles((theme: any) => ({
         color: '#666',
     },
     rightMenu: {
-        composes: 'flexRow alignCenter justifyEnd flex1',
+        composes: 'flexRow alignCenter justifyEnd ',
     },
     item: {
         padding: [theme.spacing(3), theme.spacing(6)],

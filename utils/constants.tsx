@@ -41,3 +41,4 @@ export const lgScreenWidth = 1500;
 export const competenseSvgBottomY = 645;
 export const competenseSvgTopY = 125;
 export const activeColor = '#13BB70';
+export const horizontalPaddingMobile = 2;

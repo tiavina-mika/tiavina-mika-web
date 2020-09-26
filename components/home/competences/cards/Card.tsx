@@ -4,7 +4,7 @@ import Plx from 'react-plx';
 import clsx from 'clsx';
 import { useSelector } from 'react-redux';
 import { screenState } from '../../../../reducers/appReducer';
-import { media } from '../../../../utils/constants';
+import { horizontalPaddingMobile, media } from '../../../../utils/constants';
 import Divider from '../../../shared/Divider';
 
 const useStyles = createUseStyles((theme: any) => ({
@@ -23,7 +23,7 @@ const useStyles = createUseStyles((theme: any) => ({
     cardMobile: {
         composes: 'flexColumn spaceBetween font-ProximaNova-regular',
         marginTop: theme.spacing(2),
-        padding: [theme.spacing(6), theme.spacing(3)],
+        padding: [theme.spacing(2), theme.spacing(horizontalPaddingMobile)],
         // boxSizing: 'border-box',
         // boxShadow: '0 6px 10px rgba(0,0,0,.08)',
         // borderRadius: 10,
@@ -76,6 +76,9 @@ const useStyles = createUseStyles((theme: any) => ({
     divider: {
         [media.smLg]: {
             display: 'none',
+        },
+        [media.smDown]: {
+            marginTop: theme.spacing(6),
         },
     },
 }));

@@ -3,13 +3,13 @@ import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
 import { ProjectsProps } from './Projects';
-import { media } from '../../../utils/constants';
+import { horizontalPaddingMobile, media } from '../../../utils/constants';
 import Button from '../../shared/Button';
 
 const SYSTEM_CONTENT_BLOCK_WIDTH = 380;
 
 const useStyles = createUseStyles((theme: any) => ({
-    root: {
+    projectRoot: {
         composes: 'flexColumn justifyCenter stretchSelf',
         marginBottom: theme.spacing(15),
         letterSpacing: '0.1em',
@@ -19,7 +19,7 @@ const useStyles = createUseStyles((theme: any) => ({
         [media.lgDown]: {
             flexDirection: 'column',
             alignItems: 'center',
-            padding: [0, theme.spacing(4)],
+            padding: [0, theme.spacing(horizontalPaddingMobile)],
         },
     },
     imageBlockRoot: {
@@ -91,7 +91,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     title: {
-        lineHeight: '1em',
+        lineHeight: '1.2em',
     },
     description: {
         composes: 'font-Montserrat-medium',
@@ -109,6 +109,7 @@ const useStyles = createUseStyles((theme: any) => ({
             marginTop: theme.spacing(2),
             marginBottom: theme.spacing(2),
             fontSize: 22,
+            letterSpacing: 1,
         },
     },
     link: {
@@ -129,7 +130,7 @@ const Project: FC<ProjectsProps & Props> = ({ image, reverse, title, link, descr
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <div className={classes.projectRoot}>
             <div className={classes.content}>
                 <div className={clsx(classes.imageBlockRoot, reverse ? classes.reverseImage : null)}>
                     <div className={clsx(classes.imageContainer, reverse ? classes.imageContainerReverse : null)}>

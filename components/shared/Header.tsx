@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import Title from './Title';
 import Text from './Text';
-import { media } from '../../utils/constants';
+import { horizontalPaddingMobile, media } from '../../utils/constants';
 import Menu from './Menu';
 
 const useStyles = createUseStyles((theme: any) => ({
@@ -21,7 +21,7 @@ const useStyles = createUseStyles((theme: any) => ({
         marginTop: theme.spacing(22),
         [media.lgDown]: {
             marginTop: theme.spacing(3),
-            padding: [theme.spacing(1), theme.spacing(4)],
+            padding: [theme.spacing(1), theme.spacing(horizontalPaddingMobile)],
         },
     },
     titleContainer: {
