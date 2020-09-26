@@ -103,7 +103,7 @@ const Menu = () => {
         setHeight(ref.current.clientHeight);
     }, []);
 
-    const menuItem = ({ url, text, index }: IndexI & MenuI) => (
+    const menuItem = ({ url, text, index }: IndexI & MenuI): ReactNode => (
         <div className={classes.item} key={index}>
             <a href={url} className={classes.link}>
                 {text}
@@ -111,7 +111,7 @@ const Menu = () => {
         </div>
     );
 
-    const menuDesktop = (
+    const menuDesktop: ReactNode = (
         <div className={classes.rightMenu}>
             {menus.map(({ text, url }: MenuI, index: number): ReactNode => menuItem({ index, text, url }))}
         </div>
@@ -124,7 +124,7 @@ const Menu = () => {
         onClick: handleOpen,
         className: classes.menuIcon,
     };
-    const menuIcon = (
+    const menuIcon: ReactNode = (
         <div className={classes.rightMenu}>
             {!openMenu ? (
                 <img src={`/images/icons/menu.svg`} {...menuIconProps} />
