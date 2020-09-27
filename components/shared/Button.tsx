@@ -31,7 +31,7 @@ const Button: FC<Props> = ({ text, url, className }) => {
             className={clsx(classes.button, className, url ? classes.link : null)}
             whileHover={{
                 scale: 1.1,
-                transition: { duration: 0.1, type: 'spring', stiffness: 200, damping: 3 },
+                transition: { duration: 0.1, type: 'spring', stiffness: 300, damping: 3 },
             }}>
             <span>{text}</span>
             <img src={`/images/icons/caret.svg`} alt="icon" className={classes.icon} />
