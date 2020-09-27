@@ -39,6 +39,12 @@
 }
 
 @font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('/fonts/Proxima-Nova-Bold.ttf');
+    font-display: auto;
+    font-style: normal;
+}
+@font-face {
     font-family: 'Proxima Nova Medium';
     src: url('/fonts/Proxima-Nova-Medium.otf');
     font-display: auto;

@@ -8,6 +8,7 @@ import { media } from '../utils/constants';
 import Header from '../components/shared/Header';
 import Competences from '../components/home/competences';
 import Projects from '../components/home/projects';
+import Knowledges from '../components/home/knowledges';
 
 const useStyles = createUseStyles({
     window: {
@@ -65,6 +66,7 @@ const Home = () => {
             />
             <Competences />
             <Projects />
+            <Knowledges />
         </div>
     );
 };
