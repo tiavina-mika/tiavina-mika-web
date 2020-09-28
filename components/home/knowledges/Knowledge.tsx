@@ -85,9 +85,9 @@ const useStyles = createUseStyles((theme: any) => ({
 
 const getColor = (percent: number): string => {
     let color;
-    if (percent > 50) color = '#3ee85d';
+    if (percent > 50) color = '#13BB70';
     if (percent > 25 && percent <= 50) color = '#FEE895';
-    if (percent <= 25) color = 'red';
+    if (percent <= 25) color = '#F4B63E';
     return color;
 };
 
