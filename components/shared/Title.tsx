@@ -5,10 +5,9 @@ import { media } from '../../utils/constants';
 
 const useStyles = createUseStyles({
     title: {
-        composes: 'flexRow stretchSelf font-DINCondensed-medium',
+        composes: 'flexRow stretchSelf font-Poppins-bold',
         lineHeight: '1.25em',
         letterSpacing: 4,
-        textTransform: 'uppercase',
         webkitFontSmoothing: 'antialiased',
         fontWeight: 'bold',
     },
@@ -33,7 +32,7 @@ const Title: FC<Props> = ({ text, level, className }) => {
     const classes = useStyles();
     const Component = (level ? `h${level}` : 'h1') as ElementType;
     return (
-        <Component className={clsx(classes.title, className, level ? classes[`h${level}`] : classes['h1'])}>
+        <Component className={clsx(className, classes.title, level ? classes[`h${level}`] : classes['h1'])}>
             {text}
         </Component>
     );

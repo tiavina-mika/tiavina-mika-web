@@ -19,8 +19,10 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* ----------------------- Montserrat -------------------------------- */
 @font-face {
-    font-family: 'Montserrat Medium';
+    font-family: 'Montserrat-Medium';
     src: url('/fonts/Montserrat-Medium.ttf');
     font-display: auto;
     font-style: normal;
@@ -38,6 +40,7 @@
     font-style: normal;
 }
 
+/* ----------------------- Proxima Nova -------------------------------- */
 @font-face {
     font-family: 'Proxima Nova Bold';
     src: url('/fonts/Proxima-Nova-Bold.ttf');
@@ -62,6 +65,34 @@
     font-display: auto;
     font-style: normal;
 }
+
+/* ----------------------- Poppins -------------------------------- */
+@font-face {
+    font-family: 'Poppins Bold';
+    src: url('/fonts/Poppins-Bold.ttf');
+    font-display: auto;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins Medium';
+    src: url('/fonts/Poppins-Medium.otf');
+    font-display: auto;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('/fonts/Poppins-Regular.otf');
+    font-display: auto;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Poppins Light';
+    src: url('/fonts/Poppins-Light.otf');
+    font-display: auto;
+    font-style: normal;
+}
+
+
 @font-face {
     font-family: 'Karla Regular';
     src: url('/fonts/Karla-Regular.ttf');
@@ -136,7 +167,7 @@ h6, h3, h4, h2 {
     font-weight: 300;
 }
 
-/* DIN */
+/* ----------------------- DIN -------------------------------- */
 .font-DINCondensed-medium {
     font-family: 'DINCondensed', sans-serif;
     font-weight: 500;
@@ -145,10 +176,18 @@ h6, h3, h4, h2 {
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
 }
+
+/* ----------------------- Poppins -------------------------------- */
 .font-Poppins-regular {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: 'Poppins Regular', sans-serif;
 }
+.font-Poppins-bold {
+    font-family: 'Poppins Bold', sans-serif;
+}
+.font-Poppins-medium {
+    font-family: 'Poppins Medium', sans-serif;
+}
+
 .font-tungsten-regular {
     font-family: 'Tungsten-Medium', sans-serif;
     font-weight: 400;

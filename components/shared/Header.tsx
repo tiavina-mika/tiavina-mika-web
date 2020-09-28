@@ -4,6 +4,7 @@ import Title from './Title';
 import Text from './Text';
 import { horizontalPaddingMobile, media } from '../../utils/constants';
 import Menu from './Menu';
+import clsx from 'clsx';
 
 const useStyles = createUseStyles((theme: any) => ({
     headerRoot: {
@@ -30,10 +31,20 @@ const useStyles = createUseStyles((theme: any) => ({
             marginBottom: theme.spacing(3),
         },
     },
+    title: {
+        textTransform: 'uppercase',
+        fontFamily: 'DINCondensed !important',
+    },
+    subtitle: {
+        fontSize: 32,
+    },
     descriptionContainer: {
         composes: 'flexRow stretchSelf font-ProximaNova-regular',
         lineHeight: '1.8em',
         color: theme.color.secondary,
+    },
+    description: {
+        fontSize: 24,
     },
 }));
 
@@ -48,13 +59,13 @@ const Header: FC<Props> = ({ title, description, subtitle }) => {
             {/* page title */}
             <div className={classes.content}>
                 <div className={description && subtitle ? classes.titleContainer : null}>
-                    <Title text={title} />
-                    {subtitle && <Title text={subtitle} level={2} />}
+                    <Title text={title} className={classes.title} />
+                    {subtitle && <Title text={subtitle} level={2} className={clsx(classes.title, classes.subtitle)} />}
                 </div>
                 {/* page title */}
                 {description && (
                     <div className={classes.descriptionContainer}>
-                        <Text text={description} tagName="p" />
+                        <Text text={description} tagName="p" className={classes.description} />
                     </div>
                 )}
             </div>

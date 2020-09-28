@@ -5,7 +5,6 @@ import clsx from 'clsx';
 const useStyles = createUseStyles((theme: any) => ({
     text: {
         composes: 'font-ProximaNova-regular',
-        lineHeight: '1.2em',
         fontSize: 18,
         color: theme.color.secondary,
     },
