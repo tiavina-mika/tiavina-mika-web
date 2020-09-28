@@ -5,8 +5,8 @@ import { media } from '../../utils/constants';
 
 const useStyles = createUseStyles((theme: any) => ({
     text: {
-        composes: 'flexRow stretchSelf font-ProximaNova-regular',
-        lineHeight: '1.8em',
+        composes: 'font-ProximaNova-regular',
+        lineHeight: '1.2em',
         fontSize: 24,
         color: theme.color.secondary,
         [media.mdDown]: {

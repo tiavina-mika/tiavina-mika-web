@@ -9,7 +9,7 @@ const useStyles = createUseStyles({
         borderRadius: 15,
         overflow: 'hidden',
         width: ({ width }) => width || '100%',
-        height: 13,
+        height: ({ height }) => height || 13,
     },
     color: {
         backgroundColor: ({ color }) => color,
@@ -19,9 +19,9 @@ const useStyles = createUseStyles({
     },
 });
 
-type Props = { color: string; percent: number; width?: number; className?: string };
-const ProgressiveBar: FC<Props> = ({ color, percent, width, className }) => {
-    const classes = useStyles({ color, percent, width });
+type Props = { color: string; percent: number; width?: number; className?: string; height?: number };
+const ProgressiveBar: FC<Props> = ({ color, percent, width, className, height }) => {
+    const classes = useStyles({ color, percent, width, height });
     return (
         <div className={clsx(classes.progressiveBar, className)}>
             <div className={classes.color} />

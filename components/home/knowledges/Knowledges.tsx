@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import Knowledge from './Knowledge';
 import OveralCard from './OveralCard';
 
 const useStyles = createUseStyles((theme: any) => ({
@@ -20,6 +21,7 @@ const Knowledges: FC = () => {
     return (
         <div className={classes.knowledgesRoot} id="knowledges">
             <OveralCard />
+            <Knowledge />
         </div>
     );
 };
