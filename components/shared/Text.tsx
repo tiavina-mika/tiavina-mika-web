@@ -1,17 +1,13 @@
 import React, { FC, ElementType } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
-import { media } from '../../utils/constants';
 
 const useStyles = createUseStyles((theme: any) => ({
     text: {
         composes: 'font-ProximaNova-regular',
         lineHeight: '1.2em',
-        fontSize: 24,
+        fontSize: 18,
         color: theme.color.secondary,
-        [media.mdDown]: {
-            fontSize: 18,
-        },
     },
 }));
 

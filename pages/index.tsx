@@ -9,6 +9,7 @@ import Header from '../components/shared/Header';
 import Competences from '../components/home/competences';
 import Projects from '../components/home/projects';
 import Knowledges from '../components/home/knowledges';
+import Text from '../components/shared/Text';
 
 const useStyles = createUseStyles({
     window: {
@@ -44,6 +45,14 @@ const useStyles = createUseStyles({
             alignSelf: 'stretch',
         },
     },
+    warning: {
+        composes: 'flexRow stretchSelf justifyCenter',
+        padding: 20,
+        backgroundColor: 'red',
+    },
+    warningText: {
+        color: '#fff',
+    },
 });
 
 const headerDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
@@ -59,6 +68,9 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
+            <div className={classes.warning}>
+                <Text text="Le site est actuellement en cours de développement." className={classes.warningText} />
+            </div>
             <Header
                 title="Tiavina Michael RALAINIRINA"
                 subtitle="FullStack Developer - UI / UX Designer"
