@@ -91,7 +91,11 @@ const getColor = (percent: number): string => {
     return color;
 };
 
-const getCardPosition = (index: number) => {
+interface CardPositionI {
+    top: number;
+    left: number;
+}
+const getCardPosition = (index: number): CardPositionI => {
     let top;
     let left;
     switch (index) {
