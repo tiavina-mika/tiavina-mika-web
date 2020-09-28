@@ -48,6 +48,7 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     descriptionContainer: {
         width: 400,
+        marginTop: theme.spacing(2),
     },
     description: {
         fontWeight: 300,
