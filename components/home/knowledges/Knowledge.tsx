@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
+import { media } from '../../../utils/constants';
 
 import Text from '../../shared/Text';
 import Title from '../../shared/Title';
@@ -15,25 +16,45 @@ const useStyles = createUseStyles((theme: any) => ({
     knowledgeContent: {
         composes: 'flexRow justifyCenter alignCenter',
         alignSelf: 'center',
-        width: 1200,
+        [media.lgUp]: {
+            width: 1200,
+        },
+        [media.lgDown]: {
+            flexDirection: 'column',
+            alignItems: 'center',
+        },
     },
     textContainer: {
         composes: 'flexColumn',
         flex: 1,
     },
-    imagesContainer: {
+    cards: {
         composes: 'flexRow',
-        flex: 1.2,
+        [media.lgUp]: {
+            flex: 1.2,
+        },
+        [media.smLg]: {
+            marginTop: theme.spacing(8),
+        },
+        [media.smDown]: {
+            marginTop: theme.spacing(5),
+        },
     },
     card: {
         composes: 'flexColumn spaceBetween center',
-        width: 88,
+        width: 98,
         padding: theme.spacing(3),
         marginRight: theme.spacing(1),
-        height: 83,
+        height: 93,
         backgroundColor: '#fff',
         boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
         borderRadius: 10,
+        [media.lgUp]: {
+            position: 'relative',
+        },
+        [media.lgDown]: {
+            margin: theme.spacing(2),
+        },
     },
     cardBody: {
         composes: 'flexColumn spaceBetween stretchSelf center',
@@ -47,7 +68,12 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 33,
     },
     descriptionContainer: {
-        width: 400,
+        [media.lgUp]: {
+            width: 400,
+        },
+        [media.smLg]: {
+            width: 600,
+        },
         marginTop: theme.spacing(2),
     },
     description: {
@@ -59,10 +85,36 @@ const useStyles = createUseStyles((theme: any) => ({
 
 const getColor = (percent: number): string => {
     let color;
-    if (percent > 50) color = 'green';
-    if (percent > 25 && percent <= 50) color = 'red';
-    if (percent <= 25) color = 'blue';
+    if (percent > 50) color = '#3ee85d';
+    if (percent > 25 && percent <= 50) color = '#FEE895';
+    if (percent <= 25) color = 'red';
     return color;
+};
+
+const getCardPosition = (index: number) => {
+    let top;
+    let left;
+    switch (index) {
+        case (index = 0):
+            top = 100;
+            left = 0;
+            break;
+        case (index = 1):
+            left = 95;
+            break;
+        case (index = 2):
+            top = 100;
+            left = 275;
+            break;
+        case (index = 3):
+            top = 250;
+            left = -80;
+            break;
+        default:
+            top = 210;
+            left = 120;
+    }
+    return { top, left };
 };
 
 type Props = { data: KnowledgeI };
@@ -77,10 +129,13 @@ const Knowledge: FC<Props> = ({ data }) => {
                         <Text text={data.description} tagName="p" className={classes.description} />
                     </div>
                 </div>
-                <div className={classes.imagesContainer}>
+                <div className={classes.cards}>
                     {data.technos.map(
-                        (d: TechnoI): ReactNode => (
-                            <div className={classes.card} key={d.name}>
+                        (d: TechnoI, index: number): ReactNode => (
+                            <div
+                                className={classes.card}
+                                key={d.name}
+                                style={{ top: getCardPosition(index).top, left: getCardPosition(index).left }}>
                                 <img alt="react" src={`/images/technos/${d.image}.png`} />
                                 <div className={classes.cardBody}>
                                     <Text text={d.name} className={classes.label} />

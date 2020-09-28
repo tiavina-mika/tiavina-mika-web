@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 
+import { horizontalPaddingMobile, media } from '../../../utils/constants';
+
 import Knowledge from './Knowledge';
 import OveralCard from './OveralCard';
 
@@ -9,6 +11,10 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexColumn center stretchSelf',
         fontFamily: 'font-ProximaNova-regular',
         paddingBottom: theme.spacing(15),
+        [media.lgDown]: {
+            paddingLeft: theme.spacing(horizontalPaddingMobile),
+            paddingRight: theme.spacing(horizontalPaddingMobile),
+        },
     },
     progressiveContainer: {
         composes: 'flexColumn stretchSelf center',
