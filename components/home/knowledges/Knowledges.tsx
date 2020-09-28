@@ -45,6 +45,16 @@ const data: KnowledgeI[] = [
                 image: 'css',
                 value: 100,
             },
+            {
+                name: 'JQuery',
+                image: 'jquery',
+                value: 98,
+            },
+            {
+                name: 'Angular',
+                image: 'angular',
+                value: 50,
+            },
         ],
     },
 ];
