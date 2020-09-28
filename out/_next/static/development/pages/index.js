@@ -2041,6 +2041,176 @@ var ItemsChart = function ItemsChart(_ref) {
 
 /***/ }),
 
+/***/ "./components/home/knowledges/Knowledge.tsx":
+/*!**************************************************!*\
+  !*** ./components/home/knowledges/Knowledge.tsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _shared_Text__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/Text */ "./components/shared/Text.tsx");
+/* harmony import */ var _shared_Title__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Title */ "./components/shared/Title.tsx");
+/* harmony import */ var _ProgressiveBar__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ProgressiveBar */ "./components/home/knowledges/ProgressiveBar.tsx");
+var _this = undefined,
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\Knowledge.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])(function (theme) {
+  return {
+    knowledgeRoot: {
+      composes: 'flexColumn center stretchSelf',
+      fontFamily: 'font-ProximaNova-regular',
+      marginTop: theme.spacing(20)
+    },
+    knowledgeContent: {
+      composes: 'flexRow justifyCenter alignCenter',
+      alignSelf: 'center',
+      width: 1200
+    },
+    textContainer: {
+      composes: 'flexColumn',
+      flex: 1
+    },
+    imagesContainer: {
+      composes: 'flexRow',
+      flex: 1.2
+    },
+    card: {
+      composes: 'flexColumn spaceBetween center',
+      width: 88,
+      padding: theme.spacing(3),
+      marginRight: theme.spacing(1),
+      height: 83,
+      backgroundColor: '#fff',
+      boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
+      borderRadius: 10
+    },
+    cardBody: {
+      composes: 'flexColumn spaceBetween stretchSelf center'
+    },
+    label: {
+      composes: 'font-ProximaNova-bold',
+      fontSize: 16,
+      marginBottom: theme.spacing(1)
+    }
+  };
+});
+
+var getColor = function getColor(percent) {
+  var color;
+  if (percent > 50) color = 'green';
+  if (percent > 25 && percent <= 50) color = 'red';
+  if (percent <= 25) color = 'blue';
+  return color;
+};
+
+var Knowledge = function Knowledge(_ref) {
+  var data = _ref.data;
+  var classes = useStyles();
+  return __jsx("div", {
+    className: classes.knowledgeRoot,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: classes.knowledgeContent,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
+      columnNumber: 13
+    }
+  }, __jsx("div", {
+    className: classes.textContainer,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62,
+      columnNumber: 17
+    }
+  }, __jsx(_shared_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    text: data.title,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63,
+      columnNumber: 21
+    }
+  })), __jsx("div", {
+    className: classes.imagesContainer,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65,
+      columnNumber: 17
+    }
+  }, data.technos.map(function (d) {
+    return __jsx("div", {
+      className: classes.card,
+      key: d.name,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68,
+        columnNumber: 29
+      }
+    }, __jsx("img", {
+      alt: "react",
+      src: "/images/technos/".concat(d.image, ".png"),
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69,
+        columnNumber: 33
+      }
+    }), __jsx("div", {
+      className: classes.cardBody,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 70,
+        columnNumber: 33
+      }
+    }, __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      text: d.name,
+      className: classes.label,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 71,
+        columnNumber: 37
+      }
+    }), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      color: getColor(d.value),
+      percent: d.value,
+      height: 8,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 72,
+        columnNumber: 37
+      }
+    })));
+  }))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Knowledge);
+
+/***/ }),
+
 /***/ "./components/home/knowledges/Knowledges.tsx":
 /*!***************************************************!*\
   !*** ./components/home/knowledges/Knowledges.tsx ***!
@@ -2053,11 +2223,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
+/* harmony import */ var _Knowledge__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Knowledge */ "./components/home/knowledges/Knowledge.tsx");
+/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\Knowledges.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2075,6 +2247,22 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
     }
   };
 });
+var data = [{
+  title: 'Frontend',
+  technos: [{
+    name: 'React',
+    image: 'react',
+    value: 98
+  }, {
+    name: 'HTML',
+    image: 'html',
+    value: 100
+  }, {
+    name: 'CSS',
+    image: 'css',
+    value: 100
+  }]
+}];
 
 var Knowledges = function Knowledges() {
   var classes = useStyles();
@@ -2084,16 +2272,27 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 55,
       columnNumber: 9
     }
-  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 56,
       columnNumber: 13
     }
+  }), data.map(function (d, i) {
+    return __jsx(_Knowledge__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      data: d,
+      key: i,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 58,
+        columnNumber: 17
+      }
+    });
   }));
 };
 
@@ -2362,15 +2561,18 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       var _width = _ref.width;
       return _width || '100%';
     },
-    height: 13
+    height: function height(_ref2) {
+      var _height = _ref2.height;
+      return _height || 13;
+    }
   },
   color: {
-    backgroundColor: function backgroundColor(_ref2) {
-      var color = _ref2.color;
+    backgroundColor: function backgroundColor(_ref3) {
+      var color = _ref3.color;
       return color;
     },
-    width: function width(_ref3) {
-      var percent = _ref3.percent;
+    width: function width(_ref4) {
+      var percent = _ref4.percent;
       return percent + '%';
     },
     borderRadius: 15,
@@ -2378,15 +2580,17 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
   }
 });
 
-var ProgressiveBar = function ProgressiveBar(_ref4) {
-  var color = _ref4.color,
-      percent = _ref4.percent,
-      width = _ref4.width,
-      className = _ref4.className;
+var ProgressiveBar = function ProgressiveBar(_ref5) {
+  var color = _ref5.color,
+      percent = _ref5.percent,
+      width = _ref5.width,
+      className = _ref5.className,
+      height = _ref5.height;
   var classes = useStyles({
     color: color,
     percent: percent,
-    width: width
+    width: width,
+    height: height
   });
   return __jsx("div", {
     className: Object(clsx__WEBPACK_IMPORTED_MODULE_0__["default"])(classes.progressiveBar, className),
@@ -3348,32 +3552,25 @@ var Menu = function Menu() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/constants */ "./utils/constants.tsx");
-
-
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\shared\\Text.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])(function (theme) {
   return {
-    text: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      composes: 'flexRow stretchSelf font-ProximaNova-regular',
-      lineHeight: '1.8em',
-      fontSize: 24,
+    text: {
+      composes: 'font-ProximaNova-regular',
+      lineHeight: '1.2em',
+      fontSize: 18,
       color: theme.color.secondary
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].mdDown, {
-      fontSize: 18
-    })
+    }
   };
 });
 
@@ -3384,11 +3581,11 @@ var Text = function Text(_ref) {
   var classes = useStyles();
   var Component = tagName ? tagName : 'span';
   return __jsx(Component, {
-    className: Object(clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.text, className),
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])(classes.text, className),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 18,
       columnNumber: 12
     }
   }, text);
@@ -25060,6 +25257,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_home_competences__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/home/competences */ "./components/home/competences/index.tsx");
 /* harmony import */ var _components_home_projects__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/home/projects */ "./components/home/projects/index.tsx");
 /* harmony import */ var _components_home_knowledges__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/home/knowledges */ "./components/home/knowledges/index.tsx");
+/* harmony import */ var _components_shared_Text__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/shared/Text */ "./components/shared/Text.tsx");
 
 
 var _right,
@@ -25067,6 +25265,7 @@ var _right,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\pages\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -25104,7 +25303,15 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
   }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_right, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].lgDown, {
     order: -1,
     alignSelf: 'stretch'
-  }), _right)
+  }), _right),
+  warning: {
+    composes: 'flexRow stretchSelf justifyCenter',
+    padding: 20,
+    backgroundColor: 'red'
+  },
+  warningText: {
+    color: '#fff'
+  }
 });
 var headerDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
@@ -25122,38 +25329,55 @@ var Home = function Home() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 70,
       columnNumber: 9
     }
-  }, __jsx(_components_shared_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, __jsx("div", {
+    className: classes.warning,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71,
+      columnNumber: 13
+    }
+  }, __jsx(_components_shared_Text__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    text: "Le site est actuellement en cours de d\xE9veloppement.",
+    className: classes.warningText,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72,
+      columnNumber: 17
+    }
+  })), __jsx(_components_shared_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
     title: "Tiavina Michael RALAINIRINA",
     subtitle: "FullStack Developer - UI / UX Designer",
     description: headerDescription,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 74,
       columnNumber: 13
     }
   }), __jsx(_components_home_competences__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 79,
       columnNumber: 13
     }
   }), __jsx(_components_home_projects__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 80,
       columnNumber: 13
     }
   }), __jsx(_components_home_knowledges__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 81,
       columnNumber: 13
     }
   }));
