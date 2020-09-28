@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+
 import Knowledge from './Knowledge';
 import OveralCard from './OveralCard';
 
@@ -16,12 +17,46 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
+export interface TechnoI {
+    name: string;
+    image: string;
+    value: number;
+}
+export interface KnowledgeI {
+    title: string;
+    technos: TechnoI[];
+}
+const data: KnowledgeI[] = [
+    {
+        title: 'Frontend',
+        technos: [
+            {
+                name: 'React',
+                image: 'react',
+                value: 98,
+            },
+            {
+                name: 'HTML',
+                image: 'html',
+                value: 100,
+            },
+            {
+                name: 'CSS',
+                image: 'css',
+                value: 100,
+            },
+        ],
+    },
+];
+
 const Knowledges: FC = () => {
     const classes = useStyles();
     return (
         <div className={classes.knowledgesRoot} id="knowledges">
             <OveralCard />
-            <Knowledge />
+            {data.map((d, i) => (
+                <Knowledge data={d} key={i} />
+            ))}
         </div>
     );
 };

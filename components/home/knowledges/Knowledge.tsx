@@ -1,7 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
+
 import Text from '../../shared/Text';
 import Title from '../../shared/Title';
+import { KnowledgeI, TechnoI } from './Knowledges';
 import ProgressiveBar from './ProgressiveBar';
 
 const useStyles = createUseStyles((theme: any) => ({
@@ -20,16 +22,17 @@ const useStyles = createUseStyles((theme: any) => ({
         flex: 1,
     },
     imagesContainer: {
-        composes: 'flexColumn',
+        composes: 'flexRow',
         flex: 1.2,
     },
     card: {
         composes: 'flexColumn spaceBetween center',
-        width: 118,
+        width: 88,
         padding: theme.spacing(3),
-        height: 98,
+        marginRight: theme.spacing(1),
+        height: 83,
         backgroundColor: '#fff',
-        boxShadow: '0 6px 10px rgba(0,0,0,.08)',
+        boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
         borderRadius: 10,
     },
     cardBody: {
@@ -37,27 +40,40 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     label: {
         composes: 'font-ProximaNova-bold',
-        fontSize: 18,
+        fontSize: 16,
         marginBottom: theme.spacing(1),
     },
 }));
 
-const Knowledge: FC = () => {
+const getColor = (percent: number): string => {
+    let color;
+    if (percent > 50) color = 'green';
+    if (percent > 25 && percent <= 50) color = 'red';
+    if (percent <= 25) color = 'blue';
+    return color;
+};
+
+type Props = { data: KnowledgeI };
+const Knowledge: FC<Props> = ({ data }) => {
     const classes = useStyles();
     return (
         <div className={classes.knowledgeRoot}>
             <div className={classes.knowledgeContent}>
                 <div className={classes.textContainer}>
-                    <Title text="Fontend" />
+                    <Title text={data.title} />
                 </div>
                 <div className={classes.imagesContainer}>
-                    <div className={classes.card}>
-                        <img alt="react" src={`/images/technos/react.png`} />
-                        <div className={classes.cardBody}>
-                            <Text text="React" className={classes.label} />
-                            <ProgressiveBar color="#FEE895" percent={90} height={8} />
-                        </div>
-                    </div>
+                    {data.technos.map(
+                        (d: TechnoI): ReactNode => (
+                            <div className={classes.card} key={d.name}>
+                                <img alt="react" src={`/images/technos/${d.image}.png`} />
+                                <div className={classes.cardBody}>
+                                    <Text text={d.name} className={classes.label} />
+                                    <ProgressiveBar color={getColor(d.value)} percent={d.value} height={8} />
+                                </div>
+                            </div>
+                        )
+                    )}
                 </div>
             </div>
         </div>
