@@ -1,7 +1,8 @@
 import React, { FC, ReactNode } from 'react';
+import { createUseStyles } from 'react-jss';
 
 import Project from './Project';
-import { createUseStyles } from 'react-jss';
+import { isReverse } from '../../../utils/utils';
 
 const data = [
     {
@@ -48,7 +49,7 @@ const Projects: FC = () => {
         <div className={classes.projectsRoot} id="projects">
             {data.map(
                 (item: ProjectsProps, index: number): ReactNode => (
-                    <Project {...item} key={index} reverse={index % 2 !== 0} reverseIndex={data.length - index} />
+                    <Project {...item} key={index} reverse={isReverse(index)} reverseIndex={data.length - index} />
                 )
             )}
         </div>

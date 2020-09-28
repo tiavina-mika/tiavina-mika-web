@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React, { FC, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
 import { media } from '../../../utils/constants';
@@ -12,6 +13,11 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexColumn center stretchSelf',
         fontFamily: 'font-ProximaNova-regular',
         marginTop: theme.spacing(20),
+        marginBottom: theme.spacing(10),
+        [media.lgDown]: {
+            marginTop: theme.spacing(5),
+            marginBottom: theme.spacing(5),
+        },
     },
     knowledgeContent: {
         composes: 'flexRow justifyCenter alignCenter',
@@ -27,6 +33,14 @@ const useStyles = createUseStyles((theme: any) => ({
     textContainer: {
         composes: 'flexColumn',
         flex: 1,
+        [media.lgUp]: {
+            marginTop: theme.spacing(12),
+        },
+    },
+    blockReverse: {
+        [media.lgUp]: {
+            marginLeft: theme.spacing(40),
+        },
     },
     cards: {
         composes: 'flexRow',
@@ -34,10 +48,10 @@ const useStyles = createUseStyles((theme: any) => ({
             flex: 1.2,
         },
         [media.smLg]: {
-            marginTop: theme.spacing(8),
+            marginTop: theme.spacing(6),
         },
         [media.smDown]: {
-            marginTop: theme.spacing(5),
+            marginTop: theme.spacing(2),
         },
     },
     card: {
@@ -68,18 +82,26 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 33,
     },
     descriptionContainer: {
+        marginTop: theme.spacing(2),
         [media.lgUp]: {
             width: 400,
+        },
+        [media.lgDown]: {
+            marginTop: theme.spacing(0),
         },
         [media.smLg]: {
             width: 600,
         },
-        marginTop: theme.spacing(2),
     },
     description: {
         fontWeight: 300,
         lineHeight: '1.8em',
         fontSize: 17,
+    },
+    reverse: {
+        [media.lgUp]: {
+            order: 1,
+        },
     },
 }));
 
@@ -108,7 +130,7 @@ const getCardPosition = (index: number): CardPositionI => {
             break;
         case (index = 2):
             top = 100;
-            left = 275;
+            left = 240;
             break;
         case (index = 3):
             top = 250;
@@ -121,13 +143,18 @@ const getCardPosition = (index: number): CardPositionI => {
     return { top, left };
 };
 
-type Props = { data: KnowledgeI };
-const Knowledge: FC<Props> = ({ data }) => {
+type Props = { data: KnowledgeI; reverse: boolean };
+const Knowledge: FC<Props> = ({ data, reverse }) => {
     const classes = useStyles();
     return (
         <div className={classes.knowledgeRoot}>
             <div className={classes.knowledgeContent}>
-                <div className={classes.textContainer}>
+                <div
+                    className={clsx(
+                        classes.textContainer,
+                        reverse ? classes.reverse : null,
+                        reverse ? classes.blockReverse : null
+                    )}>
                     <Title text={data.title} level={2} className={classes.title} />
                     <div className={classes.descriptionContainer}>
                         <Text text={data.description} tagName="p" className={classes.description} />
