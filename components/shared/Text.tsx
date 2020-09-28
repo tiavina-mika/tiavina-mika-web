@@ -4,7 +4,8 @@ import clsx from 'clsx';
 
 const useStyles = createUseStyles((theme: any) => ({
     text: {
-        composes: 'font-ProximaNova-regular',
+        composes: 'font-Poppins-regular',
+        // composes: 'font-ProximaNova-regular',
         fontSize: 18,
         color: theme.color.secondary,
     },

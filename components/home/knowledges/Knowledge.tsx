@@ -43,6 +43,17 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 16,
         marginBottom: theme.spacing(1),
     },
+    title: {
+        fontSize: 33,
+    },
+    descriptionContainer: {
+        width: 400,
+    },
+    description: {
+        fontWeight: 300,
+        lineHeight: '1.8em',
+        fontSize: 17,
+    },
 }));
 
 const getColor = (percent: number): string => {
@@ -60,7 +71,10 @@ const Knowledge: FC<Props> = ({ data }) => {
         <div className={classes.knowledgeRoot}>
             <div className={classes.knowledgeContent}>
                 <div className={classes.textContainer}>
-                    <Title text={data.title} />
+                    <Title text={data.title} level={2} className={classes.title} />
+                    <div className={classes.descriptionContainer}>
+                        <Text text={data.description} tagName="p" className={classes.description} />
+                    </div>
                 </div>
                 <div className={classes.imagesContainer}>
                     {data.technos.map(

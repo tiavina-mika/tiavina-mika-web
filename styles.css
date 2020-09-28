@@ -75,19 +75,19 @@
 }
 @font-face {
     font-family: 'Poppins Medium';
-    src: url('/fonts/Poppins-Medium.otf');
+    src: url('/fonts/Poppins-Medium.ttf');
     font-display: auto;
     font-style: normal;
 }
 @font-face {
     font-family: 'Poppins Regular';
-    src: url('/fonts/Poppins-Regular.otf');
+    src: url('/fonts/Poppins-Regular.ttf');
     font-display: auto;
     font-style: normal;
 }
 @font-face {
     font-family: 'Poppins Light';
-    src: url('/fonts/Poppins-Light.otf');
+    src: url('/fonts/Poppins-Light.ttf');
     font-display: auto;
     font-style: normal;
 }
@@ -172,24 +172,20 @@ h6, h3, h4, h2 {
     font-family: 'DINCondensed', sans-serif;
     font-weight: 500;
 }
-.font-Poppins-bold {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-}
 
 /* ----------------------- Poppins -------------------------------- */
 .font-Poppins-regular {
-    font-family: 'Poppins Regular', sans-serif;
+    font-family: 'Poppins Regular', serif;
 }
 .font-Poppins-bold {
-    font-family: 'Poppins Bold', sans-serif;
+    font-family: 'Poppins Bold', serif;
 }
 .font-Poppins-medium {
-    font-family: 'Poppins Medium', sans-serif;
+    font-family: 'Poppins Medium', serif;
 }
 
 .font-tungsten-regular {
-    font-family: 'Tungsten-Medium', sans-serif;
+    font-family: 'Tungsten-Medium', serif;
     font-weight: 400;
 }
 
