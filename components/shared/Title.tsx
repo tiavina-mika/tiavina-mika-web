@@ -7,11 +7,11 @@ const useStyles = createUseStyles({
     title: {
         composes: 'flexRow stretchSelf font-Poppins-bold',
         lineHeight: '1.25em',
-        letterSpacing: 4,
         webkitFontSmoothing: 'antialiased',
         fontWeight: 'bold',
     },
     h1: {
+        letterSpacing: 4,
         fontSize: 75,
         [media.mdDown]: {
             fontSize: 60,
@@ -24,6 +24,9 @@ const useStyles = createUseStyles({
             fontSize: 22,
             lineHeight: '1.6em',
         },
+    },
+    h3: {
+        letterSpacing: 2,
     },
 });
 

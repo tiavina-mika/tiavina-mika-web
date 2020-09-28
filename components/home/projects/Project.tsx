@@ -5,6 +5,8 @@ import clsx from 'clsx';
 import { ProjectsProps } from './Projects';
 import { horizontalPaddingMobile, media } from '../../../utils/constants';
 import Button from '../../shared/Button';
+import Text from '../../shared/Text';
+import Title from '../../shared/Title';
 
 const SYSTEM_CONTENT_BLOCK_WIDTH = 380;
 
@@ -92,6 +94,10 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     title: {
         lineHeight: '1.2em',
+        composes: 'font-tungsten-regular',
+        textTransform: 'uppercase',
+        fontSize: 40,
+        letterSpacing: 4,
     },
     description: {
         composes: 'font-Montserrat-medium',
@@ -101,8 +107,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     subtitle: {
-        composes: 'font-Montserrat-regular',
-        fontSize: 32,
+        fontSize: 26,
         color: theme.color.subtitle,
         textTransform: 'initial',
         [media.lgDown]: {
@@ -140,9 +145,9 @@ const Project: FC<ProjectsProps & Props> = ({ image, reverse, title, link, descr
                 <div className={clsx(classes.textBlockRoot, reverse ? classes.textBlockRootReverse : null)}>
                     <div className={classes.textContent}>
                         <div className={clsx(classes.number, classes.textSpaceBottom)}>Projet. {reverseIndex}</div>
-                        <h2 className={clsx(classes.title, classes.textSpaceBottom)}>{title}</h2>
-                        <h3 className={clsx(classes.textSpaceBottom, classes.subtitle)}>{subtitle}</h3>
-                        <div className={clsx(classes.textSpaceBottom, classes.description)}>{description}</div>
+                        <Title text={title} level={2} className={clsx(classes.title, classes.textSpaceBottom)} />
+                        <Title text={subtitle} level={3} className={clsx(classes.subtitle, classes.textSpaceBottom)} />
+                        <Text text={description} tagName="p" className={classes.textSpaceBottom} />
                         <Button url={link} text="Voir plus" />
                     </div>
                 </div>
