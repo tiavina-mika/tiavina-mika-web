@@ -9,7 +9,7 @@ const useStyles = createUseStyles((theme: any) => ({
     knowledgeProgressBarRoot: {
         composes: 'flexColumn center flex1',
         fontFamily: 'font-ProximaNova-regular',
-        marginTop: theme.spacing(20),
+        marginTop: theme.spacing(10),
         marginBottom: theme.spacing(10),
         [media.lgDown]: {
             marginTop: theme.spacing(5),
@@ -21,13 +21,13 @@ const useStyles = createUseStyles((theme: any) => ({
         alignSelf: 'center',
     },
     cards: {
-        marginTop: theme.spacing(8),
-        margin: -theme.spacing(1.5),
+        marginTop: theme.spacing(4),
+        margin: -theme.spacing(1.8),
     },
     card: {
-        width: 350,
-        padding: [theme.spacing(3.3), theme.spacing(6)],
-        margin: theme.spacing(1.5),
+        width: 300,
+        padding: [theme.spacing(2.5), theme.spacing(5)],
+        margin: theme.spacing(1.8),
         backgroundColor: '#fff',
         boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
         borderRadius: 32,
@@ -35,6 +35,8 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     title: {
         composes: 'justifyCenter',
+        textAlign: 'center',
+        fontSize: 22,
         [media.mdDown]: {
             justifyContent: 'flex-start',
         },
@@ -49,7 +51,11 @@ const KnowledgeProgressBar: FC<Props> = ({ data }) => {
         <div className={classes.knowledgeProgressBarRoot}>
             <div className={classes.knowledgeProgressBarContent}>
                 <BlockTitle text={data.title} className={classes.title} />
-                <ItemsChart items={data.items} className={classes.cards} itemClassName={classes.card} />
+                <ItemsChart
+                    items={data.items.sort((a, b) => b.value - a.value)}
+                    className={classes.cards}
+                    itemClassName={classes.card}
+                />
             </div>
         </div>
     );

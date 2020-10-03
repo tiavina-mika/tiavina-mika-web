@@ -35,6 +35,12 @@ const useStyles = createUseStyles((theme: any) => ({
             flexDirection: 'column',
         },
     },
+    knowledgesProgressBarContent: {
+        composes: 'flexRow stretchSelf flex1',
+        [media.mdUp]: {
+            width: 1300,
+        },
+    },
 }));
 
 export interface TechnoI {
@@ -185,6 +191,96 @@ const dataProgressBar: KnowledgesProgressiveChartI[] = [
             },
         ],
     },
+    {
+        title: 'Design',
+        items: [
+            {
+                label: 'Photoshop',
+                value: 96,
+                color: '#956FFF',
+            },
+            {
+                label: 'Illustrator',
+                value: 96,
+                color: '#FEE895',
+            },
+            {
+                label: 'InVision',
+                value: 80,
+                color: '#FD7A8C',
+            },
+            {
+                label: 'Zepplin',
+                value: 55,
+                color: '#95BF46',
+            },
+        ],
+    },
+    {
+        title: 'Webservice',
+        items: [
+            {
+                label: 'REST',
+                value: 96,
+                color: '#956FFF',
+            },
+            {
+                label: 'GraphQL',
+                value: 96,
+                color: '#FEE895',
+            },
+            {
+                label: 'Parse Server',
+                value: 92,
+                color: '#FD7A8C',
+            },
+            {
+                label: 'Firebase',
+                value: 55,
+                color: '#95BF46',
+            },
+        ],
+    },
+    {
+        title: 'Gestion de code source',
+        items: [
+            {
+                label: 'GitHub',
+                value: 99,
+                color: '#956FFF',
+            },
+            {
+                label: 'GitLab',
+                value: 90,
+                color: '#FEE895',
+            },
+            {
+                label: 'BitBucket',
+                value: 95,
+                color: '#FD7A8C',
+            },
+        ],
+    },
+    {
+        title: 'Gestion de projet',
+        items: [
+            {
+                label: 'Trello',
+                value: 95,
+                color: '#956FFF',
+            },
+            {
+                label: 'Asana',
+                value: 80,
+                color: '#FEE895',
+            },
+            {
+                label: 'Jira',
+                value: 90,
+                color: '#FD7A8C',
+            },
+        ],
+    },
 ];
 
 const Knowledges: FC = () => {
@@ -200,9 +296,11 @@ const Knowledges: FC = () => {
                 )
             )}
             <div className={classes.knowledgesProgressBar}>
-                {dataProgressBar.map((d, i) => (
-                    <KnowledgeProgressBar data={d} key={i} />
-                ))}
+                <div className={classes.knowledgesProgressBarContent}>
+                    {dataProgressBar.map((d, i) => (
+                        <KnowledgeProgressBar data={d} key={i} />
+                    ))}
+                </div>
             </div>
         </div>
     );
