@@ -45,6 +45,10 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     description: {
         fontSize: 24,
+        [media.mdDown]: {
+            fontSize: 18,
+            lineHeight: '1.8em',
+        },
     },
 }));
 

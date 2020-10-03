@@ -13,6 +13,7 @@ import MobileIcon from './svg/MobileIcon';
 import DesignIcon from './svg/DesignIcon';
 import { useSelector } from 'react-redux';
 import { screenState } from '../../../reducers/appReducer';
+import { media } from '../../../utils/constants';
 
 const description = `Component definition is missing display name react/display-name, bundled successfully, waiting for typecheck results...`;
 const competenceItems = [
@@ -131,6 +132,9 @@ const useStyles = createUseStyles({
     competences: {
         composes: 'flexColumn alignCenter stretchSelf',
         margin: [100, 0],
+        [media.mdDown]: {
+            margin: [30, 0],
+        },
     },
     plxTrigger: {
         marginTop: '30vh',

@@ -72,7 +72,6 @@ const useStyles = createUseStyles((theme: any) => ({
         },
         [media.smLg]: {
             width: '60%',
-            backgroundColor: 'red',
         },
     },
     items: {

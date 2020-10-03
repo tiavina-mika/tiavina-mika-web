@@ -19,7 +19,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     overall: {
-        composes: 'flexColumn center stretchSelf red',
+        composes: 'flexColumn center stretchSelf',
         [media.lgDown]: {
             marginBottom: theme.spacing(4),
         },
