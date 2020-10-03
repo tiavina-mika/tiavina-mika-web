@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React, { FC, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
 import { KnowledgesMainChart } from './OveralCard';
@@ -6,7 +7,7 @@ import ProgressiveBar from './ProgressiveBar';
 
 const useStyles = createUseStyles((theme: any) => ({
     items: {
-        composes: 'flexColumn stretchSelf center',
+        composes: 'flexColumn stretchSelf center font-ProximaNova-bold',
         paddingLeft: theme.spacing(6),
         paddingRight: theme.spacing(6),
         fontSize: 14,
@@ -29,14 +30,14 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { items: KnowledgesMainChart[] };
-const ItemsChart: FC<Props> = ({ items }) => {
+type Props = { items: KnowledgesMainChart[]; itemClassName?: string; className?: string };
+const ItemsChart: FC<Props> = ({ items, itemClassName, className }) => {
     const classes = useStyles();
     return (
-        <div className={classes.items}>
+        <div className={clsx(classes.items, className)}>
             {items.map(
                 (item: KnowledgesMainChart, index: number): ReactNode => (
-                    <div className={classes.item} key={item.label + '-' + index}>
+                    <div className={clsx(classes.item, itemClassName)} key={item.label + '-' + index}>
                         <div className={classes.texts}>
                             <div className={classes.label}>{item.label}</div>
                             <div className={classes.value}>{item.value}%</div>

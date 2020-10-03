@@ -4,7 +4,7 @@ import { createUseStyles } from 'react-jss';
 import { media } from '../../../utils/constants';
 
 import Text from '../../shared/Text';
-import Title from '../../shared/Title';
+import BlockTitle from './BlockTitle';
 import { KnowledgeI, TechnoI } from './Knowledges';
 import ProgressiveBar from './ProgressiveBar';
 
@@ -78,9 +78,6 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 16,
         marginBottom: theme.spacing(1),
     },
-    title: {
-        fontSize: 33,
-    },
     descriptionContainer: {
         marginTop: theme.spacing(2),
         [media.lgUp]: {
@@ -148,7 +145,7 @@ const Knowledge: FC<Props> = ({ data, reverse }) => {
                         reverse ? classes.reverse : null,
                         reverse ? classes.blockReverse : null
                     )}>
-                    <Title text={data.title} level={2} className={classes.title} />
+                    <BlockTitle text={data.title} />
                     <div className={classes.descriptionContainer}>
                         <Text text={data.description} tagName="p" className={classes.description} />
                     </div>
