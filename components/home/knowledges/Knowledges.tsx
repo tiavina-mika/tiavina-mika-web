@@ -38,6 +38,7 @@ export interface TechnoI {
 export interface KnowledgeI {
     title: string;
     description: string;
+    cardPositions?: number[][];
     technos: TechnoI[];
 }
 const data: KnowledgeI[] = [
@@ -85,31 +86,33 @@ const data: KnowledgeI[] = [
         standard dummy text ever since the 1500s, when an unknown 
         printer took a galley of type and scrambled it to make a 
         type specimen book. It has survived not only five centuries.`,
+        cardPositions: [
+            [0, 100, 0],
+            [1, 0, 95],
+            [2, 150, 230],
+            [3, 100, 180],
+            [4, 210, 120],
+        ],
         technos: [
             {
-                name: 'React',
-                image: 'react',
-                value: 98,
+                name: 'Node',
+                image: 'node',
+                value: 95,
             },
             {
-                name: 'HTML',
-                image: 'html',
-                value: 100,
+                name: 'Symfony',
+                image: 'symfony',
+                value: 95,
             },
             {
-                name: 'CSS',
-                image: 'css',
-                value: 100,
+                name: 'Flask',
+                image: 'flask',
+                value: 80,
             },
             {
-                name: 'JQuery',
-                image: 'jquery',
-                value: 98,
-            },
-            {
-                name: 'Angular',
-                image: 'angular',
-                value: 50,
+                name: 'Rails',
+                image: 'rails',
+                value: 45,
             },
         ],
     },

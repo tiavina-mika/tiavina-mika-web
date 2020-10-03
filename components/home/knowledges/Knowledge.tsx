@@ -117,29 +117,22 @@ interface CardPositionI {
     top: number;
     left: number;
 }
-const getCardPosition = (index: number): CardPositionI => {
-    let top;
-    let left;
-    switch (index) {
-        case (index = 0):
-            top = 100;
-            left = 0;
-            break;
-        case (index = 1):
-            left = 95;
-            break;
-        case (index = 2):
-            top = 100;
-            left = 240;
-            break;
-        case (index = 3):
-            top = 250;
-            left = -80;
-            break;
-        default:
-            top = 210;
-            left = 120;
-    }
+
+const getCardPosition = (index: number, cardPositions?: number[][]): CardPositionI => {
+    const positions: number[][] = cardPositions || [
+        [0, 100, 0],
+        [1, 0, 95],
+        [2, 100, 240],
+        [3, 250, -80],
+        [4, 210, 120],
+    ];
+    let top: number;
+    let left: number;
+    positions.map((item: number[]) => {
+        if (index !== item[0]) return false;
+        top = item[1];
+        left = item[2];
+    });
     return { top, left };
 };
 
@@ -166,7 +159,10 @@ const Knowledge: FC<Props> = ({ data, reverse }) => {
                             <div
                                 className={classes.card}
                                 key={d.name}
-                                style={{ top: getCardPosition(index).top, left: getCardPosition(index).left }}>
+                                style={{
+                                    top: getCardPosition(index, data.cardPositions).top,
+                                    left: getCardPosition(index, data.cardPositions).left,
+                                }}>
                                 <img alt="react" src={`/images/technos/${d.image}.png`} />
                                 <div className={classes.cardBody}>
                                     <Text text={d.name} className={classes.label} />
