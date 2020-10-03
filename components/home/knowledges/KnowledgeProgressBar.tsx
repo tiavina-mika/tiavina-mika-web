@@ -15,14 +15,26 @@ const useStyles = createUseStyles((theme: any) => ({
             marginTop: theme.spacing(5),
             marginBottom: theme.spacing(5),
         },
+        [media.mdDown]: {
+            alignSelf: 'stretch',
+        },
     },
     knowledgeProgressBarContent: {
         composes: 'flexColumn center stretchSelf',
         alignSelf: 'center',
+        [media.smDown]: {
+            alignSelf: 'stretch',
+        },
     },
     cards: {
         marginTop: theme.spacing(4),
         margin: -theme.spacing(1.8),
+        [media.smDown]: {
+            alignItems: 'flex-start',
+            justifyCenter: 'flex-start',
+            margin: [theme.spacing(1), 0],
+            padding: 0,
+        },
     },
     card: {
         width: 300,
@@ -32,12 +44,17 @@ const useStyles = createUseStyles((theme: any) => ({
         boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
         borderRadius: 32,
         fontSize: 18,
+        [media.smDown]: {
+            padding: [theme.spacing(2), theme.spacing(4)],
+            margin: [theme.spacing(1), 0],
+            fontSize: 14,
+        },
     },
     title: {
         composes: 'justifyCenter',
         textAlign: 'center',
         fontSize: 22,
-        [media.xsDown]: {
+        [media.smDown]: {
             justifyContent: 'flex-start',
         },
     },

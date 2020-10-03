@@ -19,7 +19,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     overall: {
-        composes: 'flexColumn center stretchSelf',
+        composes: 'flexColumn center stretchSelf red',
         [media.lgDown]: {
             marginBottom: theme.spacing(4),
         },
@@ -32,9 +32,6 @@ const useStyles = createUseStyles((theme: any) => ({
     knowledgesProgressBar: {
         marginBottom: theme.spacing(16),
         composes: 'flexRow stretchSelf flex1',
-        [media.mdDown]: {
-            flexDirection: 'column',
-        },
     },
     knowledgesProgressBarContent: {
         composes: 'flexRow stretchSelf flex1',
@@ -43,6 +40,9 @@ const useStyles = createUseStyles((theme: any) => ({
         },
         [media.mdLg]: {
             width: 1000,
+        },
+        [media.mdDown]: {
+            flexDirection: 'column',
         },
     },
 }));

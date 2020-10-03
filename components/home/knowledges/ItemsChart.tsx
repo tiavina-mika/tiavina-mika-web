@@ -27,6 +27,7 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     progressiveBar: {
         flex: 2,
+        alignSelf: 'center',
     },
 }));
 

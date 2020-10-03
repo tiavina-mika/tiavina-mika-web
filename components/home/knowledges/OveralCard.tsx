@@ -1,16 +1,19 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import { media } from '../../../utils/constants';
 import ItemsChart from './ItemsChart';
 import PieChartSvg from './PieChartSvg';
 
 const useStyles = createUseStyles((theme: any) => ({
     overallCard: {
         composes: 'flexColumn justifyCenter center font-ProximaNova-bold',
-        // height: 370,
         paddingBottom: theme.spacing(4),
         width: 420,
         boxShadow: '1px 15px 10px 0 #C9D3DD',
         borderRadius: 20,
+        [media.xsDown]: {
+            width: '100%',
+        },
     },
     header: {
         composes: 'flexColumn justifyCenter stretchSelf',
