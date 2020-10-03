@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a){return {"/":[a],"/framer/scroll":[a],"/index":[a],"/project":[a]}}("static\u002Fchunks\u002F40689c292d197b52d9ce4df9a77a4e9d45b9c9bb.0b603332d10a041f6dc0.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

@@ -1931,6 +1931,55 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./components/home/knowledges/BlockTitle.tsx":
+/*!***************************************************!*\
+  !*** ./components/home/knowledges/BlockTitle.tsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _shared_Title__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../shared/Title */ "./components/shared/Title.tsx");
+var _this = undefined,
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\BlockTitle.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])({
+  title: {
+    fontSize: 33
+  }
+});
+
+var BlockTitle = function BlockTitle(_ref) {
+  var text = _ref.text,
+      className = _ref.className;
+  var classes = useStyles();
+  return __jsx(_shared_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    text: text,
+    level: 2,
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_0__["default"])(classes.title, className),
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 12
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (BlockTitle);
+
+/***/ }),
+
 /***/ "./components/home/knowledges/ItemsChart.tsx":
 /*!***************************************************!*\
   !*** ./components/home/knowledges/ItemsChart.tsx ***!
@@ -1940,21 +1989,23 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _ProgressiveBar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ProgressiveBar */ "./components/home/knowledges/ProgressiveBar.tsx");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _ProgressiveBar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ProgressiveBar */ "./components/home/knowledges/ProgressiveBar.tsx");
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\ItemsChart.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])(function (theme) {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
   return {
     items: {
-      composes: 'flexColumn stretchSelf center',
+      composes: 'flexColumn stretchSelf center font-ProximaNova-bold',
       paddingLeft: theme.spacing(6),
       paddingRight: theme.spacing(6),
       fontSize: 14
@@ -1979,24 +2030,26 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
 });
 
 var ItemsChart = function ItemsChart(_ref) {
-  var items = _ref.items;
+  var items = _ref.items,
+      itemClassName = _ref.itemClassName,
+      className = _ref.className;
   var classes = useStyles();
   return __jsx("div", {
-    className: classes.items,
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_0__["default"])(classes.items, className),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 9
     }
   }, items.map(function (item, index) {
     return __jsx("div", {
-      className: classes.item,
+      className: Object(clsx__WEBPACK_IMPORTED_MODULE_0__["default"])(classes.item, itemClassName),
       key: item.label + '-' + index,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 39,
+        lineNumber: 40,
         columnNumber: 21
       }
     }, __jsx("div", {
@@ -2004,7 +2057,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 41,
         columnNumber: 25
       }
     }, __jsx("div", {
@@ -2012,7 +2065,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 42,
         columnNumber: 29
       }
     }, item.label), __jsx("div", {
@@ -2020,17 +2073,17 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 29
       }
-    }, item.value, "%")), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    }, item.value, "%")), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
       color: item.color,
       percent: item.value,
       className: classes.progressiveBar,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 45,
         columnNumber: 25
       }
     }));
@@ -2041,10 +2094,10 @@ var ItemsChart = function ItemsChart(_ref) {
 
 /***/ }),
 
-/***/ "./components/home/knowledges/Knowledge.tsx":
-/*!**************************************************!*\
-  !*** ./components/home/knowledges/Knowledge.tsx ***!
-  \**************************************************/
+/***/ "./components/home/knowledges/KnowledgeDescription.tsx":
+/*!*************************************************************!*\
+  !*** ./components/home/knowledges/KnowledgeDescription.tsx ***!
+  \*************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2057,12 +2110,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
 /* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
 /* harmony import */ var _shared_Text__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Text */ "./components/shared/Text.tsx");
-/* harmony import */ var _shared_Title__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared/Title */ "./components/shared/Title.tsx");
+/* harmony import */ var _BlockTitle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./BlockTitle */ "./components/home/knowledges/BlockTitle.tsx");
 /* harmony import */ var _ProgressiveBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ProgressiveBar */ "./components/home/knowledges/ProgressiveBar.tsx");
 
 
 var _this = undefined,
-    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\Knowledge.tsx";
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\KnowledgeDescription.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
@@ -2079,8 +2132,8 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
     knowledgeRoot: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn center stretchSelf',
       fontFamily: 'font-ProximaNova-regular',
-      marginTop: theme.spacing(20),
-      marginBottom: theme.spacing(10)
+      marginTop: theme.spacing(25),
+      marginBottom: theme.spacing(15)
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
       marginTop: theme.spacing(5),
       marginBottom: theme.spacing(5)
@@ -2134,9 +2187,6 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       fontSize: 16,
       marginBottom: theme.spacing(1)
     },
-    title: {
-      fontSize: 33
-    },
     descriptionContainer: (_descriptionContainer = {
       marginTop: theme.spacing(2)
     }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_descriptionContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
@@ -2165,35 +2215,15 @@ var getColor = function getColor(percent) {
   return color;
 };
 
-var getCardPosition = function getCardPosition(index) {
+var getCardPosition = function getCardPosition(index, cardPositions) {
+  var positions = cardPositions || [[0, 100, 0], [1, 0, 95], [2, 100, 240], [3, 250, -80], [4, 210, 120]];
   var top;
   var left;
-
-  switch (index) {
-    case index = 0:
-      top = 100;
-      left = 0;
-      break;
-
-    case index = 1:
-      left = 95;
-      break;
-
-    case index = 2:
-      top = 100;
-      left = 240;
-      break;
-
-    case index = 3:
-      top = 250;
-      left = -80;
-      break;
-
-    default:
-      top = 210;
-      left = 120;
-  }
-
+  positions.map(function (item) {
+    if (index !== item[0]) return false;
+    top = item[1];
+    left = item[2];
+  });
   return {
     top: top,
     left: left
@@ -2209,7 +2239,7 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150,
+      lineNumber: 140,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2217,7 +2247,7 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151,
+      lineNumber: 141,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2225,17 +2255,15 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 142,
       columnNumber: 17
     }
-  }, __jsx(_shared_Title__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_BlockTitle__WEBPACK_IMPORTED_MODULE_6__["default"], {
     text: data.title,
-    level: 2,
-    className: classes.title,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 158,
+      lineNumber: 148,
       columnNumber: 21
     }
   }), __jsx("div", {
@@ -2243,7 +2271,7 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159,
+      lineNumber: 149,
       columnNumber: 21
     }
   }, __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2253,7 +2281,7 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 160,
+      lineNumber: 150,
       columnNumber: 25
     }
   }))), __jsx("div", {
@@ -2261,7 +2289,7 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163,
+      lineNumber: 153,
       columnNumber: 17
     }
   }, data.technos.map(function (d, index) {
@@ -2269,13 +2297,13 @@ var Knowledge = function Knowledge(_ref) {
       className: classes.card,
       key: d.name,
       style: {
-        top: getCardPosition(index).top,
-        left: getCardPosition(index).left
+        top: getCardPosition(index, data.cardPositions).top,
+        left: getCardPosition(index, data.cardPositions).left
       },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166,
+        lineNumber: 156,
         columnNumber: 29
       }
     }, __jsx("img", {
@@ -2284,7 +2312,7 @@ var Knowledge = function Knowledge(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 170,
+        lineNumber: 163,
         columnNumber: 33
       }
     }), __jsx("div", {
@@ -2292,7 +2320,7 @@ var Knowledge = function Knowledge(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 171,
+        lineNumber: 164,
         columnNumber: 33
       }
     }, __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2301,7 +2329,7 @@ var Knowledge = function Knowledge(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 172,
+        lineNumber: 165,
         columnNumber: 37
       }
     }), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -2311,7 +2339,7 @@ var Knowledge = function Knowledge(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 173,
+        lineNumber: 166,
         columnNumber: 37
       }
     })));
@@ -2319,6 +2347,118 @@ var Knowledge = function Knowledge(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Knowledge);
+
+/***/ }),
+
+/***/ "./components/home/knowledges/KnowledgeProgressBar.tsx":
+/*!*************************************************************!*\
+  !*** ./components/home/knowledges/KnowledgeProgressBar.tsx ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var _BlockTitle__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BlockTitle */ "./components/home/knowledges/BlockTitle.tsx");
+/* harmony import */ var _ItemsChart__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ItemsChart */ "./components/home/knowledges/ItemsChart.tsx");
+
+
+var _this = undefined,
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\KnowledgeProgressBar.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+
+
+
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
+  return {
+    knowledgeProgressBarRoot: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      composes: 'flexColumn center flex1',
+      fontFamily: 'font-ProximaNova-regular',
+      marginTop: theme.spacing(10),
+      marginBottom: theme.spacing(10)
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgDown, {
+      marginTop: theme.spacing(5),
+      marginBottom: theme.spacing(5)
+    }),
+    knowledgeProgressBarContent: {
+      composes: 'flexColumn center stretchSelf',
+      alignSelf: 'center'
+    },
+    cards: {
+      marginTop: theme.spacing(4),
+      margin: -theme.spacing(1.8)
+    },
+    card: {
+      width: 300,
+      padding: [theme.spacing(2.5), theme.spacing(5)],
+      margin: theme.spacing(1.8),
+      backgroundColor: '#fff',
+      boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
+      borderRadius: 32,
+      fontSize: 18
+    },
+    title: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      composes: 'justifyCenter',
+      textAlign: 'center',
+      fontSize: 22
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].xsDown, {
+      justifyContent: 'flex-start'
+    })
+  };
+});
+
+var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
+  var data = _ref.data;
+  var classes = useStyles();
+  return __jsx("div", {
+    className: classes.knowledgeProgressBarRoot,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 9
+    }
+  }, __jsx("div", {
+    className: classes.knowledgeProgressBarContent,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 52,
+      columnNumber: 13
+    }
+  }, __jsx(_BlockTitle__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    text: data.title,
+    className: classes.title,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53,
+      columnNumber: 17
+    }
+  }), __jsx(_ItemsChart__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    items: data.items.sort(function (a, b) {
+      return b.value - a.value;
+    }),
+    className: classes.cards,
+    itemClassName: classes.card,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54,
+      columnNumber: 17
+    }
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (KnowledgeProgressBar);
 
 /***/ }),
 
@@ -2337,8 +2477,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
 /* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utils/utils */ "./utils/utils.ts");
-/* harmony import */ var _Knowledge__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Knowledge */ "./components/home/knowledges/Knowledge.tsx");
-/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
+/* harmony import */ var _KnowledgeDescription__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./KnowledgeDescription */ "./components/home/knowledges/KnowledgeDescription.tsx");
+/* harmony import */ var _KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./KnowledgeProgressBar */ "./components/home/knowledges/KnowledgeProgressBar.tsx");
+/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
 
 
 var _this = undefined,
@@ -2351,10 +2492,13 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
+
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
+  var _knowledgesProgressBa2;
+
   return {
     knowledgesRoot: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      composes: 'flexColumn center stretchSelf',
+      composes: 'flexColumn alignCenter justifyCenter flex1',
       fontFamily: 'font-ProximaNova-regular',
       paddingBottom: theme.spacing(15)
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgDown, {
@@ -2370,10 +2514,23 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       composes: 'flexColumn stretchSelf center',
       width: '100%',
       height: 200
-    }
+    },
+    knowledgesProgressBar: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+      marginBottom: theme.spacing(16),
+      composes: 'flexRow stretchSelf flex1'
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdDown, {
+      flexDirection: 'column'
+    }),
+    knowledgesProgressBarContent: (_knowledgesProgressBa2 = {
+      composes: 'flexRow stretchSelf flex1'
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgUp, {
+      width: 1300
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdLg, {
+      width: 1000
+    }), _knowledgesProgressBa2)
   };
 });
-var data = [{
+var dataDescription = [{
   title: 'Frontend',
   description: "Lorem Ipsum is simply dummy text of the printing and \n        typesetting industry. Lorem Ipsum has been the industry's \n        standard dummy text ever since the 1500s, when an unknown \n        printer took a galley of type and scrambled it to make a \n        type specimen book. It has survived not only five centuries, \n        but also the leap into electronic typesetting, remaining \n        essentially unchanged.",
   technos: [{
@@ -2400,26 +2557,134 @@ var data = [{
 }, {
   title: 'Backend',
   description: "Lorem Ipsum is simply dummy text of the printing and \n        typesetting industry. Lorem Ipsum has been the industry's \n        standard dummy text ever since the 1500s, when an unknown \n        printer took a galley of type and scrambled it to make a \n        type specimen book. It has survived not only five centuries.",
+  cardPositions: [[0, 100, 0], [1, 0, 95], [2, 150, 230], [3, 100, 180], [4, 210, 120]],
   technos: [{
-    name: 'React',
-    image: 'react',
-    value: 98
+    name: 'Node',
+    image: 'node',
+    value: 95
   }, {
-    name: 'HTML',
-    image: 'html',
-    value: 100
+    name: 'Symfony',
+    image: 'symfony',
+    value: 95
   }, {
-    name: 'CSS',
-    image: 'css',
-    value: 100
+    name: 'Flask',
+    image: 'flask',
+    value: 80
   }, {
-    name: 'JQuery',
-    image: 'jquery',
-    value: 98
+    name: 'Rails',
+    image: 'rails',
+    value: 45
+  }]
+}];
+var dataProgressBar = [{
+  title: 'Language de programmation',
+  items: [{
+    label: 'Javascript',
+    value: 95,
+    color: '#956FFF'
   }, {
-    name: 'Angular',
-    image: 'angular',
-    value: 50
+    label: 'TypeScript',
+    value: 95,
+    color: '#FEE895'
+  }, {
+    label: 'Python',
+    value: 80,
+    color: '#FD7A8C'
+  }, {
+    label: 'PHP',
+    value: 95,
+    color: '#95BF46'
+  }, {
+    label: 'Ruby',
+    value: 40,
+    color: '#00D8FF'
+  }]
+}, {
+  title: 'Base de données',
+  items: [{
+    label: 'MySQL',
+    value: 96,
+    color: '#956FFF'
+  }, {
+    label: 'MongoDB',
+    value: 98,
+    color: '#FEE895'
+  }, {
+    label: 'ElasticSearch',
+    value: 75,
+    color: '#FD7A8C'
+  }, {
+    label: 'PostgreSQL',
+    value: 88,
+    color: '#95BF46'
+  }]
+}, {
+  title: 'Design',
+  items: [{
+    label: 'Photoshop',
+    value: 96,
+    color: '#956FFF'
+  }, {
+    label: 'Illustrator',
+    value: 96,
+    color: '#FEE895'
+  }, {
+    label: 'InVision',
+    value: 80,
+    color: '#FD7A8C'
+  }, {
+    label: 'Zepplin',
+    value: 55,
+    color: '#95BF46'
+  }]
+}, {
+  title: 'Webservice',
+  items: [{
+    label: 'REST',
+    value: 96,
+    color: '#956FFF'
+  }, {
+    label: 'GraphQL',
+    value: 96,
+    color: '#FEE895'
+  }, {
+    label: 'Parse Server',
+    value: 92,
+    color: '#FD7A8C'
+  }, {
+    label: 'Firebase',
+    value: 55,
+    color: '#95BF46'
+  }]
+}, {
+  title: 'Gestion de code source',
+  items: [{
+    label: 'GitHub',
+    value: 99,
+    color: '#956FFF'
+  }, {
+    label: 'GitLab',
+    value: 90,
+    color: '#FEE895'
+  }, {
+    label: 'BitBucket',
+    value: 95,
+    color: '#FD7A8C'
+  }]
+}, {
+  title: 'Gestion de projet',
+  items: [{
+    label: 'Trello',
+    value: 95,
+    color: '#956FFF'
+  }, {
+    label: 'Asana',
+    value: 80,
+    color: '#FEE895'
+  }, {
+    label: 'Jira',
+    value: 90,
+    color: '#FD7A8C'
   }]
 }];
 
@@ -2431,7 +2696,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 293,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2439,29 +2704,56 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 294,
       columnNumber: 13
     }
-  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 295,
       columnNumber: 17
     }
-  })), data.map(function (d, i) {
-    return __jsx(_Knowledge__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  })), dataDescription.map(function (d, i) {
+    return __jsx(_KnowledgeDescription__WEBPACK_IMPORTED_MODULE_5__["default"], {
       data: d,
       key: i,
       reverse: Object(_utils_utils__WEBPACK_IMPORTED_MODULE_4__["isReverse"])(i),
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127,
+        lineNumber: 299,
         columnNumber: 21
       }
     });
-  }));
+  }), __jsx("div", {
+    className: classes.knowledgesProgressBar,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 302,
+      columnNumber: 13
+    }
+  }, __jsx("div", {
+    className: classes.knowledgesProgressBarContent,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 303,
+      columnNumber: 17
+    }
+  }, dataProgressBar.map(function (d, i) {
+    return __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      data: d,
+      key: i,
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 305,
+        columnNumber: 25
+      }
+    });
+  }))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Knowledges);
