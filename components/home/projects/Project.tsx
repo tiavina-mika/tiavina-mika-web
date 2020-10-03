@@ -99,13 +99,6 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 40,
         letterSpacing: 4,
     },
-    description: {
-        composes: 'font-Montserrat-medium',
-        lineHeight: 1.8,
-        [media.lgDown]: {
-            marginBottom: theme.spacing(5),
-        },
-    },
     subtitle: {
         fontSize: 26,
         color: theme.color.subtitle,

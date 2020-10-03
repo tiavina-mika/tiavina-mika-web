@@ -12,7 +12,7 @@ const useStyles = createUseStyles((theme: any) => ({
         marginTop: theme.spacing(10),
         marginBottom: theme.spacing(10),
         [media.lgDown]: {
-            marginTop: theme.spacing(5),
+            marginTop: theme.spacing(3),
             marginBottom: theme.spacing(5),
         },
         [media.mdDown]: {
@@ -33,6 +33,7 @@ const useStyles = createUseStyles((theme: any) => ({
             alignItems: 'flex-start',
             justifyCenter: 'flex-start',
             margin: [theme.spacing(1), 0],
+            marginTop: theme.spacing(1.3),
             padding: 0,
         },
     },
@@ -45,7 +46,7 @@ const useStyles = createUseStyles((theme: any) => ({
         borderRadius: 32,
         fontSize: 18,
         [media.smDown]: {
-            padding: [theme.spacing(2), theme.spacing(4)],
+            padding: [theme.spacing(3), theme.spacing(4)],
             margin: [theme.spacing(1), 0],
             fontSize: 14,
         },
@@ -56,6 +57,7 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 22,
         [media.smDown]: {
             justifyContent: 'flex-start',
+            fontSize: 18,
         },
     },
 }));
