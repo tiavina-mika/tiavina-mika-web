@@ -12,8 +12,8 @@ const useStyles = createUseStyles((theme: any) => ({
     knowledgeRoot: {
         composes: 'flexColumn center stretchSelf',
         fontFamily: 'font-ProximaNova-regular',
-        marginTop: theme.spacing(20),
-        marginBottom: theme.spacing(10),
+        marginTop: theme.spacing(25),
+        marginBottom: theme.spacing(15),
         [media.lgDown]: {
             marginTop: theme.spacing(5),
             marginBottom: theme.spacing(5),

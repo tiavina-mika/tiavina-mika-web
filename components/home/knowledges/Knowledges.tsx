@@ -30,6 +30,7 @@ const useStyles = createUseStyles((theme: any) => ({
         height: 200,
     },
     knowledgesProgressBar: {
+        marginBottom: theme.spacing(16),
         composes: 'flexRow stretchSelf flex1',
         [media.mdDown]: {
             flexDirection: 'column',
@@ -37,8 +38,11 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     knowledgesProgressBarContent: {
         composes: 'flexRow stretchSelf flex1',
-        [media.mdUp]: {
+        [media.lgUp]: {
             width: 1300,
+        },
+        [media.mdLg]: {
+            width: 1000,
         },
     },
 }));

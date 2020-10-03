@@ -37,7 +37,7 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'justifyCenter',
         textAlign: 'center',
         fontSize: 22,
-        [media.mdDown]: {
+        [media.xsDown]: {
             justifyContent: 'flex-start',
         },
     },
