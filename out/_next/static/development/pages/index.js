@@ -40,28 +40,32 @@ var openMenuAnimation = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-plx */ "./node_modules/react-plx/lib/index.js");
-/* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_plx__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./svg */ "./components/home/competences/svg/index.tsx");
-/* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cards */ "./components/home/competences/cards/index.tsx");
-/* harmony import */ var _svg_WebIcon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./svg/WebIcon */ "./components/home/competences/svg/WebIcon.tsx");
-/* harmony import */ var _svg_DatabaseIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./svg/DatabaseIcon */ "./components/home/competences/svg/DatabaseIcon.tsx");
-/* harmony import */ var _svg_SecurityIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./svg/SecurityIcon */ "./components/home/competences/svg/SecurityIcon.tsx");
-/* harmony import */ var _svg_PerformanceIcon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./svg/PerformanceIcon */ "./components/home/competences/svg/PerformanceIcon.tsx");
-/* harmony import */ var _svg_MobileIcon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./svg/MobileIcon */ "./components/home/competences/svg/MobileIcon.tsx");
-/* harmony import */ var _svg_DesignIcon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./svg/DesignIcon */ "./components/home/competences/svg/DesignIcon.tsx");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _reducers_appReducer__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../../reducers/appReducer */ "./reducers/appReducer.ts");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-plx */ "./node_modules/react-plx/lib/index.js");
+/* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_plx__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./svg */ "./components/home/competences/svg/index.tsx");
+/* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./cards */ "./components/home/competences/cards/index.tsx");
+/* harmony import */ var _svg_WebIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./svg/WebIcon */ "./components/home/competences/svg/WebIcon.tsx");
+/* harmony import */ var _svg_DatabaseIcon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./svg/DatabaseIcon */ "./components/home/competences/svg/DatabaseIcon.tsx");
+/* harmony import */ var _svg_SecurityIcon__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./svg/SecurityIcon */ "./components/home/competences/svg/SecurityIcon.tsx");
+/* harmony import */ var _svg_PerformanceIcon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./svg/PerformanceIcon */ "./components/home/competences/svg/PerformanceIcon.tsx");
+/* harmony import */ var _svg_MobileIcon__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./svg/MobileIcon */ "./components/home/competences/svg/MobileIcon.tsx");
+/* harmony import */ var _svg_DesignIcon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./svg/DesignIcon */ "./components/home/competences/svg/DesignIcon.tsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _reducers_appReducer__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../../reducers/appReducer */ "./reducers/appReducer.ts");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+
 
 
 var _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\competences\\Competences.tsx",
     _this = undefined;
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+
 
 
 
@@ -84,11 +88,11 @@ var competenceItems = [{
   x: 75,
   label: 'Web',
   icon: function getIcon() {
-    return __jsx(_svg_WebIcon__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    return __jsx(_svg_WebIcon__WEBPACK_IMPORTED_MODULE_8__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 26,
+        lineNumber: 27,
         columnNumber: 20
       }
     });
@@ -106,11 +110,11 @@ var competenceItems = [{
   x: 275,
   label: 'Mobile',
   icon: function getIcon() {
-    return __jsx(_svg_MobileIcon__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    return __jsx(_svg_MobileIcon__WEBPACK_IMPORTED_MODULE_12__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 44,
         columnNumber: 20
       }
     });
@@ -129,12 +133,12 @@ var competenceItems = [{
   x: 435,
   label: 'Base de données',
   icon: function getIcon(active) {
-    return __jsx(_svg_DatabaseIcon__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    return __jsx(_svg_DatabaseIcon__WEBPACK_IMPORTED_MODULE_9__["default"], {
       active: active,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 62,
         columnNumber: 20
       }
     });
@@ -153,11 +157,11 @@ var competenceItems = [{
   x: 470,
   label: 'Securité',
   icon: function getIcon() {
-    return __jsx(_svg_SecurityIcon__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    return __jsx(_svg_SecurityIcon__WEBPACK_IMPORTED_MODULE_10__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79,
+        lineNumber: 80,
         columnNumber: 20
       }
     });
@@ -176,12 +180,12 @@ var competenceItems = [{
   x: 250,
   label: 'Performance',
   icon: function getIcon(active) {
-    return __jsx(_svg_PerformanceIcon__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    return __jsx(_svg_PerformanceIcon__WEBPACK_IMPORTED_MODULE_11__["default"], {
       active: active,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 97,
+        lineNumber: 98,
         columnNumber: 20
       }
     });
@@ -200,12 +204,12 @@ var competenceItems = [{
   x: 67,
   label: 'Design',
   icon: function getIcon(active) {
-    return __jsx(_svg_DesignIcon__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    return __jsx(_svg_DesignIcon__WEBPACK_IMPORTED_MODULE_13__["default"], {
       active: active,
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 115,
+        lineNumber: 116,
         columnNumber: 20
       }
     });
@@ -219,11 +223,13 @@ var competenceItems = [{
   title: 'UI / UX Design'
 }];
 var triggerClassName = 'cardsTrigger';
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])({
-  competences: {
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])({
+  competences: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
     composes: 'flexColumn alignCenter stretchSelf',
     margin: [100, 0]
-  },
+  }, _utils_constants__WEBPACK_IMPORTED_MODULE_16__["media"].mdDown, {
+    margin: [30, 0]
+  }),
   plxTrigger: {
     marginTop: '30vh',
     pointerEvents: 'none'
@@ -248,17 +254,17 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
 var Competences = function Competences() {
   var classes = useStyles();
 
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(''),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(''),
       currentStep = _useState[0],
       setCurrentStep = _useState[1];
 
-  var isMobile = Object(react_redux__WEBPACK_IMPORTED_MODULE_13__["useSelector"])(_reducers_appReducer__WEBPACK_IMPORTED_MODULE_14__["screenState"]);
+  var isMobile = Object(react_redux__WEBPACK_IMPORTED_MODULE_14__["useSelector"])(_reducers_appReducer__WEBPACK_IMPORTED_MODULE_15__["screenState"]);
 
   var handleCurrentStep = function handleCurrentStep(name) {
     setCurrentStep(name);
   };
 
-  var parallaxData = Object(react__WEBPACK_IMPORTED_MODULE_1__["useMemo"])(function () {
+  var parallaxData = Object(react__WEBPACK_IMPORTED_MODULE_2__["useMemo"])(function () {
     return [
     /** animation in */
     {
@@ -292,7 +298,7 @@ var Competences = function Competences() {
       }]
     }];
   }, []);
-  var Component = isMobile ? 'div' : react_plx__WEBPACK_IMPORTED_MODULE_3___default.a;
+  var Component = isMobile ? 'div' : react_plx__WEBPACK_IMPORTED_MODULE_4___default.a;
   var otherProps = isMobile ? {
     className: classes.cardsMobile
   } : {
@@ -304,41 +310,41 @@ var Competences = function Competences() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214,
+      lineNumber: 218,
       columnNumber: 9
     }
   }, !isMobile && __jsx("div", {
-    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(triggerClassName, classes.plxTrigger),
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_5__["default"])(triggerClassName, classes.plxTrigger),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215,
+      lineNumber: 219,
       columnNumber: 27
     }
   }), __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, otherProps, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216,
+      lineNumber: 220,
       columnNumber: 13
     }
-  }), !isMobile && __jsx(_svg__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), !isMobile && __jsx(_svg__WEBPACK_IMPORTED_MODULE_6__["default"], {
     current: currentStep,
     items: competenceItems,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217,
+      lineNumber: 221,
       columnNumber: 31
     }
-  }), __jsx(_cards__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }), __jsx(_cards__WEBPACK_IMPORTED_MODULE_7__["default"], {
     triggerClassName: triggerClassName,
     items: competenceItems,
     onCurrentStep: handleCurrentStep,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 218,
+      lineNumber: 222,
       columnNumber: 17
     }
   })), !isMobile && __jsx("div", {
@@ -346,7 +352,7 @@ var Competences = function Competences() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 221,
+      lineNumber: 225,
       columnNumber: 27
     }
   }));
@@ -2024,7 +2030,8 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       marginTop: theme.spacing(0.7)
     },
     progressiveBar: {
-      flex: 2
+      flex: 2,
+      alignSelf: 'center'
     }
   };
 });
@@ -2039,7 +2046,7 @@ var ItemsChart = function ItemsChart(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 9
     }
   }, items.map(function (item, index) {
@@ -2049,7 +2056,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 41,
         columnNumber: 21
       }
     }, __jsx("div", {
@@ -2057,7 +2064,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 42,
         columnNumber: 25
       }
     }, __jsx("div", {
@@ -2065,7 +2072,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 29
       }
     }, item.label), __jsx("div", {
@@ -2073,7 +2080,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 44,
         columnNumber: 29
       }
     }, item.value, "%")), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -2083,7 +2090,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 46,
         columnNumber: 25
       }
     }));
@@ -2378,25 +2385,36 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
+  var _knowledgeProgressBar;
+
   return {
-    knowledgeProgressBarRoot: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    knowledgeProgressBarRoot: (_knowledgeProgressBar = {
       composes: 'flexColumn center flex1',
       fontFamily: 'font-ProximaNova-regular',
       marginTop: theme.spacing(10),
       marginBottom: theme.spacing(10)
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgDown, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeProgressBar, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgDown, {
       marginTop: theme.spacing(5),
       marginBottom: theme.spacing(5)
-    }),
-    knowledgeProgressBarContent: {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeProgressBar, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdDown, {
+      alignSelf: 'stretch'
+    }), _knowledgeProgressBar),
+    knowledgeProgressBarContent: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn center stretchSelf',
       alignSelf: 'center'
-    },
-    cards: {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].smDown, {
+      alignSelf: 'stretch'
+    }),
+    cards: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       marginTop: theme.spacing(4),
       margin: -theme.spacing(1.8)
-    },
-    card: {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].smDown, {
+      alignItems: 'flex-start',
+      justifyCenter: 'flex-start',
+      margin: [theme.spacing(1), 0],
+      padding: 0
+    }),
+    card: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       width: 300,
       padding: [theme.spacing(2.5), theme.spacing(5)],
       margin: theme.spacing(1.8),
@@ -2404,12 +2422,16 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
       borderRadius: 32,
       fontSize: 18
-    },
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].smDown, {
+      padding: [theme.spacing(2), theme.spacing(4)],
+      margin: [theme.spacing(1), 0],
+      fontSize: 14
+    }),
     title: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'justifyCenter',
       textAlign: 'center',
       fontSize: 22
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].xsDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].smDown, {
       justifyContent: 'flex-start'
     })
   };
@@ -2423,7 +2445,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 68,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2431,7 +2453,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 69,
       columnNumber: 13
     }
   }, __jsx(_BlockTitle__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2440,7 +2462,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 70,
       columnNumber: 17
     }
   }), __jsx(_ItemsChart__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2452,7 +2474,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 71,
       columnNumber: 17
     }
   })));
@@ -2494,7 +2516,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
-  var _knowledgesProgressBa2;
+  var _knowledgesProgressBa;
 
   return {
     knowledgesRoot: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -2515,19 +2537,19 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       width: '100%',
       height: 200
     },
-    knowledgesProgressBar: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    knowledgesProgressBar: {
       marginBottom: theme.spacing(16),
       composes: 'flexRow stretchSelf flex1'
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdDown, {
-      flexDirection: 'column'
-    }),
-    knowledgesProgressBarContent: (_knowledgesProgressBa2 = {
+    },
+    knowledgesProgressBarContent: (_knowledgesProgressBa = {
       composes: 'flexRow stretchSelf flex1'
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgUp, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgUp, {
       width: 1300
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdLg, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdLg, {
       width: 1000
-    }), _knowledgesProgressBa2)
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdDown, {
+      flexDirection: 'column'
+    }), _knowledgesProgressBa)
   };
 });
 var dataDescription = [{
@@ -2769,29 +2791,35 @@ var Knowledges = function Knowledges() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _ItemsChart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ItemsChart */ "./components/home/knowledges/ItemsChart.tsx");
-/* harmony import */ var _PieChartSvg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./PieChartSvg */ "./components/home/knowledges/PieChartSvg.tsx");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var _ItemsChart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ItemsChart */ "./components/home/knowledges/ItemsChart.tsx");
+/* harmony import */ var _PieChartSvg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PieChartSvg */ "./components/home/knowledges/PieChartSvg.tsx");
+
+
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\OveralCard.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])(function (theme) {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
   return {
-    overallCard: {
+    overallCard: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn justifyCenter center font-ProximaNova-bold',
-      // height: 370,
       paddingBottom: theme.spacing(4),
       width: 420,
       boxShadow: '1px 15px 10px 0 #C9D3DD',
       borderRadius: 20
-    },
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].xsDown, {
+      width: '100%'
+    }),
     header: {
       composes: 'flexColumn justifyCenter stretchSelf',
       backgroundColor: '#F1FDFF',
@@ -2835,7 +2863,7 @@ var OveralCard = function OveralCard() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 69,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2843,7 +2871,7 @@ var OveralCard = function OveralCard() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 70,
       columnNumber: 13
     }
   }, "Note G\xE9n\xE9rale"), __jsx("div", {
@@ -2851,23 +2879,23 @@ var OveralCard = function OveralCard() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 71,
       columnNumber: 13
     }
-  }, __jsx(_PieChartSvg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(_PieChartSvg__WEBPACK_IMPORTED_MODULE_5__["default"], {
     total: total / itemsChart.length,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 72,
       columnNumber: 17
     }
-  })), __jsx(_ItemsChart__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  })), __jsx(_ItemsChart__WEBPACK_IMPORTED_MODULE_4__["default"], {
     items: itemsChart,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 74,
       columnNumber: 13
     }
   }));
@@ -3663,9 +3691,12 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       lineHeight: '1.8em',
       color: theme.color.secondary
     },
-    description: {
+    description: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       fontSize: 24
-    }
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].mdDown, {
+      fontSize: 18,
+      lineHeight: '1.8em'
+    })
   };
 });
 
@@ -3679,14 +3710,14 @@ var Header = function Header(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, __jsx(_Menu__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 62,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -3694,7 +3725,7 @@ var Header = function Header(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 64,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3702,7 +3733,7 @@ var Header = function Header(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 65,
       columnNumber: 17
     }
   }, __jsx(_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -3711,7 +3742,7 @@ var Header = function Header(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 66,
       columnNumber: 21
     }
   }), subtitle && __jsx(_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -3721,7 +3752,7 @@ var Header = function Header(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 67,
       columnNumber: 34
     }
   })), description && __jsx("div", {
@@ -3729,7 +3760,7 @@ var Header = function Header(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 71,
       columnNumber: 21
     }
   }, __jsx(_Text__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -3739,7 +3770,7 @@ var Header = function Header(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 72,
       columnNumber: 25
     }
   }))));
@@ -26028,7 +26059,7 @@ var isReverse = function isReverse(index) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!***************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=E%3A%5Ctiavina-mika%5Ctiavina-mika-web%5Cpages%5Cindex.tsx ***!
   \***************************************************************************************************************************/
@@ -26051,5 +26082,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
