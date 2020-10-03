@@ -2394,7 +2394,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       marginTop: theme.spacing(10),
       marginBottom: theme.spacing(10)
     }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeProgressBar, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].lgDown, {
-      marginTop: theme.spacing(5),
+      marginTop: theme.spacing(3),
       marginBottom: theme.spacing(5)
     }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeProgressBar, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].mdDown, {
       alignSelf: 'stretch'
@@ -2412,6 +2412,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       alignItems: 'flex-start',
       justifyCenter: 'flex-start',
       margin: [theme.spacing(1), 0],
+      marginTop: theme.spacing(1.3),
       padding: 0
     }),
     card: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -2423,7 +2424,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       borderRadius: 32,
       fontSize: 18
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].smDown, {
-      padding: [theme.spacing(2), theme.spacing(4)],
+      padding: [theme.spacing(3), theme.spacing(4)],
       margin: [theme.spacing(1), 0],
       fontSize: 14
     }),
@@ -2432,7 +2433,8 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       textAlign: 'center',
       fontSize: 22
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].smDown, {
-      justifyContent: 'flex-start'
+      justifyContent: 'flex-start',
+      fontSize: 18
     })
   };
 });
@@ -2445,7 +2447,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 70,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2453,7 +2455,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 71,
       columnNumber: 13
     }
   }, __jsx(_BlockTitle__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -2462,7 +2464,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 72,
       columnNumber: 17
     }
   }), __jsx(_ItemsChart__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2474,7 +2476,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 73,
       columnNumber: 17
     }
   })));
@@ -3223,12 +3225,6 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       fontSize: 40,
       letterSpacing: 4
     },
-    description: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
-      composes: 'font-Montserrat-medium',
-      lineHeight: 1.8
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
-      marginBottom: theme.spacing(5)
-    }),
     subtitle: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       fontSize: 26,
       color: theme.color.subtitle,
@@ -3263,7 +3259,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138,
+      lineNumber: 131,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -3271,7 +3267,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139,
+      lineNumber: 132,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3279,7 +3275,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140,
+      lineNumber: 133,
       columnNumber: 17
     }
   }, __jsx("div", {
@@ -3287,7 +3283,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 134,
       columnNumber: 21
     }
   }, __jsx("img", {
@@ -3297,7 +3293,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 135,
       columnNumber: 25
     }
   }))), __jsx("div", {
@@ -3305,7 +3301,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 138,
       columnNumber: 17
     }
   }, __jsx("div", {
@@ -3313,7 +3309,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 146,
+      lineNumber: 139,
       columnNumber: 21
     }
   }, __jsx("div", {
@@ -3321,7 +3317,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147,
+      lineNumber: 140,
       columnNumber: 25
     }
   }, "Projet. ", reverseIndex), __jsx(_shared_Title__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3331,7 +3327,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148,
+      lineNumber: 141,
       columnNumber: 25
     }
   }), __jsx(_shared_Title__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3341,7 +3337,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149,
+      lineNumber: 142,
       columnNumber: 25
     }
   }), __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3351,7 +3347,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 150,
+      lineNumber: 143,
       columnNumber: 25
     }
   }), __jsx(_shared_Button__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -3360,7 +3356,7 @@ var Project = function Project(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151,
+      lineNumber: 144,
       columnNumber: 25
     }
   })))));
@@ -4073,25 +4069,35 @@ var Menu = function Menu() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/constants */ "./utils/constants.tsx");
+
+
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\shared\\Text.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])(function (theme) {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
   return {
-    text: {
+    text: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'font-Poppins-regular',
       // composes: 'font-ProximaNova-regular',
       fontSize: 18,
       color: theme.color.secondary
-    }
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smDown, {
+      fontSize: 16
+    }),
+    p: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smDown, {
+      lineHeight: 1.8
+    })
   };
 });
 
@@ -4102,11 +4108,11 @@ var Text = function Text(_ref) {
   var classes = useStyles();
   var Component = tagName ? tagName : 'span';
   return __jsx(Component, {
-    className: Object(clsx__WEBPACK_IMPORTED_MODULE_2__["default"])(classes.text, className),
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_3__["default"])(classes.text, className, classes[tagName]),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 27,
       columnNumber: 12
     }
   }, text);
@@ -26059,7 +26065,7 @@ var isReverse = function isReverse(index) {
 
 /***/ }),
 
-/***/ 2:
+/***/ 1:
 /*!***************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=E%3A%5Ctiavina-mika%5Ctiavina-mika-web%5Cpages%5Cindex.tsx ***!
   \***************************************************************************************************************************/
@@ -26082,5 +26088,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[1,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
