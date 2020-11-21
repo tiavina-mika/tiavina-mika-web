@@ -3,12 +3,14 @@ import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 import { media } from '../../utils/constants';
 
-const useStyles = createUseStyles((theme: any) => ({
+const useStyles = createUseStyles({
     text: {
         composes: 'font-Poppins-regular',
         // composes: 'font-ProximaNova-regular',
         fontSize: 18,
-        color: theme.color.secondary,
+        // color: theme.color.secondary,
+        padding: 0,
+        margin: 0,
         [media.smDown]: {
             fontSize: 16,
         },
@@ -18,7 +20,7 @@ const useStyles = createUseStyles((theme: any) => ({
             lineHeight: 1.8,
         },
     },
-}));
+});
 
 type Props = { text: string; className?: string; tagName?: 'b' | 'p' };
 const Text: FC<Props> = ({ text, tagName, className }) => {

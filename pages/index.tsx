@@ -7,17 +7,11 @@ import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
 import Header from '../components/shared/Header';
 import Competences from '../components/home/competences';
-import Projects from '../components/home/projects';
+import Projects from '../components/home/projects-grid';
 import Knowledges from '../components/home/knowledges';
 import Text from '../components/shared/Text';
 
 const useStyles = createUseStyles({
-    window: {
-        [media.mdDown]: {
-            paddingLeft: 15,
-            paddingRight: 15,
-        },
-    },
     root: {
         composes: 'flexColumn flexCenter alignCenter stretchSelf flex1',
     },
@@ -27,22 +21,6 @@ const useStyles = createUseStyles({
         color: '#fff',
         [media.lgDown]: {
             flexDirection: 'column',
-        },
-    },
-    left: {
-        composes: 'flexColumn',
-        [media.lgUp]: {
-            width: '80%',
-        },
-    },
-    right: {
-        composes: 'flexColumn',
-        [media.lgUp]: {
-            width: '20%',
-        },
-        [media.lgDown]: {
-            order: -1,
-            alignSelf: 'stretch',
         },
     },
     warning: {

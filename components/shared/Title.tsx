@@ -5,10 +5,12 @@ import { media } from '../../utils/constants';
 
 const useStyles = createUseStyles({
     title: {
-        composes: 'flexRow stretchSelf font-Poppins-bold',
+        composes: 'font-Poppins-bold',
         lineHeight: '1.25em',
         webkitFontSmoothing: 'antialiased',
         fontWeight: 'bold',
+        margin: 0,
+        padding: 0,
     },
     h1: {
         letterSpacing: 4,
@@ -19,7 +21,7 @@ const useStyles = createUseStyles({
         },
     },
     h2: {
-        fontSize: 24,
+        fontSize: 48,
         [media.mdDown]: {
             fontSize: 22,
             lineHeight: '1.6em',
