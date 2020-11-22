@@ -2050,14 +2050,15 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
 var ItemsChart = function ItemsChart(_ref) {
   var items = _ref.items,
       itemClassName = _ref.itemClassName,
-      className = _ref.className;
+      className = _ref.className,
+      startAnimation = _ref.startAnimation;
   var classes = useStyles();
   return __jsx("div", {
     className: Object(clsx__WEBPACK_IMPORTED_MODULE_1__["default"])(classes.items, className),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, items.map(function (item, index) {
@@ -2067,7 +2068,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 47,
         columnNumber: 21
       }
     }, __jsx("div", {
@@ -2075,7 +2076,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 48,
         columnNumber: 25
       }
     }, __jsx("div", {
@@ -2083,7 +2084,7 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47,
+        lineNumber: 49,
         columnNumber: 29
       }
     }, item.label), __jsx("div", {
@@ -2091,17 +2092,18 @@ var ItemsChart = function ItemsChart(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 48,
+        lineNumber: 50,
         columnNumber: 29
       }
     }, item.value, "%")), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
       color: item.color,
       percent: item.value,
       className: classes.progressiveBar,
+      startAnimation: startAnimation,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 52,
         columnNumber: 25
       }
     }));
@@ -2112,10 +2114,10 @@ var ItemsChart = function ItemsChart(_ref) {
 
 /***/ }),
 
-/***/ "./components/home/knowledges/KnowledgeDescription.tsx":
-/*!*************************************************************!*\
-  !*** ./components/home/knowledges/KnowledgeDescription.tsx ***!
-  \*************************************************************/
+/***/ "./components/home/knowledges/Knowledge.tsx":
+/*!**************************************************!*\
+  !*** ./components/home/knowledges/Knowledge.tsx ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2125,15 +2127,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
-/* harmony import */ var _shared_Text__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../shared/Text */ "./components/shared/Text.tsx");
-/* harmony import */ var _BlockTitle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./BlockTitle */ "./components/home/knowledges/BlockTitle.tsx");
-/* harmony import */ var _ProgressiveBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ProgressiveBar */ "./components/home/knowledges/ProgressiveBar.tsx");
+/* harmony import */ var react_intersection_observer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-intersection-observer */ "./node_modules/react-intersection-observer/react-intersection-observer.m.js");
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var _shared_Text__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../shared/Text */ "./components/shared/Text.tsx");
+/* harmony import */ var _BlockTitle__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./BlockTitle */ "./components/home/knowledges/BlockTitle.tsx");
+/* harmony import */ var _ProgressiveBar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ProgressiveBar */ "./components/home/knowledges/ProgressiveBar.tsx");
 
 
 var _this = undefined,
-    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\KnowledgeDescription.tsx";
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\Knowledge.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
@@ -2143,7 +2146,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])(function (theme) {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"])(function (theme) {
   var _knowledgeContent, _cards, _card, _descriptionContainer;
 
   return {
@@ -2152,35 +2156,35 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       fontFamily: 'font-ProximaNova-regular',
       marginTop: theme.spacing(25),
       marginBottom: theme.spacing(15)
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgDown, {
       marginTop: theme.spacing(5),
       marginBottom: theme.spacing(5)
     }),
     knowledgeContent: (_knowledgeContent = {
       composes: 'flexRow justifyCenter alignCenter',
       alignSelf: 'center'
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeContent, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeContent, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgUp, {
       width: 1200
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeContent, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgeContent, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgDown, {
       flexDirection: 'column',
       alignItems: 'center'
     }), _knowledgeContent),
     textContainer: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn',
       flex: 1
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgUp, {
       marginTop: theme.spacing(12)
     }),
-    blockReverse: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
+    blockReverse: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgUp, {
       marginLeft: theme.spacing(40)
     }),
     cards: (_cards = {
       composes: 'flexRow'
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_cards, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_cards, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgUp, {
       flex: 1.2
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_cards, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smLg, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_cards, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].smLg, {
       marginTop: theme.spacing(6)
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_cards, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smDown, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_cards, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].smDown, {
       marginTop: theme.spacing(2)
     }), _cards),
     card: (_card = {
@@ -2192,9 +2196,9 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       backgroundColor: '#fff',
       boxShadow: '0 8px 10px 0 rgba(0,0,0,.08)',
       borderRadius: 10
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_card, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_card, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgUp, {
       position: 'relative'
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_card, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_card, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgDown, {
       margin: theme.spacing(2)
     }), _card),
     cardBody: {
@@ -2207,21 +2211,21 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
     },
     descriptionContainer: (_descriptionContainer = {
       marginTop: theme.spacing(2)
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_descriptionContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_descriptionContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgUp, {
       width: 400
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_descriptionContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_descriptionContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgDown, {
       marginTop: theme.spacing(0)
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_descriptionContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smLg, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_descriptionContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].smLg, {
       width: 600
     }), _descriptionContainer),
     description: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       fontWeight: 300,
       lineHeight: '1.8em',
       fontSize: 17
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].smDown, {
       fontSize: 16
     }),
-    reverse: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgUp, {
+    reverse: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({}, _utils_constants__WEBPACK_IMPORTED_MODULE_5__["media"].lgUp, {
       order: 1
     })
   };
@@ -2254,12 +2258,20 @@ var Knowledge = function Knowledge(_ref) {
   var data = _ref.data,
       reverse = _ref.reverse;
   var classes = useStyles();
+
+  var _useInView = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_3__["useInView"])({
+    threshold: 0
+  }),
+      ref = _useInView.ref,
+      inView = _useInView.inView;
+
   return __jsx("div", {
     className: classes.knowledgeRoot,
+    ref: ref,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 147,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2267,7 +2279,7 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 148,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2275,15 +2287,15 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 149,
       columnNumber: 17
     }
-  }, __jsx(_BlockTitle__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  }, __jsx(_BlockTitle__WEBPACK_IMPORTED_MODULE_7__["default"], {
     text: data.title,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 151,
+      lineNumber: 155,
       columnNumber: 21
     }
   }), __jsx("div", {
@@ -2291,17 +2303,17 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 156,
       columnNumber: 21
     }
-  }, __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
     text: data.description,
     tagName: "p",
     className: classes.description,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 157,
       columnNumber: 25
     }
   }))), __jsx("div", {
@@ -2309,7 +2321,7 @@ var Knowledge = function Knowledge(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156,
+      lineNumber: 160,
       columnNumber: 17
     }
   }, data.technos.map(function (d, index) {
@@ -2323,7 +2335,7 @@ var Knowledge = function Knowledge(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 159,
+        lineNumber: 163,
         columnNumber: 29
       }
     }, __jsx("img", {
@@ -2332,7 +2344,7 @@ var Knowledge = function Knowledge(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 166,
+        lineNumber: 170,
         columnNumber: 33
       }
     }), __jsx("div", {
@@ -2340,26 +2352,27 @@ var Knowledge = function Knowledge(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 167,
+        lineNumber: 171,
         columnNumber: 33
       }
-    }, __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    }, __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_6__["default"], {
       text: d.name,
       className: classes.label,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 168,
+        lineNumber: 172,
         columnNumber: 37
       }
-    }), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    }), __jsx(_ProgressiveBar__WEBPACK_IMPORTED_MODULE_8__["default"], {
       color: getColor(d.value),
       percent: d.value,
       height: 8,
+      startAnimation: inView,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 169,
+        lineNumber: 173,
         columnNumber: 37
       }
     })));
@@ -2455,7 +2468,8 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
 });
 
 var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
-  var data = _ref.data;
+  var data = _ref.data,
+      startAnimation = _ref.startAnimation;
   var classes = useStyles();
   return __jsx("div", {
     className: classes.knowledgeProgressBarRoot,
@@ -2488,6 +2502,7 @@ var KnowledgeProgressBar = function KnowledgeProgressBar(_ref) {
     }),
     className: classes.cards,
     itemClassName: classes.card,
+    startAnimation: startAnimation,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -2515,13 +2530,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var pure_react_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! pure-react-carousel */ "./node_modules/pure-react-carousel/dist/index.es.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../hooks/useWindowSize */ "./hooks/useWindowSize.tsx");
-/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../utils/utils */ "./utils/utils.ts");
-/* harmony import */ var _KnowledgeDescription__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./KnowledgeDescription */ "./components/home/knowledges/KnowledgeDescription.tsx");
-/* harmony import */ var _KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./KnowledgeProgressBar */ "./components/home/knowledges/KnowledgeProgressBar.tsx");
-/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
+/* harmony import */ var react_intersection_observer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-intersection-observer */ "./node_modules/react-intersection-observer/react-intersection-observer.m.js");
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../hooks/useWindowSize */ "./hooks/useWindowSize.tsx");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../utils/utils */ "./utils/utils.ts");
+/* harmony import */ var _Knowledge__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Knowledge */ "./components/home/knowledges/Knowledge.tsx");
+/* harmony import */ var _KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./KnowledgeProgressBar */ "./components/home/knowledges/KnowledgeProgressBar.tsx");
+/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
 
 
 var _this = undefined,
@@ -2538,7 +2554,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"])(function (theme) {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_5__["createUseStyles"])(function (theme) {
   var _knowledgesProgressBa2, _sliderContainer;
 
   return {
@@ -2547,13 +2564,13 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       position: 'relative',
       fontFamily: 'font-ProximaNova-regular',
       paddingBottom: theme.spacing(15)
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].lgDown, {
-      paddingLeft: theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_6__["horizontalPaddingMobile"]),
-      paddingRight: theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_6__["horizontalPaddingMobile"])
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].lgDown, {
+      paddingLeft: theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_7__["horizontalPaddingMobile"]),
+      paddingRight: theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_7__["horizontalPaddingMobile"])
     }),
     overall: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn center stretchSelf'
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].lgDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].lgDown, {
       marginBottom: theme.spacing(4)
     }),
     progressiveContainer: {
@@ -2564,26 +2581,26 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
     knowledgesProgressBar: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       marginBottom: theme.spacing(16),
       composes: 'flexRow stretchSelf justifyCenter flex1'
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].mdLg, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].mdLg, {
       marginTop: theme.spacing(6)
     }),
     knowledgesProgressBarContent: (_knowledgesProgressBa2 = {
       composes: 'flexRow stretchSelf flex1'
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].lgUp, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].lgUp, {
       width: 1300
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].mdLg, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].mdLg, {
       width: 1000
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].mdDown, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_knowledgesProgressBa2, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].mdDown, {
       flexDirection: 'column'
     }), _knowledgesProgressBa2),
     sliderContainer: (_sliderContainer = {
       position: 'relative',
       width: 1200
-    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_sliderContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].lgXl, {
+    }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_sliderContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].lgXl, {
       width: '90vw'
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_sliderContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].mdLg, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_sliderContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].mdLg, {
       width: 800
-    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_sliderContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].mdDown, {
+    }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(_sliderContainer, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].mdDown, {
       width: '85vw'
     }), _sliderContainer),
     slider: {
@@ -2622,12 +2639,12 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
     },
     buttonBack: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       left: -60
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].xlDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].xlDown, {
       left: -45
     }),
     buttonNext: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       right: -60
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].xlDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].xlDown, {
       right: -45
     })
   };
@@ -2793,10 +2810,22 @@ var dataProgressBar = [{
 var Knowledges = function Knowledges() {
   var classes = useStyles();
 
-  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_5__["useWindowSize"])(),
+  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_6__["useWindowSize"])(),
       width = _useWindowSize.width;
 
-  var isTablet = width <= _utils_constants__WEBPACK_IMPORTED_MODULE_6__["sm"];
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+      isTablet = _useState[0],
+      setIsTablet = _useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
+    setIsTablet(width <= _utils_constants__WEBPACK_IMPORTED_MODULE_7__["sm"]);
+  }, [width]);
+
+  var _useInView = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_4__["useInView"])({
+    threshold: 0
+  }),
+      ref = _useInView.ref,
+      inView = _useInView.inView;
 
   var carousel = __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_2__["CarouselProvider"], {
     visibleSlides: 3,
@@ -2808,15 +2837,16 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 362,
+      lineNumber: 370,
       columnNumber: 9
     }
   }, __jsx("div", {
     className: classes.sliderContainer,
+    ref: ref,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 369,
+      lineNumber: 377,
       columnNumber: 13
     }
   }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_2__["Slider"], {
@@ -2824,7 +2854,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 370,
+      lineNumber: 378,
       columnNumber: 17
     }
   }, dataProgressBar.map(function (d, i) {
@@ -2834,16 +2864,17 @@ var Knowledges = function Knowledges() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 372,
+        lineNumber: 380,
         columnNumber: 25
       }
-    }, __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    }, __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_10__["default"], {
       data: d,
       key: i,
+      startAnimation: inView,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 373,
+        lineNumber: 381,
         columnNumber: 29
       }
     }));
@@ -2852,7 +2883,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 377,
+      lineNumber: 385,
       columnNumber: 17
     }
   }, '<'), __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_2__["ButtonNext"], {
@@ -2860,27 +2891,29 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 378,
+      lineNumber: 386,
       columnNumber: 17
     }
   }, '>')));
 
   var mobile = __jsx("div", {
     className: classes.knowledgesProgressBarContent,
+    ref: ref,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 384,
+      lineNumber: 392,
       columnNumber: 9
     }
   }, dataProgressBar.map(function (d, i) {
-    return __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    return __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_10__["default"], {
       data: d,
       key: i,
+      startAnimation: inView,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 386,
+        lineNumber: 394,
         columnNumber: 17
       }
     });
@@ -2892,7 +2925,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 391,
+      lineNumber: 399,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2900,25 +2933,25 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 392,
+      lineNumber: 400,
       columnNumber: 13
     }
-  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 393,
+      lineNumber: 401,
       columnNumber: 17
     }
   })), dataDescription.map(function (d, i) {
-    return __jsx(_KnowledgeDescription__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    return __jsx(_Knowledge__WEBPACK_IMPORTED_MODULE_9__["default"], {
       data: d,
       key: i,
-      reverse: Object(_utils_utils__WEBPACK_IMPORTED_MODULE_7__["isReverse"])(i),
+      reverse: Object(_utils_utils__WEBPACK_IMPORTED_MODULE_8__["isReverse"])(i),
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 397,
+        lineNumber: 405,
         columnNumber: 21
       }
     });
@@ -2927,7 +2960,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 400,
+      lineNumber: 408,
       columnNumber: 13
     }
   }, isTablet ? mobile : carousel));
@@ -2949,10 +2982,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
-/* harmony import */ var _ItemsChart__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ItemsChart */ "./components/home/knowledges/ItemsChart.tsx");
-/* harmony import */ var _PieChartSvg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PieChartSvg */ "./components/home/knowledges/PieChartSvg.tsx");
+/* harmony import */ var react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-intersection-observer */ "./node_modules/react-intersection-observer/react-intersection-observer.m.js");
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var _ItemsChart__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ItemsChart */ "./components/home/knowledges/ItemsChart.tsx");
+/* harmony import */ var _PieChartSvg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./PieChartSvg */ "./components/home/knowledges/PieChartSvg.tsx");
 
 
 var _this = undefined,
@@ -2964,7 +2998,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])(function (theme) {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])(function (theme) {
   return {
     overallCard: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn justifyCenter center font-ProximaNova-bold',
@@ -2972,7 +3007,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       width: 420,
       boxShadow: '1px 15px 10px 0 #C9D3DD',
       borderRadius: 20
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_3__["media"].xsDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].xsDown, {
       width: '100%'
     }),
     header: {
@@ -3013,12 +3048,20 @@ var OveralCard = function OveralCard() {
   var total = itemsChart.reduce(function (acc, curr) {
     return acc + curr.value;
   }, 0);
+
+  var _useInView = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__["useInView"])({
+    threshold: 0
+  }),
+      ref = _useInView.ref,
+      inView = _useInView.inView;
+
   return __jsx("div", {
     className: classes.overallCard,
+    ref: ref,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 73,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -3026,7 +3069,7 @@ var OveralCard = function OveralCard() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 74,
       columnNumber: 13
     }
   }, "Note G\xE9n\xE9rale"), __jsx("div", {
@@ -3034,23 +3077,25 @@ var OveralCard = function OveralCard() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 75,
       columnNumber: 13
     }
-  }, __jsx(_PieChartSvg__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }, __jsx(_PieChartSvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
     total: total / itemsChart.length,
+    startAnimation: inView,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 76,
       columnNumber: 17
     }
-  })), __jsx(_ItemsChart__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  })), __jsx(_ItemsChart__WEBPACK_IMPORTED_MODULE_5__["default"], {
     items: itemsChart,
+    startAnimation: inView,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 78,
       columnNumber: 13
     }
   }));
@@ -3069,25 +3114,27 @@ var OveralCard = function OveralCard() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\PieChartSvg.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"])({
-  cls1: {
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])({
+  inactiveBar: {
     fill: '#fff',
     stroke: '#eff4f9',
     strokeWidth: 20
   },
-  cls2: {
+  activeBar: {
     strokeWidth: 20,
     fill: 'none',
-    stroke: '#80ebff',
+    // stroke: '#80ebff',
     strokeLinecap: 'round'
   },
   cls3: {
@@ -3100,13 +3147,26 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
     composes: 'font-ProximaNova-bold'
   }
 });
+var activeBar = {
+  hidden: {
+    stroke: '#eff4f9',
+    pathLength: 0 //   fill: "rgba(255, 255, 255, 0)"
+
+  },
+  visible: {
+    stroke: '#80ebff',
+    pathLength: 1 //   fill: "rgba(255, 255, 255, 1)"
+
+  }
+};
 
 var PieChartSvg = function PieChartSvg(_ref) {
-  var total = _ref.total;
+  var total = _ref.total,
+      startAnimation = _ref.startAnimation;
   var classes = useStyles();
-  return __jsx("svg", {
-    id: "Layer_1",
-    "data-name": "Layer 1",
+  return __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_0__["motion"].svg, {
+    id: "PieChartSvg_1",
+    "data-name": "PieChartSvg 1",
     xmlns: "http://www.w3.org/2000/svg",
     width: "193",
     height: "196.02",
@@ -3114,27 +3174,40 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, __jsx("path", {
     id: "inactive-bar",
-    className: classes.cls1,
+    className: classes.inactiveBar,
     d: "M183,98c0,48.75-38.87,88-86.5,88S10,146.76,10,98,48.87,10,96.5,10,183,49.25,183,98Z",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 52,
       columnNumber: 13
     }
-  }), __jsx("path", {
+  }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_0__["motion"].path, {
     id: "active-bar",
-    className: classes.cls2,
+    className: classes.activeBar,
     d: "M96,12c46.39,0,84,38.28,84,85.5S142.39,183,96,183,12,144.72,12,97.5A86.41,86.41,0,0,1,22.33,56.38",
+    variants: activeBar,
+    initial: "hidden",
+    animate: startAnimation ? 'visible' : '',
+    transition: {
+      "default": {
+        duration: 2,
+        ease: 'easeInOut'
+      },
+      stroke: {
+        duration: 0.2,
+        ease: [1, 0, 0.8, 1]
+      }
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 57,
       columnNumber: 13
     }
   }), __jsx("path", {
@@ -3144,7 +3217,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 69,
       columnNumber: 13
     }
   }), __jsx("text", {
@@ -3154,7 +3227,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
+      lineNumber: 70,
       columnNumber: 13
     }
   }, total), __jsx("text", {
@@ -3164,7 +3237,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 73,
       columnNumber: 13
     }
   }, "100"));
@@ -3184,17 +3257,19 @@ var PieChartSvg = function PieChartSvg(_ref) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/framer-motion.es.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\ProgressiveBar.tsx";
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
 
 
 
-var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"])({
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])({
   progressiveBar: {
     composes: 'flexRow',
     backgroundColor: '#F4F9FE',
@@ -3214,21 +3289,19 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       var color = _ref3.color;
       return color;
     },
-    width: function width(_ref4) {
-      var percent = _ref4.percent;
-      return percent + '%';
-    },
+    // width: ({ percent }) => percent + '%',
     borderRadius: 15,
     height: '100%'
   }
 });
 
-var ProgressiveBar = function ProgressiveBar(_ref5) {
-  var color = _ref5.color,
-      percent = _ref5.percent,
-      width = _ref5.width,
-      className = _ref5.className,
-      height = _ref5.height;
+var ProgressiveBar = function ProgressiveBar(_ref4) {
+  var color = _ref4.color,
+      percent = _ref4.percent,
+      width = _ref4.width,
+      className = _ref4.className,
+      height = _ref4.height,
+      startAnimation = _ref4.startAnimation;
   var classes = useStyles({
     color: color,
     percent: percent,
@@ -3240,15 +3313,25 @@ var ProgressiveBar = function ProgressiveBar(_ref5) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 34,
       columnNumber: 9
     }
-  }, __jsx("div", {
+  }, __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: classes.color,
+    initial: {
+      width: 0
+    },
+    animate: startAnimation ? {
+      width: percent + '%'
+    } : {},
+    transition: {
+      duration: 2,
+      ease: 'easeOut'
+    },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 36,
       columnNumber: 13
     }
   }));
@@ -3377,7 +3460,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
           visibility: 'hidden'
         },
         // description block animation
-        '& div:nth-of-type(3)': {
+        '& div:nth-child(3)': {
           opacity: 1
         }
       }
@@ -3766,7 +3849,13 @@ var ProjectsGrid = function ProjectsGrid() {
   var _useWindowSize = Object(react_use__WEBPACK_IMPORTED_MODULE_5__["useWindowSize"])(),
       width = _useWindowSize.width;
 
-  var isTablet = width <= _utils_constants__WEBPACK_IMPORTED_MODULE_7__["md"];
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
+      isTablet = _useState3[0],
+      setIsTablet = _useState3[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
+    setIsTablet(width <= _utils_constants__WEBPACK_IMPORTED_MODULE_7__["md"]);
+  }, [width]);
   var parallaxData = Object(react__WEBPACK_IMPORTED_MODULE_3__["useMemo"])(function () {
     return [{
       start: 'self',
@@ -3810,7 +3899,7 @@ var ProjectsGrid = function ProjectsGrid() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 211,
+        lineNumber: 215,
         columnNumber: 62
       }
     }));
@@ -3821,7 +3910,7 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 214,
+      lineNumber: 218,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -3829,7 +3918,7 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 215,
+      lineNumber: 219,
       columnNumber: 13
     }
   }, __jsx(_shared_Title__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -3838,7 +3927,7 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 216,
+      lineNumber: 220,
       columnNumber: 17
     }
   }), __jsx(_shared_Text__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -3848,7 +3937,7 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 217,
+      lineNumber: 221,
       columnNumber: 17
     }
   })));
@@ -3862,7 +3951,7 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 228,
+      lineNumber: 232,
       columnNumber: 9
     }
   }, isTablet && blockTitle, __jsx("div", {
@@ -3870,7 +3959,7 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 230,
+      lineNumber: 234,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3878,7 +3967,7 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 231,
+      lineNumber: 235,
       columnNumber: 17
     }
   }, !isTablet && blockTitle, leftCardsData.map(splicedPorject)), __jsx("div", {
@@ -3886,14 +3975,14 @@ var ProjectsGrid = function ProjectsGrid() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 235,
+      lineNumber: 239,
       columnNumber: 17
     }
   }, __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, otherProps, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 236,
+      lineNumber: 240,
       columnNumber: 21
     }
   }), rightCardsData.map(splicedPorject)))));
@@ -4615,7 +4704,10 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
   }), _h2),
   h3: {
     letterSpacing: 2
-  }
+  },
+  h4: {},
+  h5: {},
+  h6: {}
 });
 
 var Title = function Title(_ref) {
@@ -4629,7 +4721,7 @@ var Title = function Title(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 46,
       columnNumber: 9
     }
   }, text);
@@ -18697,6 +18789,658 @@ module.exports = (__webpack_require__(/*! dll-reference dll_2adc2403d89adc16ead0
 
 /***/ }),
 
+/***/ "./node_modules/next/dist/next-server/lib/amp-context.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/amp-context.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+exports.AmpStateContext = React.createContext({});
+
+if (true) {
+  exports.AmpStateContext.displayName = 'AmpStateContext';
+}
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/amp.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/amp.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var amp_context_1 = __webpack_require__(/*! ./amp-context */ "./node_modules/next/dist/next-server/lib/amp-context.js");
+
+function isInAmpMode() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      _ref$ampFirst = _ref.ampFirst,
+      ampFirst = _ref$ampFirst === void 0 ? false : _ref$ampFirst,
+      _ref$hybrid = _ref.hybrid,
+      hybrid = _ref$hybrid === void 0 ? false : _ref$hybrid,
+      _ref$hasQuery = _ref.hasQuery,
+      hasQuery = _ref$hasQuery === void 0 ? false : _ref$hasQuery;
+
+  return ampFirst || hybrid && hasQuery;
+}
+
+exports.isInAmpMode = isInAmpMode;
+
+function useAmp() {
+  // Don't assign the context value to a variable to save bytes
+  return isInAmpMode(react_1["default"].useContext(amp_context_1.AmpStateContext));
+}
+
+exports.useAmp = useAmp;
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/head-manager-context.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/head-manager-context.js ***!
+  \************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+exports.HeadManagerContext = React.createContext(null);
+
+if (true) {
+  exports.HeadManagerContext.displayName = 'HeadManagerContext';
+}
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/head.js":
+/*!********************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/head.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var side_effect_1 = __importDefault(__webpack_require__(/*! ./side-effect */ "./node_modules/next/dist/next-server/lib/side-effect.js"));
+
+var amp_context_1 = __webpack_require__(/*! ./amp-context */ "./node_modules/next/dist/next-server/lib/amp-context.js");
+
+var head_manager_context_1 = __webpack_require__(/*! ./head-manager-context */ "./node_modules/next/dist/next-server/lib/head-manager-context.js");
+
+var amp_1 = __webpack_require__(/*! ./amp */ "./node_modules/next/dist/next-server/lib/amp.js");
+
+function defaultHead() {
+  var inAmpMode = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var head = [react_1["default"].createElement("meta", {
+    charSet: "utf-8"
+  })];
+
+  if (!inAmpMode) {
+    head.push(react_1["default"].createElement("meta", {
+      name: "viewport",
+      content: "width=device-width"
+    }));
+  }
+
+  return head;
+}
+
+exports.defaultHead = defaultHead;
+
+function onlyReactElement(list, child) {
+  // React children can be "string" or "number" in this case we ignore them for backwards compat
+  if (typeof child === 'string' || typeof child === 'number') {
+    return list;
+  } // Adds support for React.Fragment
+
+
+  if (child.type === react_1["default"].Fragment) {
+    return list.concat(react_1["default"].Children.toArray(child.props.children).reduce(function (fragmentList, fragmentChild) {
+      if (typeof fragmentChild === 'string' || typeof fragmentChild === 'number') {
+        return fragmentList;
+      }
+
+      return fragmentList.concat(fragmentChild);
+    }, []));
+  }
+
+  return list.concat(child);
+}
+
+var METATYPES = ['name', 'httpEquiv', 'charSet', 'itemProp'];
+/*
+ returns a function for filtering head child elements
+ which shouldn't be duplicated, like <title/>
+ Also adds support for deduplicated `key` properties
+*/
+
+function unique() {
+  var keys = new Set();
+  var tags = new Set();
+  var metaTypes = new Set();
+  var metaCategories = {};
+  return function (h) {
+    var unique = true;
+
+    if (h.key && typeof h.key !== 'number' && h.key.indexOf('$') > 0) {
+      var key = h.key.slice(h.key.indexOf('$') + 1);
+
+      if (keys.has(key)) {
+        unique = false;
+      } else {
+        keys.add(key);
+      }
+    } // eslint-disable-next-line default-case
+
+
+    switch (h.type) {
+      case 'title':
+      case 'base':
+        if (tags.has(h.type)) {
+          unique = false;
+        } else {
+          tags.add(h.type);
+        }
+
+        break;
+
+      case 'meta':
+        for (var i = 0, len = METATYPES.length; i < len; i++) {
+          var metatype = METATYPES[i];
+          if (!h.props.hasOwnProperty(metatype)) continue;
+
+          if (metatype === 'charSet') {
+            if (metaTypes.has(metatype)) {
+              unique = false;
+            } else {
+              metaTypes.add(metatype);
+            }
+          } else {
+            var category = h.props[metatype];
+            var categories = metaCategories[metatype] || new Set();
+
+            if (categories.has(category)) {
+              unique = false;
+            } else {
+              categories.add(category);
+              metaCategories[metatype] = categories;
+            }
+          }
+        }
+
+        break;
+    }
+
+    return unique;
+  };
+}
+/**
+ *
+ * @param headElements List of multiple <Head> instances
+ */
+
+
+function reduceComponents(headElements, props) {
+  return headElements.reduce(function (list, headElement) {
+    var headElementChildren = react_1["default"].Children.toArray(headElement.props.children);
+    return list.concat(headElementChildren);
+  }, []).reduce(onlyReactElement, []).reverse().concat(defaultHead(props.inAmpMode)).filter(unique()).reverse().map(function (c, i) {
+    var key = c.key || i;
+    return react_1["default"].cloneElement(c, {
+      key: key
+    });
+  });
+}
+
+var Effect = side_effect_1["default"]();
+/**
+ * This component injects elements to `<head>` of your page.
+ * To avoid duplicated `tags` in `<head>` you can use the `key` property, which will make sure every tag is only rendered once.
+ */
+
+function Head(_ref) {
+  var children = _ref.children;
+  return react_1["default"].createElement(amp_context_1.AmpStateContext.Consumer, null, function (ampState) {
+    return react_1["default"].createElement(head_manager_context_1.HeadManagerContext.Consumer, null, function (updateHead) {
+      return react_1["default"].createElement(Effect, {
+        reduceComponentsToState: reduceComponents,
+        handleStateChange: updateHead,
+        inAmpMode: amp_1.isInAmpMode(ampState)
+      }, children);
+    });
+  });
+}
+
+Head.rewind = Effect.rewind;
+exports["default"] = Head;
+
+/***/ }),
+
+/***/ "./node_modules/next/dist/next-server/lib/side-effect.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/next/dist/next-server/lib/side-effect.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _classCallCheck = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ "./node_modules/next/node_modules/@babel/runtime/helpers/classCallCheck.js");
+
+var _assertThisInitialized = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ "./node_modules/next/node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+
+var _createClass = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/next/node_modules/@babel/runtime/helpers/createClass.js");
+
+var _inherits = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/next/node_modules/@babel/runtime/helpers/inherits.js");
+
+var _possibleConstructorReturn = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/next/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
+
+var _getPrototypeOf = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/next/node_modules/@babel/runtime/helpers/getPrototypeOf.js");
+
+var _toConsumableArray = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/next/node_modules/@babel/runtime/helpers/toConsumableArray.js");
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var react_1 = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var isServer = false;
+
+exports["default"] = function () {
+  var mountedInstances = new Set();
+  var state;
+
+  function emitChange(component) {
+    state = component.props.reduceComponentsToState(_toConsumableArray(mountedInstances), component.props);
+
+    if (component.props.handleStateChange) {
+      component.props.handleStateChange(state);
+    }
+  }
+
+  return /*#__PURE__*/function (_react_1$Component) {
+    _inherits(_class, _react_1$Component);
+
+    var _super = _createSuper(_class);
+
+    _createClass(_class, null, [{
+      key: "rewind",
+      // Used when server rendering
+      value: function rewind() {
+        var recordedState = state;
+        state = undefined;
+        mountedInstances.clear();
+        return recordedState;
+      }
+    }]);
+
+    function _class(props) {
+      var _this;
+
+      _classCallCheck(this, _class);
+
+      _this = _super.call(this, props);
+
+      if (isServer) {
+        mountedInstances.add(_assertThisInitialized(_this));
+        emitChange(_assertThisInitialized(_this));
+      }
+
+      return _this;
+    }
+
+    _createClass(_class, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        mountedInstances.add(this);
+        emitChange(this);
+      }
+    }, {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate() {
+        emitChange(this);
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        mountedInstances["delete"](this);
+        emitChange(this);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return null;
+      }
+    }]);
+
+    return _class;
+  }(react_1.Component);
+};
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) {
+    for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+}
+
+module.exports = _arrayWithoutHoles;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/assertThisInitialized.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/assertThisInitialized.js ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+module.exports = _assertThisInitialized;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/classCallCheck.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/classCallCheck.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+module.exports = _classCallCheck;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/createClass.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/createClass.js ***!
+  \******************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+module.exports = _createClass;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/getPrototypeOf.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/getPrototypeOf.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _getPrototypeOf(o) {
+  module.exports = _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
+
+module.exports = _getPrototypeOf;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/inherits.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/inherits.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var setPrototypeOf = __webpack_require__(/*! ./setPrototypeOf */ "./node_modules/next/node_modules/@babel/runtime/helpers/setPrototypeOf.js");
+
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
+
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) setPrototypeOf(subClass, superClass);
+}
+
+module.exports = _inherits;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/iterableToArray.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/iterableToArray.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _iterableToArray(iter) {
+  if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);
+}
+
+module.exports = _iterableToArray;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/nonIterableSpread.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/nonIterableSpread.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance");
+}
+
+module.exports = _nonIterableSpread;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/possibleConstructorReturn.js ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var _typeof = __webpack_require__(/*! ../helpers/typeof */ "./node_modules/next/node_modules/@babel/runtime/helpers/typeof.js");
+
+var assertThisInitialized = __webpack_require__(/*! ./assertThisInitialized */ "./node_modules/next/node_modules/@babel/runtime/helpers/assertThisInitialized.js");
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (_typeof(call) === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return assertThisInitialized(self);
+}
+
+module.exports = _possibleConstructorReturn;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/setPrototypeOf.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/setPrototypeOf.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _setPrototypeOf(o, p) {
+  module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
+
+  return _setPrototypeOf(o, p);
+}
+
+module.exports = _setPrototypeOf;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/toConsumableArray.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/toConsumableArray.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayWithoutHoles = __webpack_require__(/*! ./arrayWithoutHoles */ "./node_modules/next/node_modules/@babel/runtime/helpers/arrayWithoutHoles.js");
+
+var iterableToArray = __webpack_require__(/*! ./iterableToArray */ "./node_modules/next/node_modules/@babel/runtime/helpers/iterableToArray.js");
+
+var nonIterableSpread = __webpack_require__(/*! ./nonIterableSpread */ "./node_modules/next/node_modules/@babel/runtime/helpers/nonIterableSpread.js");
+
+function _toConsumableArray(arr) {
+  return arrayWithoutHoles(arr) || iterableToArray(arr) || nonIterableSpread();
+}
+
+module.exports = _toConsumableArray;
+
+/***/ }),
+
+/***/ "./node_modules/next/node_modules/@babel/runtime/helpers/typeof.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/next/node_modules/@babel/runtime/helpers/typeof.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
+
+function _typeof(obj) {
+  if (typeof Symbol === "function" && _typeof2(Symbol.iterator) === "symbol") {
+    module.exports = _typeof = function _typeof(obj) {
+      return _typeof2(obj);
+    };
+  } else {
+    module.exports = _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : _typeof2(obj);
+    };
+  }
+
+  return _typeof(obj);
+}
+
+module.exports = _typeof;
+
+/***/ }),
+
 /***/ "./node_modules/popmotion/dist/popmotion.es.js":
 /*!*****************************************************!*\
   !*** ./node_modules/popmotion/dist/popmotion.es.js ***!
@@ -20828,6 +21572,392 @@ function getDisplayName(Component) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = (__webpack_require__(/*! dll-reference dll_2adc2403d89adc16ead0 */ "dll-reference dll_2adc2403d89adc16ead0"))("./node_modules/react-dom/index.js");
+
+/***/ }),
+
+/***/ "./node_modules/react-intersection-observer/react-intersection-observer.m.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/react-intersection-observer/react-intersection-observer.m.js ***!
+  \***********************************************************************************/
+/*! exports provided: default, InView, useInView */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InView", function() { return InView; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInView", function() { return useInView; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _inheritsLoose(subClass, superClass) {
+  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype.constructor = subClass;
+  subClass.__proto__ = superClass;
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+var ObserverMap = new Map();
+var RootIds = new Map();
+var rootId = 0;
+/**
+ * Generate a unique ID for the root element
+ * @param root
+ */
+
+function getRootId(root) {
+  if (!root) return '0';
+  if (RootIds.has(root)) return RootIds.get(root);
+  rootId += 1;
+  RootIds.set(root, rootId.toString());
+  return RootIds.get(root);
+}
+/**
+ * Convert the options to a string Id, based on the values.
+ * Ensures we can reuse the same observer when observing elements with the same options.
+ * @param options
+ */
+
+
+function optionsToId(options) {
+  return Object.keys(options).sort().filter(function (key) {
+    return options[key] !== undefined;
+  }).map(function (key) {
+    return key + "_" + (key === 'root' ? getRootId(options.root) : options[key]);
+  }).toString();
+}
+
+function createObserver(options) {
+  // Create a unique ID for this observer instance, based on the root, root margin and threshold.
+  var id = optionsToId(options);
+  var instance = ObserverMap.get(id);
+
+  if (!instance) {
+    // Create a map of elements this observer is going to observe. Each element has a list of callbacks that should be triggered, once it comes into view.
+    var elements = new Map();
+    var thresholds;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var _elements$get;
+
+        // While it would be nice if you could just look at isIntersecting to determine if the component is inside the viewport, browsers can't agree on how to use it.
+        // -Firefox ignores `threshold` when considering `isIntersecting`, so it will never be false again if `threshold` is > 0
+        var inView = entry.isIntersecting && thresholds.some(function (threshold) {
+          return entry.intersectionRatio >= threshold;
+        }); // @ts-ignore support IntersectionObserver v2
+
+        if (options.trackVisibility && typeof entry.isVisible === 'undefined') {
+          // The browser doesn't support Intersection Observer v2, falling back to v1 behavior.
+          // @ts-ignore
+          entry.isVisible = inView;
+        }
+
+        (_elements$get = elements.get(entry.target)) == null ? void 0 : _elements$get.forEach(function (callback) {
+          callback(inView, entry);
+        });
+      });
+    }, options); // Ensure we have a valid thresholds array. If not, use the threshold from the options
+
+    thresholds = observer.thresholds || (Array.isArray(options.threshold) ? options.threshold : [options.threshold || 0]);
+    instance = {
+      id: id,
+      observer: observer,
+      elements: elements
+    };
+    ObserverMap.set(id, instance);
+  }
+
+  return instance;
+}
+
+function observe(element, callback, options) {
+  if (options === void 0) {
+    options = {};
+  }
+
+  if (!element) return function () {}; // An observer with the same options can be reused, so lets use this fact
+
+  var _createObserver = createObserver(options),
+      id = _createObserver.id,
+      observer = _createObserver.observer,
+      elements = _createObserver.elements; // Register the callback listener for this element
+
+
+  var callbacks = elements.get(element) || [];
+
+  if (!elements.has(element)) {
+    elements.set(element, callbacks);
+  }
+
+  callbacks.push(callback);
+  observer.observe(element);
+  return function unobserve() {
+    // Remove the callback from the callback list
+    callbacks.splice(callbacks.indexOf(callback), 1);
+
+    if (callbacks.length === 0) {
+      // No more callback exists for element, so destroy it
+      elements["delete"](element);
+      observer.unobserve(element);
+    }
+
+    if (elements.size === 0) {
+      // No more elements are being observer by this instance, so destroy it
+      observer.disconnect();
+      ObserverMap["delete"](id);
+    }
+  };
+}
+
+function isPlainChildren(props) {
+  return typeof props.children !== 'function';
+}
+/**
+ * Monitors scroll, and triggers the children function with updated props
+ */
+
+
+var InView = /*#__PURE__*/function (_React$Component) {
+  _inheritsLoose(InView, _React$Component);
+
+  function InView(props) {
+    var _this;
+
+    _this = _React$Component.call(this, props) || this;
+    _this.node = null;
+    _this._unobserveCb = null;
+
+    _this.handleNode = function (node) {
+      if (_this.node) {
+        // Clear the old observer, before we start observing a new element
+        _this.unobserve();
+
+        if (!node && !_this.props.triggerOnce && !_this.props.skip) {
+          // Reset the state if we get a new node, and we aren't ignoring updates
+          _this.setState({
+            inView: !!_this.props.initialInView,
+            entry: undefined
+          });
+        }
+      }
+
+      _this.node = node ? node : null;
+
+      _this.observeNode();
+    };
+
+    _this.handleChange = function (inView, entry) {
+      if (inView && _this.props.triggerOnce) {
+        // If `triggerOnce` is true, we should stop observing the element.
+        _this.unobserve();
+      }
+
+      if (!isPlainChildren(_this.props)) {
+        // Store the current State, so we can pass it to the children in the next render update
+        // There's no reason to update the state for plain children, since it's not used in the rendering.
+        _this.setState({
+          inView: inView,
+          entry: entry
+        });
+      }
+
+      if (_this.props.onChange) {
+        // If the user is actively listening for onChange, always trigger it
+        _this.props.onChange(inView, entry);
+      }
+    };
+
+    _this.state = {
+      inView: !!props.initialInView,
+      entry: undefined
+    };
+    return _this;
+  }
+
+  var _proto = InView.prototype;
+
+  _proto.componentDidUpdate = function componentDidUpdate(prevProps) {
+    // If a IntersectionObserver option changed, reinit the observer
+    if (prevProps.rootMargin !== this.props.rootMargin || prevProps.root !== this.props.root || prevProps.threshold !== this.props.threshold || prevProps.skip !== this.props.skip || prevProps.trackVisibility !== this.props.trackVisibility || prevProps.delay !== this.props.delay) {
+      this.unobserve();
+      this.observeNode();
+    }
+  };
+
+  _proto.componentWillUnmount = function componentWillUnmount() {
+    this.unobserve();
+    this.node = null;
+  };
+
+  _proto.observeNode = function observeNode() {
+    if (!this.node || this.props.skip) return;
+    var _this$props = this.props,
+        threshold = _this$props.threshold,
+        root = _this$props.root,
+        rootMargin = _this$props.rootMargin,
+        trackVisibility = _this$props.trackVisibility,
+        delay = _this$props.delay;
+    this._unobserveCb = observe(this.node, this.handleChange, {
+      threshold: threshold,
+      root: root,
+      rootMargin: rootMargin,
+      // @ts-ignore
+      trackVisibility: trackVisibility,
+      // @ts-ignore
+      delay: delay
+    });
+  };
+
+  _proto.unobserve = function unobserve() {
+    if (this._unobserveCb) {
+      this._unobserveCb();
+
+      this._unobserveCb = null;
+    }
+  };
+
+  _proto.render = function render() {
+    if (!isPlainChildren(this.props)) {
+      var _this$state = this.state,
+          inView = _this$state.inView,
+          entry = _this$state.entry;
+      return this.props.children({
+        inView: inView,
+        entry: entry,
+        ref: this.handleNode
+      });
+    }
+
+    var _this$props2 = this.props,
+        children = _this$props2.children,
+        as = _this$props2.as,
+        tag = _this$props2.tag,
+        props = _objectWithoutPropertiesLoose(_this$props2, ["children", "as", "tag", "triggerOnce", "threshold", "root", "rootMargin", "onChange", "skip", "trackVisibility", "delay", "initialInView"]);
+
+    return /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_0__["createElement"])(as || tag || 'div', _extends({
+      ref: this.handleNode
+    }, props), children);
+  };
+
+  return InView;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+InView.displayName = 'InView';
+InView.defaultProps = {
+  threshold: 0,
+  triggerOnce: false,
+  initialInView: false
+};
+
+function useInView(_temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      threshold = _ref.threshold,
+      delay = _ref.delay,
+      trackVisibility = _ref.trackVisibility,
+      rootMargin = _ref.rootMargin,
+      root = _ref.root,
+      triggerOnce = _ref.triggerOnce,
+      skip = _ref.skip,
+      initialInView = _ref.initialInView;
+
+  var unobserve = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])();
+
+  var _React$useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    inView: !!initialInView
+  }),
+      state = _React$useState[0],
+      setState = _React$useState[1];
+
+  var setRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(function (node) {
+    if (unobserve.current !== undefined) {
+      unobserve.current();
+      unobserve.current = undefined;
+    } // Skip creating the observer
+
+
+    if (skip) return;
+
+    if (node) {
+      unobserve.current = observe(node, function (inView, entry) {
+        setState({
+          inView: inView,
+          entry: entry
+        });
+
+        if (entry.isIntersecting && triggerOnce && unobserve.current) {
+          // If it should only trigger once, unobserve the element after it's inView
+          unobserve.current();
+          unobserve.current = undefined;
+        }
+      }, {
+        root: root,
+        rootMargin: rootMargin,
+        threshold: threshold,
+        // @ts-ignore
+        trackVisibility: trackVisibility,
+        // @ts-ignore
+        delay: delay
+      });
+    }
+  }, // We break the rule here, because we aren't including the actual `threshold` variable
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  [// If the threshold is an array, convert it to a string so it won't change between renders.
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  Array.isArray(threshold) ? threshold.toString() : threshold, root, rootMargin, triggerOnce, skip, trackVisibility, delay]);
+  /* eslint-disable-next-line */
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    if (!unobserve.current && state.entry && !triggerOnce && !skip) {
+      // If we don't have a ref, then reset the state (unless the hook is set to only `triggerOnce` or `skip`)
+      // This ensures we correctly reflect the current state - If you aren't observing anything, then nothing is inView
+      setState({
+        inView: !!initialInView
+      });
+    }
+  });
+  var result = [setRef, state.inView, state.entry]; // Support object destructuring, by adding the specific values.
+
+  result.ref = result[0];
+  result.inView = result[1];
+  result.entry = result[2];
+  return result;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (InView);
+
+//# sourceMappingURL=react-intersection-observer.m.js.map
+
 
 /***/ }),
 
@@ -33933,20 +35063,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./hooks/useWindowSize.tsx");
-/* harmony import */ var _reducers_appReducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/appReducer */ "./reducers/appReducer.ts");
-/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../utils/constants */ "./utils/constants.tsx");
-/* harmony import */ var _components_shared_Header__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/shared/Header */ "./components/shared/Header.tsx");
-/* harmony import */ var _components_home_competences__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/home/competences */ "./components/home/competences/index.tsx");
-/* harmony import */ var _components_home_projects_grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/home/projects-grid */ "./components/home/projects-grid/index.tsx");
-/* harmony import */ var _components_home_knowledges__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/home/knowledges */ "./components/home/knowledges/index.tsx");
-/* harmony import */ var _components_shared_Text__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/shared/Text */ "./components/shared/Text.tsx");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../hooks/useWindowSize */ "./hooks/useWindowSize.tsx");
+/* harmony import */ var _reducers_appReducer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../reducers/appReducer */ "./reducers/appReducer.ts");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/constants */ "./utils/constants.tsx");
+/* harmony import */ var _components_shared_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/shared/Header */ "./components/shared/Header.tsx");
+/* harmony import */ var _components_home_competences__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/home/competences */ "./components/home/competences/index.tsx");
+/* harmony import */ var _components_home_projects_grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/home/projects-grid */ "./components/home/projects-grid/index.tsx");
+/* harmony import */ var _components_home_knowledges__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/home/knowledges */ "./components/home/knowledges/index.tsx");
+/* harmony import */ var _components_shared_Text__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/shared/Text */ "./components/shared/Text.tsx");
 
 
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\pages\\index.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
@@ -33967,7 +35100,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       composes: 'flexColumn stretchSelf flex1',
       backgroundColor: '#000',
       color: '#fff'
-    }, _utils_constants__WEBPACK_IMPORTED_MODULE_6__["media"].lgDown, {
+    }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].lgDown, {
       flexDirection: 'column'
     }),
     warning: {
@@ -33987,36 +35120,77 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
 var headerDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
 var Home = function Home() {
-  var size = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_4__["useWindowSize"])();
+  var size = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_5__["useWindowSize"])();
   var classes = useStyles({
     size: size
   });
   var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_3__["useDispatch"])();
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    dispatch(Object(_reducers_appReducer__WEBPACK_IMPORTED_MODULE_5__["getScreen"])(size.width));
+    dispatch(Object(_reducers_appReducer__WEBPACK_IMPORTED_MODULE_6__["getScreen"])(size.width));
   }, []);
   return __jsx("div", {
     className: classes.root,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 53,
       columnNumber: 9
     }
-  }, __jsx("div", {
-    className: classes.warning,
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 53,
-      columnNumber: 13
-    }
-  }, __jsx(_components_shared_Text__WEBPACK_IMPORTED_MODULE_11__["default"], {
-    className: classes.warningText,
+  }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_4___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 54,
+      columnNumber: 13
+    }
+  }, __jsx("title", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 55,
+      columnNumber: 17
+    }
+  }, "Tiavina Michael Ralainirina"), __jsx("link", {
+    rel: "icon",
+    href: "/favicon.ico",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 56,
+      columnNumber: 17
+    }
+  }), __jsx("meta", {
+    name: "title",
+    content: "Tiavina Michael Ralainirina Portfolio",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 57,
+      columnNumber: 17
+    }
+  }), __jsx("meta", {
+    name: "description",
+    content: "FullStack Developer from Madagascar.",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58,
+      columnNumber: 17
+    }
+  })), __jsx("div", {
+    className: classes.warning,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60,
+      columnNumber: 13
+    }
+  }, __jsx(_components_shared_Text__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    className: classes.warningText,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61,
       columnNumber: 17
     }
   }, "Le site est actuellement en cours de d\xE9veloppement. Pour plus d'info veuillez me contacter", __jsx("a", {
@@ -34025,38 +35199,38 @@ var Home = function Home() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 56,
+      lineNumber: 63,
       columnNumber: 21
     }
-  }, "ici"))), __jsx(_components_shared_Header__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, "ici"))), __jsx(_components_shared_Header__WEBPACK_IMPORTED_MODULE_8__["default"], {
     title: "Tiavina Michael RALAINIRINA",
     subtitle: "FullStack Developer - UI / UX Designer",
     description: headerDescription,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 13
-    }
-  }), __jsx(_components_home_competences__WEBPACK_IMPORTED_MODULE_8__["default"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66,
-      columnNumber: 13
-    }
-  }), __jsx(_components_home_projects_grid__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67,
-      columnNumber: 13
-    }
-  }), __jsx(_components_home_knowledges__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 68,
+      columnNumber: 13
+    }
+  }), __jsx(_components_home_competences__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73,
+      columnNumber: 13
+    }
+  }), __jsx(_components_home_projects_grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
+      columnNumber: 13
+    }
+  }), __jsx(_components_home_knowledges__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
       columnNumber: 13
     }
   }));
