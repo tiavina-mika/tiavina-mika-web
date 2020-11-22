@@ -4,9 +4,10 @@ import Card from './Card';
 import clsx from 'clsx';
 import { screenState } from '../../../../reducers/appReducer';
 import { useSelector } from 'react-redux';
+import { media } from '../../../../utils/constants';
 
 const y = 40;
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: any) => ({
     cardsRoot: {
         composes: 'flexRow justifyStart alignCenter flex1',
     },
@@ -16,6 +17,13 @@ const useStyles = createUseStyles({
     },
     cardsMobile: {
         composes: 'flexColumn center flex1',
+        [media.mdLg]: {
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            paddingLeft: theme.spacing(3),
+            paddingRight: theme.spacing(3),
+        },
     },
     firstCard: {
         transform: 'translateY(-10vh)',
@@ -24,7 +32,7 @@ const useStyles = createUseStyles({
         transform: `translateY(${y}vh)`,
         opacity: 0,
     },
-});
+}));
 
 interface Property {
     startValue: string | number;

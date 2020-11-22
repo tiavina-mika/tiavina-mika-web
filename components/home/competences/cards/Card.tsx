@@ -24,14 +24,6 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexColumn spaceBetween font-ProximaNova-regular',
         marginTop: theme.spacing(2),
         padding: [theme.spacing(2), theme.spacing(horizontalPaddingMobile)],
-        // boxSizing: 'border-box',
-        // boxShadow: '0 6px 10px rgba(0,0,0,.08)',
-        // borderRadius: 10,
-        // height: 410,
-        // width: 543,
-        // backgroundColor: '#fff',
-        // position: 'absolute',
-        // padding: [60, 68],
         color: theme.colors.secondary,
         [media.smLg]: {
             boxShadow: '0 6px 10px rgba(0,0,0,.08)',
@@ -39,6 +31,9 @@ const useStyles = createUseStyles((theme: any) => ({
             height: 300,
             width: 440,
             marginBottom: theme.spacing(5),
+        },
+        [media.mdLg]: {
+            marginTop: theme.spacing(4),
         },
     },
     cardHead: {
