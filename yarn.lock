@@ -5373,7 +5373,7 @@ react-in-viewport@^1.0.0-alpha.11:
   dependencies:
     hoist-non-react-statics "^3.0.0"
 
-react-intersection-observer@^8.26.2:
+react-intersection-observer@^8.30.3:
   version "8.30.3"
   resolved "https://registry.yarnpkg.com/react-intersection-observer/-/react-intersection-observer-8.30.3.tgz#99850f0aacc5b474dddb04976e58d7ee9315ba19"
   integrity sha512-hKYTJUrU99hAf7h1lNY3pjYXt+09BaPNC6fcLw1B8OLJJUDXTWrwzu4hRuztougeRgPYpxmNaTn1FS4F3EQnhA==

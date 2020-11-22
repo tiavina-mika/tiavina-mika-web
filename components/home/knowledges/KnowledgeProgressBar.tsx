@@ -64,9 +64,9 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { data: any };
+type Props = { data: any; startAnimation: boolean };
 
-const KnowledgeProgressBar: FC<Props> = ({ data }) => {
+const KnowledgeProgressBar: FC<Props> = ({ data, startAnimation }) => {
     const classes = useStyles();
     return (
         <div className={classes.knowledgeProgressBarRoot}>
@@ -76,6 +76,7 @@ const KnowledgeProgressBar: FC<Props> = ({ data }) => {
                     items={data.items.sort((a, b) => b.value - a.value)}
                     className={classes.cards}
                     itemClassName={classes.card}
+                    startAnimation={startAnimation}
                 />
             </div>
         </div>

@@ -33,6 +33,9 @@ const useStyles = createUseStyles({
     h3: {
         letterSpacing: 2,
     },
+    h4: {},
+    h5: {},
+    h6: {},
 });
 
 type Props = { text: string; className?: string; level?: 1 | 2 | 3 | 4 | 5 | 6 };

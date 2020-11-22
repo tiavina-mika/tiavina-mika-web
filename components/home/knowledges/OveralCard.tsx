@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { createUseStyles } from 'react-jss';
+
 import { media } from '../../../utils/constants';
 import ItemsChart from './ItemsChart';
 import PieChartSvg from './PieChartSvg';
@@ -64,14 +66,16 @@ const OveralCard: FC = () => {
     const total = itemsChart.reduce((acc, curr) => {
         return acc + curr.value;
     }, 0);
-
+    const { ref, inView } = useInView({
+        threshold: 0,
+    });
     return (
-        <div className={classes.overallCard}>
+        <div className={classes.overallCard} ref={ref}>
             <div className={classes.header}>Note Générale</div>
             <div className={classes.pieChart}>
-                <PieChartSvg total={total / itemsChart.length} />
+                <PieChartSvg total={total / itemsChart.length} startAnimation={inView} />
             </div>
-            <ItemsChart items={itemsChart} />
+            <ItemsChart items={itemsChart} startAnimation={inView} />
         </div>
     );
 };

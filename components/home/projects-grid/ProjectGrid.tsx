@@ -82,7 +82,7 @@ const useStyles = createUseStyles((theme: any) => ({
                     visibility: 'hidden',
                 },
                 // description block animation
-                '& div:nth-of-type(3)': {
+                '& div:nth-child(3)': {
                     opacity: 1,
                 },
             },

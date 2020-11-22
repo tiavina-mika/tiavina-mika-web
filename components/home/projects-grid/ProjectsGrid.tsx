@@ -165,7 +165,11 @@ const ProjectsGrid = () => {
     const [leftCardsData, setLeftCardData] = useState<ProjectI[]>([]);
     const [rightCardsData, setRightCardData] = useState<ProjectI[]>([]);
     const { width } = useWindowSize();
-    const isTablet: boolean = width <= md;
+    const [isTablet, setIsTablet] = useState<boolean>(false);
+
+    useEffect(() => {
+        setIsTablet(width <= md);
+    }, [width]);
 
     const parallaxData = useMemo(() => {
         return [

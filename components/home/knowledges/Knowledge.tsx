@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { FC, ReactNode } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { createUseStyles } from 'react-jss';
 import { media } from '../../../utils/constants';
 
@@ -139,8 +140,11 @@ const getCardPosition = (index: number, cardPositions?: number[][]): CardPositio
 type Props = { data: KnowledgeI; reverse: boolean };
 const Knowledge: FC<Props> = ({ data, reverse }) => {
     const classes = useStyles();
+    const { ref, inView } = useInView({
+        threshold: 0,
+    });
     return (
-        <div className={classes.knowledgeRoot}>
+        <div className={classes.knowledgeRoot} ref={ref}>
             <div className={classes.knowledgeContent}>
                 <div
                     className={clsx(
@@ -166,7 +170,12 @@ const Knowledge: FC<Props> = ({ data, reverse }) => {
                                 <img alt="react" src={`/images/technos/${d.image}.png`} />
                                 <div className={classes.cardBody}>
                                     <Text text={d.name} className={classes.label} />
-                                    <ProgressiveBar color={getColor(d.value)} percent={d.value} height={8} />
+                                    <ProgressiveBar
+                                        color={getColor(d.value)}
+                                        percent={d.value}
+                                        height={8}
+                                        startAnimation={inView}
+                                    />
                                 </div>
                             </div>
                         )

@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, useEffect, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { createUseStyles } from 'react-jss';
 import { useWindowSize } from '../../../hooks/useWindowSize';
 
 import { horizontalPaddingMobile, media, sm } from '../../../utils/constants';
 import { isReverse } from '../../../utils/utils';
 
-import Knowledge from './KnowledgeDescription';
+import Knowledge from './Knowledge';
 import KnowledgeProgressBar from './KnowledgeProgressBar';
 import OveralCard, { KnowledgesMainChart } from './OveralCard';
 
@@ -356,8 +357,15 @@ const dataProgressBar: KnowledgesProgressiveChartI[] = [
 const Knowledges: FC = () => {
     const classes = useStyles();
     const { width } = useWindowSize();
-    const isTablet: boolean = width <= sm;
+    const [isTablet, setIsTablet] = useState<boolean>(false);
 
+    useEffect(() => {
+        setIsTablet(width <= sm);
+    }, [width]);
+
+    const { ref, inView } = useInView({
+        threshold: 0,
+    });
     const carousel: ReactNode = (
         <CarouselProvider
             visibleSlides={3}
@@ -366,11 +374,11 @@ const Knowledges: FC = () => {
             naturalSlideWidth={500}
             naturalSlideHeight={500}
             hasMasterSpinner>
-            <div className={classes.sliderContainer}>
+            <div className={classes.sliderContainer} ref={ref}>
                 <Slider className={classes.slider}>
                     {dataProgressBar.map((d, i) => (
                         <Slide index={i} key={i}>
-                            <KnowledgeProgressBar data={d} key={i} />
+                            <KnowledgeProgressBar data={d} key={i} startAnimation={inView} />
                         </Slide>
                     ))}
                 </Slider>
@@ -381,9 +389,9 @@ const Knowledges: FC = () => {
     );
 
     const mobile: ReactNode = (
-        <div className={classes.knowledgesProgressBarContent}>
+        <div className={classes.knowledgesProgressBarContent} ref={ref}>
             {dataProgressBar.map((d, i) => (
-                <KnowledgeProgressBar data={d} key={i} />
+                <KnowledgeProgressBar data={d} key={i} startAnimation={inView} />
             ))}
         </div>
     );

@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React, { FC, ReactNode } from 'react';
+import { useInView } from 'react-intersection-observer';
 import { createUseStyles } from 'react-jss';
 import { media } from '../../../utils/constants';
 import { KnowledgesMainChart } from './OveralCard';
@@ -35,9 +36,10 @@ const useStyles = createUseStyles((theme: any) => ({
     },
 }));
 
-type Props = { items: KnowledgesMainChart[]; itemClassName?: string; className?: string };
-const ItemsChart: FC<Props> = ({ items, itemClassName, className }) => {
+type Props = { items: KnowledgesMainChart[]; itemClassName?: string; className?: string; startAnimation: boolean };
+const ItemsChart: FC<Props> = ({ items, itemClassName, className, startAnimation }) => {
     const classes = useStyles();
+
     return (
         <div className={clsx(classes.items, className)}>
             {items.map(
@@ -47,7 +49,12 @@ const ItemsChart: FC<Props> = ({ items, itemClassName, className }) => {
                             <div className={classes.label}>{item.label}</div>
                             <div className={classes.value}>{item.value}%</div>
                         </div>
-                        <ProgressiveBar color={item.color} percent={item.value} className={classes.progressiveBar} />
+                        <ProgressiveBar
+                            color={item.color}
+                            percent={item.value}
+                            className={classes.progressiveBar}
+                            startAnimation={startAnimation}
+                        />
                     </div>
                 )
             )}
