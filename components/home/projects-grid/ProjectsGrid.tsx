@@ -78,6 +78,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     blockDescription: {
+        marginTop: theme.spacing(2),
         width: '80%',
         [media.smMd]: {
             width: '60%',
@@ -131,7 +132,7 @@ const projects: Omit<ProjectI, 'color'>[] = [
     {
         id: '2',
         subtitle: 'Some card subtitle 2',
-        title: 'Some card title, two line card title 2',
+        title: 'Some card title 2',
         description: 'Some long, very very long card description, and very very long card description 2',
         url: '/',
     },
