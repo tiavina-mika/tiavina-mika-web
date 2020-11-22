@@ -10,6 +10,7 @@ import Competences from '../components/home/competences';
 import Projects from '../components/home/projects-grid';
 import Knowledges from '../components/home/knowledges';
 import Text from '../components/shared/Text';
+import { Head } from 'next/document';
 
 const useStyles = createUseStyles((theme: any) => ({
     root: {
@@ -50,6 +51,12 @@ const Home = () => {
 
     return (
         <div className={classes.root}>
+            <Head>
+                <title>Tiavina Michael Ralainirina</title>
+                <link rel="icon" href="/favicon.ico" />
+                <meta name="title" content="Tiavina Michael Ralainirina Portfolio" />
+                <meta name="description" content="FullStack Developer from Madagascar." />
+            </Head>
             <div className={classes.warning}>
                 <Text className={classes.warningText}>
                     {`Le site est actuellement en cours de développement. Pour plus d'info veuillez me contacter`}
