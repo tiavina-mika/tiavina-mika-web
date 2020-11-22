@@ -33,6 +33,14 @@ const useStyles = createUseStyles((theme: any) => ({
             width: RESPONSIVE_CARD_WIDTH.mdLg,
             height: '47vw',
         },
+        [media.smMd]: {
+            width: '46vw',
+            height: '48vw',
+        },
+        [media.smDown]: {
+            width: '100%',
+            height: 366,
+        },
     },
     center: {
         composes: 'stretchSelf flex1',
@@ -57,44 +65,77 @@ const useStyles = createUseStyles((theme: any) => ({
         gridTemplateColumns: '100%',
         gridTemplateRows: 'repeat(3, auto) 1fr',
         gridGap: theme.spacing(3),
-        '&:hover': {
-            // the see more button
-            '& div:last-child div': {
-                backgroundColor: '#fff',
-                transform: `translate(${theme.spacing(0)}px,-${theme.spacing(2)}px)`,
-                color: theme.color.secondary,
+        [media.smUp]: {
+            '&:hover': {
+                // the see more button
+                '& div:last-child div': {
+                    backgroundColor: '#fff',
+                    transform: `translate(${theme.spacing(0)}px,-${theme.spacing(2)}px)`,
+                    color: theme.color.secondary,
+                },
+                // grey right arrow
+                '& img:last-child': {
+                    visibility: 'visible',
+                },
+                // white right arrow
+                '& img:first-child': {
+                    visibility: 'hidden',
+                },
+                // description block animation
+                '& div:nth-of-type(3)': {
+                    opacity: 1,
+                },
             },
-            // grey right arrow
-            '& img:last-child': {
-                visibility: 'visible',
-            },
-            // white right arrow
-            '& img:first-child': {
-                visibility: 'hidden',
-            },
-            // description block animation
-            '& div:nth-of-type(3)': {
-                opacity: 1,
-            },
+        },
+        [media.mdDown]: {
+            gridGap: theme.spacing(1),
+        },
+        [media.smDown]: {
+            gridTemplateRows: 'repeat(2, auto) 1fr',
         },
     },
     subtitle: {
         fontSize: 18,
+        [media.smMd]: {
+            fontSize: 16,
+            fontWeight: 300,
+        },
+        [media.xsMd]: {
+            fontSize: 16,
+        },
     },
     title: {
         fontSize: 26,
         width: '60%',
+        [media.smMd]: {
+            fontSize: 20,
+            width: '80%',
+        },
+        [media.xsMd]: {
+            width: '40%',
+        },
+        [media.mdDown]: {
+            fontSize: 18,
+        },
     },
     descriptionContainer: {
         width: '40%',
         lineHeight: 1.43,
         opacity: 0,
         transition: 'opacity .5s cubic-bezier(.19,1,.4,1)',
-        [media.xlDown]: {
-            fontSize: 18,
+        [media.smMd]: {
+            width: '60%',
+        },
+        [media.smDown]: {
+            // visibility: 'hidden',
+            display: 'none',
         },
     },
-    description: {},
+    description: {
+        [media.xsMd]: {
+            fontSize: 14,
+        },
+    },
     seeMore: {
         composes: 'flexRow flexEnd',
     },

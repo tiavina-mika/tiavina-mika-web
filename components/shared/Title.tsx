@@ -26,6 +26,9 @@ const useStyles = createUseStyles({
             fontSize: 22,
             lineHeight: '1.6em',
         },
+        [media.smMd]: {
+            fontSize: 42,
+        },
     },
     h3: {
         letterSpacing: 2,

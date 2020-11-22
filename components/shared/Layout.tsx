@@ -16,8 +16,11 @@ const useStyles = createUseStyles({
         // [media.mdDown]: {
         //     width: '90%',
         // },
-        [media.xsSm]: {
-            width: '90%',
+        [media.smDown]: {
+            width: '94%',
+        },
+        [media.smMd]: {
+            width: '98%',
         },
         [media.mdLg]: {
             width: '96%',

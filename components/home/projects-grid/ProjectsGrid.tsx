@@ -1,6 +1,7 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
-import { media, projectCardWidth } from '../../../utils/constants';
+import { useWindowSize } from 'react-use';
+import { md, media, projectCardWidth } from '../../../utils/constants';
 
 import Layout from '../../shared/Layout';
 import Text from '../../shared/Text';
@@ -9,23 +10,41 @@ import ProjectGrid, { RESPONSIVE_CARD_WIDTH } from './ProjectGrid';
 
 const useStyles = createUseStyles((theme: any) => ({
     projectsRoot: {
-        composes: 'flexRow red',
+        composes: 'flexRow',
     },
     projectsContent: {
         composes: 'flexRow flex1',
+        [media.smDown]: {
+            flexDirection: 'column',
+        },
     },
     left: {
         composes: 'flexColumn flex1 justifyCenter flexEnd',
-        marginRight: theme.spacing(3),
+        [media.smMd]: {
+            marginRight: theme.spacing(1.5),
+        },
+        [media.mdUp]: {
+            marginRight: theme.spacing(3),
+        },
+        [media.smDown]: {
+            alignSelf: 'stretch',
+        },
     },
     right: {
         composes: 'flexColumn flex1 justifyCenter flexStart',
-        marginLeft: theme.spacing(3),
+        [media.smMd]: {
+            marginLeft: theme.spacing(1.5),
+        },
+        [media.mdUp]: {
+            marginLeft: theme.spacing(3),
+        },
+        [media.smDown]: {
+            alignSelf: 'stretch',
+        },
     },
     blockTitle: {
         position: 'relative',
         composes: 'flexColumn',
-        width: projectCardWidth,
         paddingTop: theme.spacing(12),
         paddingBottom: theme.spacing(16),
         [media.lgXl]: {
@@ -34,12 +53,43 @@ const useStyles = createUseStyles((theme: any) => ({
         [media.mdLg]: {
             width: RESPONSIVE_CARD_WIDTH.mdLg,
         },
+        [media.xlUp]: {
+            width: projectCardWidth,
+        },
+        [media.smMd]: {
+            paddingTop: theme.spacing(6),
+            paddingBottom: theme.spacing(9),
+        },
+        [media.smDown]: {
+            paddingTop: theme.spacing(3),
+            paddingBottom: theme.spacing(5),
+        },
     },
     blockTitleContent: {
-        paddingLeft: theme.spacing(5),
+        [media.smMd]: {
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            alignSelf: 'stretch',
+        },
+        [media.mdUp]: {
+            paddingLeft: theme.spacing(5),
+            paddingRight: theme.spacing(5),
+        },
     },
     blockDescription: {
         width: '80%',
+        [media.smMd]: {
+            width: '60%',
+            lineHeight: 1.4,
+            textAlign: 'center',
+            fontSize: 16,
+        },
+        [media.smDown]: {
+            fontSize: 14,
+            width: '100%',
+            lineHeight: 1.6,
+        },
     },
     block: {
         borderRadius: 10,
@@ -112,6 +162,8 @@ const ProjectsGrid = () => {
     const classes = useStyles();
     const [leftCardsData, setLeftCardData] = useState<ProjectI[]>([]);
     const [rightCardsData, setRightCardData] = useState<ProjectI[]>([]);
+    const { width } = useWindowSize();
+    const isTablet: boolean = width <= md;
 
     useEffect(() => {
         const split: number = projects.length <= 5 ? 2 : 3;
@@ -128,20 +180,25 @@ const ProjectsGrid = () => {
     }, []);
 
     const splicedPorject = (project: ProjectI): ReactNode => <ProjectGrid key={project.id} {...project} />;
+
+    const blockTitle: ReactNode = (
+        <div className={classes.blockTitle}>
+            <div className={classes.blockTitleContent}>
+                <Title text="Some Title" level={2} />
+                <Text
+                    className={classes.blockDescription}
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus metus non nunc tempor, eu ultricies mi euismod."
+                    tagName="p"
+                />
+            </div>
+        </div>
+    );
     return (
         <Layout className={classes.projectsRoot}>
+            {isTablet && blockTitle}
             <div className={classes.projectsContent}>
                 <div className={classes.left}>
-                    <div className={classes.blockTitle}>
-                        <div className={classes.blockTitleContent}>
-                            <Title text="Some Title" level={2} />
-                            <Text
-                                className={classes.blockDescription}
-                                text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dapibus metus non nunc tempor, eu ultricies mi euismod."
-                                tagName="p"
-                            />
-                        </div>
-                    </div>
+                    {!isTablet && blockTitle}
                     {leftCardsData.map(splicedPorject)}
                 </div>
                 <div className={classes.right}>{rightCardsData.map(splicedPorject)}</div>
