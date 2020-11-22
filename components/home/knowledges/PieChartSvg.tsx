@@ -25,16 +25,22 @@ const useStyles = createUseStyles({
     },
 });
 
-const activeBar = {
+interface ActiveBarAttrI {
+    stroke: string;
+    pathLength: 0 | 1;
+}
+interface ActiveBarI {
+    hidden: ActiveBarAttrI;
+    visible: ActiveBarAttrI;
+}
+const activeBar: ActiveBarI = {
     hidden: {
         stroke: '#eff4f9',
         pathLength: 0,
-        //   fill: "rgba(255, 255, 255, 0)"
     },
     visible: {
         stroke: '#80ebff',
         pathLength: 1,
-        //   fill: "rgba(255, 255, 255, 1)"
     },
 };
 type Props = { total: number; startAnimation: boolean };
