@@ -94,6 +94,9 @@ const useStyles = createUseStyles((theme: any) => ({
         fontWeight: 300,
         lineHeight: '1.8em',
         fontSize: 17,
+        [media.smDown]: {
+            fontSize: 16,
+        },
     },
     reverse: {
         [media.lgUp]: {

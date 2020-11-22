@@ -21,9 +21,11 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     knowledgeProgressBarContent: {
         composes: 'flexColumn center stretchSelf',
+        width: 400,
         alignSelf: 'center',
         [media.smDown]: {
             alignSelf: 'stretch',
+            alignItems: 'flex-start',
         },
     },
     cards: {
@@ -46,7 +48,7 @@ const useStyles = createUseStyles((theme: any) => ({
         borderRadius: 32,
         fontSize: 18,
         [media.smDown]: {
-            padding: [theme.spacing(3), theme.spacing(4)],
+            padding: [theme.spacing(1.5), theme.spacing(3)],
             margin: [theme.spacing(1), 0],
             fontSize: 14,
         },
@@ -57,7 +59,7 @@ const useStyles = createUseStyles((theme: any) => ({
         fontSize: 22,
         [media.smDown]: {
             justifyContent: 'flex-start',
-            fontSize: 18,
+            fontSize: 16,
         },
     },
 }));

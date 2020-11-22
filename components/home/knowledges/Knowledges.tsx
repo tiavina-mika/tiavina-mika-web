@@ -1,7 +1,10 @@
+import clsx from 'clsx';
+import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import React, { FC, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
+import { useWindowSize } from '../../../hooks/useWindowSize';
 
-import { horizontalPaddingMobile, media } from '../../../utils/constants';
+import { horizontalPaddingMobile, media, sm } from '../../../utils/constants';
 import { isReverse } from '../../../utils/utils';
 
 import Knowledge from './KnowledgeDescription';
@@ -11,6 +14,7 @@ import OveralCard, { KnowledgesMainChart } from './OveralCard';
 const useStyles = createUseStyles((theme: any) => ({
     knowledgesRoot: {
         composes: 'flexColumn alignCenter justifyCenter flex1',
+        position: 'relative',
         fontFamily: 'font-ProximaNova-regular',
         paddingBottom: theme.spacing(15),
         [media.lgDown]: {
@@ -31,7 +35,10 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     knowledgesProgressBar: {
         marginBottom: theme.spacing(16),
-        composes: 'flexRow stretchSelf flex1',
+        composes: 'flexRow stretchSelf justifyCenter flex1',
+        [media.mdLg]: {
+            marginTop: theme.spacing(6),
+        },
     },
     knowledgesProgressBarContent: {
         composes: 'flexRow stretchSelf flex1',
@@ -43,6 +50,65 @@ const useStyles = createUseStyles((theme: any) => ({
         },
         [media.mdDown]: {
             flexDirection: 'column',
+        },
+    },
+    sliderContainer: {
+        position: 'relative',
+        width: 1200,
+        [media.lgXl]: {
+            width: '90vw',
+        },
+        [media.mdLg]: {
+            width: 800,
+        },
+        [media.mdDown]: {
+            width: '85vw',
+        },
+    },
+    slider: {
+        overflow: 'hidden',
+        padding: 0,
+        '& ul': {
+            display: 'flex',
+            padding: 0,
+            margin: 0,
+        },
+        '& li': {
+            listStyle: 'none',
+            padding: '0 !important',
+            width: [400, '!important'],
+        },
+    },
+    sildeButton: {
+        position: 'absolute',
+        top: '50%',
+        transform: 'translateY(-50%)',
+        borderRadius: '50%',
+        width: 62,
+        height: 62,
+        backgroundColor: '#000',
+        boxShadow: '0 1px 5px 1px #C9D3DD',
+        color: '#fff',
+        cursor: 'pointer',
+        border: 'none',
+        fontSize: 22,
+        '&:disabled': {
+            opacity: 0.2,
+        },
+        '&:focus': {
+            outline: 'none',
+        },
+    },
+    buttonBack: {
+        left: -60,
+        [media.xlDown]: {
+            left: -45,
+        },
+    },
+    buttonNext: {
+        right: -60,
+        [media.xlDown]: {
+            right: -45,
         },
     },
 }));
@@ -289,6 +355,38 @@ const dataProgressBar: KnowledgesProgressiveChartI[] = [
 
 const Knowledges: FC = () => {
     const classes = useStyles();
+    const { width } = useWindowSize();
+    const isTablet: boolean = width <= sm;
+
+    const carousel: ReactNode = (
+        <CarouselProvider
+            visibleSlides={3}
+            totalSlides={6}
+            step={1}
+            naturalSlideWidth={500}
+            naturalSlideHeight={500}
+            hasMasterSpinner>
+            <div className={classes.sliderContainer}>
+                <Slider className={classes.slider}>
+                    {dataProgressBar.map((d, i) => (
+                        <Slide index={i} key={i}>
+                            <KnowledgeProgressBar data={d} key={i} />
+                        </Slide>
+                    ))}
+                </Slider>
+                <ButtonBack className={clsx(classes.buttonBack, classes.sildeButton)}>{'<'}</ButtonBack>
+                <ButtonNext className={clsx(classes.buttonNext, classes.sildeButton)}>{'>'}</ButtonNext>
+            </div>
+        </CarouselProvider>
+    );
+
+    const mobile: ReactNode = (
+        <div className={classes.knowledgesProgressBarContent}>
+            {dataProgressBar.map((d, i) => (
+                <KnowledgeProgressBar data={d} key={i} />
+            ))}
+        </div>
+    );
     return (
         <div className={classes.knowledgesRoot} id="knowledges">
             <div className={classes.overall}>
@@ -299,13 +397,7 @@ const Knowledges: FC = () => {
                     <Knowledge data={d} key={i} reverse={isReverse(i)} />
                 )
             )}
-            <div className={classes.knowledgesProgressBar}>
-                <div className={classes.knowledgesProgressBarContent}>
-                    {dataProgressBar.map((d, i) => (
-                        <KnowledgeProgressBar data={d} key={i} />
-                    ))}
-                </div>
-            </div>
+            <div className={classes.knowledgesProgressBar}>{isTablet ? mobile : carousel}</div>
         </div>
     );
 };

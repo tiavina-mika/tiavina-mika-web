@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import React, { FC, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
+import { media } from '../../../utils/constants';
 import { KnowledgesMainChart } from './OveralCard';
 
 import ProgressiveBar from './ProgressiveBar';
@@ -24,6 +25,9 @@ const useStyles = createUseStyles((theme: any) => ({
     value: {
         color: '#8693B5',
         marginTop: theme.spacing(0.7),
+        [media.smDown]: {
+            marginTop: 2,
+        },
     },
     progressiveBar: {
         flex: 2,
@@ -44,7 +48,6 @@ const ItemsChart: FC<Props> = ({ items, itemClassName, className }) => {
                             <div className={classes.value}>{item.value}%</div>
                         </div>
                         <ProgressiveBar color={item.color} percent={item.value} className={classes.progressiveBar} />
-                        {/* <ProgressiveBar color="#FD7A8C" percent={10} width={167} /> */}
                     </div>
                 )
             )}
