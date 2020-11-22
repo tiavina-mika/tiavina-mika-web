@@ -33,7 +33,7 @@ interface ActiveBarI {
     hidden: ActiveBarAttrI;
     visible: ActiveBarAttrI;
 }
-const activeBar: ActiveBarI = {
+const activeBar: Partial<ActiveBarI> = {
     hidden: {
         stroke: '#eff4f9',
         pathLength: 0,
