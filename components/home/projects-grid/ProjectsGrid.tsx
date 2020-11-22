@@ -1,8 +1,9 @@
-import React, { ReactNode, useEffect, useState } from 'react';
+import React, { ElementType, Fragment, ReactNode, useEffect, useMemo, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 import { useWindowSize } from 'react-use';
-import { md, media, projectCardWidth } from '../../../utils/constants';
+import Plx from 'react-plx';
 
+import { md, media, projectCardWidth } from '../../../utils/constants';
 import Layout from '../../shared/Layout';
 import Text from '../../shared/Text';
 import Title from '../../shared/Title';
@@ -166,6 +167,33 @@ const ProjectsGrid = () => {
     const { width } = useWindowSize();
     const isTablet: boolean = width <= md;
 
+    const parallaxData = useMemo(() => {
+        return [
+            {
+                start: 'self',
+                duration: '160vh',
+                properties: [
+                    {
+                        startValue: 0,
+                        endValue: -240,
+                        unit: 'px',
+                        property: 'translateY',
+                    },
+                ],
+            },
+            {
+                start: 'self',
+                duration: '20vh',
+                properties: [
+                    {
+                        startValue: 0,
+                        endValue: 1,
+                        property: 'opacity',
+                    },
+                ],
+            },
+        ];
+    }, []);
     useEffect(() => {
         const split: number = projects.length <= 5 ? 2 : 3;
         const newProjects = projects.map(
@@ -194,6 +222,8 @@ const ProjectsGrid = () => {
             </div>
         </div>
     );
+    const Component: ElementType = isTablet ? Fragment : Plx;
+    const otherProps = isTablet ? {} : { parallaxData };
     return (
         <Layout className={classes.projectsRoot}>
             {isTablet && blockTitle}
@@ -202,7 +232,9 @@ const ProjectsGrid = () => {
                     {!isTablet && blockTitle}
                     {leftCardsData.map(splicedPorject)}
                 </div>
-                <div className={classes.right}>{rightCardsData.map(splicedPorject)}</div>
+                <div className={classes.right}>
+                    <Component {...otherProps}>{rightCardsData.map(splicedPorject)}</Component>
+                </div>
             </div>
         </Layout>
     );

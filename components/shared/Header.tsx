@@ -25,12 +25,7 @@ const useStyles = createUseStyles((theme: any) => ({
             padding: [theme.spacing(1), theme.spacing(horizontalPaddingMobile)],
         },
     },
-    titleContainer: {
-        marginBottom: theme.spacing(6),
-        [media.mdDown]: {
-            marginBottom: theme.spacing(3),
-        },
-    },
+    titleContainer: {},
     title: {
         textTransform: 'uppercase',
         fontFamily: 'DINCondensed !important',
@@ -50,6 +45,10 @@ const useStyles = createUseStyles((theme: any) => ({
             lineHeight: '1.8em',
         },
     },
+    spacing: {
+        marginTop: theme.spacing(8.5),
+        marginBottom: theme.spacing(8.5),
+    },
 }));
 
 type Props = { title: string; description?: string; subtitle?: string };
@@ -63,12 +62,18 @@ const Header: FC<Props> = ({ title, description, subtitle }) => {
             {/* page title */}
             <div className={classes.content}>
                 <div className={description && subtitle ? classes.titleContainer : null}>
-                    <Title text={title} className={classes.title} />
-                    {subtitle && <Title text={subtitle} level={2} className={clsx(classes.title, classes.subtitle)} />}
+                    <Title text={title} className={clsx(classes.title, classes.spacing)} />
+                    {subtitle && (
+                        <Title
+                            text={subtitle}
+                            level={2}
+                            className={clsx(classes.title, classes.subtitle, classes.spacing)}
+                        />
+                    )}
                 </div>
                 {/* page title */}
                 {description && (
-                    <div className={classes.descriptionContainer}>
+                    <div className={clsx(classes.descriptionContainer)}>
                         <Text text={description} tagName="p" className={classes.description} />
                     </div>
                 )}
