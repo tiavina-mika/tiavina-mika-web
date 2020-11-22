@@ -11,7 +11,7 @@ import Projects from '../components/home/projects-grid';
 import Knowledges from '../components/home/knowledges';
 import Text from '../components/shared/Text';
 
-const useStyles = createUseStyles({
+const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: 'flexColumn flexCenter alignCenter stretchSelf flex1',
     },
@@ -31,7 +31,11 @@ const useStyles = createUseStyles({
     warningText: {
         color: '#fff',
     },
-});
+    emailLink: {
+        color: theme.color.active,
+        marginLeft: theme.spacing(1),
+    },
+}));
 
 const headerDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
@@ -47,7 +51,12 @@ const Home = () => {
     return (
         <div className={classes.root}>
             <div className={classes.warning}>
-                <Text text="Le site est actuellement en cours de développement." className={classes.warningText} />
+                <Text className={classes.warningText}>
+                    {`Le site est actuellement en cours de développement. Pour plus d'info veuillez me contacter`}
+                    <a href="mailto:tiavinamika@gmail.com" className={classes.emailLink}>
+                        ici
+                    </a>
+                </Text>
             </div>
             <Header
                 title="Tiavina Michael RALAINIRINA"

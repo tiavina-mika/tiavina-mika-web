@@ -1,4 +1,4 @@
-import React, { FC, ElementType } from 'react';
+import React, { FC, ElementType, ReactNode } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 import { media } from '../../utils/constants';
@@ -22,11 +22,11 @@ const useStyles = createUseStyles({
     },
 });
 
-type Props = { text: string; className?: string; tagName?: 'b' | 'p' };
-const Text: FC<Props> = ({ text, tagName, className }) => {
+type Props = { text?: string; children?: ReactNode; className?: string; tagName?: 'b' | 'p' };
+const Text: FC<Props> = ({ text, tagName, className, children }) => {
     const classes = useStyles();
     const Component = (tagName ? tagName : 'span') as ElementType;
-    return <Component className={clsx(classes.text, className, classes[tagName])}>{text}</Component>;
+    return <Component className={clsx(classes.text, className, classes[tagName])}>{text || children}</Component>;
 };
 
 export default Text;
