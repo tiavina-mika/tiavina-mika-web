@@ -15,7 +15,7 @@ const useStyles = createUseStyles((theme: any) => ({
         opacity: 0.4,
     },
     dotsActive: {
-        stroke: theme.color.active,
+        stroke: theme.colors.active,
         opacity: 1,
     },
     dotsInactive: {
@@ -53,7 +53,7 @@ const CompetencesBlock: FC<Props> = ({ id, x, dotsPath, icon, label, isCurrent }
                 {icon(isCurrent)}
                 <g id="text-container" transform="translate(2.95 -0.55)">
                     <text
-                        fill={isCurrent ? '#fff' : (theme as any).color.secondary}
+                        fill={isCurrent ? '#fff' : (theme as any).colors.secondary}
                         className={classes.text}
                         x={x}
                         y={isTop(id) ? competenseSvgTopY : competenseSvgBottomY}

@@ -6,16 +6,16 @@ const useStyles = createUseStyles((theme: any) => ({
     secondary: { fill: '#bdefd1' },
     cls6: {
         fill: 'none',
-        stroke: theme.color.active,
+        stroke: theme.colors.active,
         strokeWidth: 4.01,
     },
 
     cls7: {
         fill: 'none',
-        stroke: theme.color.active,
+        stroke: theme.colors.active,
         strokeWidth: 3,
     },
-    active: { fill: theme.color.active },
+    active: { fill: theme.colors.active },
 }));
 
 type Props = { active?: boolean };

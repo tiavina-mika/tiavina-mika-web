@@ -101,7 +101,7 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     subtitle: {
         fontSize: 26,
-        color: theme.color.subtitle,
+        color: theme.colors.subtitle,
         textTransform: 'initial',
         [media.lgDown]: {
             marginTop: theme.spacing(2),

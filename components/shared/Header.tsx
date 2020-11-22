@@ -36,7 +36,7 @@ const useStyles = createUseStyles((theme: any) => ({
     descriptionContainer: {
         composes: 'flexRow stretchSelf font-ProximaNova-regular',
         lineHeight: '1.8em',
-        color: theme.color.secondary,
+        color: theme.colors.secondary,
     },
     description: {
         fontSize: 24,

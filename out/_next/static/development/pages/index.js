@@ -412,7 +412,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       backgroundColor: '#fff',
       position: 'absolute',
       padding: [60, 68],
-      color: theme.color.secondary
+      color: theme.colors.secondary
     },
     cardMobile: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_1__["default"])({
       composes: 'flexColumn spaceBetween font-ProximaNova-regular',
@@ -426,7 +426,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       // backgroundColor: '#fff',
       // position: 'absolute',
       // padding: [60, 68],
-      color: theme.color.secondary
+      color: theme.colors.secondary
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_8__["media"].smLg, {
       boxShadow: '0 6px 10px rgba(0,0,0,.08)',
       borderRadius: 10,
@@ -453,15 +453,15 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       lineHeight: 1.72
     },
     title: {
-      color: theme.color.primary,
+      color: theme.colors.primary,
       fontSize: 26
     },
     link: {
-      color: theme.color.active,
+      color: theme.colors.active,
       fontSize: 20,
       textDecoration: 'none',
       '&:hover': {
-        color: theme.color.active,
+        color: theme.colors.active,
         opacity: 0.8
       }
     },
@@ -806,7 +806,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
       opacity: 0.4
     },
     dotsActive: {
-      stroke: theme.color.active,
+      stroke: theme.colors.active,
       opacity: 1
     },
     dotsInactive: {
@@ -871,7 +871,7 @@ var CompetencesBlock = function CompetencesBlock(_ref) {
       columnNumber: 17
     }
   }, __jsx("text", {
-    fill: isCurrent ? '#fff' : theme.color.secondary,
+    fill: isCurrent ? '#fff' : theme.colors.secondary,
     className: classes.text,
     x: x,
     y: Object(_utils_utils__WEBPACK_IMPORTED_MODULE_4__["isTop"])(id) ? _utils_constants__WEBPACK_IMPORTED_MODULE_3__["competenseSvgTopY"] : _utils_constants__WEBPACK_IMPORTED_MODULE_3__["competenseSvgBottomY"],
@@ -913,7 +913,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
       fill: '#bdefd1'
     },
     active: {
-      fill: theme.color.active
+      fill: theme.colors.active
     },
     white: {
       fill: '#fff'
@@ -1018,16 +1018,16 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
     },
     cls6: {
       fill: 'none',
-      stroke: theme.color.active,
+      stroke: theme.colors.active,
       strokeWidth: 4.01
     },
     cls7: {
       fill: 'none',
-      stroke: theme.color.active,
+      stroke: theme.colors.active,
       strokeWidth: 3
     },
     active: {
-      fill: theme.color.active
+      fill: theme.colors.active
     }
   };
 });
@@ -1237,7 +1237,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
       fill: '#bdefd1'
     },
     active: {
-      fill: theme.color.active
+      fill: theme.colors.active
     },
     white: {
       fill: '#fff'
@@ -1368,7 +1368,7 @@ var RecShadow = function RecShadow(_ref) {
       columnNumber: 13
     }
   }), __jsx("rect", {
-    fill: isCurrent ? theme.color.active : '#fff',
+    fill: isCurrent ? theme.colors.active : '#fff',
     x: x,
     y: Object(_utils_utils__WEBPACK_IMPORTED_MODULE_2__["isTop"])(id) ? '14' : '537.78',
     width: "167.98",
@@ -3227,7 +3227,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
     },
     subtitle: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       fontSize: 26,
-      color: theme.color.subtitle,
+      color: theme.colors.subtitle,
       textTransform: 'initial'
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
       marginTop: theme.spacing(2),
@@ -3585,7 +3585,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_1__["createUseStyles"]
       composes: 'flexRow stretchSelf justifyCenter'
     },
     divider: {
-      backgroundColor: theme.color.secondary,
+      backgroundColor: theme.colors.secondary,
       opacity: 0.2,
       width: 100,
       height: 1.5,
@@ -3685,7 +3685,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
     descriptionContainer: {
       composes: 'flexRow stretchSelf font-ProximaNova-regular',
       lineHeight: '1.8em',
-      color: theme.color.secondary
+      color: theme.colors.secondary
     },
     description: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       fontSize: 24
@@ -3864,7 +3864,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"]
       padding: [theme.spacing(3), theme.spacing(6)]
     },
     link: {
-      color: theme.color.active,
+      color: theme.colors.active,
       textDecoration: 'none'
     },
     menuMobile: {
@@ -4091,7 +4091,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       composes: 'font-Poppins-regular',
       // composes: 'font-ProximaNova-regular',
       fontSize: 18,
-      color: theme.color.secondary
+      color: theme.colors.secondary
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smDown, {
       fontSize: 16
     }),

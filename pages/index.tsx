@@ -32,7 +32,7 @@ const useStyles = createUseStyles((theme: any) => ({
         color: '#fff',
     },
     emailLink: {
-        color: theme.color.active,
+        color: theme.colors.active,
         marginLeft: theme.spacing(1),
     },
 }));

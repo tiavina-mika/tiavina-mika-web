@@ -8,7 +8,7 @@ const useStyles = createUseStyles((theme: any) => ({
     root: {
         composes: 'flexColum center stretchSelf',
         fontFamily: 'Prequelrough, sans-serif',
-        backgroundColor: theme.color.secondary,
+        backgroundColor: theme.colors.secondary,
         [media.lgUp]: {
             height: '100vh',
         },
@@ -39,7 +39,7 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     content: {
         '& h3': {
-            color: theme.color.grey,
+            color: theme.colors.grey,
             fontWeight: '400',
             lineHeight: 1.4,
             textTransform: 'uppercase',

@@ -77,7 +77,7 @@ const useStyles = createUseStyles((theme: any) => ({
         padding: [theme.spacing(3), theme.spacing(6)],
     },
     link: {
-        color: theme.color.active,
+        color: theme.colors.active,
         textDecoration: 'none',
     },
     menuMobile: {

@@ -31,7 +31,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       composes: 'font-Poppins-regular',
       // composes: 'font-ProximaNova-regular',
       fontSize: 18,
-      color: theme.color.secondary
+      color: theme.colors.secondary
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].smDown, {
       lineHeight: '1.8em'
     }),

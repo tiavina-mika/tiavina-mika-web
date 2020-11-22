@@ -20,7 +20,7 @@ const useStyles = createUseStyles((theme: any) => ({
     title: {
         margin: 0,
         marginBottom: theme.spacing(5),
-        color: theme.color.secondary,
+        color: theme.colors.secondary,
         fontFamily: 'Montserrat Regular, sans-serif',
         textTransform: 'uppercase',
         letterSpacing: -5,
@@ -36,7 +36,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     line: {
-        backgroundColor: theme.color.primary,
+        backgroundColor: theme.colors.primary,
         height: 10,
     },
 }));

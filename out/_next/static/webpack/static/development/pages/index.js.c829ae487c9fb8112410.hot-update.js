@@ -113,7 +113,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
     }),
     subtitle: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       fontSize: 26,
-      color: theme.color.subtitle,
+      color: theme.colors.subtitle,
       textTransform: 'initial'
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_4__["media"].lgDown, {
       marginTop: theme.spacing(2),

@@ -16,7 +16,7 @@ const RecShadow: FC<Props> = ({ id, transform, xlinkHref, x, isCurrent }) => {
         <g id={id}>
             <image className={classes.shadow} width="199" height="168" transform={transform} xlinkHref={xlinkHref} />
             <rect
-                fill={isCurrent ? (theme as any).color.active : '#fff'}
+                fill={isCurrent ? (theme as any).colors.active : '#fff'}
                 x={x}
                 y={isTop(id) ? '14' : '537.78'}
                 width="167.98"

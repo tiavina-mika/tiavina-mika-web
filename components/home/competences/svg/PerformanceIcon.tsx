@@ -3,7 +3,7 @@ import { createUseStyles } from 'react-jss';
 
 const useStyles = createUseStyles((theme: any) => ({
     secondary: { fill: '#bdefd1' },
-    active: { fill: theme.color.active },
+    active: { fill: theme.colors.active },
     white: { fill: '#fff' },
 }));
 type Props = { active?: boolean };

@@ -40,7 +40,7 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     post: {
         textShadow: '0px 0px 2px rgba(0,0,0,0.5)',
-        color: theme.color.primary,
+        color: theme.colors.primary,
         fontSize: 20,
     },
 }));

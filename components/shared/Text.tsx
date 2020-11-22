@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
         composes: 'font-Poppins-regular',
         // composes: 'font-ProximaNova-regular',
         fontSize: 18,
-        // color: theme.color.secondary,
+        // color: theme.colors.secondary,
         padding: 0,
         margin: 0,
         [media.smDown]: {

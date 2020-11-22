@@ -9,7 +9,7 @@ import '../styles.css';
 import { activeColor } from '../utils/constants';
 
 const theme = {
-    color: {
+    colors: {
         active: activeColor, //green
         secondary: '#5B606B', //blue dark
         regular: '#6D6D6D',

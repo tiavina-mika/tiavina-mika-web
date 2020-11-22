@@ -61,10 +61,10 @@ const useStyles = createUseStyles((theme: any) => ({
     },
     action: {
         composes: '$rowCenter flex1',
-        borderTop: `1px solid ${theme.color.subtitle}`,
+        borderTop: `1px solid ${theme.colors.subtitle}`,
         '& a': {
             '&:hover': {
-                color: theme.color.primary,
+                color: theme.colors.primary,
             },
         },
     },

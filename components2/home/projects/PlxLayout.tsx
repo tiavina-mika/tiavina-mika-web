@@ -63,7 +63,7 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'font-tungsten-regular',
         fontSize: 32,
         letterSpacing: '0.16em',
-        color: theme.color.subtitle,
+        color: theme.colors.subtitle,
         marginTop: theme.spacing(2),
         marginBottom: theme.spacing(2),
     },

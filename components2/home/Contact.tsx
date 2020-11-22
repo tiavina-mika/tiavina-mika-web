@@ -176,7 +176,7 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: '$columnStretch',
     },
     button: {
-        backgroundColor: theme.color.primary,
+        backgroundColor: theme.colors.primary,
         color: '#fff',
         borderRadius: 30,
         height: 60,

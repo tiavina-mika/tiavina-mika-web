@@ -8,7 +8,7 @@ import { screenState } from '../../../reducers/appReducer';
 const useStyles = createUseStyles((theme: any) => ({
     link: {
         composes: 'flexRow spaceBetween flex1',
-        backgroundColor: theme.color.primary,
+        backgroundColor: theme.colors.primary,
         color: '#fff',
         textDecoration: 'none',
         padding: [20, 30],

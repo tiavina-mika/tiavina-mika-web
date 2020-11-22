@@ -73,7 +73,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     name: {
-        color: theme.color.grey,
+        color: theme.colors.grey,
         fontWeight: '400',
         lineHeight: 1.4,
         textTransform: 'uppercase',
@@ -99,7 +99,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     shortDescription: {
-        color: theme.color.subtitle,
+        color: theme.colors.subtitle,
         fontFamily: 'Montserrat, sans-serif',
     },
     description: {

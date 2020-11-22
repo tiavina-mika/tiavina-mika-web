@@ -7,7 +7,7 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'flexRow stretchSelf justifyCenter',
     },
     divider: {
-        backgroundColor: theme.color.secondary,
+        backgroundColor: theme.colors.secondary,
         opacity: 0.2,
         width: 100,
         height: 1.5,

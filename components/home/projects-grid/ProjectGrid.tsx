@@ -71,7 +71,7 @@ const useStyles = createUseStyles((theme: any) => ({
                 '& div:last-child div': {
                     backgroundColor: '#fff',
                     transform: `translate(${theme.spacing(0)}px,-${theme.spacing(2)}px)`,
-                    color: theme.color.secondary,
+                    color: theme.colors.secondary,
                 },
                 // grey right arrow
                 '& img:last-child': {

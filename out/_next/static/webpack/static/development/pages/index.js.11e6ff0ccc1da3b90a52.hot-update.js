@@ -31,7 +31,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
       composes: 'font-Poppins-regular',
       // composes: 'font-ProximaNova-regular',
       fontSize: 18,
-      color: theme.color.secondary
+      color: theme.colors.secondary
     },
     p: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       color: 'red'

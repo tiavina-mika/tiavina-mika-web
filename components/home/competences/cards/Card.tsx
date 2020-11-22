@@ -18,7 +18,7 @@ const useStyles = createUseStyles((theme: any) => ({
         backgroundColor: '#fff',
         position: 'absolute',
         padding: [60, 68],
-        color: theme.color.secondary,
+        color: theme.colors.secondary,
     },
     cardMobile: {
         composes: 'flexColumn spaceBetween font-ProximaNova-regular',
@@ -32,7 +32,7 @@ const useStyles = createUseStyles((theme: any) => ({
         // backgroundColor: '#fff',
         // position: 'absolute',
         // padding: [60, 68],
-        color: theme.color.secondary,
+        color: theme.colors.secondary,
         [media.smLg]: {
             boxShadow: '0 6px 10px rgba(0,0,0,.08)',
             borderRadius: 10,
@@ -61,15 +61,15 @@ const useStyles = createUseStyles((theme: any) => ({
         lineHeight: 1.72,
     },
     title: {
-        color: theme.color.primary,
+        color: theme.colors.primary,
         fontSize: 26,
     },
     link: {
-        color: theme.color.active,
+        color: theme.colors.active,
         fontSize: 20,
         textDecoration: 'none',
         '&:hover': {
-            color: theme.color.active,
+            color: theme.colors.active,
             opacity: 0.8,
         },
     },

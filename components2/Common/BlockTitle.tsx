@@ -79,7 +79,7 @@ const useStyles = createUseStyles((theme: any) => ({
     subtitle: {
         fontSize: 22,
         letterSpacing: '0.16em',
-        color: theme.color.subtitle,
+        color: theme.colors.subtitle,
         [media.mdDown]: {
             fontSize: 18,
         },
