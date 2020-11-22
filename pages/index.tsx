@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { createUseStyles } from 'react-jss';
 import { useDispatch } from 'react-redux';
+import Head from 'next/head';
 
 import { useWindowSize } from '../hooks/useWindowSize';
 import { getScreen } from '../reducers/appReducer';
@@ -10,7 +11,6 @@ import Competences from '../components/home/competences';
 import Projects from '../components/home/projects-grid';
 import Knowledges from '../components/home/knowledges';
 import Text from '../components/shared/Text';
-import { Head } from 'next/document';
 
 const useStyles = createUseStyles((theme: any) => ({
     root: {
