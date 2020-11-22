@@ -1,14 +1,15 @@
 import React, { ReactNode, useEffect, useState } from 'react';
 import { createUseStyles } from 'react-jss';
+import { media, projectCardWidth } from '../../../utils/constants';
 
 import Layout from '../../shared/Layout';
 import Text from '../../shared/Text';
 import Title from '../../shared/Title';
-import ProjectGrid from './ProjectGrid';
+import ProjectGrid, { RESPONSIVE_CARD_WIDTH } from './ProjectGrid';
 
 const useStyles = createUseStyles((theme: any) => ({
     projectsRoot: {
-        composes: 'flexRow',
+        composes: 'flexRow red',
     },
     projectsContent: {
         composes: 'flexRow flex1',
@@ -24,9 +25,15 @@ const useStyles = createUseStyles((theme: any) => ({
     blockTitle: {
         position: 'relative',
         composes: 'flexColumn',
-        width: 580,
+        width: projectCardWidth,
         paddingTop: theme.spacing(12),
         paddingBottom: theme.spacing(16),
+        [media.lgXl]: {
+            width: RESPONSIVE_CARD_WIDTH.lgXl,
+        },
+        [media.mdLg]: {
+            width: RESPONSIVE_CARD_WIDTH.mdLg,
+        },
     },
     blockTitleContent: {
         paddingLeft: theme.spacing(5),

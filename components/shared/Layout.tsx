@@ -13,13 +13,16 @@ const useStyles = createUseStyles({
     },
     layoutWithWidth: {
         width: '80%',
-        [media.mdDown]: {
-            width: '90%',
-        },
+        // [media.mdDown]: {
+        //     width: '90%',
+        // },
         [media.xsSm]: {
             width: '90%',
         },
         [media.mdLg]: {
+            width: '96%',
+        },
+        [media.lgXl]: {
             width: '90%',
         },
     },

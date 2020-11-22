@@ -1,25 +1,45 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
+import { media, projectCardWidth } from '../../../utils/constants';
 
 import Text from '../../shared/Text';
 import Title from '../../shared/Title';
 import { ProjectI } from './ProjectsGrid';
 
+interface ResponsiveCardWidthI {
+    lgXl: string;
+    mdLg: string;
+}
+export const RESPONSIVE_CARD_WIDTH: ResponsiveCardWidthI = {
+    lgXl: '42vw',
+    mdLg: '45vw',
+};
 const useStyles = createUseStyles((theme: any) => ({
     block: {
         composes: 'flexRow',
         position: 'relative',
         borderRadius: 10,
         transition: 'all .5s cubic-bezier(.19,1,.4,1)',
-        width: 580,
+        width: projectCardWidth,
         height: 590,
         backgroundColor: ({ color }: Pick<ProjectI, 'color'>) => '#' + color,
         marginBottom: theme.spacing(6),
         color: ({ isDark }) => (isDark ? '##54575a' : '#fff'),
+        [media.lgXl]: {
+            width: RESPONSIVE_CARD_WIDTH.lgXl,
+            height: '43vw',
+        },
+        [media.mdLg]: {
+            width: RESPONSIVE_CARD_WIDTH.mdLg,
+            height: '47vw',
+        },
     },
     center: {
         composes: 'stretchSelf flex1',
         padding: '10% 12%',
+        [media.mdLg]: {
+            padding: '6% 8%',
+        },
     },
     cardLink: {
         position: 'absolute',
@@ -49,7 +69,7 @@ const useStyles = createUseStyles((theme: any) => ({
                 visibility: 'visible',
             },
             // white right arrow
-            '& img:nth(2)': {
+            '& img:first-child': {
                 visibility: 'hidden',
             },
             // description block animation
@@ -70,6 +90,9 @@ const useStyles = createUseStyles((theme: any) => ({
         lineHeight: 1.43,
         opacity: 0,
         transition: 'opacity .5s cubic-bezier(.19,1,.4,1)',
+        [media.xlDown]: {
+            fontSize: 18,
+        },
     },
     description: {},
     seeMore: {
@@ -110,8 +133,8 @@ const ProjectGrid: FC<ProjectI> = ({ title, subtitle, url, color, description })
                     <div className={classes.seeMore}>
                         <div className={classes.seeMoreButton}>
                             <Text text="Learn more" className={classes.seeMoreText} />
-                            <img src="/images/icons/right-arrow-light.svg" alt="arrow right" />
-                            <img src="/images/icons/right-arrow.svg" alt="arrow right" />
+                            <img src={`/images/icons/right-arrow${color.dark ? '' : '-light'}.svg`} alt="arrow right" />
+                            <img src={`/images/icons/right-arrow${color.dark ? '-light' : ''}.svg`} alt="arrow right" />
                         </div>
                     </div>
                 </div>

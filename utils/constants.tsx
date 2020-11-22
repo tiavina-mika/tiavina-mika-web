@@ -42,3 +42,4 @@ export const competenseSvgBottomY = 645;
 export const competenseSvgTopY = 125;
 export const activeColor = '#13BB70';
 export const horizontalPaddingMobile = 2;
+export const projectCardWidth = 580;
