@@ -1,10 +1,11 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import Title from './Title';
+import clsx from 'clsx';
+
 import Text from './Text';
 import { horizontalPaddingMobile, media } from '../../utils/constants';
 import Menu from './Menu';
-import clsx from 'clsx';
+import MainTitle from './MainTitle';
 
 const useStyles = createUseStyles((theme: any) => ({
     headerRoot: {
@@ -26,10 +27,6 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     titleContainer: {},
-    title: {
-        textTransform: 'uppercase',
-        fontFamily: 'DINCondensed !important',
-    },
     subtitle: {
         fontSize: 32,
     },
@@ -62,14 +59,8 @@ const Header: FC<Props> = ({ title, description, subtitle }) => {
             {/* page title */}
             <div className={classes.content}>
                 <div className={description && subtitle ? classes.titleContainer : null}>
-                    <Title text={title} className={clsx(classes.title, classes.spacing)} />
-                    {subtitle && (
-                        <Title
-                            text={subtitle}
-                            level={2}
-                            className={clsx(classes.title, classes.subtitle, classes.spacing)}
-                        />
-                    )}
+                    <MainTitle text={title} className={classes.spacing} type="page" />
+                    {subtitle && <MainTitle text={subtitle} className={clsx(classes.subtitle, classes.spacing)} />}
                 </div>
                 {/* page title */}
                 {description && (
