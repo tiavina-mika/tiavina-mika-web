@@ -1,7 +1,8 @@
 import React, { ElementType, FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import Plx from '../../projects/node_modules/react-plx';
+import Plx from 'react-plx';
 import clsx from 'clsx';
+
 import { useSelector } from 'react-redux';
 import { screenState } from '../../../../reducers/appReducer';
 import { horizontalPaddingMobile, media } from '../../../../utils/constants';
