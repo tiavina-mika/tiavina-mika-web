@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react';
 import clsx from 'clsx';
-import Plx from '../../components/home/projects/node_modules/react-plx';
+import Plx from 'react-plx';
 import { useSelector } from 'react-redux';
 
 import { screenState } from '../../reducers/appReducer';

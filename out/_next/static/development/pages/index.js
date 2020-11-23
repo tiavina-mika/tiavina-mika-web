@@ -489,7 +489,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 93,
       columnNumber: 9
     }
   }), __jsx("div", {
@@ -497,7 +497,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 94,
       columnNumber: 13
     }
   }, __jsx("img", {
@@ -507,14 +507,14 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 95,
       columnNumber: 17
     }
   }), __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 96,
       columnNumber: 17
     }
   }, data.ranking)), __jsx("div", {
@@ -522,7 +522,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 98,
       columnNumber: 13
     }
   }, __jsx("h3", {
@@ -530,7 +530,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 99,
       columnNumber: 17
     }
   }, data.title), __jsx("p", {
@@ -538,7 +538,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 17
     }
   }, data.description)), __jsx("div", {
@@ -546,7 +546,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 102,
       columnNumber: 13
     }
   }, __jsx("a", {
@@ -555,7 +555,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 103,
       columnNumber: 17
     }
   }, "See more")), isMobile && __jsx(_shared_Divider__WEBPACK_IMPORTED_MODULE_9__["default"], {
@@ -563,7 +563,7 @@ var Card = function Card(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 107,
       columnNumber: 26
     }
   }));
@@ -2532,18 +2532,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var react_intersection_observer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-intersection-observer */ "./node_modules/react-intersection-observer/react-intersection-observer.m.js");
 /* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
-/* harmony import */ var _hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../hooks/useWindowSize */ "./hooks/useWindowSize.tsx");
+/* harmony import */ var _hooks_useResponsive__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../hooks/useResponsive */ "./hooks/useResponsive.tsx");
 /* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../utils/constants */ "./utils/constants.tsx");
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../utils/utils */ "./utils/utils.ts");
-/* harmony import */ var _Knowledge__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./Knowledge */ "./components/home/knowledges/Knowledge.tsx");
-/* harmony import */ var _KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./KnowledgeProgressBar */ "./components/home/knowledges/KnowledgeProgressBar.tsx");
-/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
+/* harmony import */ var _shared_BackgroundPlx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../shared/BackgroundPlx */ "./components/shared/BackgroundPlx.tsx");
+/* harmony import */ var _shared_Layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../shared/Layout */ "./components/shared/Layout.tsx");
+/* harmony import */ var _Knowledge__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Knowledge */ "./components/home/knowledges/Knowledge.tsx");
+/* harmony import */ var _KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./KnowledgeProgressBar */ "./components/home/knowledges/KnowledgeProgressBar.tsx");
+/* harmony import */ var _OveralCard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./OveralCard */ "./components/home/knowledges/OveralCard.tsx");
 
 
 var _this = undefined,
     _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\knowledges\\Knowledges.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
+
+
 
 
 
@@ -2568,6 +2572,9 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_5__["createUseStyles"]
       paddingLeft: theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_7__["horizontalPaddingMobile"]),
       paddingRight: theme.spacing(_utils_constants__WEBPACK_IMPORTED_MODULE_7__["horizontalPaddingMobile"])
     }),
+    plx: {
+      composes: 'flexColumn flex1 stretchSelf'
+    },
     overall: Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])({
       composes: 'flexColumn center stretchSelf'
     }, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].lgDown, {
@@ -2809,17 +2816,7 @@ var dataProgressBar = [{
 
 var Knowledges = function Knowledges() {
   var classes = useStyles();
-
-  var _useWindowSize = Object(_hooks_useWindowSize__WEBPACK_IMPORTED_MODULE_6__["useWindowSize"])(),
-      width = _useWindowSize.width;
-
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])(false),
-      isTablet = _useState[0],
-      setIsTablet = _useState[1];
-
-  Object(react__WEBPACK_IMPORTED_MODULE_3__["useEffect"])(function () {
-    setIsTablet(width <= _utils_constants__WEBPACK_IMPORTED_MODULE_7__["sm"]);
-  }, [width]);
+  var isTablet = Object(_hooks_useResponsive__WEBPACK_IMPORTED_MODULE_6__["useResponsive"])(_utils_constants__WEBPACK_IMPORTED_MODULE_7__["sm"]);
 
   var _useInView = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_4__["useInView"])({
     threshold: 0
@@ -2837,7 +2834,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 370,
+      lineNumber: 369,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2846,7 +2843,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 377,
+      lineNumber: 376,
       columnNumber: 13
     }
   }, __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_2__["Slider"], {
@@ -2854,7 +2851,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 378,
+      lineNumber: 377,
       columnNumber: 17
     }
   }, dataProgressBar.map(function (d, i) {
@@ -2864,17 +2861,17 @@ var Knowledges = function Knowledges() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 380,
+        lineNumber: 379,
         columnNumber: 25
       }
-    }, __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    }, __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_12__["default"], {
       data: d,
       key: i,
       startAnimation: inView,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 381,
+        lineNumber: 380,
         columnNumber: 29
       }
     }));
@@ -2883,7 +2880,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 385,
+      lineNumber: 384,
       columnNumber: 17
     }
   }, '<'), __jsx(pure_react_carousel__WEBPACK_IMPORTED_MODULE_2__["ButtonNext"], {
@@ -2891,7 +2888,7 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 386,
+      lineNumber: 385,
       columnNumber: 17
     }
   }, '>')));
@@ -2902,24 +2899,24 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 392,
+      lineNumber: 391,
       columnNumber: 9
     }
   }, dataProgressBar.map(function (d, i) {
-    return __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    return __jsx(_KnowledgeProgressBar__WEBPACK_IMPORTED_MODULE_12__["default"], {
       data: d,
       key: i,
       startAnimation: inView,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 394,
+        lineNumber: 393,
         columnNumber: 17
       }
     });
   }));
 
-  return __jsx("div", {
+  return __jsx(_shared_Layout__WEBPACK_IMPORTED_MODULE_10__["default"], {
     className: classes.knowledgesRoot,
     id: "knowledges",
     __self: _this,
@@ -2928,31 +2925,39 @@ var Knowledges = function Knowledges() {
       lineNumber: 399,
       columnNumber: 9
     }
-  }, __jsx("div", {
-    className: classes.overall,
+  }, __jsx(_shared_BackgroundPlx__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    id: "knowledges",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 400,
       columnNumber: 13
     }
-  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, __jsx("div", {
+    className: classes.overall,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 401,
       columnNumber: 17
     }
+  }, __jsx(_OveralCard__WEBPACK_IMPORTED_MODULE_13__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 402,
+      columnNumber: 21
+    }
   })), dataDescription.map(function (d, i) {
-    return __jsx(_Knowledge__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    return __jsx(_Knowledge__WEBPACK_IMPORTED_MODULE_11__["default"], {
       data: d,
       key: i,
       reverse: Object(_utils_utils__WEBPACK_IMPORTED_MODULE_8__["isReverse"])(i),
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 405,
-        columnNumber: 21
+        lineNumber: 406,
+        columnNumber: 25
       }
     });
   }), __jsx("div", {
@@ -2960,10 +2965,10 @@ var Knowledges = function Knowledges() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 408,
-      columnNumber: 13
+      lineNumber: 409,
+      columnNumber: 17
     }
-  }, isTablet ? mobile : carousel));
+  }, isTablet ? mobile : carousel)));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Knowledges);
@@ -3150,13 +3155,11 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
 var activeBar = {
   hidden: {
     stroke: '#eff4f9',
-    pathLength: 0 //   fill: "rgba(255, 255, 255, 0)"
-
+    pathLength: 0
   },
   visible: {
     stroke: '#80ebff',
-    pathLength: 1 //   fill: "rgba(255, 255, 255, 1)"
-
+    pathLength: 1
   }
 };
 
@@ -3174,7 +3177,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 51,
       columnNumber: 9
     }
   }, __jsx("path", {
@@ -3184,7 +3187,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 58,
       columnNumber: 13
     }
   }), __jsx(framer_motion__WEBPACK_IMPORTED_MODULE_0__["motion"].path, {
@@ -3207,7 +3210,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 63,
       columnNumber: 13
     }
   }), __jsx("path", {
@@ -3217,7 +3220,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 75,
       columnNumber: 13
     }
   }), __jsx("text", {
@@ -3227,7 +3230,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 76,
       columnNumber: 13
     }
   }, total), __jsx("text", {
@@ -3237,7 +3240,7 @@ var PieChartSvg = function PieChartSvg(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 79,
       columnNumber: 13
     }
   }, "100"));
@@ -3356,10 +3359,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./components/home/projects-grid/ProjectGrid.tsx":
-/*!*******************************************************!*\
-  !*** ./components/home/projects-grid/ProjectGrid.tsx ***!
-  \*******************************************************/
+/***/ "./components/home/projects/Project.tsx":
+/*!**********************************************!*\
+  !*** ./components/home/projects/Project.tsx ***!
+  \**********************************************/
 /*! exports provided: RESPONSIVE_CARD_WIDTH, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3376,7 +3379,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\projects-grid\\ProjectGrid.tsx";
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\projects\\Project.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -3521,7 +3524,7 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_2__["createUseStyles"]
   };
 });
 
-var ProjectGrid = function ProjectGrid(_ref3) {
+var Project = function Project(_ref3) {
   var title = _ref3.title,
       subtitle = _ref3.subtitle,
       url = _ref3.url,
@@ -3662,14 +3665,14 @@ var ProjectGrid = function ProjectGrid(_ref3) {
   }))))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ProjectGrid);
+/* harmony default export */ __webpack_exports__["default"] = (Project);
 
 /***/ }),
 
-/***/ "./components/home/projects-grid/ProjectsGrid.tsx":
-/*!********************************************************!*\
-  !*** ./components/home/projects-grid/ProjectsGrid.tsx ***!
-  \********************************************************/
+/***/ "./components/home/projects/Projects.tsx":
+/*!***********************************************!*\
+  !*** ./components/home/projects/Projects.tsx ***!
+  \***********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3688,13 +3691,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../shared/Layout */ "./components/shared/Layout.tsx");
 /* harmony import */ var _shared_Text__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../shared/Text */ "./components/shared/Text.tsx");
 /* harmony import */ var _shared_Title__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../shared/Title */ "./components/shared/Title.tsx");
-/* harmony import */ var _ProjectGrid__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ProjectGrid */ "./components/home/projects-grid/ProjectGrid.tsx");
+/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./Project */ "./components/home/projects/Project.tsx");
 
 
 
 
 var _this = undefined,
-    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\projects-grid\\ProjectsGrid.tsx";
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\home\\projects\\Projects.tsx";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement;
 
@@ -3747,9 +3750,9 @@ var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_4__["createUseStyles"]
       paddingTop: theme.spacing(12),
       paddingBottom: theme.spacing(16)
     }, Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_blockTitle, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].lgXl, {
-      width: _ProjectGrid__WEBPACK_IMPORTED_MODULE_11__["RESPONSIVE_CARD_WIDTH"].lgXl
+      width: _Project__WEBPACK_IMPORTED_MODULE_11__["RESPONSIVE_CARD_WIDTH"].lgXl
     }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_blockTitle, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].mdLg, {
-      width: _ProjectGrid__WEBPACK_IMPORTED_MODULE_11__["RESPONSIVE_CARD_WIDTH"].mdLg
+      width: _Project__WEBPACK_IMPORTED_MODULE_11__["RESPONSIVE_CARD_WIDTH"].mdLg
     }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_blockTitle, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].xlUp, {
       width: _utils_constants__WEBPACK_IMPORTED_MODULE_7__["projectCardWidth"]
     }), Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_2__["default"])(_blockTitle, _utils_constants__WEBPACK_IMPORTED_MODULE_7__["media"].smMd, {
@@ -3835,7 +3838,7 @@ var projects = [{
   url: '/'
 }];
 
-var ProjectsGrid = function ProjectsGrid() {
+var Projects = function Projects() {
   var classes = useStyles();
 
   var _useState = Object(react__WEBPACK_IMPORTED_MODULE_3__["useState"])([]),
@@ -3893,7 +3896,7 @@ var ProjectsGrid = function ProjectsGrid() {
   }, []);
 
   var splicedPorject = function splicedPorject(project) {
-    return __jsx(_ProjectGrid__WEBPACK_IMPORTED_MODULE_11__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+    return __jsx(_Project__WEBPACK_IMPORTED_MODULE_11__["default"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
       key: project.id
     }, project, {
       __self: _this,
@@ -3988,22 +3991,98 @@ var ProjectsGrid = function ProjectsGrid() {
   }), rightCardsData.map(splicedPorject)))));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (ProjectsGrid);
+/* harmony default export */ __webpack_exports__["default"] = (Projects);
 
 /***/ }),
 
-/***/ "./components/home/projects-grid/index.tsx":
-/*!*************************************************!*\
-  !*** ./components/home/projects-grid/index.tsx ***!
-  \*************************************************/
+/***/ "./components/home/projects/index.tsx":
+/*!********************************************!*\
+  !*** ./components/home/projects/index.tsx ***!
+  \********************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ProjectsGrid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProjectsGrid */ "./components/home/projects-grid/ProjectsGrid.tsx");
+/* harmony import */ var _Projects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Projects */ "./components/home/projects/Projects.tsx");
 
-/* harmony default export */ __webpack_exports__["default"] = (_ProjectsGrid__WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* harmony default export */ __webpack_exports__["default"] = (_Projects__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+/***/ }),
+
+/***/ "./components/shared/BackgroundPlx.tsx":
+/*!*********************************************!*\
+  !*** ./components/shared/BackgroundPlx.tsx ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-jss */ "./node_modules/react-jss/dist/react-jss.esm.js");
+/* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-plx */ "./node_modules/react-plx/lib/index.js");
+/* harmony import */ var react_plx__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_plx__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _hooks_useResponsive__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/useResponsive */ "./hooks/useResponsive.tsx");
+/* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utils/constants */ "./utils/constants.tsx");
+
+
+var _this = undefined,
+    _jsxFileName = "E:\\tiavina-mika\\tiavina-mika-web\\components\\shared\\BackgroundPlx.tsx";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
+
+
+
+
+
+
+var useStyles = Object(react_jss__WEBPACK_IMPORTED_MODULE_3__["createUseStyles"])({
+  plx: {
+    composes: 'flexColumn flex1 stretchSelf'
+  }
+});
+
+var BackgrounPlx = function BackgrounPlx(_ref) {
+  var children = _ref.children,
+      id = _ref.id,
+      duration = _ref.duration;
+  var classes = useStyles();
+  var triggerClassName = id + 'Trigger';
+  var isTablet = Object(_hooks_useResponsive__WEBPACK_IMPORTED_MODULE_5__["useResponsive"])(_utils_constants__WEBPACK_IMPORTED_MODULE_6__["sm"]);
+  var parallaxData = Object(react__WEBPACK_IMPORTED_MODULE_2__["useMemo"])(function () {
+    return [
+    /** animation in */
+    {
+      start: ".".concat(triggerClassName),
+      startOffset: '10vh',
+      duration: "".concat(duration || 150, "vh"),
+      properties: [{
+        startValue: '#ffffff',
+        endValue: '#F9F8F7',
+        property: 'backgroundColor'
+      }]
+    }];
+  }, []);
+  var Component = isTablet ? react__WEBPACK_IMPORTED_MODULE_2__["Fragment"] : react_plx__WEBPACK_IMPORTED_MODULE_4___default.a;
+  var otherProps = isTablet ? {} : {
+    parallaxData: parallaxData,
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_1__["default"])(triggerClassName, classes.plx)
+  };
+  return __jsx(Component, Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, otherProps, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 42,
+      columnNumber: 12
+    }
+  }), children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (BackgrounPlx);
 
 /***/ }),
 
@@ -4728,6 +4807,37 @@ var Title = function Title(_ref) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Title);
+
+/***/ }),
+
+/***/ "./hooks/useResponsive.tsx":
+/*!*********************************!*\
+  !*** ./hooks/useResponsive.tsx ***!
+  \*********************************/
+/*! exports provided: useResponsive */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useResponsive", function() { return useResponsive; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_use__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-use */ "./node_modules/react-use/esm/index.js");
+
+
+var useResponsive = function useResponsive(screen) {
+  var _useWindowSize = Object(react_use__WEBPACK_IMPORTED_MODULE_1__["useWindowSize"])(),
+      width = _useWindowSize.width;
+
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      isScreen = _useState[0],
+      setIsScreen = _useState[1];
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
+    setIsScreen(width <= screen);
+  }, [width]);
+  return isScreen;
+};
 
 /***/ }),
 
@@ -35070,7 +35180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_constants__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../utils/constants */ "./utils/constants.tsx");
 /* harmony import */ var _components_shared_Header__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/shared/Header */ "./components/shared/Header.tsx");
 /* harmony import */ var _components_home_competences__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/home/competences */ "./components/home/competences/index.tsx");
-/* harmony import */ var _components_home_projects_grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/home/projects-grid */ "./components/home/projects-grid/index.tsx");
+/* harmony import */ var _components_home_projects__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/home/projects */ "./components/home/projects/index.tsx");
 /* harmony import */ var _components_home_knowledges__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/home/knowledges */ "./components/home/knowledges/index.tsx");
 /* harmony import */ var _components_shared_Text__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/shared/Text */ "./components/shared/Text.tsx");
 
@@ -35219,7 +35329,7 @@ var Home = function Home() {
       lineNumber: 73,
       columnNumber: 13
     }
-  }), __jsx(_components_home_projects_grid__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }), __jsx(_components_home_projects__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
