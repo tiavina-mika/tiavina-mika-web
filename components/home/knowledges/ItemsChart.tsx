@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { FC, ReactNode } from 'react';
-import { useInView } from 'react-intersection-observer';
 import { createUseStyles } from 'react-jss';
+
 import { media } from '../../../utils/constants';
 import { KnowledgesMainChart } from './OveralCard';
 

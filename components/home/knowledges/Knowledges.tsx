@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
-import React, { FC, ReactNode, useEffect, useState } from 'react';
+import React, { FC, ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { createUseStyles } from 'react-jss';
-import { useWindowSize } from '../../../hooks/useWindowSize';
 
+import { useResponsive } from '../../../hooks/useResponsive';
 import { horizontalPaddingMobile, media, sm } from '../../../utils/constants';
 import { isReverse } from '../../../utils/utils';
-
+import BackgrounPlx from '../../shared/BackgroundPlx';
+import Layout from '../../shared/Layout';
 import Knowledge from './Knowledge';
 import KnowledgeProgressBar from './KnowledgeProgressBar';
 import OveralCard, { KnowledgesMainChart } from './OveralCard';
@@ -22,6 +23,9 @@ const useStyles = createUseStyles((theme: any) => ({
             paddingLeft: theme.spacing(horizontalPaddingMobile),
             paddingRight: theme.spacing(horizontalPaddingMobile),
         },
+    },
+    plx: {
+        composes: 'flexColumn flex1 stretchSelf',
     },
     overall: {
         composes: 'flexColumn center stretchSelf',
@@ -356,12 +360,7 @@ const dataProgressBar: KnowledgesProgressiveChartI[] = [
 
 const Knowledges: FC = () => {
     const classes = useStyles();
-    const { width } = useWindowSize();
-    const [isTablet, setIsTablet] = useState<boolean>(false);
-
-    useEffect(() => {
-        setIsTablet(width <= sm);
-    }, [width]);
+    const isTablet = useResponsive(sm);
 
     const { ref, inView } = useInView({
         threshold: 0,
@@ -395,18 +394,21 @@ const Knowledges: FC = () => {
             ))}
         </div>
     );
+
     return (
-        <div className={classes.knowledgesRoot} id="knowledges">
-            <div className={classes.overall}>
-                <OveralCard />
-            </div>
-            {dataDescription.map(
-                (d: KnowledgeI, i: number): ReactNode => (
-                    <Knowledge data={d} key={i} reverse={isReverse(i)} />
-                )
-            )}
-            <div className={classes.knowledgesProgressBar}>{isTablet ? mobile : carousel}</div>
-        </div>
+        <Layout className={classes.knowledgesRoot} id="knowledges">
+            <BackgrounPlx id="knowledges">
+                <div className={classes.overall}>
+                    <OveralCard />
+                </div>
+                {dataDescription.map(
+                    (d: KnowledgeI, i: number): ReactNode => (
+                        <Knowledge data={d} key={i} reverse={isReverse(i)} />
+                    )
+                )}
+                <div className={classes.knowledgesProgressBar}>{isTablet ? mobile : carousel}</div>
+            </BackgrounPlx>
+        </Layout>
     );
 };
 
