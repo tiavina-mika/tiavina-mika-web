@@ -15,8 +15,9 @@ const useStyles = createUseStyles({
         letterSpacing: 4,
     },
     block: {
+        fontSize: 56,
         letterSpacing: 2,
-    }
+    },
 });
 
 type Props = { text: string; className?: string; type?: 'page' | 'block' };

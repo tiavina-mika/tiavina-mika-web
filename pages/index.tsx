@@ -11,7 +11,7 @@ import Competences from '../components/home/competences';
 import Projects from '../components/home/projects';
 import Knowledges from '../components/home/knowledges';
 import Text from '../components/shared/Text';
-// import Contact from '../components/home/contact';
+import Contact from '../components/home/contact';
 
 const useStyles = createUseStyles((theme: any) => ({
     root: {
@@ -74,7 +74,7 @@ const Home = () => {
             <Competences />
             <Projects />
             <Knowledges />
-            {/* <Contact /> */}
+            <Contact />
         </div>
     );
 };
