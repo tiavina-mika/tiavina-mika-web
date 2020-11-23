@@ -33,7 +33,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     contactDetail: {
-        composes: 'flexColumn',
+        composes: 'flexColumn flex1',
         [media.xsDown]: {
             marginRight: theme.spacing(1),
             flex: 1,
@@ -52,7 +52,7 @@ const useStyles = createUseStyles((theme: any) => ({
         opacity: 0.6,
         fontWeight: 300,
         marginTop: theme.spacing(1),
-        [media.smUp]: {
+        [media.xlUp]: {
             width: 300,
         },
     },

@@ -2,6 +2,8 @@ import React, { ElementType, FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
 
+import { media } from '../../utils/constants';
+
 const useStyles = createUseStyles({
     mainTitle: {
         composes: 'font-DINCondensed-medium',
@@ -17,6 +19,11 @@ const useStyles = createUseStyles({
     block: {
         fontSize: 56,
         letterSpacing: 2,
+        [media.smDown]: {
+            fontSize: 44,
+            letterSpacing: 1,
+            lineHeight: 1.2,
+        },
     },
 });
 

@@ -1,6 +1,7 @@
 import React, { FC, ElementType } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
+
 import { media } from '../../utils/constants';
 
 const useStyles = createUseStyles({

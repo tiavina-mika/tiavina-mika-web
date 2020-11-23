@@ -1,6 +1,7 @@
 import React from 'react';
 import { createUseStyles } from 'react-jss';
 
+import { media } from '../../../utils/constants';
 import Layout from '../../shared/Layout';
 import MainTitle from '../../shared/MainTitle';
 import Title from '../../shared/Title';
@@ -10,7 +11,6 @@ import Form from './Form';
 const useStyles = createUseStyles((theme: any) => ({
     contact: {
         composes: 'flexColumn stretchSelf',
-        height: '200vh',
     },
     contactTitle: {
         composes: 'flexColumn stretchSelf',
@@ -18,9 +18,21 @@ const useStyles = createUseStyles((theme: any) => ({
     contactBody: {
         composes: 'flexRow stretchSelf',
         marginTop: theme.spacing(12),
+        [media.mdDown]: {
+            flexDirection: 'column',
+            marginTop: theme.spacing(6),
+        },
     },
     form: {
         flex: 2,
+        [media.mdDown]: {
+            marginTop: theme.spacing(4),
+            alignSelf: 'stretch',
+            flex: 1,
+        },
+        [media.smDown]: {
+            flexDirection: 'column',
+        },
     },
     details: {
         flex: 1,
@@ -28,8 +40,10 @@ const useStyles = createUseStyles((theme: any) => ({
     subtitle: {
         fontSize: 24,
         lineHeight: 1.4,
-        width: '50%',
         marginTop: theme.spacing(2),
+        [media.smUp]: {
+            width: '50%',
+        },
     },
 }));
 

@@ -1,6 +1,9 @@
 import clsx from 'clsx';
-import React, { ChangeEvent, FC, FormEvent, useState } from 'react';
+import React, { ChangeEvent, FC, FormEvent, ReactNode, useState } from 'react';
 import { createUseStyles } from 'react-jss';
+
+import { useResponsive } from '../../../hooks/useResponsive';
+import { media, sm } from '../../../utils/constants';
 
 const INPUT_SPACING = 1.8;
 const useStyles = createUseStyles((theme: any) => ({
@@ -45,6 +48,9 @@ const useStyles = createUseStyles((theme: any) => ({
         composes: 'stretchSelf flex1',
         paddingTop: theme.spacing(4),
         paddingBottom: theme.spacing(4),
+        [media.smDown]: {
+            marginBottom: theme.spacing(INPUT_SPACING),
+        },
     },
     button: {
         composes: 'font-Poppins-regular',
@@ -76,6 +82,7 @@ interface State {
 type Props = { className?: string };
 const Form: FC<Props> = ({ className }) => {
     const classes = useStyles();
+    const isTablet: boolean = useResponsive(sm);
     const [error, setError] = useState<State>({
         name: '',
         email: '',
@@ -106,23 +113,24 @@ const Form: FC<Props> = ({ className }) => {
 
     const inputProps: string[] = [classes.input, classes.textInput, classes.spacing, classes.defaultSize];
 
+    const textArea: ReactNode = (
+        <textarea
+            className={clsx(
+                classes.input,
+                classes.textArea,
+                classes.spacing,
+                error.message ? classes.errorInput : null
+            )}
+            value={values.message}
+            placeholder={error.message || 'Entrez votre message'}
+            onChange={handleChange('message')}
+            required
+        />
+    );
     return (
         <form className={clsx(classes.form, className)} onSubmit={onSubmit}>
             {/* ---------------------------------- textarea ---------------------------------- */}
-            <div className={classes.left}>
-                <textarea
-                    className={clsx(
-                        classes.input,
-                        classes.textArea,
-                        classes.spacing,
-                        error.message ? classes.errorInput : null
-                    )}
-                    value={values.message}
-                    placeholder={error.message || 'Entrez votre message'}
-                    onChange={handleChange('message')}
-                    required
-                />
-            </div>
+            {!isTablet && <div className={classes.left}>{textArea}</div>}
             {/* ---------------------------------- text input ---------------------------------- */}
             <div className={classes.right}>
                 <input
@@ -146,6 +154,7 @@ const Form: FC<Props> = ({ className }) => {
                     placeholder={error.company || 'Votre entreprise'}
                     onChange={handleChange('company')}
                 />
+                {isTablet && textArea}
                 <button className={clsx(classes.button, classes.spacing, classes.defaultSize)} type="submit">
                     Envoyer
                 </button>
