@@ -1,147 +1,182 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
-import clsx from 'clsx';
+import { media, projectCardWidth } from '../../../utils/constants';
 
-import { ProjectsProps } from './Projects';
-import { horizontalPaddingMobile, media } from '../../../utils/constants';
-import Button from '../../shared/Button';
 import Text from '../../shared/Text';
 import Title from '../../shared/Title';
+import { ProjectI } from './Projects';
 
-const SYSTEM_CONTENT_BLOCK_WIDTH = 380;
-
+interface ResponsiveCardWidthI {
+    lgXl: string;
+    mdLg: string;
+}
+export const RESPONSIVE_CARD_WIDTH: ResponsiveCardWidthI = {
+    lgXl: '42vw',
+    mdLg: '45vw',
+};
 const useStyles = createUseStyles((theme: any) => ({
-    projectRoot: {
-        composes: 'flexColumn justifyCenter stretchSelf',
-        marginBottom: theme.spacing(15),
-        letterSpacing: '0.1em',
-    },
-    content: {
-        composes: 'flexRow justifyCenter stretchSelf',
-        [media.lgDown]: {
-            flexDirection: 'column',
-            alignItems: 'center',
-            padding: [0, theme.spacing(horizontalPaddingMobile)],
-        },
-    },
-    imageBlockRoot: {
-        composes: 'flexColumn center',
-        [media.lgUp]: {
-            flex: 1.3,
-        },
-    },
-    textBlockRoot: {
+    block: {
         composes: 'flexRow',
-        [media.lgUp]: {
-            flex: 1,
+        position: 'relative',
+        borderRadius: 10,
+        transition: 'all .5s cubic-bezier(.19,1,.4,1)',
+        width: projectCardWidth,
+        height: 590,
+        backgroundColor: ({ color }: Pick<ProjectI, 'color'>) => '#' + color,
+        marginBottom: theme.spacing(6),
+        color: ({ isDark }) => (isDark ? '##54575a' : '#fff'),
+        [media.lgXl]: {
+            width: RESPONSIVE_CARD_WIDTH.lgXl,
+            height: '43vw',
         },
-        [media.lgDown]: {
-            marginTop: theme.spacing(4),
+        [media.mdLg]: {
+            width: RESPONSIVE_CARD_WIDTH.mdLg,
+            height: '47vw',
         },
-        [media.smLg]: {
-            maxWidth: SYSTEM_CONTENT_BLOCK_WIDTH,
-        },
-    },
-    textBlockRootReverse: {
-        [media.lgUp]: {
-            justifyContent: 'flex-end',
-        },
-    },
-    textContent: {
-        [media.lgUp]: {
-            maxWidth: SYSTEM_CONTENT_BLOCK_WIDTH,
-            padding: [theme.spacing(8), theme.spacing(6)],
-        },
-    },
-    reverseImage: {
-        [media.lgUp]: {
-            order: 1,
-        },
-    },
-    imageContainer: {
-        composes: 'flexRow justifyEnd stretchSelf',
-        paddingRight: theme.spacing(6),
-        transform: 'translate(0%, 0px) rotate(-4e-05deg) rotateY(15deg) rotateX(9.99994deg)',
-        transformOrigin: 'center top',
-        pointerEvents: 'none',
-    },
-    imageContainerReverse: {
-        transform: 'translate(0%, 0px) rotate(-4e-05deg) rotateY(-15deg) rotateX(9.99994deg)',
-    },
-    img: {
-        [media.lgUp]: {
-            width: '90%',
-        },
-        [media.smLg]: {
-            width: '95%',
+        [media.smMd]: {
+            width: '46vw',
+            height: '48vw',
         },
         [media.smDown]: {
             width: '100%',
-        },
-        margin: 0,
-    },
-    textSpaceBottom: {
-        [media.lgUp]: {
-            marginBottom: theme.spacing(6),
+            height: 366,
         },
     },
-    number: {
-        composes: 'font-Montserrat-bold',
-        color: '#F8C462',
-        [media.lgDown]: {
-            marginBottom: theme.spacing(5),
+    center: {
+        composes: 'stretchSelf flex1',
+        padding: '10% 12%',
+        [media.mdLg]: {
+            padding: '6% 8%',
+        },
+    },
+    cardLink: {
+        position: 'absolute',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        zIndex: 1,
+        width: '100%',
+        height: '100%',
+    },
+    content: {
+        height: '100%',
+        display: 'grid',
+        gridTemplateColumns: '100%',
+        gridTemplateRows: 'repeat(3, auto) 1fr',
+        gridGap: theme.spacing(3),
+        [media.smUp]: {
+            '&:hover': {
+                // the see more button
+                '& div:last-child div': {
+                    backgroundColor: '#fff',
+                    transform: `translate(${theme.spacing(0)}px,-${theme.spacing(2)}px)`,
+                    color: theme.colors.secondary,
+                },
+                // grey right arrow
+                '& img:last-child': {
+                    visibility: 'visible',
+                },
+                // white right arrow
+                '& img:first-child': {
+                    visibility: 'hidden',
+                },
+                // description block animation
+                '& div:nth-child(3)': {
+                    opacity: 1,
+                },
+            },
+        },
+        [media.mdDown]: {
+            gridGap: theme.spacing(1),
+        },
+        [media.smDown]: {
+            gridTemplateRows: 'repeat(2, auto) 1fr',
+        },
+    },
+    subtitle: {
+        fontSize: 18,
+        [media.smMd]: {
+            fontSize: 16,
+            fontWeight: 300,
+        },
+        [media.xsMd]: {
+            fontSize: 16,
         },
     },
     title: {
-        lineHeight: '1.2em',
-        composes: 'font-tungsten-regular',
-        textTransform: 'uppercase',
-        fontSize: 40,
-        letterSpacing: 4,
-    },
-    subtitle: {
         fontSize: 26,
-        color: theme.colors.subtitle,
-        textTransform: 'initial',
-        [media.lgDown]: {
-            marginTop: theme.spacing(2),
-            marginBottom: theme.spacing(2),
-            fontSize: 22,
-            letterSpacing: 1,
+        width: '60%',
+        [media.smMd]: {
+            fontSize: 20,
+            width: '80%',
+        },
+        [media.xsMd]: {
+            width: '40%',
+        },
+        [media.mdDown]: {
+            fontSize: 18,
         },
     },
-    link: {
-        marginTop: theme.spacing(6),
-        justifyContent: 'flex-start !important',
+    descriptionContainer: {
+        width: '40%',
+        lineHeight: 1.43,
+        opacity: 0,
+        transition: 'opacity .5s cubic-bezier(.19,1,.4,1)',
+        [media.smMd]: {
+            width: '60%',
+        },
+        [media.smDown]: {
+            // visibility: 'hidden',
+            display: 'none',
+        },
     },
-    linkText: {
-        justifyContent: 'flex-start !important',
+    description: {
+        [media.xsMd]: {
+            fontSize: 14,
+        },
+    },
+    seeMore: {
+        composes: 'flexRow flexEnd',
+    },
+    seeMoreButton: {
+        transition: 'all .5s cubic-bezier(.19,1,.4,1)',
+        padding: [theme.spacing(2), theme.spacing(4)],
+        transform: `translate(-${theme.spacing(4)}px,-${theme.spacing(2)}px)`,
+        borderRadius: 999,
+        '& img:last-child': {
+            visibility: 'hidden',
+        },
+    },
+    seeMoreText: {
+        fontSize: 14,
+        marginRight: theme.spacing(2),
     },
 }));
 
-type Props = {
-    reverse?: boolean;
-    reverseIndex: number;
-};
-
-const Project: FC<ProjectsProps & Props> = ({ image, reverse, title, link, description, subtitle, reverseIndex }) => {
-    const classes = useStyles();
+const Project: FC<ProjectI> = ({ title, subtitle, url, color, description }) => {
+    const classes = useStyles({ color: color.color, isDark: color.dark });
 
     return (
-        <div className={classes.projectRoot}>
-            <div className={classes.content}>
-                <div className={clsx(classes.imageBlockRoot, reverse ? classes.reverseImage : null)}>
-                    <div className={clsx(classes.imageContainer, reverse ? classes.imageContainerReverse : null)}>
-                        <img src={`/images/${image}`} alt={image} className={classes.img} />
+        <div className={classes.block}>
+            <div className={classes.center}>
+                <div className={classes.content}>
+                    <a href={url} className={classes.cardLink} />
+                    <div>
+                        <Title text={subtitle} level={4} className={classes.subtitle} />
                     </div>
-                </div>
-                <div className={clsx(classes.textBlockRoot, reverse ? classes.textBlockRootReverse : null)}>
-                    <div className={classes.textContent}>
-                        <div className={clsx(classes.number, classes.textSpaceBottom)}>Projet. {reverseIndex}</div>
-                        <Title text={title} level={2} className={clsx(classes.title, classes.textSpaceBottom)} />
-                        <Title text={subtitle} level={3} className={clsx(classes.subtitle, classes.textSpaceBottom)} />
-                        <Text text={description} tagName="p" className={classes.textSpaceBottom} />
-                        <Button url={link} text="Voir plus" />
+                    <div className={classes.title}>
+                        <Title text={title} level={3} />
+                    </div>
+                    <div className={classes.descriptionContainer}>
+                        <Text text={description} tagName="p" className={classes.description} />
+                    </div>
+                    <div className={classes.seeMore}>
+                        <div className={classes.seeMoreButton}>
+                            <Text text="Learn more" className={classes.seeMoreText} />
+                            <img src={`/images/icons/right-arrow${color.dark ? '' : '-light'}.svg`} alt="arrow right" />
+                            <img src={`/images/icons/right-arrow${color.dark ? '-light' : ''}.svg`} alt="arrow right" />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@ import { getScreen } from '../reducers/appReducer';
 import { media } from '../utils/constants';
 import Header from '../components/shared/Header';
 import Competences from '../components/home/competences';
-import Projects from '../components/home/projects-grid';
+import Projects from '../components/home/projects';
 import Knowledges from '../components/home/knowledges';
 import Text from '../components/shared/Text';
 

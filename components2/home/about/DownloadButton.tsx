@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { createUseStyles } from 'react-jss';
 import clsx from 'clsx';
-import Plx from 'react-plx';
+import Plx from '../../../components/home/projects/node_modules/react-plx';
 import { useSelector } from 'react-redux';
 import { screenState } from '../../../reducers/appReducer';
 
