@@ -9,6 +9,7 @@ import Details from './Details';
 import Form from './Form';
 
 const useStyles = createUseStyles((theme: any) => ({
+    contactRoot:
     contact: {
         composes: 'flexColumn stretchSelf',
     },
@@ -51,7 +52,7 @@ const Contact = () => {
     const classes = useStyles();
 
     return (
-        <Layout className={classes.contact}>
+        <Layout rootClassName={classes.contactRoot} className={classes.contact}>
             <div className={classes.contactTitle}>
                 <MainTitle text="Avez-vous un projet à l'esprit?" />
                 <Title

@@ -175,7 +175,7 @@ const Projects = () => {
         return [
             {
                 start: 'self',
-                duration: '160vh',
+                duration: '190vh',
                 properties: [
                     {
                         startValue: 0,
