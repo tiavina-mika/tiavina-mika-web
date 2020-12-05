@@ -9,11 +9,19 @@ import { sm } from '../../utils/constants';
 const useStyles = createUseStyles({
     plx: {
         composes: 'flexColumn flex1 stretchSelf',
+        paddingBottom: 140,
     },
 });
 
-type Props = { children: ReactNode; id: string | number; duration?: number };
-const BackgrounPlx: FC<Props> = ({ children, id, duration }) => {
+type Props = {
+    children: ReactNode;
+    id: string | number;
+    duration?: number;
+    color?: string;
+    startOffset?: number;
+    className?: string;
+};
+const BackgrounPlx: FC<Props> = ({ children, id, duration, color, startOffset, className }) => {
     const classes = useStyles();
     const triggerClassName = id + 'Trigger';
     const isTablet = useResponsive(sm);
@@ -23,22 +31,22 @@ const BackgrounPlx: FC<Props> = ({ children, id, duration }) => {
             /** animation in */
             {
                 start: `.${triggerClassName}`,
-                startOffset: '50vh',
+                startOffset: `${startOffset || 50}vh`,
                 duration: `${duration || 150}vh`,
                 properties: [
                     {
                         startValue: '#ffffff',
-                        endValue: '#F9F8F7',
+                        endValue: color || '#F9F8F7',
                         property: 'backgroundColor',
                     },
                 ],
             },
         ],
-        []
+        [color, duration, startOffset]
     );
 
     const Component: ElementType = isTablet ? Fragment : Plx;
-    const otherProps = isTablet ? {} : { parallaxData, className: clsx(triggerClassName, classes.plx) };
+    const otherProps = isTablet ? {} : { parallaxData, className: clsx(triggerClassName, classes.plx, className) };
     return <Component {...otherProps}>{children}</Component>;
 };
 
