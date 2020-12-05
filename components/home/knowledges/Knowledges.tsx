@@ -71,6 +71,9 @@ const useStyles = createUseStyles((theme: any) => ({
             width: '85vw',
         },
     },
+    sliderTransition: {
+        transition: '.6s transform ease-out',
+    },
     slider: {
         overflow: 'hidden',
         padding: 0,
@@ -373,9 +376,10 @@ const Knowledges: FC = () => {
             step={1}
             naturalSlideWidth={500}
             naturalSlideHeight={500}
-            hasMasterSpinner>
+            isPlaying
+            interval={10000}>
             <div className={classes.sliderContainer} ref={ref}>
-                <Slider className={classes.slider}>
+                <Slider className={classes.slider} classNameAnimation={classes.sliderTransition}>
                     {dataProgressBar.map(
                         (d: KnowledgesProgressiveChartI, i: number): ReactNode => (
                             <Slide index={i} key={i}>
