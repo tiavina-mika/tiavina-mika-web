@@ -376,11 +376,13 @@ const Knowledges: FC = () => {
             hasMasterSpinner>
             <div className={classes.sliderContainer} ref={ref}>
                 <Slider className={classes.slider}>
-                    {dataProgressBar.map((d, i) => (
-                        <Slide index={i} key={i}>
-                            <KnowledgeProgressBar data={d} key={i} startAnimation={inView} />
-                        </Slide>
-                    ))}
+                    {dataProgressBar.map(
+                        (d: KnowledgesProgressiveChartI, i: number): ReactNode => (
+                            <Slide index={i} key={i}>
+                                <KnowledgeProgressBar data={d} key={i} startAnimation={inView} />
+                            </Slide>
+                        )
+                    )}
                 </Slider>
                 <ButtonBack className={clsx(classes.buttonBack, classes.sildeButton)}>{'<'}</ButtonBack>
                 <ButtonNext className={clsx(classes.buttonNext, classes.sildeButton)}>{'>'}</ButtonNext>
@@ -390,9 +392,11 @@ const Knowledges: FC = () => {
 
     const mobile: ReactNode = (
         <div className={classes.knowledgesProgressBarContent} ref={ref}>
-            {dataProgressBar.map((d, i) => (
-                <KnowledgeProgressBar data={d} key={i} startAnimation={inView} />
-            ))}
+            {dataProgressBar.map(
+                (d: KnowledgesProgressiveChartI, i: number): ReactNode => (
+                    <KnowledgeProgressBar data={d} key={i} startAnimation={inView} />
+                )
+            )}
         </div>
     );
 
