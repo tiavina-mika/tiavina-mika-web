@@ -23,7 +23,7 @@ const BackgrounPlx: FC<Props> = ({ children, id, duration }) => {
             /** animation in */
             {
                 start: `.${triggerClassName}`,
-                startOffset: '10vh',
+                startOffset: '50vh',
                 duration: `${duration || 150}vh`,
                 properties: [
                     {

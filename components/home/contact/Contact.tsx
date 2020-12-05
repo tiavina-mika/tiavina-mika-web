@@ -9,7 +9,9 @@ import Details from './Details';
 import Form from './Form';
 
 const useStyles = createUseStyles((theme: any) => ({
-    contactRoot:
+    contactRoot: {
+        paddingBottom: theme.spacing(30),
+    },
     contact: {
         composes: 'flexColumn stretchSelf',
     },

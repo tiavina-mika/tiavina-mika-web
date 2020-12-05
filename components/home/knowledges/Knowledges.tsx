@@ -7,7 +7,7 @@ import { createUseStyles } from 'react-jss';
 import { useResponsive } from '../../../hooks/useResponsive';
 import { horizontalPaddingMobile, media, sm } from '../../../utils/constants';
 import { isReverse } from '../../../utils/utils';
-import BackgrounPlx from '../../shared/BackgroundPlx';
+import BackgroundPlx from '../../shared/BackgroundPlx';
 import Layout from '../../shared/Layout';
 import Knowledge from './Knowledge';
 import KnowledgeProgressBar from './KnowledgeProgressBar';
@@ -58,6 +58,7 @@ const useStyles = createUseStyles((theme: any) => ({
         },
     },
     sliderContainer: {
+        cursor: 'grab',
         position: 'relative',
         width: 1200,
         [media.lgXl]: {
@@ -397,7 +398,7 @@ const Knowledges: FC = () => {
 
     return (
         <Layout className={classes.knowledgesRoot} id="knowledges">
-            <BackgrounPlx id="knowledges">
+            <BackgroundPlx id="knowledges">
                 <div className={classes.overall}>
                     <OveralCard />
                 </div>
@@ -407,7 +408,7 @@ const Knowledges: FC = () => {
                     )
                 )}
                 <div className={classes.knowledgesProgressBar}>{isTablet ? mobile : carousel}</div>
-            </BackgrounPlx>
+            </BackgroundPlx>
         </Layout>
     );
 };
