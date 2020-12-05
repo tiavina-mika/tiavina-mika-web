@@ -21,7 +21,7 @@ type Props = {
     startOffset?: number;
     className?: string;
 };
-const BackgrounPlx: FC<Props> = ({ children, id, duration, color, startOffset, className }) => {
+const BackgroundPlx: FC<Props> = ({ children, id, duration, color, startOffset, className }) => {
     const classes = useStyles();
     const triggerClassName = id + 'Trigger';
     const isTablet = useResponsive(sm);
@@ -50,4 +50,4 @@ const BackgrounPlx: FC<Props> = ({ children, id, duration, color, startOffset, c
     return <Component {...otherProps}>{children}</Component>;
 };
 
-export default BackgrounPlx;
+export default BackgroundPlx;
