@@ -9,7 +9,7 @@ import MainTitle from './MainTitle';
 
 const useStyles = createUseStyles((theme: any) => ({
     headerRoot: {
-        composes: 'flexColumn justifyCenter font-ProximaNova-regular',
+        composes: 'flexColumn justifyCenter font-ProximaNova-regular flex1 stretchSelf',
         fontSize: 22,
         background: 'linear-gradient(top bottom, #CCC 0%, #F4F4F4 100%)',
         [media.lgUp]: {
@@ -49,7 +49,7 @@ const useStyles = createUseStyles((theme: any) => ({
 }));
 
 type Props = { title: string; description?: string; subtitle?: string };
-const Header: FC<Props> = ({ title, description, subtitle }) => {
+const PageHeader: FC<Props> = ({ title, description, subtitle }) => {
     const classes = useStyles();
 
     return (
@@ -73,4 +73,4 @@ const Header: FC<Props> = ({ title, description, subtitle }) => {
     );
 };
 
-export default Header;
+export default PageHeader;

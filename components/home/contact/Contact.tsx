@@ -2,11 +2,11 @@ import React from 'react';
 import { createUseStyles } from 'react-jss';
 
 import { media } from '../../../utils/constants';
+import ContactForm from '../../shared/ContactForm';
 import Layout from '../../shared/Layout';
 import MainTitle from '../../shared/MainTitle';
 import Title from '../../shared/Title';
 import Details from './Details';
-import Form from './Form';
 
 const useStyles = createUseStyles((theme: any) => ({
     contactRoot: {
@@ -65,7 +65,7 @@ const Contact = () => {
             </div>
             <div className={classes.contactBody}>
                 <Details className={classes.details} />
-                <Form className={classes.form} />
+                <ContactForm className={classes.form} />
             </div>
         </Layout>
     );

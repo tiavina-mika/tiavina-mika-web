@@ -1,11 +1,12 @@
 import React, { ReactNode, useEffect, useRef, useState } from 'react';
-import { createUseStyles } from 'react-jss';
+import { createUseStyles, useTheme } from 'react-jss';
 import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 
 import { openMenuAnimation } from '../../animations/app';
 import { screenState } from '../../reducers/appReducer';
 import { horizontalPaddingMobile, media } from '../../utils/constants';
+import Link from './Link';
 
 interface MenuI {
     url: string;
@@ -22,6 +23,10 @@ const menus: MenuI[] = [
     {
         url: '/',
         text: 'Projets',
+    },
+    {
+        url: '/contact',
+        text: 'Contact',
     },
 ];
 
@@ -49,11 +54,11 @@ const useStyles = createUseStyles((theme: any) => ({
             alignItems: 'flex-start',
         },
     },
-    logo: {
+    logoContainer: {
         composes: '$rowCenter',
+    },
+    logo: {
         fontSize: 52,
-        fontStyle: 'italic',
-        padding: 0,
         [media.lgDown]: {
             fontSize: 42,
             lineHeight: '1em',
@@ -79,6 +84,10 @@ const useStyles = createUseStyles((theme: any) => ({
     link: {
         color: theme.colors.active,
         textDecoration: 'none',
+        fontSize: 20,
+        '&:hover': {
+            opacity: 0.6,
+        },
     },
     menuMobile: {
         composes: 'flexColumn stretchSelf',
@@ -98,6 +107,7 @@ const useStyles = createUseStyles((theme: any) => ({
 
 const Menu = () => {
     const isMobile = useSelector(screenState);
+    const theme = useTheme();
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const [height, setHeight] = useState(0);
     const classes = useStyles(height);
@@ -110,9 +120,13 @@ const Menu = () => {
 
     const menuItem = ({ url, text, index }: IndexI & MenuI): ReactNode => (
         <div className={classes.item} key={index}>
-            <a href={url} className={classes.link}>
-                {text}
-            </a>
+            <Link
+                href={url}
+                text={text}
+                className={classes.link}
+                animate={false}
+                hoveredColor={(theme as any).colors.active}
+            />
         </div>
     );
 
@@ -143,7 +157,11 @@ const Menu = () => {
         <div className={classes.menu}>
             <div className={classes.content} ref={ref}>
                 <div className={classes.leftMenu}>
-                    <div className={classes.logo}>Mika</div>
+                    <div className={classes.logoContainer}>
+                        <Link href="/" animate={false} className={classes.logo}>
+                            Mika.L
+                        </Link>
+                    </div>
                     <div className={classes.description}>
                         <span>Some description about Mika</span>
                     </div>

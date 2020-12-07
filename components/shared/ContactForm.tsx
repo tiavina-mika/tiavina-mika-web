@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React, { ChangeEvent, FC, FormEvent, ReactNode, useState } from 'react';
 import { createUseStyles } from 'react-jss';
 
-import { useResponsive } from '../../../hooks/useResponsive';
-import { media, sm } from '../../../utils/constants';
+import { useResponsive } from '../../hooks/useResponsive';
+import { media, sm } from '../../utils/constants';
 
 const INPUT_SPACING = 1.8;
 const useStyles = createUseStyles((theme: any) => ({
@@ -27,13 +27,19 @@ const useStyles = createUseStyles((theme: any) => ({
         borderStyle: 'none',
         backgroundColor: 'rgba(240,243,247,1)',
         border: '1px solid transparent',
-        fontSize: '1rem',
+        fontSize: 16,
+        [media.smDown]: {
+            fontSize: 14,
+        },
     },
     textInput: {
         marginBottom: theme.spacing(INPUT_SPACING),
     },
     defaultSize: {
         height: 74,
+        [media.smDown]: {
+            height: 61,
+        },
     },
     spacing: {
         composes: 'stretchSelf font-Poppins-regular',
@@ -66,6 +72,9 @@ const useStyles = createUseStyles((theme: any) => ({
             color: '#fff',
             border: `1px solid ${theme.colors.active}`,
         },
+        [media.smDown]: {
+            marginTop: theme.spacing(INPUT_SPACING),
+        },
     },
     errorInput: {
         color: 'red',
@@ -80,7 +89,7 @@ interface State {
     message: string;
 }
 type Props = { className?: string };
-const Form: FC<Props> = ({ className }) => {
+const ContactForm: FC<Props> = ({ className }) => {
     const classes = useStyles();
     const isTablet: boolean = useResponsive(sm);
     const [error, setError] = useState<State>({
@@ -162,4 +171,4 @@ const Form: FC<Props> = ({ className }) => {
         </form>
     );
 };
-export default Form;
+export default ContactForm;

@@ -5,11 +5,12 @@ import { AppProps } from 'next/app';
 import { AnimatePresence } from 'framer-motion';
 
 import store from '../reducers/store';
-import '../styles.css';
 import { activeColor } from '../utils/constants';
+import '../styles.css';
 
 const theme = {
     colors: {
+        primary: '#000',
         active: activeColor, //green
         secondary: '#5B606B', //blue dark
         regular: '#6D6D6D',

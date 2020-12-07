@@ -1,81 +1,26 @@
-import React, { useEffect } from 'react';
-import { createUseStyles } from 'react-jss';
-import { useDispatch } from 'react-redux';
-import Head from 'next/head';
+import React from 'react';
 
-import { useWindowSize } from '../hooks/useWindowSize';
-import { getScreen } from '../reducers/appReducer';
-import { media } from '../utils/constants';
-import Header from '../components/shared/Header';
 import Competences from '../components/home/competences';
 import Projects from '../components/home/projects';
 import Knowledges from '../components/home/knowledges';
-import Text from '../components/shared/Text';
 import Contact from '../components/home/contact';
-
-const useStyles = createUseStyles((theme: any) => ({
-    root: {
-        composes: 'flexColumn flexCenter alignCenter stretchSelf flex1',
-    },
-    main: {
-        composes: 'flexColumn stretchSelf flex1',
-        backgroundColor: '#000',
-        color: '#fff',
-        [media.lgDown]: {
-            flexDirection: 'column',
-        },
-    },
-    warning: {
-        composes: 'flexRow stretchSelf justifyCenter',
-        padding: 20,
-        backgroundColor: 'red',
-    },
-    warningText: {
-        color: '#fff',
-    },
-    emailLink: {
-        color: theme.colors.active,
-        marginLeft: theme.spacing(1),
-    },
-}));
+import Page from '../components/shared/Page';
 
 const headerDescription = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 
 const Home = () => {
-    const size = useWindowSize();
-    const classes = useStyles({ size });
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getScreen(size.width));
-    }, []);
-
     return (
-        <div className={classes.root}>
-            <Head>
-                <title>Tiavina Michael Ralainirina</title>
-                <link rel="icon" href="/favicon.ico" />
-                <meta name="title" content="Tiavina Michael Ralainirina Portfolio" />
-                <meta name="description" content="FullStack Developer from Madagascar." />
-            </Head>
-            <div className={classes.warning}>
-                <Text className={classes.warningText}>
-                    {`Le site est actuellement en cours de développement. Pour plus d'info veuillez me contacter`}
-                    <a href="mailto:tiavinamika@gmail.com" className={classes.emailLink}>
-                        ici
-                    </a>
-                </Text>
-            </div>
-            <Header
-                title="Tiavina Michael RALAINIRINA"
-                subtitle="FullStack Developer - UI / UX Designer"
-                description={headerDescription}
-            />
+        <Page
+            metaTitle="Tiavina Michael Ralainirina Portfolio"
+            metaDescription="FullStack Developer from Madagascar."
+            pageTitle="Tiavina Michael RALAINIRINA"
+            pageSubtitle="FullStack Developer - UI / UX Designer"
+            pageDescription={headerDescription}>
             <Competences />
             <Projects />
             <Knowledges />
             <Contact />
-        </div>
+        </Page>
     );
 };
 

@@ -23,8 +23,8 @@ type Props = {
 };
 const BackgroundPlx: FC<Props> = ({ children, id, duration, color, startOffset, className }) => {
     const classes = useStyles();
-    const triggerClassName = id + 'Trigger';
-    const isTablet = useResponsive(sm);
+    const triggerClassName: string = id + 'Trigger';
+    const isTablet: boolean = useResponsive(sm);
 
     const parallaxData = useMemo(
         () => [
